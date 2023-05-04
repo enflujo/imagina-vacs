@@ -1,0 +1,112 @@
+---
+export interface Props {
+  titulo: string;
+  descripcion?: string;
+  imagen?: { url: string; titulo: string; ancho: string; alto: string };
+}
+
+const { titulo, descripcion, imagen } = Astro.props;
+const ruta = new URL(Astro.url.pathname, Astro.site);
+const tituloPagina = `${titulo} | Imagina + EnFlujo`;
+const img = imagen || { url: '', titulo: '', ancho: '', alto: '' };
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/sitio.webmanifest" />
+    <link rel="canonical" href={ruta.href} />
+    <title>{tituloPagina}</title>
+    <meta name="description" content={descripcion} />
+    <!-- OpenGraph -->
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="EnFlujo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={ruta.href} />
+    <meta property="og:title" content={tituloPagina} />
+    <meta property="og:description" content={descripcion} />
+    <meta property="og:image" content={img.url} />
+    <meta property="og:image:alt" content={img.titulo} />
+    <meta property="og:image:width" content={img.ancho} />
+    <meta property="og:image:height" content={img.alto} />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@labenflujo" />
+    <meta name="twitter:creator" content="@labenflujo" />
+    <meta name="twitter:url" content={ruta.href} />
+    <meta name="twitter:title" content={tituloPagina} />
+    <meta name="twitter:description" content={descripcion} />
+    <meta name="twitter:image" content={img.url} />
+    <meta name="twitter:image:alt" content={img.titulo} />
+
+    {
+      import.meta.env.PROD && (
+        <script
+          async
+          defer
+          data-website-id="569a36fc-18d4-4ee4-a40c-7c7a9a35b3a1"
+          src="https://analitica.enflujo.com/script.js"
+          data-domains="enflujo.com"
+        />
+      )
+    }
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global lang="scss">
+  html {
+    box-sizing: border-box;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  blockquote,
+  dl,
+  dd,
+  figure,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  pre,
+  time {
+    margin: 0;
+  }
+
+  main {
+    padding: 0;
+    margin: 0;
+  }
+
+  p {
+    margin: 1em 0;
+    line-height: 1.2;
+  }
+
+  a,
+  a:link {
+    color: #57c5b6;
+  }
+</style>
