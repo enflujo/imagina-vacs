@@ -5,13 +5,149 @@ import Plantilla from '../plantillas/Plantilla.astro';
 <Plantilla titulo="VACS">
   <main>
     <h1>VACS</h1>
-    <section class="introduccion">
-      <h2>contexto</h2>
+    <section id="introduccion" class="seccion">
+      <h2>Introducción</h2>
       <div>
-        <p>Algo</p>
-        <p>algo2</p>
+        <p>
+          La violencia contra niños, niñas y adolescentes es un problema de salud pública que afecta el desarrollo de
+          las personas y las comunidades. Las experiencias tempranas de los individuos y los entornos a los cuales están
+          expuestos configuran la arquitectura del cerebro y afectan su desarrollo.
+        </p>
+
+        <p>
+          La exposición a experiencias adversas durante los primeros años de vida como situaciones de maltrato, abuso y
+          abandono afectan seriamente la salud mental de niñas, niños y adolescentes. Incluso, estudios neurobiológicos
+          y conductuales han demostrado que puede interferir negativamente en el desarrollo del cerebro.
+        </p>
+
+        <p>
+          Estas vivencias pueden tener secuelas a largo plazo como: problemas de salud física y mental, afectaciones en
+          la configuración de relaciones sociales saludables, disminución en la capacidad de confiar y conectar con los
+          demás, afectaciones en la regulación de las emociones e incluso en los procesos económicos de los individuos y
+          sociedades.
+        </p>
       </div>
     </section>
+
+    <section id="evcnna" class="seccion">
+      <h2>EVCNNA</h2>
+      <p>
+        En 2018 Colombia realizó por primera vez la Encuesta de Violencia contra Niños, Niñas y Adolescentes (EVCNNA).
+        Hizo parte de la estrategia INSPIRE de la Organización Mundial de la Salud para prevenir la violencia infantil y
+        se diseñó con el objetivo de medir la prevalencia y las circunstancias alrededor de la violencia sexual, física
+        y psicológica durante la infancia, adolescencia y la adultez temprana.
+      </p>
+      <p>
+        La encuesta se aplicó a dos grupos de jóvenes entre los 14 y 24 años: una muestra nacional y otra de municipios
+        históricamente afectados por la violencia, que están cubiertos por los <span
+          class="ampliar"
+          onclick="pdet.classList.toggle('visible')">Programas de Desarrollo con Enfoque Territorial (PDET)</span
+        >.
+      </p>
+      <div id="pdet" class="ampliacion">
+        Los Programas de Desarrollo con Enfoque Territorial (PDET) fueron creados por el acuerdo de paz de La Habana y
+        son un instrumento especial de planificación y gestión a 15 años, que tienen como objetivo estabilizar y
+        transformar los territorios más afectados por la violencia, la pobreza, las economías ilícitas y la debilidad
+        institucional, y así lograr el desarrollo rural que requieren estos 170 municipios. <a
+          href="https://www.eltiempo.com/politica/proceso-de-paz/pdet-significado-y-cuales-son-los-municipios-pdet-en-colombia-615965"
+        >
+          fuente</a
+        >
+      </div>
+      <p>
+        Las investigaciones que presentamos a continuación se basan en datos recopilados por la EVCNNA en Colombia
+        (2018), Honduras (2017) y El Salvador (2017); la encuesta FORENSIS (2020) en Colombia y el capítulo “No es un
+        mal menor” del Informe Final de la Comisión de la Verdad (2022).
+      </p>
+    </section>
+
+    <seccion id="glosarioViolencias" class="seccion">
+      <h2>Glosario de violencias</h2>
+      <p>
+        La violencia es definida como “el uso intencional de la fuerza física o del poder, ya sea en grado de amenaza de
+        ejecución real, ejercida contra uno mismo, contra otra persona, o contra un grupo o comunidad, siempre que la
+        conducta produzca, o que tenga una alta probabilidad de producir lesiones, muerte, daño psicológico, trastornos
+        en el desarrollo o privaciones”.
+      </p>
+      <p>
+        Según la EVCNNA, en Colombia los castigos físicos y la violencia psicológica son prácticas comunes utilizadas
+        por los padres en el contexto de la disciplina. Además, las normas sociales suelen justificar la violencia
+        ejercida dentro del hogar como un asunto privado y se espera que los niños se sometan a la voluntad de sus
+        padres.
+      </p>
+      <ul>
+        <li>
+          <h3>Experiencias adversas en la infancia</h3>
+          <p>
+            También llamadas ACEs, por sus siglas en inglés. Eventos potencialmente traumáticos sufridos durante la
+            infancia y la juventud (como sufrir o presenciar abuso emocional, físico o sexual y disfunción del hogar en
+            la infancia)
+          </p>
+        </li>
+        <li>
+          <h3>Maltrato infantil y adolescente</h3>
+          <p>
+            Cualquier acto o serie de actos por parte de un padre, madre u otro cuidador que resulte en un daño, un
+            potencial daño o una amenaza de daño. Las cuatro formas principales de maltrato son: físico, emocional o
+            psicológico, negligencia o abandono y sexual. Según el Instituto Nacional Legal y de Ciencias Forenses-
+            Grupo Centro de Referencia Nacional sobre Violencia (FORENSIS, 2020) la violencia hacia los niños, niñas y
+            adolescentes es un tipo de violencia ejercida básicamente por los padres, el representante legal o cualquier
+            otra persona que les genere daño y que afecta la integridad personal y el desarrollo integral del menor.
+            (Organización Mundial de la Salud, 2022; Armfield et. al., 2021)
+          </p>
+        </li>
+        <li>
+          <h3>Violencia física</h3>
+          <p>
+            Haber sido abofeteado, empujado, sacudido, golpeado con un objeto, pateado, estrangulado, asfixiado,
+            ahogado, quemado, amenazado con armas blancas o de fuego intencionalmente por una persona de la misma edad,
+            la pareja, padres y/o cuidadores o adultos en la comunidad.
+          </p>
+        </li>
+        <li>
+          <h3>Violencia emocional</h3>
+          <p>
+            Que padres, tutores, o cuidadores le hayan dicho que no merecía ser querido, que hubiesen preferido que no
+            hubiese nacido o estuviese muerto o haber sido menospreciado, ridiculizado o humillado por estos. Haber sido
+            humillado, insultado o ridiculizado; haber sido impedido de verse con familia o amigos o haber sido
+            amenazado con daño físico por parte de la pareja antes de los 18 años.
+          </p>
+        </li>
+        <li>
+          <h3>Violencia sexual</h3>
+          <p>
+            Haber recibido el ofrecimiento de apoyo económico o material a cambio de relaciones sexuales; haber recibido
+            tocamientos de manera sexual y no consentida sin concluir en relaciones sexuales; haber sido presionado a
+            tener relaciones sexuales sin haberlo conseguido; haber sido forzado físicamente a tener relaciones sexuales
+            y haberlo conseguido; haber sido presionado a través acosos, amenazas, intimidación, engaños, chantaje o
+            coacción y haberlo conseguido.
+          </p>
+        </li>
+        <li>
+          <h3>Violencia intrafamiliar (VIF) o doméstica</h3>
+          <p>
+            Toda acción u omisión cometida por algún miembro de la familia en relación de poder, sin importar el espacio
+            físico donde ocurra, que perjudique el bienestar, la integridad física, psicológica o la libertad y el
+            derecho al pleno desarrollo de otro/a miembro de la familia. (Organización Panamericana de la Salud, 2022)
+          </p>
+        </li>
+        <li>
+          <h3>Presenciar violencia en el hogar</h3>
+          <p>
+            Haber visto u odio a la madre o madrastra ser golpeada por el padre o padrastro; haber visto a los padres
+            golpear a los hermanos o hermanas.
+          </p>
+        </li>
+        <li>
+          <h3>Violencia en la comunidad</h3>
+          <p>Haber visto a alguien ser atacado fuera de la casa o ambiente familiar.</p>
+        </li>
+        <li>
+          <h3>Orfandad y/o separación parental</h3>
+          <p>Que el padre o madre haya fallecido; haber estado separado del padre o madre por 6 meses o más.</p>
+        </li>
+      </ul>
+    </seccion>
 
     <div>
       <a href="/proyecto1">Proyecto 1</a>
@@ -22,6 +158,11 @@ import Plantilla from '../plantillas/Plantilla.astro';
   </main>
 </Plantilla>
 
+<script>
+  const pdet = document.getElementById('pdet');
+  let visible: false;
+</script>
+
 <style lang="scss">
   main {
     background: rgb(50, 29, 47);
@@ -29,5 +170,32 @@ import Plantilla from '../plantillas/Plantilla.astro';
     color: #f6f1f1;
     min-height: 100vh;
     padding: 5em;
+  }
+  .seccion {
+    width: 70vw;
+  }
+  .ampliar {
+    color: rgb(196, 160, 229);
+    cursor: pointer;
+  }
+  .ampliacion {
+    display: none;
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  #pdet {
+    position: relative;
+    width: 30vw;
+    border: #f6f1f1 solid 4px;
+    padding: 1em;
+    background-color: rgb(84, 21, 255);
+  }
+  #glosarioViolencias {
+    li {
+      padding-bottom: 0em;
+    }
   }
 </style>
