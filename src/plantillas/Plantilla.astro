@@ -61,52 +61,5 @@ const img = imagen || { url: '', titulo: '', ancho: '', alto: '' };
   </body>
 </html>
 <style is:global lang="scss">
-  html {
-    box-sizing: border-box;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-  }
-
-  blockquote,
-  dl,
-  dd,
-  figure,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  pre,
-  time {
-    margin: 0;
-  }
-
-  main {
-    padding: 0;
-    margin: 0;
-  }
-
-  p {
-    margin: 1em 0;
-    line-height: 1.2;
-  }
-
-  a,
-  a:link {
-    color: #57c5b6;
-  }
+  @import '../scss/estilosGlobales.scss';
 </style>

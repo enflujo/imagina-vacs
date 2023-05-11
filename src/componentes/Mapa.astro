@@ -1,0 +1,84 @@
+---
+export interface Props {
+  // Porcentaje que no debe superar a lo ancho (1-100)
+  ancho?: number;
+  // Porcentaje que no debe superar a lo alto (1-100)
+  alto?: number;
+}
+
+const { ancho, alto } = Astro.props;
+---
+
+<svg id="mapa" data-proporciones={JSON.stringify({ ancho, alto })}></svg>
+
+<script>
+  import { ExtremosCoordenadas, GeoJson } from '../tipos';
+  import { crearLinea, escalaCoordenadas, extremosLugar } from '../utilidades/mapas';
+  import codigosPdet from '../utilidades/pdet';
+  const rutaMunicipios = 'https://enflujo.com/bodega/maternoinfantil/municipios.json';
+  const mapa = document.getElementById('mapa');
+  let municipios: GeoJson;
+  let extremosGeo: ExtremosCoordenadas;
+  const proporciones = JSON.parse(mapa.dataset.proporciones);
+
+  async function inicio() {
+    municipios = await fetch(rutaMunicipios).then((res) => res.json());
+
+    municipios.features.forEach((municipio) => {
+      let esPdet = false;
+      if (codigosPdet.includes(municipio.properties.codigo)) {
+        esPdet = true;
+      }
+
+      municipio.properties.pdet = esPdet;
+    });
+
+    extremosGeo = extremosLugar(municipios);
+    escalar();
+  }
+
+  function calcularPorcentaje(valor: number, porcentaje: number) {
+    return valor * (porcentaje / 100);
+  }
+
+  function escalar() {
+    let ancho = window.innerWidth;
+    let alto = window.innerHeight;
+    const mapearCoordenadas = escalaCoordenadas(extremosGeo);
+    const coordenadasAncho = extremosGeo.longitudMax - extremosGeo.longitudMin;
+    const coordenadasAlto = extremosGeo.latitudMax - extremosGeo.latitudMin;
+
+    if (proporciones.ancho && proporciones.ancho <= 100) {
+      ancho = calcularPorcentaje(ancho, proporciones.ancho);
+    }
+
+    if (proporciones.alto && proporciones.alto <= 100) {
+      alto = calcularPorcentaje(alto, proporciones.alto);
+    }
+
+    // Revisa las proporciones del mapa para que no se deforme
+    if (coordenadasAncho > coordenadasAlto) {
+      alto = (ancho * (coordenadasAlto / coordenadasAncho)) | 0;
+    } else {
+      ancho = (alto * (coordenadasAncho / coordenadasAlto)) | 0;
+    }
+
+    mapa.setAttribute('width', `${ancho}`);
+    mapa.setAttribute('height', `${alto}`);
+
+    mapa.innerHTML = '';
+
+    municipios.features.forEach((municipio) => {
+      const linea = crearLinea(municipio.geometry.coordinates, mapearCoordenadas, ancho, alto);
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+
+      svg.setAttribute('class', municipio.properties.pdet ? 'municipio pdet' : 'municipio');
+      svg.setAttribute('d', linea);
+      mapa.appendChild(svg);
+    });
+  }
+
+  inicio();
+
+  window.onresize = escalar;
+</script>

@@ -1,13 +1,10 @@
 ---
+import Mapa from '../componentes/Mapa.astro';
 import Plantilla from '../plantillas/Plantilla.astro';
 ---
 
 <Plantilla titulo="VACS">
-  <svg id="mapa">
-    <g id="municipios"></g>
-  </svg>
-
-  <main>
+  <main id="proyecto1">
     <section id="introduccion" class="seccion apagado">
       <h1>Proyecto 1</h1>
       <div class="resumen">
@@ -160,19 +157,14 @@ import Plantilla from '../plantillas/Plantilla.astro';
         </p>
       </div>
     </section>
+
+    <Mapa alto={80} />
   </main>
 </Plantilla>
 
 <script>
-  import { crearLinea, escalaCoordenadas, extremosLugar } from '../utilidades/mapas';
   import { duranteInterseccion } from '../utilidades/observador';
-  import codigosPdet from '../utilidades/pdet';
-  const rutaMunicipios = 'https://enflujo.com/bodega/maternoinfantil/municipios.json';
   const secciones = document.querySelectorAll('.seccion');
-  const mapa = document.getElementById('mapa');
-  const contenedorMunicipios = document.getElementById('municipios');
-  let municipios;
-  let extremosGeo;
 
   secciones.forEach((seccion) => duranteInterseccion(seccion, detectar, false, { threshold: [0, 0.5, 1] }));
 
@@ -183,100 +175,61 @@ import Plantilla from '../plantillas/Plantilla.astro';
       elemento.target.classList.remove('apagado');
     }
   }
-
-  async function inicio() {
-    municipios = await fetch(rutaMunicipios).then((res) => res.json());
-
-    municipios.features.forEach((municipio) => {
-      let esPdet = false;
-      if (codigosPdet.includes(municipio.properties.codigo)) {
-        esPdet = true;
-      }
-
-      municipio.properties.pdet = esPdet;
-    });
-
-    extremosGeo = extremosLugar(municipios);
-
-    escalar();
-  }
-
-  function escalar() {
-    const ancho = window.innerWidth;
-    const alto = window.innerHeight;
-    const mapearCoordenadas = escalaCoordenadas(extremosGeo);
-    mapa.setAttribute('width', `${(ancho / 2) | 0}`);
-    mapa.setAttribute('height', `${(alto / 1.5) | 0}`);
-
-    mapa.innerHTML = '';
-
-    municipios.features.forEach((municipio) => {
-      const linea = crearLinea(municipio.geometry.coordinates, mapearCoordenadas, ancho / 2, alto / 1.5);
-      const svg = document.createElement('path');
-      const esPdet = municipio.properties.pdet;
-
-      svg.className = municipio.properties.pdet ? 'municipio pdet' : 'municipio';
-      svg.setAttribute('d', linea);
-      svg.setAttribute('fill', esPdet ? 'red' : 'grey');
-      mapa.appendChild(svg);
-    });
-  }
-
-  inicio();
-
-  window.onresize = escalar;
 </script>
 
-<style lang="scss">
-  main {
-    background: rgb(50, 29, 47);
-    background: linear-gradient(180deg, rgba(50, 29, 47, 1) 0%, rgba(61, 46, 79, 1) 50%, rgba(76, 95, 122, 1) 100%);
-    color: #f6f1f1;
-    min-height: 100vh;
-    padding: 5em;
-  }
+<style lang="scss" is:global>
+  #proyecto1 {
+    #mapa {
+      position: fixed;
+      top: 10%;
+      left: 10%;
+      z-index: 1;
 
-  h1 {
-    font-size: 4em;
-    text-align: center;
-    margin-bottom: 1em;
-  }
+      .municipio {
+        fill: rgb(218, 241, 243);
+        shape-rendering: geometricPrecision;
+        stroke: rgba(149, 216, 222, 0.736);
+        stroke-width: 0.5px;
 
-  .seccion {
-    transition: opacity 1.6s ease-out;
-    transition-delay: 250ms;
-    margin-bottom: 10em;
-  }
-
-  .apagado {
-    opacity: 0;
-  }
-
-  .resumen {
-    font-size: 2em;
-  }
-
-  #introduccion {
-    min-height: 100vh;
-    margin-bottom: 0;
-  }
-
-  .columnas {
-    display: flex;
-    justify-content: space-around;
-
-    .columna {
-      flex-basis: 30%;
+        &.pdet {
+          fill: rgb(210, 83, 76);
+          stroke: rgba(229, 169, 169, 0.791);
+        }
+      }
     }
-  }
 
-  #mapa {
-    position: absolute;
-  }
+    h1 {
+      font-size: 4em;
+      text-align: center;
+      margin-bottom: 1em;
+    }
 
-  .municipio {
-    fill: red;
-    stroke: yellow;
-    shape-rendering: geometricPrecision;
+    .seccion {
+      transition: opacity 1.6s ease-out;
+      transition-delay: 250ms;
+      margin-bottom: 10em;
+    }
+
+    .apagado {
+      opacity: 0;
+    }
+
+    .resumen {
+      font-size: 2em;
+    }
+
+    #introduccion {
+      min-height: 100vh;
+      margin-bottom: 0;
+    }
+
+    .columnas {
+      display: flex;
+      justify-content: space-around;
+
+      .columna {
+        flex-basis: 30%;
+      }
+    }
   }
 </style>
