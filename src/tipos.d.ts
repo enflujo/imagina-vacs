@@ -9,8 +9,8 @@ export interface GeometriaMapa {
     codigo: string;
     // Nombre del municipio o departamento.
     nombre: string;
-    // Código numérico del departamento (sólo aparece en caso de que sea municipio)
-    departamento?: string;
+    // Nombre del departamento
+    dep?: string;
     // Si es PDET o no.
     pdet: boolean;
   };

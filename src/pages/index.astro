@@ -1,9 +1,10 @@
 ---
+import Mapa from '../componentes/Mapa.astro';
 import Plantilla from '../plantillas/Plantilla.astro';
 ---
 
 <Plantilla titulo="VACS">
-  <main>
+  <main id="paginaIntroduccion">
     <h1>VACS</h1>
     <section id="introduccion" class="seccion">
       <h2>Introducción</h2>
@@ -28,39 +29,45 @@ import Plantilla from '../plantillas/Plantilla.astro';
       </div>
     </section>
 
-    <section id="evcnna" class="seccion">
-      <h2>CONTEXTO</h2>
+    <div class="doble">
+      <section id="evcnna" class="seccion medio">
+        <h2>CONTEXTO</h2>
 
-      <h3>Encuesta de Violencia contra Niños, Niñas y Adolescentes</h3>
-      <p>
-        En 2018 Colombia realizó por primera vez la Encuesta de Violencia contra Niños, Niñas y Adolescentes (EVCNNA),
-        que fue parte de la estrategia INSPIRE de la Organización Mundial de la Salud para prevenir la violencia
-        infantil. Su objetivo era medir la prevalencia y las circunstancias alrededor de la violencia sexual, física y
-        psicológica durante la infancia, adolescencia y la adultez temprana.
-      </p>
-      <p>
-        La encuesta se aplicó a dos grupos de jóvenes entre los 14 y 24 años: una muestra nacional y otra de municipios
-        históricamente afectados por la violencia, que están cubiertos por los <span
-          class="ampliar"
-          onclick="pdet.classList.toggle('visible')">Programas de Desarrollo con Enfoque Territorial (PDET)</span
-        >.
-      </p>
-      <div id="pdet" class="ampliacion">
-        Los Programas de Desarrollo con Enfoque Territorial (PDET) fueron creados por el acuerdo de paz de La Habana y
-        son un instrumento especial de planificación y gestión a 15 años, que tienen como objetivo estabilizar y
-        transformar los territorios más afectados por la violencia, la pobreza, las economías ilícitas y la debilidad
-        institucional, y así lograr el desarrollo rural que requieren estos 170 municipios. <a
-          href="https://www.eltiempo.com/politica/proceso-de-paz/pdet-significado-y-cuales-son-los-municipios-pdet-en-colombia-615965"
-        >
-          fuente</a
-        >
+        <h3>Encuesta de Violencia contra Niños, Niñas y Adolescentes</h3>
+        <p>
+          En 2018 Colombia realizó por primera vez la Encuesta de Violencia contra Niños, Niñas y Adolescentes (EVCNNA),
+          que fue parte de la estrategia INSPIRE de la Organización Mundial de la Salud para prevenir la violencia
+          infantil. Su objetivo era medir la prevalencia y las circunstancias alrededor de la violencia sexual, física y
+          psicológica durante la infancia, adolescencia y la adultez temprana.
+        </p>
+        <p>
+          La encuesta se aplicó a dos grupos de jóvenes entre los 14 y 24 años: una muestra nacional y otra de
+          municipios históricamente afectados por la violencia, que están cubiertos por los <span
+            class="ampliar"
+            onclick="pdet.classList.toggle('visible')">Programas de Desarrollo con Enfoque Territorial (PDET)</span
+          >.
+        </p>
+        <div id="pdet" class="ampliacion">
+          Los Programas de Desarrollo con Enfoque Territorial (PDET) fueron creados por el acuerdo de paz de La Habana y
+          son un instrumento especial de planificación y gestión a 15 años, que tienen como objetivo estabilizar y
+          transformar los territorios más afectados por la violencia, la pobreza, las economías ilícitas y la debilidad
+          institucional, y así lograr el desarrollo rural que requieren estos 170 municipios. <a
+            href="https://www.eltiempo.com/politica/proceso-de-paz/pdet-significado-y-cuales-son-los-municipios-pdet-en-colombia-615965"
+          >
+            fuente</a
+          >
+        </div>
+        <p>
+          Las investigaciones que presentamos a continuación se basan en datos recopilados por la EVCNNA en Colombia
+          (2018), Honduras (2017) y El Salvador (2017); la encuesta FORENSIS (2020) en Colombia y el capítulo “No es un
+          mal menor” del Informe Final de la Comisión de la Verdad (2022).
+        </p>
+      </section>
+
+      <div id="mapa-pdet" class="seccion">
+        <Mapa alto={50} />
       </div>
-      <p>
-        Las investigaciones que presentamos a continuación se basan en datos recopilados por la EVCNNA en Colombia
-        (2018), Honduras (2017) y El Salvador (2017); la encuesta FORENSIS (2020) en Colombia y el capítulo “No es un
-        mal menor” del Informe Final de la Comisión de la Verdad (2022).
-      </p>
-    </section>
+    </div>
 
     <section id="glosarioViolencias" class="seccion">
       <h3>Glosario de violencias</h3>
@@ -166,10 +173,7 @@ import Plantilla from '../plantillas/Plantilla.astro';
   </main>
 </Plantilla>
 
-<script>
-  const pdet = document.getElementById('pdet');
-  let visible: false;
-</script>
+<script></script>
 
 <style lang="scss">
   main {
@@ -179,9 +183,7 @@ import Plantilla from '../plantillas/Plantilla.astro';
     min-height: 100vh;
     padding: 5em;
   }
-  .seccion {
-    width: 70vw;
-  }
+
   .ampliar {
     color: #57c5b6;
     cursor: pointer;
@@ -228,6 +230,33 @@ import Plantilla from '../plantillas/Plantilla.astro';
     &:hover {
       background-color: rgb(196, 160, 229);
       color: rgb(50, 29, 47);
+    }
+  }
+
+  .doble {
+    display: flex;
+
+    .seccion {
+      flex-basis: 50%;
+      position: relative;
+    }
+  }
+</style>
+
+<style is:global lang="scss">
+  #paginaIntroduccion {
+    .mapa {
+      .municipio {
+        fill: rgb(218, 241, 243);
+        shape-rendering: geometricPrecision;
+        stroke: rgba(149, 216, 222, 0.736);
+        stroke-width: 0.8px;
+
+        &.pdet {
+          fill: rgb(230, 102, 95);
+          stroke: rgba(229, 169, 169, 0.791);
+        }
+      }
     }
   }
 </style>

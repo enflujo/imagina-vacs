@@ -258,8 +258,6 @@ import Plantilla from '../plantillas/Plantilla.astro';
         </p>
       </div>
     </section>
-
-    <Mapa alto={80} />
   </main>
 </Plantilla>
 
@@ -280,25 +278,6 @@ import Plantilla from '../plantillas/Plantilla.astro';
 
 <style lang="scss" is:global>
   #proyecto1 {
-    #mapa {
-      position: fixed;
-      top: 10%;
-      left: 10%;
-      z-index: 1;
-
-      .municipio {
-        fill: rgb(218, 241, 243);
-        shape-rendering: geometricPrecision;
-        stroke: rgba(149, 216, 222, 0.736);
-        stroke-width: 0.5px;
-
-        &.pdet {
-          fill: rgb(210, 83, 76);
-          stroke: rgba(229, 169, 169, 0.791);
-        }
-      }
-    }
-
     h1 {
       font-size: 4em;
       text-align: center;

@@ -9,14 +9,22 @@ export interface Props {
 const { ancho, alto } = Astro.props;
 ---
 
-<svg id="mapa" data-proporciones={JSON.stringify({ ancho, alto })}></svg>
+<svg class="mapa" data-proporciones={JSON.stringify({ ancho, alto })}></svg>
+<div id="informacion">
+  <p class="nombre"></p>
+  <p class="espdet"></p>
+</div>
 
 <script>
   import { ExtremosCoordenadas, GeoJson } from '../tipos';
   import { crearLinea, escalaCoordenadas, extremosLugar } from '../utilidades/mapas';
   import codigosPdet from '../utilidades/pdet';
-  const rutaMunicipios = 'https://enflujo.com/bodega/maternoinfantil/municipios.json';
-  const mapa = document.getElementById('mapa');
+  const rutaMunicipios = 'https://enflujo.com/bodega/colombia/municipios.json';
+  const mapa = document.querySelector('.mapa') as HTMLDivElement;
+  const informacion = document.getElementById('informacion');
+  const infoMunucipio = informacion.querySelector('.nombre') as HTMLParagraphElement;
+  const infoEsPdet = informacion.querySelector('.espdet') as HTMLParagraphElement;
+
   let municipios: GeoJson;
   let extremosGeo: ExtremosCoordenadas;
   const proporciones = JSON.parse(mapa.dataset.proporciones);
@@ -70,15 +78,75 @@ const { ancho, alto } = Astro.props;
 
     municipios.features.forEach((municipio) => {
       const linea = crearLinea(municipio.geometry.coordinates, mapearCoordenadas, ancho, alto);
-      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      const zona = document.createElementNS('http://www.w3.org/2000/svg', 'path');
 
-      svg.setAttribute('class', municipio.properties.pdet ? 'municipio pdet' : 'municipio');
-      svg.setAttribute('d', linea);
-      mapa.appendChild(svg);
+      zona.setAttribute('class', municipio.properties.pdet ? 'municipio pdet' : 'municipio');
+      zona.setAttribute('d', linea);
+      zona.onmousemove = (evento) => {
+        const dims = mapa.getBoundingClientRect();
+        const x = evento.clientX - dims.x;
+        const y = evento.clientY - dims.y;
+
+        infoMunucipio.innerText = `${municipio.properties.nombre}, (${municipio.properties.dep})`;
+        infoEsPdet.innerText = municipio.properties.pdet ? 'PDET' : '';
+
+        if (municipio.properties.pdet) {
+          informacion.classList.add('pdet');
+        } else {
+          informacion.classList.remove('pdet');
+        }
+
+        Object.assign(informacion.style, {
+          top: `${y}px`,
+          left: `${x}px`,
+        });
+      };
+
+      mapa.appendChild(zona);
     });
+
+    mapa.onmouseenter = () => {
+      informacion.classList.add('visible');
+    };
+    mapa.onmouseleave = () => {
+      informacion.classList.remove('visible');
+    };
   }
 
   inicio();
 
   window.onresize = escalar;
 </script>
+
+<style lang="scss">
+  #informacion {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    max-width: 200px;
+    padding: 0.5em;
+    font-size: 0.8em;
+    font-weight: bold;
+
+    background-color: rgb(253, 253, 250);
+    color: black;
+    z-index: 9;
+    transition: opacity 0.42s ease-out;
+    transform: translate(-50%, -105%);
+
+    &.visible {
+      opacity: 1;
+    }
+
+    &.pdet {
+      background-color: rgb(252, 154, 149);
+    }
+
+    .espdet {
+      font-size: 0.6em;
+      font-style: italic;
+      text-align: right;
+      font-weight: normal;
+    }
+  }
+</style>
