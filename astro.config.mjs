@@ -3,11 +3,10 @@ import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
 import compress from 'astro-compress';
 
-// https://astro.build/config
 export default defineConfig({
   outDir: './publico',
   publicDir: './recursos',
-  site: 'https://enflujo.com',
+  site: 'https://imagina.uniandes.edu.co',
   integrations: [
     sitemap(),
     robotsTxt(),
@@ -15,4 +14,8 @@ export default defineConfig({
       path: './publico',
     }),
   ],
+  base: '/especiales/vacs',
+  build: {
+    assets: 'recursos',
+  },
 });
