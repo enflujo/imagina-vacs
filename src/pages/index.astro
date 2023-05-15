@@ -9,33 +9,34 @@ import Plantilla from '../plantillas/Plantilla.astro';
       <h2>Introducción</h2>
       <div>
         <p>
-          La violencia contra niños, niñas y adolescentes es un problema de salud pública que afecta el desarrollo de
-          las personas y las comunidades. Las experiencias tempranas de los individuos y los entornos a los cuales están
-          expuestos configuran la arquitectura del cerebro y afectan su desarrollo.
+          La manera en la que actuamos y en la cual nos relacionamos con el mundo se empieza a construir desde nuestra
+          infancia, de hecho, esta es la etapa en la que nuestro cerebro absorbe más fácilmente la información que nos
+          rodea.
         </p>
 
         <p>
-          La exposición a experiencias adversas durante los primeros años de vida como situaciones de maltrato, abuso y
-          abandono afectan seriamente la salud mental de niñas, niños y adolescentes. Incluso, estudios neurobiológicos
-          y conductuales han demostrado que puede interferir negativamente en el desarrollo del cerebro.
+          Aunque en esta edad los niños y niñas son más propensos a aprender un nuevo idioma o memorizar nuevos
+          conceptos, también es más probable que aquellas experiencias traumáticas vividas durante esta etapa sean
+          determinantes en la aparición futura de deficiencias o dificultades sociales, emocionales y cognitivas.
         </p>
 
         <p>
-          Estas vivencias pueden tener secuelas a largo plazo como: problemas de salud física y mental, afectaciones en
-          la configuración de relaciones sociales saludables, disminución en la capacidad de confiar y conectar con los
-          demás, afectaciones en la regulación de las emociones e incluso en los procesos económicos de los individuos y
-          sociedades.
+          Sufrir o presenciar maltrato o abuso en la niñez puede hacer que a largo plazo tengamos problemas de salud
+          física y mental, nos resulte más difícil confiar o conectar con los demás y regular nuestras emociones o
+          perpetremos ese ciclo de violencia.
         </p>
       </div>
     </section>
 
     <section id="evcnna" class="seccion">
-      <h2>EVCNNA</h2>
+      <h2>CONTEXTO</h2>
+
+      <h3>Encuesta de Violencia contra Niños, Niñas y Adolescentes</h3>
       <p>
-        En 2018 Colombia realizó por primera vez la Encuesta de Violencia contra Niños, Niñas y Adolescentes (EVCNNA).
-        Hizo parte de la estrategia INSPIRE de la Organización Mundial de la Salud para prevenir la violencia infantil y
-        se diseñó con el objetivo de medir la prevalencia y las circunstancias alrededor de la violencia sexual, física
-        y psicológica durante la infancia, adolescencia y la adultez temprana.
+        En 2018 Colombia realizó por primera vez la Encuesta de Violencia contra Niños, Niñas y Adolescentes (EVCNNA),
+        que fue parte de la estrategia INSPIRE de la Organización Mundial de la Salud para prevenir la violencia
+        infantil. Su objetivo era medir la prevalencia y las circunstancias alrededor de la violencia sexual, física y
+        psicológica durante la infancia, adolescencia y la adultez temprana.
       </p>
       <p>
         La encuesta se aplicó a dos grupos de jóvenes entre los 14 y 24 años: una muestra nacional y otra de municipios
@@ -62,7 +63,7 @@ import Plantilla from '../plantillas/Plantilla.astro';
     </section>
 
     <seccion id="glosarioViolencias" class="seccion">
-      <h2>Glosario de violencias</h2>
+      <h3>Glosario de violencias</h3>
       <p>
         La violencia es definida como “el uso intencional de la fuerza física o del poder, ya sea en grado de amenaza de
         ejecución real, ejercida contra uno mismo, contra otra persona, o contra un grupo o comunidad, siempre que la
@@ -149,11 +150,16 @@ import Plantilla from '../plantillas/Plantilla.astro';
       </ul>
     </seccion>
 
-    <div>
-      <a href="/proyecto1">Proyecto 1</a>
-      <a href="/proyecto2">Proyecto 2</a>
-      <a href="/proyecto3">Proyecto 3</a>
-      <a href="/proyecto4">Proyecto 4</a>
+    <div id="contenedorEnlaces">
+      <a class="enlace" href="/proyecto1">La huella del conflicto armado en la niñez y adolescencia colombianas</a>
+      <a class="enlace" href="/proyecto2"
+        >Experiencias Adversas en la Infancia: Estudio Comparativo de Colombia, Honduras y El Salvador</a
+      >
+      <a class="enlace" href="/proyecto3"
+        >Trayectorias de maltrato: El impacto de la violencia en la infancia y adolescencia como predictor de ser
+        víctima y victimario en la adultez</a
+      >
+      <a class="enlace" href="/proyecto4">Proyecto 4</a>
     </div>
   </main>
 </Plantilla>
@@ -175,7 +181,7 @@ import Plantilla from '../plantillas/Plantilla.astro';
     width: 70vw;
   }
   .ampliar {
-    color: rgb(196, 160, 229);
+    color: #57c5b6;
     cursor: pointer;
   }
   .ampliacion {
@@ -191,11 +197,35 @@ import Plantilla from '../plantillas/Plantilla.astro';
     width: 30vw;
     border: #f6f1f1 solid 4px;
     padding: 1em;
-    background-color: rgb(84, 21, 255);
+    background-color: rgb(196, 160, 229);
+    color: rgb(50, 29, 47);
+
+    a {
+      color: white;
+    }
   }
   #glosarioViolencias {
     li {
       padding-bottom: 0em;
+    }
+  }
+
+  #contenedorEnlaces {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+  }
+
+  .enlace {
+    border: 1px white solid;
+    text-align: center;
+    padding: 0.5em;
+    margin: 1em;
+    border-radius: 15px;
+
+    &:hover {
+      background-color: rgb(196, 160, 229);
+      color: rgb(50, 29, 47);
     }
   }
 </style>
