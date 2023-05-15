@@ -16,10 +16,10 @@ const img = imagen || { url: '', titulo: '', ancho: '', alto: '' };
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/sitio.webmanifest" />
+    <link rel="icon" href=`${import.meta.env.BASE_URL}favicon.ico` sizes="any" />
+    <link rel="icon" href=`${import.meta.env.BASE_URL}favicon.svg` type="image/svg+xml" />
+    <link rel="apple-touch-icon" href=`${import.meta.env.BASE_URL}apple-touch-icon.png` />
+    <link rel="manifest" href=`${import.meta.env.BASE_URL}sitio.webmanifest` />
     <link rel="canonical" href={ruta.href} />
     <title>{tituloPagina}</title>
     <meta name="description" content={descripcion} />
