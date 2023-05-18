@@ -1,11 +1,11 @@
 ---
-import Mapa from '../componentes/Mapa.astro';
-import Plantilla from '../plantillas/Plantilla.astro';
+import Mapa from '@componentes/Mapa.astro';
+import Plantilla from '@plantillas/Plantilla.astro';
 ---
 
 <Plantilla titulo="VACS">
   <main id="paginaIntroduccion">
-    <h1>VACS</h1>
+    <h1 id="tituloPagina">VACS</h1>
     <section id="introduccion" class="seccion">
       <h2>Introducción</h2>
       <div>
@@ -64,7 +64,7 @@ import Plantilla from '../plantillas/Plantilla.astro';
         </p>
       </section>
 
-      <div id="mapa-pdet" class="seccion">
+      <div id="mapaPdet" class="seccion">
         <Mapa alto={50} />
       </div>
     </div>
@@ -198,7 +198,23 @@ import Plantilla from '../plantillas/Plantilla.astro';
   </main>
 </Plantilla>
 
-<script></script>
+<script>
+  import { moverX, opacidad } from '@gestos/aimador';
+
+  const mapaPdet = document.getElementById('mapaPdet');
+  Object.assign(mapaPdet.style, {
+    opacity: 0,
+    // transform: 'translateX(90%)',
+  });
+
+  async function inicio() {
+    await opacidad(mapaPdet);
+    // await moverX(mapaPdet, '0', '5s');
+    console.log('listo');
+  }
+
+  setTimeout(inicio, 250);
+</script>
 
 <style lang="scss">
   main {

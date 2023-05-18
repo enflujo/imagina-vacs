@@ -1,6 +1,5 @@
 ---
-import Mapa from '../componentes/Mapa.astro';
-import Plantilla from '../plantillas/Plantilla.astro';
+import Plantilla from '@plantillas/Plantilla.astro';
 ---
 
 <Plantilla titulo="VACS">
@@ -25,7 +24,7 @@ import Plantilla from '../plantillas/Plantilla.astro';
 
         <p>Según los datos y estimaciones que hizo la Comisión en las últimas tres décadas:</p>
 
-        <div class="grafica">
+        <div id="grafica1" class="grafica">
           GRÁFICA / ILUSTRACIÓN 0.1: De 1985 a 2018, 64.084 niñas, niños y adolescentes perdieron la vida por el
           conflicto; de 1985 a 2016, 28.192 fueron desaparecidos de manera forzada; de 1990 a 2018 6.496 sufrieron
           secuestro; de 1990 a 2017, 16.238 fueron reclutados por grupos armados y de 1985 a 2019, 3.049.527 fueron
@@ -331,7 +330,10 @@ import Plantilla from '../plantillas/Plantilla.astro';
 </Plantilla>
 
 <script>
-  import { duranteInterseccion } from '../utilidades/observador';
+  import { actualizar, grafica } from '@graficas/proyecto1/grafica1';
+  import { duranteInterseccion } from '@utilidades/observador';
+
+  const contenedorGrafica1 = document.getElementById('grafica1');
   const secciones = document.querySelectorAll('.seccion');
 
   secciones.forEach((seccion) => duranteInterseccion(seccion, detectar, false, { threshold: [0, 0.5, 1] }));
@@ -343,6 +345,12 @@ import Plantilla from '../plantillas/Plantilla.astro';
       elemento.target.classList.remove('apagado');
     }
   }
+
+  const grafica1 = grafica();
+
+  contenedorGrafica1.appendChild(grafica1);
+
+  actualizar();
 </script>
 
 <style lang="scss" is:global>

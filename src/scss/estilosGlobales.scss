@@ -1,3 +1,9 @@
+:root {
+  --negro: #0f0d0f;
+  --pocaLuz: #2c323b;
+  --verde: #57c5b6;
+}
+
 html {
   box-sizing: border-box;
   -ms-text-size-adjust: 100%;
@@ -35,11 +41,12 @@ time {
 main {
   padding: 0;
   margin: 0;
-  background: rgb(50, 29, 47);
-  background: linear-gradient(180deg, rgba(50, 29, 47, 1) 0%, rgba(61, 46, 79, 1) 50%, rgba(76, 95, 122, 1) 100%);
+  background: var(--negro);
+  background: linear-gradient(180deg, var(--negro) 0%, var(--pocaLuz) 100%);
   color: #f6f1f1;
   min-height: 100vh;
   padding: 5em;
+  overflow: hidden;
 }
 
 p {
@@ -49,5 +56,5 @@ p {
 
 a,
 a:link {
-  color: #57c5b6;
+  color: var(--verde);
 }

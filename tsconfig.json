@@ -1,3 +1,13 @@
 {
-  "extends": "astro/tsconfigs/base"
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@componentes/*": ["src/componentes/*"],
+      "@gestos/*": ["src/gestos/*"],
+      "@plantillas/*": ["src/plantillas/*"],
+      "@utilidades/*": ["src/utilidades/*"],
+      "@graficas/*": ["src/graficas/*"]
+    }
+  }
 }

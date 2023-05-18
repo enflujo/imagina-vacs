@@ -6,10 +6,10 @@
  * @returns instancia del observador
  */
 export const duranteInterseccion = (
-  elemento,
-  accion,
+  elemento: Element,
+  accion: (elemento: IntersectionObserverEntry) => void,
   desconectarInmediatamente = true,
-  opciones = { threshold: 0 }
+  opciones: IntersectionObserverInit = { threshold: 0 }
 ) => {
   const observador = new IntersectionObserver(([elementoObservado]) => {
     if (elementoObservado && elementoObservado.isIntersecting) {
