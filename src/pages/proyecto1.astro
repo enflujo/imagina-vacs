@@ -9,21 +9,10 @@ import Plantilla from '../plantillas/Plantilla.astro';
       <h1>La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
       <div class="resumen">
         <p>
-          En el capítulo “No es un mal menor” del informe final, la Comisión de la Verdad relata las violencias que
-          niñas, niños y adolescentes han sufrido en el conflicto armado colombiano. En la investigación se encontró que
-          las cinco principales violaciones a los derechos de las que han sido víctimas son el homicidio, el
-          reclutamiento, el desplazamiento forzado, la desaparición forzada y el secuestro.
+          <span class="mal" data-texto="No es un mal menor"></span>En el capítulo “No es un mal menor” del informe
+          final, la Comisión de la Verdad relata las violencias que niñas, niños y adolescentes han sufrido en el
+          conflicto armado colombiano. Según los datos y estimaciones que hizo la Comisión en las últimas tres décadas:
         </p>
-
-        <p>
-          Esta información fue recopilada a partir de entrevistas y bases de datos de organizaciones sociales, y su
-          búsqueda reveló un gran vacío: durante años muchos hechos violentos no fueron denunciados ni registrados
-          debido al miedo a los actores armados, la ausencia de entidades institucionales en los territorios, la
-          desconfianza, la falta de investigación y la naturalización del reclutamiento de niñas y niños por parte de
-          grupos armados ilegales en algunas comunidades.
-        </p>
-
-        <p>Según los datos y estimaciones que hizo la Comisión en las últimas tres décadas:</p>
 
         <div class="grafica">
           GRÁFICA / ILUSTRACIÓN 0.1: De 1985 a 2018, 64.084 niñas, niños y adolescentes perdieron la vida por el
@@ -33,8 +22,18 @@ import Plantilla from '../plantillas/Plantilla.astro';
         </div>
 
         <p>
-          En esta investigación los hallazgos de la Comisión se cruzan con los resultados de la EVCNNA buscando
-          contrastar y complementar sus conclusiones con respecto a cuatro ejes principales: <a href="#migracion"
+          La recopilación de esta información a partir de entrevistas y bases de datos de organizaciones sociales reveló
+          un gran vacío: durante años muchos hechos violentos no fueron denunciados ni registrados debido al miedo a los
+          actores armados, la ausencia de entidades institucionales en los territorios, la desconfianza, la falta de
+          investigación y la naturalización del reclutamiento de niñas y niños por parte de grupos armados ilegales en
+          algunas comunidades.
+        </p>
+
+        <p>
+          <span class="mal" data-texto="Buscando comprender"></span>
+          Buscando comprender mejor las consecuencias sociales y psicológicas que el conflicto armado ha tenido en la vida
+          de niños, niñas y adolescentes en Colombia, esta investigación revisa los resultados de la EVCNNA para contrastar
+          y complementar los hallazgos de la Comisión con respecto a cuatro ejes principales: <a href="#migracion"
             >Migración forzada</a
           >,
           <a href="#orfandad">Orfandad</a>, <a href="#salud-mental">Salud mental</a> y <a href="#violencia">Violencia</a
@@ -333,12 +332,80 @@ import Plantilla from '../plantillas/Plantilla.astro';
 <script>
   import { duranteInterseccion } from '../utilidades/observador';
   const secciones = document.querySelectorAll('.seccion');
+  const intro = document.getElementById('introduccion');
+  const males = document.querySelectorAll('.mal');
+
+  const esperar = (
+    elementos: HTMLElement[],
+    funcion: (evento, elemento: HTMLElement) => void,
+    tiempoEspera: number
+  ) => {
+    let temporizador = null;
+    return (evento) => {
+      window.clearTimeout(temporizador);
+
+      temporizador = window.setTimeout(() => {
+        elementos.forEach((elemento) => {
+          funcion(evento, elemento);
+        });
+      }, tiempoEspera);
+    };
+  };
+
+  window.addEventListener('scroll', esperar(males, agrandarMal, 10));
+
+  function eventoScroll(evento) {
+    console.log(window.scrollY);
+    // let opacidad = 0;
+    // if (window.scrollY === 0) {
+    //   mal.style.padding = '0em';
+    //   mal.style.position = 'relative';
+    // } else {
+    //   mal.style.fontSize = `${window.scrollY / 50 < 20 && window.scrollY / 50 > 1 ? window.scrollY / 50 : 1}em`;
+    //   mal.style.backgroundColor = `rgba(0, 0, 0,${opacidad + window.scrollY / 500})`;
+    //   mal.style.position = 'absolute';
+    //   mal.style.padding = '1em';
+    // }
+  }
+
+  function agrandarMal(evento, elemento: HTMLElement) {
+    let opacidad = 0;
+
+    // console.log(window.scrollY);
+    if (window.scrollY === 0) {
+      elemento.style.padding = '0em';
+      elemento.style.position = 'relative';
+      elemento.style.color = 'rgba(224, 169, 222, 1)';
+      elemento.style.display = 'none';
+    } else {
+      const pasoX = window.innerWidth / 1000;
+      const pasoY = window.innerHeight / 800;
+      elemento.style.padding = '3em';
+      elemento.style.backgroundColor = `rgba(0, 0, 0,${opacidad + window.scrollY / 500})`;
+      elemento.style.position = 'fixed';
+      elemento.style.display = 'block';
+      elemento.style.top = '0';
+      elemento.style.left = '0';
+      elemento.style.width = `${window.scrollY * pasoX}px`;
+      elemento.style.height = `${window.scrollY * pasoY}px`;
+
+      if (window.scrollY > 200) {
+        elemento.innerText = elemento.dataset.texto;
+      } else {
+        elemento.innerText = '';
+      }
+
+      if (window.scrollY > 1500) {
+        elemento.style.display = 'none';
+      }
+    }
+  }
 
   secciones.forEach((seccion) => duranteInterseccion(seccion, detectar, false, { threshold: [0, 0.5, 1] }));
 
   function detectar(elemento: IntersectionObserverEntry) {
     if (elemento.intersectionRatio < 0.5) {
-      elemento.target.classList.add('apagado');
+      //  elemento.target.classList.add('apagado');
     } else if (elemento.intersectionRatio >= 0.5) {
       elemento.target.classList.remove('apagado');
     }
@@ -370,6 +437,15 @@ import Plantilla from '../plantillas/Plantilla.astro';
     #introduccion {
       min-height: 100vh;
       margin-bottom: 0;
+
+      #mal {
+        color: rgb(224, 169, 222);
+        display: inline-block;
+        border-radius: 100px;
+        max-width: 100vw;
+        max-height: 100vh;
+        font-size: 1.2em;
+      }
     }
 
     .columnas {
