@@ -96,25 +96,68 @@ export const actualizar = () => {
 };
 
 function pintar() {
-  ctx.globalAlpha = 0.01;
+  // ctx.globalAlpha = 0.01;
 
   datos.forEach((violencia, i) => {
-    ctx.save();
-    ctx.fillStyle = violencia.color;
     const yMax = escalaRadio(cantidadMax);
     const distancia = yMax / 2;
     const x1 = i * anchoSeccion;
     const centroViolencia = { x: x1 + anchoSeccion / 2, y: centro.y };
     const punto = convertirEscala(violencia.cantidad, 6496, cantidadMax, 10, 1);
 
-    for (let i = 0; i < violencia.cantidad; i++) {
-      const angulo = aleatorioFraccion(0, DOS_PI);
-      const radio = aleatorioFraccion(0, distancia);
-      const x = (radio * Math.cos(angulo) + centroViolencia.x) | 0;
-      const y = (radio * Math.sin(angulo) + centroViolencia.y) | 0;
-      ctx.fillRect(x, dims.alto - y, punto, punto);
+    // ctx.save();
+
+    animar(violencia.cantidad, violencia.color, distancia, centroViolencia, punto);
+    // for (let i = 0; i < violencia.cantidad; i++) {
+    //   const angulo = aleatorioFraccion(0, DOS_PI);
+    //   const radio = aleatorioFraccion(0, distancia);
+    //   const x = (radio * Math.cos(angulo) + centroViolencia.x) | 0;
+    //   const y = (radio * Math.sin(angulo) + centroViolencia.y) | 0;
+    //   ctx.fillRect(x, dims.alto - y, punto, punto);
+    // }
+
+    // ctx.restore();
+  });
+}
+
+const vel = 4;
+let contador = 0;
+
+function animar(
+  cantidad: number,
+  color: string,
+  distancia: number,
+  centroViolencia: { x: number; y: number },
+  punto: number
+) {
+  // console.log(cantidad);
+
+  let conteo = 0;
+  let seguir = true;
+
+  ciclo();
+
+  function ciclo() {
+    // ctx.save();
+    ctx.fillStyle = color;
+
+    for (let i = 0; i < 100; i++) {
+      conteo++;
+      if (conteo < cantidad) {
+        const angulo = aleatorioFraccion(0, DOS_PI);
+        const radio = aleatorioFraccion(0, distancia);
+        const x = (radio * Math.cos(angulo) + centroViolencia.x) | 0;
+        const y = (radio * Math.sin(angulo) + centroViolencia.y) | 0;
+        ctx.fillRect(x, dims.alto - y, 2, 2);
+      } else {
+        seguir = false;
+        // console.log('fin');
+        break;
+      }
     }
 
-    ctx.restore();
-  });
+    if (seguir) {
+      requestAnimationFrame(ciclo);
+    }
+  }
 }

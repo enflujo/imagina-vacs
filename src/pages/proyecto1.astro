@@ -1,11 +1,26 @@
 ---
+import Mapa from '@componentes/Mapa.astro';
 import Plantilla from '@plantillas/Plantilla.astro';
 ---
 
 <Plantilla titulo="VACS">
   <main id="proyecto1">
+    <section>
+      <h1
+        id="titulo"
+        class="textoSombra"
+        data-texto="La huella del conflicto armado en la niñez y adolescencia colombianas"
+      >
+      </h1>
+
+      <div id="primera">
+        <Mapa alto={80} />
+      </div>
+
+      <!-- <p class="puente" style="font-size:5em">¿Qué Pasó?</p> -->
+    </section>
+
     <section id="introduccion" class="seccion apagado">
-      <h1>La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
       <div class="resumen">
         <p>
           En el capítulo “No es un mal menor” del informe final, la Comisión de la Verdad relata las violencias que
@@ -16,385 +31,550 @@ import Plantilla from '@plantillas/Plantilla.astro';
 
         <p>
           Esta información fue recopilada a partir de entrevistas y bases de datos de organizaciones sociales, y su
-          búsqueda reveló un gran vacío: durante años muchos hechos violentos no fueron denunciados ni registrados
-          debido al miedo a los actores armados, la ausencia de entidades institucionales en los territorios, la
-          desconfianza, la falta de investigación y la naturalización del reclutamiento de niñas y niños por parte de
-          grupos armados ilegales en algunas comunidades.
-        </p>
+          búsqueda reveló un gran vacío: <p>
+            <span
+              class="textoSombra"
+              data-texto="Durante años muchos hechos violentos no fueron denunciados ni registrados."></span>
+          </p>
+          <p>
+            El miedo a los actores armados, la ausencia de entidades institucionales en los territorios, la
+            desconfianza, la falta de investigación y la naturalización del reclutamiento de niñas y niños por parte de
+            grupos armados ilegales en algunas comunidades hicieron crecer este silencio.
+          </p>
 
-        <p>Según los datos y estimaciones que hizo la Comisión en las últimas tres décadas:</p>
+          <p>Según los datos y estimaciones que hizo la Comisión en las tres décadas:</p>
+
+          <p>
+            En esta investigación los hallazgos de la Comisión se cruzan con los resultados de la EVCNNA buscando
+            contrastar y complementar sus conclusiones con respecto a cuatro ejes principales: <a href="#migracion"
+              >Migración forzada</a
+            >,
+            <a href="#orfandad">Orfandad</a>, <a href="#salud-mental">Salud mental</a> y <a href="#violencia"
+              >Violencia</a
+            >. Además, permite comparar los datos nacionales con los datos recogidos en los municipios <span>PDET</span
+            >.
+          </p>
+        </p>
 
         <div id="grafica1" class="grafica">
-          GRÁFICA / ILUSTRACIÓN 0.1: De 1985 a 2018, 64.084 niñas, niños y adolescentes perdieron la vida por el
-          conflicto; de 1985 a 2016, 28.192 fueron desaparecidos de manera forzada; de 1990 a 2018 6.496 sufrieron
-          secuestro; de 1990 a 2017, 16.238 fueron reclutados por grupos armados y de 1985 a 2019, 3.049.527 fueron
-          víctimas de desplazamiento forzado
+          <div class="contenedorNodosFlotantes">
+            <div class="contador nodoFlotante" data-valor="64084" data-incrementos="10">0</div>
+            <div class="contador nodoFlotante" data-valor="28192" data-incrementos="10">0</div>
+            <div class="contador nodoFlotante" data-valor="6496" data-incrementos="3">0</div>
+            <div class="contador nodoFlotante" data-valor="3049527" data-incrementos="1200">0</div>
+          </div>
+          GRÁFICA / ILUSTRACIÓN 0.1: De 1985 a 2018, 64.084 niñas, niños y adolescentes perdieron la vida por el conflicto;
+          de 1985 a 2016, 28.192 fueron desaparecidos de manera forzada; de 1990 a 2018 6.496 sufrieron secuestro; de 1990
+          a 2017, 16.238 fueron reclutados por grupos armados y de 1985 a 2019, 3.049.527 fueron víctimas de desplazamiento
+          forzado
+        </div>
+      </div>
+
+      <div class="columnas seccion apagado" id="migracion">
+        <h2>I. Migración Forzada</h2>
+        <div class="columna columna1">
+          <p>
+            Las personas desplazadas son aquellas que, por situaciones de violencia o catástrofes naturales, han sido
+            obligadas a huir de su hogar hacia otro lugar del país. En Colombia más de 9.500.000 personas fueron
+            desplazadas por el conflicto armado entre 1985 y 2022 (fuente: página web oficial del Registro Único de
+            Víctimas, 2022).
+          </p>
+
+          <p>
+            El desplazamiento forzado tiene fuertes consecuencias sociales, culturales y económicas. Rompe comunidades,
+            separa familias, produce sensaciones de desarraigo y obliga a las personas a adaptarse a entornos extraños,
+            muchas veces en situaciones precarias.
+          </p>
+
+          <p>
+            Según la EVCNNA, las razones más comunes por las que los y las jóvenes menores de 18 años han migrado dentro
+            y fuera de Colombia han sido la búsqueda de oportunidades económicas o laborales y la reunión con familiares
+            migrantes. La violencia es la cuarta causa de migración, tanto interna como externa.
+          </p>
+          <p>
+            Aunque en general es más común que las personas en Colombia migren hacia el interior que fuera del país, es
+            en los municipios históricamente afectados por la violencia (PDET) donde las personas han sufrido más el
+            desplazamiento a causa del conflicto. En particular, los niños y hombres jóvenes de estos municipios han
+            migrado más que los de otros municipios debido, quizás, al mayor riesgo que tienen de ser reclutados para
+            participar en grupos armados ilegales por ser hombres y por vivir en estos territorios.
+          </p>
         </div>
 
-        <p>
-          En esta investigación los hallazgos de la Comisión se cruzan con los resultados de la EVCNNA buscando
-          contrastar y complementar sus conclusiones con respecto a cuatro ejes principales: <a href="#migracion"
-            >Migración forzada</a
-          >,
-          <a href="#orfandad">Orfandad</a>, <a href="#salud-mental">Salud mental</a> y <a href="#violencia">Violencia</a
-          >. Además, permite comparar los datos nacionales con los datos recogidos en los municipios <span>PDET</span>.
-        </p>
-      </div>
-    </section>
+        <div class="columna columna2">
+          <p>GRÁFICA 1.1: Causas de la migración</p>
 
-    <div class="columnas seccion apagado" id="migracion">
-      <h2>I. Migración Forzada</h2>
-      <div class="columna columna1">
-        <p>
-          Las personas desplazadas son aquellas que, por situaciones de violencia o catástrofes naturales, han sido
-          obligadas a huir de su hogar hacia otro lugar del país. En Colombia más de 9.500.000 personas fueron
-          desplazadas por el conflicto armado entre 1985 y 2022 (fuente: página web oficial del Registro Único de
-          Víctimas, 2022).
-        </p>
+          <p>GRÁFICA 1.2: Diferencias de migración debido a violencia por población (PDET – NO PDET)</p>
 
-        <p>
-          El desplazamiento forzado tiene fuertes consecuencias sociales, culturales y económicas. Rompe comunidades,
-          separa familias, produce sensaciones de desarraigo y obliga a las personas a adaptarse a entornos extraños,
-          muchas veces en situaciones precarias.
-        </p>
-
-        <p>
-          Según la EVCNNA, las razones más comunes por las que los y las jóvenes menores de 18 años han migrado dentro y
-          fuera de Colombia han sido la búsqueda de oportunidades económicas o laborales y la reunión con familiares
-          migrantes. La violencia es la cuarta causa de migración, tanto interna como externa.
-        </p>
-        <p>
-          Aunque en general es más común que las personas en Colombia migren hacia el interior que fuera del país, es en
-          los municipios históricamente afectados por la violencia (PDET) donde las personas han sufrido más el
-          desplazamiento a causa del conflicto. En particular, los niños y hombres jóvenes de estos municipios han
-          migrado más que los de otros municipios debido, quizás, al mayor riesgo que tienen de ser reclutados para
-          participar en grupos armados ilegales por ser hombres y por vivir en estos territorios.
-        </p>
+          <p>GRÁFICA 1.3: Diferencias de migración debido a violencia por género y población.</p>
+        </div>
       </div>
 
-      <div class="columna columna2">
-        <p>GRÁFICA 1.1: Causas de la migración</p>
+      <div class="columnas seccion apagado" id="orfandad">
+        <h2>II. Orfandad</h2>
+        <div class="columna columna1">
+          <p>
+            Una niña o niño huérfano es quien ha sufrido la pérdida de uno o ambos padres. Hasta 2005 había más de
+            10.700.000 niñas, niños y adolescentes en situación de orfandad en América Latina. Esta población está en
+            riesgo de tener menor acceso a educación y a servicios médicos, y es más propensa a sufrir de angustia
+            psicosocial, abandono y abusos.
+          </p>
+          <p>
+            Además del dolor y el sufrimiento que produce la orfandad, es normal que los niños y niñas crean que hay una
+            relación causal entre sus propios actos y la violencia sufrida, como si las cosas malas pasaran porque uno
+            se portó mal o dejó de hacer algo. Sin embrago, que esos sentimientos permanezcan durante mucho tiempo
+            muestra, ante todo, una falta de espacios sociales de reconocimiento y apoyo para poder asimilar y entender
+            lo vivido.
+          </p>
+          <p>
+            En Colombia, la orfandad es un fenómeno muy frecuente pero poco estudiado. Es también una de las principales
+            consecuencias de la guerra y una de las más invisibilizadas. El Registro Único de Víctimas (RUV) no tiene
+            datos de orfandad y solo hasta 2011 el Instituto Colombiano de Bienestar Familiar (ICBF) empezó a
+            reportarla. Sin embargo, solo cuenta a quienes son huérfanos de ambos padres y han sido atendidos por la
+            institución, dejando así por fuera a gran cantidad de niños y niñas que han perdido a uno solo de sus padres
+            o cuya custodia fue asumida por alguien más.
+          </p>
+          <p>
+            Entre 2011 y 2021 el ICBF registró 1161 niñas, niños y adolescentes menores de 18 años huérfanos a causa del
+            conflicto. Por otro lado, según la Comisión, entre 1985 y 2018 más de 620.000 personas, en su mayoría
+            adultas, fueron asesinadas, secuestradas o desaparecidas. ¿Qué pasó con sus hijas e hijos?
+          </p>
+          <p>
+            Buscando entender este vacío, tomamos los resultados de la EVCNNA, que indagó por la orfandad a nivel
+            nacional y en municipios PDET. Según esta encuesta, en los municipios más afectados por el conflicto hay
+            2.5% más huérfanos menores de 8 años que en el resto del país y es más común que los niños, niñas y jóvenes
+            hayan perdido a su padre.
+          </p>
+        </div>
 
-        <p>GRÁFICA 1.2: Diferencias de migración debido a violencia por población (PDET – NO PDET)</p>
+        <div class="columna columna2">
+          <p>
+            GRÁFICA 2.1 (¿CÓMO?): desde el 2011 hasta abril de 2021 el ICBF registró 1.161 casos de niñas, niños y
+            adolescentes menores de 18 años huérfanos a causa del conflicto y que estuvieron o están actualmente
+            recibiendo atención. Sin embargo, el proceso de sistematización y análisis que realizó la Comisión encontró
+            que “entre 1985 y el 2018, 450.666 personas fueron víctimas de homicidio; de 1985 a 2016, 121.768 de
+            desaparición forzada y 50.770 de secuestro”
+          </p>
 
-        <p>GRÁFICA 1.3: Diferencias de migración debido a violencia por género y población.</p>
-      </div>
-    </div>
-
-    <div class="columnas seccion apagado" id="orfandad">
-      <h2>II. Orfandad</h2>
-      <div class="columna columna1">
-        <p>
-          Una niña o niño huérfano es quien ha sufrido la pérdida de uno o ambos padres. Hasta 2005 había más de
-          10.700.000 niñas, niños y adolescentes en situación de orfandad en América Latina. Esta población está en
-          riesgo de tener menor acceso a educación y a servicios médicos, y es más propensa a sufrir de angustia
-          psicosocial, abandono y abusos.
-        </p>
-        <p>
-          Además del dolor y el sufrimiento que produce la orfandad, es normal que los niños y niñas crean que hay una
-          relación causal entre sus propios actos y la violencia sufrida, como si las cosas malas pasaran porque uno se
-          portó mal o dejó de hacer algo. Sin embrago, que esos sentimientos permanezcan durante mucho tiempo muestra,
-          ante todo, una falta de espacios sociales de reconocimiento y apoyo para poder asimilar y entender lo vivido.
-        </p>
-        <p>
-          En Colombia, la orfandad es un fenómeno muy frecuente pero poco estudiado. Es también una de las principales
-          consecuencias de la guerra y una de las más invisibilizadas. El Registro Único de Víctimas (RUV) no tiene
-          datos de orfandad y solo hasta 2011 el Instituto Colombiano de Bienestar Familiar (ICBF) empezó a reportarla.
-          Sin embargo, solo cuenta a quienes son huérfanos de ambos padres y han sido atendidos por la institución,
-          dejando así por fuera a gran cantidad de niños y niñas que han perdido a uno solo de sus padres o cuya
-          custodia fue asumida por alguien más.
-        </p>
-        <p>
-          Entre 2011 y 2021 el ICBF registró 1161 niñas, niños y adolescentes menores de 18 años huérfanos a causa del
-          conflicto. Por otro lado, según la Comisión, entre 1985 y 2018 más de 620.000 personas, en su mayoría adultas,
-          fueron asesinadas, secuestradas o desaparecidas. ¿Qué pasó con sus hijas e hijos?
-        </p>
-        <p>
-          Buscando entender este vacío, tomamos los resultados de la EVCNNA, que indagó por la orfandad a nivel nacional
-          y en municipios PDET. Según esta encuesta, en los municipios más afectados por el conflicto hay 2.5% más
-          huérfanos menores de 8 años que en el resto del país y es más común que los niños, niñas y jóvenes hayan
-          perdido a su padre.
-        </p>
-      </div>
-
-      <div class="columna columna2">
-        <p>
-          GRÁFICA 2.1 (¿CÓMO?): desde el 2011 hasta abril de 2021 el ICBF registró 1.161 casos de niñas, niños y
-          adolescentes menores de 18 años huérfanos a causa del conflicto y que estuvieron o están actualmente
-          recibiendo atención. Sin embargo, el proceso de sistematización y análisis que realizó la Comisión encontró
-          que “entre 1985 y el 2018, 450.666 personas fueron víctimas de homicidio; de 1985 a 2016, 121.768 de
-          desaparición forzada y 50.770 de secuestro”
-        </p>
-
-        <p>GRÁFICA 2.2: Orfandad - Diferencias de PDET en relación con el promedio nacional.</p>
-      </div>
-    </div>
-
-    <div class="columnas seccion apagado" id="salud-mental">
-      <h2>III. Salud Mental</h2>
-      <div class="columna columna1">
-        <p>
-          Experiencias como el secuestro, el homicidio de un familiar o el desplazamiento forzado dejaron secuelas
-          físicas, psicológicas y afectivas en la vida de niñas, niños y adolescentes colombianos.
-        </p>
-
-        <p>
-          La forma como murieron los padres, los relatos de otras personas o la propia imaginación sobre los hechos
-          vividos en el conflicto producen frecuentemente malestar emocional, ideas obsesivas, pesadillas, culpa, y
-          hasta pensamientos suicidas. Estas consecuencias pueden aparecer incluso años después.
-        </p>
-
-        <h3>¿La afectación es diferente en los municipios PDET?</h3>
-        <p>
-          Para identificar problemas de salud mental en jóvenes entre 14 y 18 años, la EVCNNA hizo preguntas como si en
-          los últimos 30 días la persona se había sentido nerviosa, desesperada, ansiosa, intranquila, inútil o tan
-          triste que nada le pudo alegrar, y si alguna vez se había lastimado, si alguna vez había pensado en suicidarse
-          y, de ser así, si había intentado hacerlo.
-        </p>
-
-        <p>
-          Según los resultados de la encuesta, la presencia de problemas de salud mental moderada en los jóvenes de la
-          muestra PDET fue 4% menor que en la muestra nacional y pensaron en hacerse daño 3.84% menos que el promedio
-          nacional. También se encontró que en todo el país las mujeres habían sufrido más afectaciones de salud mental
-          que los hombres. Y, en particular en los municipios PDET, hubo una diferencia de 29.27% en los intentos de
-          suicidio, siendo las mujeres las que más intentan acabar su vida. Del 16.91% de las mujeres que piensan en
-          terminar con su vida, el 57% efectivamente lo intenta.
-        </p>
-
-        <p>
-          Esta diferencia podría explicarse por la cruda realidad a la que han estado expuestas las mujeres en el marco
-          del conflicto armado, sufriendo múltiples violencias como acoso, violación, tortura sexual, castigos por
-          quedar embarazadas, ser obligadas a abortar, a dar sus hijos en adopción o a ejercer una maternidad forzada.
-        </p>
+          <p>GRÁFICA 2.2: Orfandad - Diferencias de PDET en relación con el promedio nacional.</p>
+        </div>
       </div>
 
-      <div class="columna columna2">
-        <p>
-          GRÁFICA(S) 3.1: En el informe, la CEV (2022a) afirma que El 63,5 % de los testimonios sobre secuestro hablan
-          de este tipo de consecuencias sobre la salud física y mental: problemas en el sueño o la alimentación,
-          migraña, depresión, ansiedad, recuerdos recurrentes sobre el hecho e intentos de suicidio, entre otros (p. 49)
-        </p>
-        <p>
-          En nueve de cada diez testimonios tomados por la Comisión, las víctimas hablaron de la culpa, la tristeza, la
-          rabia, la indignación y la impotencia como impactos de la pérdida. Además, una de cada diez personas
-          entrevistadas que quedaron huérfanas por el conflicto armado afirmó que esta violencia les dejó una sensación
-          de pérdida del sentido de la vida acompañada de pensamientos suicidas y depresión.
-        </p>
+      <div class="columnas seccion apagado" id="salud-mental">
+        <h2>III. Salud Mental</h2>
+        <div class="columna columna1">
+          <p>
+            Experiencias como el secuestro, el homicidio de un familiar o el desplazamiento forzado dejaron secuelas
+            físicas, psicológicas y afectivas en la vida de niñas, niños y adolescentes colombianos.
+          </p>
 
-        <p>GRÁFICA 3.2: Diferencias de variables relacionadas a salud mental por población.</p>
+          <p>
+            La forma como murieron los padres, los relatos de otras personas o la propia imaginación sobre los hechos
+            vividos en el conflicto producen frecuentemente malestar emocional, ideas obsesivas, pesadillas, culpa, y
+            hasta pensamientos suicidas. Estas consecuencias pueden aparecer incluso años después.
+          </p>
 
-        <p>GRÁFICA 3.3 Diferencias de variables relacionadas a salud mental por género y población.</p>
-      </div>
-    </div>
+          <h3>¿La afectación es diferente en los municipios PDET?</h3>
+          <p>
+            Para identificar problemas de salud mental en jóvenes entre 14 y 18 años, la EVCNNA hizo preguntas como si
+            en los últimos 30 días la persona se había sentido nerviosa, desesperada, ansiosa, intranquila, inútil o tan
+            triste que nada le pudo alegrar, y si alguna vez se había lastimado, si alguna vez había pensado en
+            suicidarse y, de ser así, si había intentado hacerlo.
+          </p>
 
-    <div class="columnas seccion apagado" id="violencia">
-      <h2>IV. Violencia</h2>
-      <div class="columna columna1">
-        <p>
-          Violencias como la desaparición forzada y el homicidio causaron en Colombia la desintegración de muchas
-          familias. Niños y niñas quedaron al cuidado de personas distintas a sus padres o nuevas personas llegaron a
-          integrar sus núcleos familiares. En esos contextos se hizo más probable la vulneración de los derechos y
-          muchos sufrieron violencias físicas, sexuales y psicológicas al ser maltratados por las nuevas personas que
-          asumieron su cuidado.
-        </p>
-        <p>En el informe de la Comisión hay relatos como este:</p>
-        <p class="relato">
-          Nosotros nos quedábamos solos y el vecino de al lado se masturbaba delante de mí y a mí me daba miedo decirle
-          a mi tío, al hermano de mi mamá, porque él me pegaba y me maltrataba mucho… Yo tenía ocho años cuando él me
-          metió un ‘cablazo’.
-        </p>
-        <p>
-          El maltrato intrafamiliar que sufrían los menores a manos de sus cuidadores y factores como la presencia de
-          grupos armados en el territorio influyeron mucho en su reclutamiento para la guerra.
-        </p>
+          <p>
+            Según los resultados de la encuesta, la presencia de problemas de salud mental moderada en los jóvenes de la
+            muestra PDET fue 4% menor que en la muestra nacional y pensaron en hacerse daño 3.84% menos que el promedio
+            nacional. También se encontró que en todo el país las mujeres habían sufrido más afectaciones de salud
+            mental que los hombres. Y, en particular en los municipios PDET, hubo una diferencia de 29.27% en los
+            intentos de suicidio, siendo las mujeres las que más intentan acabar su vida. Del 16.91% de las mujeres que
+            piensan en terminar con su vida, el 57% efectivamente lo intenta.
+          </p>
 
-        <h3>Violencia física y emocional</h3>
-        <p>
-          En el marco del conflicto, los niños reclutados por grupos al margen de la ley eran obligados a ejercer
-          trabajos forzados y maltratados físicamente como forma de castigo. Carlos, que tenía 12 años cuando fue
-          reclutado, cuenta que luego de intentar fugarse del campamento militar donde las FARC lo había llevado,
-          recibió un castigo físico severo:
-        </p>
+          <p>
+            Esta diferencia podría explicarse por la cruda realidad a la que han estado expuestas las mujeres en el
+            marco del conflicto armado, sufriendo múltiples violencias como acoso, violación, tortura sexual, castigos
+            por quedar embarazadas, ser obligadas a abortar, a dar sus hijos en adopción o a ejercer una maternidad
+            forzada.
+          </p>
+        </div>
 
-        <p class="relato">
-          Me acuerdo de que me llevaron a un punto de una molienda y ahí me quemaron toda la cara, estuve ocho meses en
-          el pabellón de un hospital.
-        </p>
+        <div class="columna columna2">
+          <p>
+            GRÁFICA(S) 3.1: En el informe, la CEV (2022a) afirma que El 63,5 % de los testimonios sobre secuestro hablan
+            de este tipo de consecuencias sobre la salud física y mental: problemas en el sueño o la alimentación,
+            migraña, depresión, ansiedad, recuerdos recurrentes sobre el hecho e intentos de suicidio, entre otros (p.
+            49)
+          </p>
+          <p>
+            En nueve de cada diez testimonios tomados por la Comisión, las víctimas hablaron de la culpa, la tristeza,
+            la rabia, la indignación y la impotencia como impactos de la pérdida. Además, una de cada diez personas
+            entrevistadas que quedaron huérfanas por el conflicto armado afirmó que esta violencia les dejó una
+            sensación de pérdida del sentido de la vida acompañada de pensamientos suicidas y depresión.
+          </p>
 
-        <p>
-          Sin embargo, el maltrato físico infantil en Colombia no sucede solo en esos contextos de la guerra. También
-          sucede en los hogares y en la comunidad. Para 2018, tanto en los municipios PDET como en el resto del país, 7
-          de cada 20 jóvenes (35%) sufrió de alguna agresión física antes de los 18 años. Las primeras agresiones
-          físicas suceden por lo general, entre los 9 y 15 años.
-        </p>
-        <p>GRÁFICA 4.1: Diferencias de eventos de violencia física por población</p>
+          <p>GRÁFICA 3.2: Diferencias de variables relacionadas a salud mental por población.</p>
 
-        <p>GRÁFICA 4.2: Diferencias de eventos de violencia física por género y población</p>
-
-        <p>
-          Resultados de la EVCNNA muestran que niños, niñas y jóvenes en Colombia también sufren violencia emocional. Se
-          les preguntó si sus padres o apoderados alguna vez habían dicho algo hiriente como que no merecían haber
-          nacido o si los habían ridiculizado o amenazado con deshacerse de ellos:
-        </p>
-
-        <p>GRÁFICA 4.2: Tabla 8. Diferencias de eventos de violencia emocional por población</p>
-
-        <p>
-          En general, las mujeres en Colombia son agredidas emocionalmente más que los hombres. 1 de cada 10 mujeres es
-          ridiculizada o menospreciada antes de cumplir 18 años.
-        </p>
-        <p>GRÁFICA 4.3: Diferencias de eventos de violencia emocional por género y población</p>
+          <p>GRÁFICA 3.3 Diferencias de variables relacionadas a salud mental por género y población.</p>
+        </div>
       </div>
 
-      <div class="columna columna2">
-        <h3>Violencia sexual</h3>
-        <p>
-          Aunque tanto las niñas como los niños sufrieron las consecuencias de la guerra, la Comisión desveló que las
-          violencias que sufrían unos y otros no eran las mismas. Las niñas reclutadas eran más propensas a ser víctimas
-          de acoso y abuso sexual, obligadas a asumir funciones domésticas y de cuidado en el hogar, forzadas a
-          abandonar la escuela antes de tiempo, reclutadas para trabajos de inteligencia y espionaje, inducidas a
-          abortar y hacer uso de métodos anticonceptivos desde temprana edad. La Comisión entrevistó a 1.172 víctimas de
-          violencia sexual y encontró que el 37% de ellas eran niñas, niños y adolescentes.
-        </p>
-        <p>
-          Milena le contó a la Comisión cómo fue para ella su vivencia en grupos armados durante su infancia y
-          adolescencia:
-        </p>
-        <p class="relato">
-          Ellos decían: “Juguemos a la moneda, si sale tal cosa, nos comemos a esa hembra, y si no, la ponemos a lavar
-          ropa y de una vez a hacer la comida”. Cuando caía violarme, llegaban por la noche. Como dos o tres veces pasó
-          que se reunieron todos y me cogieron entre los cuatro. Me pegaron, se burlaron y luego me volaron cuatro
-          dientes. Ahí mismo me violaron y mientras tanto me decían: “Ahora sí quedó más fea de lo que es”. Sin los
-          dientes, decían: “Así nos lo puede hacer más rico”.
-        </p>
-        <p>Cristina relató cómo quedó embarazada después de una violación y la obligaron a abortar:</p>
-        <p class="relato">
-          A partir de eso, de las violaciones, yo quedé en embarazo, entonces me obligaron a abortar con seis meses de
-          embarazo. Yo tenía dieciséis años. No podía llorar, no podía contarle a nadie. Todos los días era muy
-          doloroso, era muy difícil; pero ya después del aborto, pues yo siempre lloraba, pero cuando estaba de guardia,
-          porque pues es un momento en el que uno estaba prácticamente solo, y le pedía perdón a Dios por no haber
-          podido proteger esa criatura y era un cargo de conciencia que no me pertenecía porque yo traté de cuidarlo lo
-          más que pude; pero pues ya se me salió de las manos.
-        </p>
-        <p>
-          Camila, por su parte, reveló cómo las niñas y adolescentes eran tratadas como propiedad de integrantes del
-          grupo armado:
-        </p>
-        <p class="relato">
-          Aunque no dejé entrar tanto la aguja, no me lo he podido quitar del todo, me tocó hacerme un tatuaje para
-          tapar ese nombre porque todo el mundo me preguntaba.
-        </p>
+      <div class="columnas seccion apagado" id="violencia">
+        <h2>IV. Violencia</h2>
+        <div class="columna columna1">
+          <p>
+            Violencias como la desaparición forzada y el homicidio causaron en Colombia la desintegración de muchas
+            familias. Niños y niñas quedaron al cuidado de personas distintas a sus padres o nuevas personas llegaron a
+            integrar sus núcleos familiares. En esos contextos se hizo más probable la vulneración de los derechos y
+            muchos sufrieron violencias físicas, sexuales y psicológicas al ser maltratados por las nuevas personas que
+            asumieron su cuidado.
+          </p>
+          <p>En el informe de la Comisión hay relatos como este:</p>
+          <p class="relato">
+            Nosotros nos quedábamos solos y el vecino de al lado se masturbaba delante de mí y a mí me daba miedo
+            decirle a mi tío, al hermano de mi mamá, porque él me pegaba y me maltrataba mucho… Yo tenía ocho años
+            cuando él me metió un ‘cablazo’.
+          </p>
+          <p>
+            El maltrato intrafamiliar que sufrían los menores a manos de sus cuidadores y factores como la presencia de
+            grupos armados en el territorio influyeron mucho en su reclutamiento para la guerra.
+          </p>
 
-        <p>
-          La EVCNNA ha ayudado a entender mejor el panorama de violencia sexual a nivel nacional y en los municipios más
-          afectados por el conflicto. Las mujeres son las grandes afectadas.
-        </p>
+          <h3>Violencia física y emocional</h3>
+          <p>
+            En el marco del conflicto, los niños reclutados por grupos al margen de la ley eran obligados a ejercer
+            trabajos forzados y maltratados físicamente como forma de castigo. Carlos, que tenía 12 años cuando fue
+            reclutado, cuenta que luego de intentar fugarse del campamento militar donde las FARC lo había llevado,
+            recibió un castigo físico severo:
+          </p>
 
-        <p>
-          El 11.7% de los entrevistados entre los 14 y 24 años afirmaron haber sido tocados de manera indeseada antes de
-          cumplir la mayoría de edad, y se estima que la edad promedio en la que sucedió por primera vez fueron los 12.6
-          años. Alrededor del 5.3% fue víctima de un intento frustrado de violación; 2.14% físicamente forzados a tener
-          sexo y 1.6% presionados a tener relaciones sexuales antes de ser mayores de edad. Quienes viven en municipios
-          PDET tienden a tener el primer evento de sexo forzado físicamente antes que el promedio nacional. El aborto
-          parece ser menos recurrente en estos municipios, quizás debido a la dificultad de realizar este procedimiento
-          en regiones periféricas del país.
-        </p>
+          <p class="relato">
+            Me acuerdo de que me llevaron a un punto de una molienda y ahí me quemaron toda la cara, estuve ocho meses
+            en el pabellón de un hospital.
+          </p>
 
-        <p>GRÁFICA 4.4: Diferencias de eventos de violencia sexual por género y población</p>
+          <p>
+            Sin embargo, el maltrato físico infantil en Colombia no sucede solo en esos contextos de la guerra. También
+            sucede en los hogares y en la comunidad. Para 2018, tanto en los municipios PDET como en el resto del país,
+            7 de cada 20 jóvenes (35%) sufrió de alguna agresión física antes de los 18 años. Las primeras agresiones
+            físicas suceden por lo general, entre los 9 y 15 años.
+          </p>
+          <p>GRÁFICA 4.1: Diferencias de eventos de violencia física por población</p>
+
+          <p>GRÁFICA 4.2: Diferencias de eventos de violencia física por género y población</p>
+
+          <p>
+            Resultados de la EVCNNA muestran que niños, niñas y jóvenes en Colombia también sufren violencia emocional.
+            Se les preguntó si sus padres o apoderados alguna vez habían dicho algo hiriente como que no merecían haber
+            nacido o si los habían ridiculizado o amenazado con deshacerse de ellos:
+          </p>
+
+          <p>GRÁFICA 4.2: Tabla 8. Diferencias de eventos de violencia emocional por población</p>
+
+          <p>
+            En general, las mujeres en Colombia son agredidas emocionalmente más que los hombres. 1 de cada 10 mujeres
+            es ridiculizada o menospreciada antes de cumplir 18 años.
+          </p>
+          <p>GRÁFICA 4.3: Diferencias de eventos de violencia emocional por género y población</p>
+        </div>
+
+        <div class="columna columna2">
+          <h3>Violencia sexual</h3>
+          <p>
+            Aunque tanto las niñas como los niños sufrieron las consecuencias de la guerra, la Comisión desveló que las
+            violencias que sufrían unos y otros no eran las mismas. Las niñas reclutadas eran más propensas a ser
+            víctimas de acoso y abuso sexual, obligadas a asumir funciones domésticas y de cuidado en el hogar, forzadas
+            a abandonar la escuela antes de tiempo, reclutadas para trabajos de inteligencia y espionaje, inducidas a
+            abortar y hacer uso de métodos anticonceptivos desde temprana edad. La Comisión entrevistó a 1.172 víctimas
+            de violencia sexual y encontró que el 37% de ellas eran niñas, niños y adolescentes.
+          </p>
+          <p>
+            Milena le contó a la Comisión cómo fue para ella su vivencia en grupos armados durante su infancia y
+            adolescencia:
+          </p>
+          <p class="relato">
+            Ellos decían: “Juguemos a la moneda, si sale tal cosa, nos comemos a esa hembra, y si no, la ponemos a lavar
+            ropa y de una vez a hacer la comida”. Cuando caía violarme, llegaban por la noche. Como dos o tres veces
+            pasó que se reunieron todos y me cogieron entre los cuatro. Me pegaron, se burlaron y luego me volaron
+            cuatro dientes. Ahí mismo me violaron y mientras tanto me decían: “Ahora sí quedó más fea de lo que es”. Sin
+            los dientes, decían: “Así nos lo puede hacer más rico”.
+          </p>
+          <p>Cristina relató cómo quedó embarazada después de una violación y la obligaron a abortar:</p>
+          <p class="relato">
+            A partir de eso, de las violaciones, yo quedé en embarazo, entonces me obligaron a abortar con seis meses de
+            embarazo. Yo tenía dieciséis años. No podía llorar, no podía contarle a nadie. Todos los días era muy
+            doloroso, era muy difícil; pero ya después del aborto, pues yo siempre lloraba, pero cuando estaba de
+            guardia, porque pues es un momento en el que uno estaba prácticamente solo, y le pedía perdón a Dios por no
+            haber podido proteger esa criatura y era un cargo de conciencia que no me pertenecía porque yo traté de
+            cuidarlo lo más que pude; pero pues ya se me salió de las manos.
+          </p>
+          <p>
+            Camila, por su parte, reveló cómo las niñas y adolescentes eran tratadas como propiedad de integrantes del
+            grupo armado:
+          </p>
+          <p class="relato">
+            Aunque no dejé entrar tanto la aguja, no me lo he podido quitar del todo, me tocó hacerme un tatuaje para
+            tapar ese nombre porque todo el mundo me preguntaba.
+          </p>
+
+          <p>
+            La EVCNNA ha ayudado a entender mejor el panorama de violencia sexual a nivel nacional y en los municipios
+            más afectados por el conflicto. Las mujeres son las grandes afectadas.
+          </p>
+
+          <p>
+            El 11.7% de los entrevistados entre los 14 y 24 años afirmaron haber sido tocados de manera indeseada antes
+            de cumplir la mayoría de edad, y se estima que la edad promedio en la que sucedió por primera vez fueron los
+            12.6 años. Alrededor del 5.3% fue víctima de un intento frustrado de violación; 2.14% físicamente forzados a
+            tener sexo y 1.6% presionados a tener relaciones sexuales antes de ser mayores de edad. Quienes viven en
+            municipios PDET tienden a tener el primer evento de sexo forzado físicamente antes que el promedio nacional.
+            El aborto parece ser menos recurrente en estos municipios, quizás debido a la dificultad de realizar este
+            procedimiento en regiones periféricas del país.
+          </p>
+
+          <p>GRÁFICA 4.4: Diferencias de eventos de violencia sexual por género y población</p>
+        </div>
       </div>
-    </div>
 
-    <section class="seccion apagado">
-      <h2>Resultados generales</h2>
-      <div class="contenido">
-        <p>
-          El conflicto armado afectó a la juventud colombiana en diferentes dimensiones. Niñas, niños y adolescentes han
-          sufrido múltiples formas de violencia y abuso que marcaron su experiencia de vida y alteraron su mundo
-          infantil y adolescente. Las personas entrevistadas por la CEV que sufrieron la desaparición u homicidio de un
-          familiar durante las primeras décadas de su vida quedaron con severas afectaciones a su salud mental
-          expresadas en malestar emocional, pesadillas, sentimientos de culpa, ideas obsesivas y pensamientos suicidas.
-        </p>
+      <section class="seccion apagado">
+        <h2>Resultados generales</h2>
+        <div class="contenido">
+          <p>
+            El conflicto armado afectó a la juventud colombiana en diferentes dimensiones. Niñas, niños y adolescentes
+            han sufrido múltiples formas de violencia y abuso que marcaron su experiencia de vida y alteraron su mundo
+            infantil y adolescente. Las personas entrevistadas por la CEV que sufrieron la desaparición u homicidio de
+            un familiar durante las primeras décadas de su vida quedaron con severas afectaciones a su salud mental
+            expresadas en malestar emocional, pesadillas, sentimientos de culpa, ideas obsesivas y pensamientos
+            suicidas.
+          </p>
 
-        <p>
-          A nivel estadístico se encontró que en nueve de cada diez testimonios tomados por la Comisión, las víctimas
-          hablaron de la culpa, la tristeza, la rabia, la indignación y la impotencia como impactos de la pérdida.
-          Además, una de cada diez personas entrevistadas que quedaron huérfanas por el conflicto armado afirmó que esta
-          violencia les dejó una sensación de pérdida del sentido de la vida acompañada de pensamientos suicidas y
-          depresión (CEV, 2022, p. 31). De estas violencias sufridas también se derivan afectaciones a la salud física y
-          reproductiva como enfermedades de transmisión sexual, daños en el sistema reproductor, dolores y problemas en
-          la salud general.
-        </p>
-      </div>
+          <p>
+            A nivel estadístico se encontró que en nueve de cada diez testimonios tomados por la Comisión, las víctimas
+            hablaron de la culpa, la tristeza, la rabia, la indignación y la impotencia como impactos de la pérdida.
+            Además, una de cada diez personas entrevistadas que quedaron huérfanas por el conflicto armado afirmó que
+            esta violencia les dejó una sensación de pérdida del sentido de la vida acompañada de pensamientos suicidas
+            y depresión (CEV, 2022, p. 31). De estas violencias sufridas también se derivan afectaciones a la salud
+            física y reproductiva como enfermedades de transmisión sexual, daños en el sistema reproductor, dolores y
+            problemas en la salud general.
+          </p>
+        </div>
+      </section>
     </section>
   </main>
-</Plantilla>
 
-<script>
-  import { actualizar, grafica } from '@graficas/proyecto1/grafica1';
-  import { duranteInterseccion } from '@utilidades/observador';
+  <script>
+    import { actualizar, grafica } from '@graficas/proyecto1/grafica1';
+    import { duranteInterseccion } from '@utilidades/observador';
 
-  const contenedorGrafica1 = document.getElementById('grafica1');
-  const secciones = document.querySelectorAll('.seccion');
+    const esperar = (
+      elementos: HTMLElement[],
+      funcion: (evento, elemento: HTMLElement) => void,
+      tiempoEspera: number
+    ) => {
+      let temporizador = null;
+      return (evento) => {
+        window.clearTimeout(temporizador);
 
-  secciones.forEach((seccion) => duranteInterseccion(seccion, detectar, false, { threshold: [0, 0.5, 1] }));
+        temporizador = window.setTimeout(() => {
+          elementos.forEach((elemento) => {
+            funcion(evento, elemento);
+          });
+        }, tiempoEspera);
+      };
+    };
 
-  function detectar(elemento: IntersectionObserverEntry) {
-    if (elemento.intersectionRatio < 0.5) {
-      elemento.target.classList.add('apagado');
-    } else if (elemento.intersectionRatio >= 0.5) {
-      elemento.target.classList.remove('apagado');
-    }
-  }
-
-  const grafica1 = grafica();
-
-  contenedorGrafica1.appendChild(grafica1);
-
-  actualizar();
-</script>
-
-<style lang="scss" is:global>
-  #proyecto1 {
-    h1 {
-      font-size: 4em;
-      text-align: center;
-      margin-bottom: 1em;
-    }
-
-    .seccion {
-      transition: opacity 1.6s ease-out;
-      transition-delay: 250ms;
-      margin-bottom: 10em;
-    }
-
-    .apagado {
-      opacity: 0;
+    function entrarPorIzquierda(evento, elemento: HTMLElement) {
+      console.log(window.scrollY);
+      if (window.scrollY > 1000 && window.scrollY < 2000) {
+        Object.assign(elemento.style, {
+          top: '0',
+          // left: '50%',
+          // transform: 'translateX(-50%)',
+          position: 'fixed',
+        });
+      } else {
+        elemento.style.position = 'relative';
+      }
+      // if (window.screenY >= window.scrollY) {
+      //   elemento.classList.add('visiblePorIzquierda');
+      // }
     }
 
-    .resumen {
-      font-size: 2em;
-    }
+    const primera = document.getElementById('primera');
 
-    #introduccion {
-      min-height: 100vh;
-      margin-bottom: 0;
-    }
+    window.addEventListener('scroll', esperar([primera], entrarPorIzquierda, 10));
 
-    .columnas {
-      display: flex;
-      justify-content: space-around;
+    const contenedorGrafica1 = document.getElementById('grafica1');
+    const secciones = document.querySelectorAll('.seccion');
 
-      .columna {
-        flex-basis: 30%;
+    secciones.forEach((seccion) => duranteInterseccion(seccion, detectar, false, { threshold: [0, 0.5, 1] }));
+
+    function detectar(elemento: IntersectionObserverEntry) {
+      if (elemento.intersectionRatio < 0.5) {
+        elemento.target.classList.add('apagado');
+      } else if (elemento.intersectionRatio >= 0.5) {
+        elemento.target.classList.remove('apagado');
       }
     }
 
-    .relato {
-      background-color: rgba(210, 105, 30, 0.89);
-      border-radius: 15px;
-      padding: 1em;
-      font-style: italic;
-      font-size: 1.1em;
+    const grafica1 = grafica();
+    contenedorGrafica1.appendChild(grafica1);
+
+    actualizar();
+
+    const sombras = document.querySelectorAll('.textoSombra');
+
+    sombras.forEach((contenedor: HTMLElement) => {
+      const partes = contenedor.dataset.texto.split('');
+
+      partes.forEach((caracter) => {
+        const elemento = document.createElement('span');
+        if (caracter.trim().length) {
+          elemento.className = 'letraSombra';
+        } else {
+          elemento.className = 'letraSombra espacio';
+        }
+
+        elemento.innerText = caracter;
+        contenedor.appendChild(elemento);
+      });
+    });
+
+    const contadores = document.querySelectorAll('.contador');
+
+    contadores.forEach((elemento: HTMLElement) => {
+      const valor = +elemento.dataset.valor;
+      const incrementos = +elemento.dataset.incrementos | 10;
+
+      Object.assign(elemento.style, {
+        top: `${(Math.random() * window.innerHeight) | 0}px`,
+        left: `${(Math.random() * window.innerHeight) | 0}px`,
+      });
+
+      const reloj = setInterval(() => {
+        const nuevoValor = +elemento.innerText + incrementos;
+        if (+elemento.innerText < valor) {
+          elemento.innerText = `${nuevoValor}`;
+        } else {
+          clearInterval(reloj);
+        }
+      }, 1);
+    });
+  </script>
+
+  <style lang="scss" is:global>
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+
+    @font-face {
+      font-family: 'Blinker';
+      src: url('../fuentes/Blinker_variable_font.ttf') format('truetype-variations');
+      font-weight: 1 900;
     }
-  }
-</style>
+
+    #proyecto1 {
+      main {
+        font-family: 'Red Hat Display', sans-serif;
+      }
+
+      .textoSombra {
+        font-size: 4em;
+        text-shadow: -10px 1px 10px #f3eb8db9;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 0;
+        font-weight: 700;
+
+        line-height: 0.9;
+        // letter-spacing: 50px;
+        // text-transform: uppercase;
+        color: #fff57b;
+        top: 0;
+        // margin-top: -27vw;
+        // position: absolute;
+        width: 96%;
+
+        margin-bottom: 2em;
+        // transition: all 1s ease-in-out;
+
+        &:hover {
+          font-weight: 100;
+          .letraSombra {
+            text-shadow: -5px 5px 60px #fff47b;
+            color: #fff47b;
+          }
+        }
+
+        .letraSombra {
+          font-size: 10vw;
+          text-shadow: -13px 0px 15px #f3eb8db9;
+        }
+      }
+
+      .letraSombra {
+        font-family: 'Blinker';
+        color: var(--negro);
+
+        letter-spacing: -0.05em;
+        position: relative;
+        transition: all 1s ease-in-out;
+
+        &.espacio {
+          width: 0.2em;
+          display: inline-block;
+        }
+      }
+
+      .seccion {
+        transition: opacity 1.6s ease-out;
+        transition-delay: 250ms;
+        margin-bottom: 10em;
+      }
+
+      // .apagado {
+      //   opacity: 0;
+      // }
+
+      .resumen {
+        font-size: 2em;
+        width: 50vw;
+        // margin: 0 0 0 auto;
+      }
+
+      #introduccion {
+        min-height: 100vh;
+        margin-bottom: 0;
+      }
+
+      .columnas {
+        display: flex;
+        justify-content: space-around;
+
+        .columna {
+          flex-basis: 30%;
+        }
+      }
+
+      .relato {
+        background-color: rgba(210, 105, 30, 0.89);
+        border-radius: 15px;
+        padding: 1em;
+        font-style: italic;
+        font-size: 1.1em;
+      }
+    }
+
+    .contenedorNodosFlotantes {
+      position: relative;
+      top: 0;
+
+      .nodoFlotante {
+        font-family: 'Blinker';
+        position: absolute;
+        font-size: 2em;
+        color: #f3eb8db9;
+        // opacity: 0.3;
+      }
+    }
+  </style>
+</Plantilla>
