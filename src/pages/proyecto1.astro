@@ -7,39 +7,52 @@ import Plantilla from '../plantillas/Plantilla.astro';
   <main id="proyecto1">
     <section id="introduccion" class="seccion apagado">
       <h1>La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
-      <div class="resumen">
-        <p>
-          <span class="mal" data-texto="No es un mal menor"></span>En el capítulo “No es un mal menor” del informe
-          final, la Comisión de la Verdad relata las violencias que niñas, niños y adolescentes han sufrido en el
-          conflicto armado colombiano. Según los datos y estimaciones que hizo la Comisión en las últimas tres décadas:
-        </p>
-
-        <div class="grafica">
+      <p class="narracion">
+        La Comisión de la Verdad, en el capítulo “No es un mal menor” del Informe Final, relata las violencias que
+        niñas, niños y adolescentes han sufrido en el conflicto armado colombiano.
+      </p>
+      <p class="escribiendo">Se estima que en las últimas tres décadas (entre 1985 y 2019):</p>
+      <!--PREGUNTA: ¿Por qué la presición de fechas?-->
+      <!-- <div class="grafica">
           GRÁFICA / ILUSTRACIÓN 0.1: De 1985 a 2018, 64.084 niñas, niños y adolescentes perdieron la vida por el
           conflicto; de 1985 a 2016, 28.192 fueron desaparecidos de manera forzada; de 1990 a 2018 6.496 sufrieron
           secuestro; de 1990 a 2017, 16.238 fueron reclutados por grupos armados y de 1985 a 2019, 3.049.527 fueron
           víctimas de desplazamiento forzado
-        </div>
+        </div> -->
 
-        <p>
-          La recopilación de esta información a partir de entrevistas y bases de datos de organizaciones sociales reveló
-          un gran vacío: durante años muchos hechos violentos no fueron denunciados ni registrados debido al miedo a los
-          actores armados, la ausencia de entidades institucionales en los territorios, la desconfianza, la falta de
-          investigación y la naturalización del reclutamiento de niñas y niños por parte de grupos armados ilegales en
-          algunas comunidades.
-        </p>
+      <div class="grafica">Más de 64.084 niñas, niños y adolescentes perdieron la vida por el conflicto.</div>
 
-        <p>
-          <span class="mal" data-texto="Buscando comprender"></span>
-          Buscando comprender mejor las consecuencias sociales y psicológicas que el conflicto armado ha tenido en la vida
-          de niños, niñas y adolescentes en Colombia, esta investigación revisa los resultados de la EVCNNA para contrastar
-          y complementar los hallazgos de la Comisión con respecto a cuatro ejes principales: <a href="#migracion"
-            >Migración forzada</a
-          >,
-          <a href="#orfandad">Orfandad</a>, <a href="#salud-mental">Salud mental</a> y <a href="#violencia">Violencia</a
-          >. Además, permite comparar los datos nacionales con los datos recogidos en los municipios <span>PDET</span>.
-        </p>
-      </div>
+      <div class="grafica">Más de 28.000 fueron desaparecidos de manera forzada.</div>
+
+      <div class="grafica">Más de 6.000 sufrieron secuestro.</div>
+
+      <div class="grafica">Más de 16.000 fueron reclutados por grupos armados.</div>
+
+      <div class="grafica">Más de 3.000.000 fueron víctimas de desplazamiento forzado.</div>
+
+      <div class="separador"></div>
+
+      <p class="narracion">
+        Sin embargo, la recopilación de la información para el informe, a partir de entrevistas y bases de datos de
+        organizaciones sociales, reveló un gran vacío:
+      </p>
+
+      <p class="destacado">
+        Durante años muchos hechos violentos no fueron denunciados ni registrados debido al miedo a los actores armados,
+        la ausencia de entidades institucionales en los territorios, la desconfianza, la falta de investigación y la
+        naturalización del reclutamiento de niñas y niños por parte de grupos armados ilegales en algunas comunidades.
+      </p>
+
+      <p>
+        <span data-texto="Buscando comprender"></span>
+        Buscando comprender mejor las consecuencias sociales y psicológicas que el conflicto armado ha tenido en la vida
+        de niños, niñas y adolescentes en Colombia, esta investigación revisa los resultados de la EVCNNA para contrastar
+        y complementar los hallazgos de la Comisión con respecto a cuatro ejes principales: <a href="#migracion"
+          >Migración forzada</a
+        >,
+        <a href="#orfandad">Orfandad</a>, <a href="#salud-mental">Salud mental</a> y <a href="#violencia">Violencia</a>.
+        Además, permite comparar los datos nacionales con los datos recogidos en los municipios <span>PDET</span>.
+      </p>
     </section>
 
     <div class="columnas seccion apagado" id="migracion">
@@ -334,6 +347,27 @@ import Plantilla from '../plantillas/Plantilla.astro';
   const secciones = document.querySelectorAll('.seccion');
   const intro = document.getElementById('introduccion');
   const males = document.querySelectorAll('.mal');
+  const secuencia = document.getElementById('sec');
+
+  imprimirSecuencia(secuencia);
+
+  function imprimir(elemento: HTMLElement) {
+    let t = '';
+    if (elemento) {
+      let texto = elemento.getAttribute('data-texto');
+      for (let i = 0; i < texto.length; i++) {
+        t += texto[i];
+        elemento.innerHTML = `${t}`;
+        console.log('mi');
+      }
+    }
+  }
+
+  function imprimirSecuencia(elemento) {
+    let temporizador = setTimeout(() => {
+      imprimir(elemento);
+    }, 2000);
+  }
 
   const esperar = (
     elementos: HTMLElement[],
@@ -434,20 +468,48 @@ import Plantilla from '../plantillas/Plantilla.astro';
       font-size: 2em;
     }
 
-    #introduccion {
-      min-height: 100vh;
-      margin-bottom: 0;
+    .escribiendo {
+      height: 2em;
+      text-decoration: blink;
+      // animation: openclose 5s ease-in-out;
+      background-color: rgb(137 123 153);
+      padding: 0.4em;
+      width: fit-content;
+    }
 
-      #mal {
-        color: rgb(224, 169, 222);
-        display: inline-block;
-        border-radius: 100px;
-        max-width: 100vw;
-        max-height: 100vh;
-        font-size: 1.2em;
+    .destacado {
+      font-size: 1.3em;
+      color: rgb(50, 29, 47);
+      background-color: rgba(245, 186, 57, 0.836);
+      padding: 0.5em;
+      width: 50vw;
+    }
+
+    @keyframes openclose {
+      0% {
+        width: 0;
+      }
+
+      100% {
+        width: 50%;
       }
     }
 
+    .separador {
+      height: 2px;
+      width: 70vw;
+      //background-color: rgb(241, 208, 16);
+      margin: 3em 0;
+      border-top: rgb(137 123 153) dashed 2px;
+    }
+
+    .grafica {
+      width: fit-content;
+      border: solid 1px rgb(137 123 153);
+      padding: 0.5em;
+      margin: 1em;
+    }
+    font-family: 'Source Sans Pro', sans-serif;
     .columnas {
       display: flex;
       justify-content: space-around;
@@ -463,6 +525,20 @@ import Plantilla from '../plantillas/Plantilla.astro';
       padding: 1em;
       font-style: italic;
       font-size: 1.1em;
+    }
+
+    #introduccion {
+      min-height: 100vh;
+      margin-bottom: 0;
+
+      #mal {
+        color: rgb(224, 169, 222);
+        display: inline-block;
+        border-radius: 100px;
+        max-width: 100vw;
+        max-height: 100vh;
+        font-size: 1.2em;
+      }
     }
   }
 </style>
