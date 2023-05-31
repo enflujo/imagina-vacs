@@ -4,9 +4,10 @@ import Plantilla from '../plantillas/Plantilla.astro';
 
 <Plantilla titulo="VACS">
   <main>
+    <nav><a class="enlace" href="./">inicio</a></nav>
     <section id="introduccion" class="seccion apagado">
       <h1>Experiencias Adversas en la Infancia: Estudio Comparativo de Colombia, Honduras y El Salvador</h1>
-      <h2>Jorge Leonardo Rodríguez Arenas y Julián David López Céspedes</h2>
+      <h2 class="autores">Investigación: Jorge Leonardo Rodríguez Arenas y Julián David López Céspedes</h2>
       <div class="resumen">
         <p>
           Las experiencias adversas en la infancia, o ACEs en inglés, son situaciones vividas durante la niñez y la
@@ -123,6 +124,10 @@ import Plantilla from '../plantillas/Plantilla.astro';
         tipo de ACEs.
       </p>
     </section>
+    <div class="navegacion">
+      <a class="botonNavegar" href=`${import.meta.env.BASE_URL}proyecto1`>←</a>
+      <a class="botonNavegar" href=`${import.meta.env.BASE_URL}proyecto3`>→</a>
+    </div>
   </main>
 </Plantilla>
 

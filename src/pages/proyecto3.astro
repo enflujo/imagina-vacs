@@ -4,12 +4,13 @@ import Plantilla from '../plantillas/Plantilla.astro';
 
 <Plantilla titulo="VACS">
   <main>
+    <nav><a class="enlace" href="./">inicio</a></nav>
     <section id="introduccion" class="seccion apagado">
       <h1>
         Trayectorias de maltrato: El impacto de la violencia en la infancia y adolescencia como predictor de ser víctima
         y victimario en la adultez
       </h1>
-      <h2>Mónica Tatiana Moreno Ángel y Joaquín Daniel Ramírez Cabarcas</h2>
+      <h2 class="autores">Investigación: Mónica Tatiana Moreno Ángel y Joaquín Daniel Ramírez Cabarcas</h2>
       <div class="resumen">
         <p>
           La infancia y la adolescencia son etapas claves del desarrollo humano, es en este periodo que se definirá el
@@ -113,6 +114,10 @@ import Plantilla from '../plantillas/Plantilla.astro';
             muy similar en los municipios más afectados históricamente por el conflicto armado, y en el resto del país.
           </p>
         </p>
+      </div>
+      <div class="navegacion">
+        <a class="botonNavegar" href=`${import.meta.env.BASE_URL}proyecto2`>←</a>
+        <a class="botonNavegar" href=`${import.meta.env.BASE_URL}`>→</a>
       </div>
     </section>
 
