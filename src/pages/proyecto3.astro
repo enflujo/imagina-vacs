@@ -1,9 +1,11 @@
 ---
 import Menu from '@/componentes/Menu.astro';
+import NavegadorProyectos from '@/componentes/NavegadorProyectos.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 ---
 
 <Plantilla titulo="VACS">
+  <NavegadorProyectos numeroProyecto={3} />
   <Menu />
 
   <main>
@@ -187,10 +189,8 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           abusadores y maltratadores.
         </p>
       </div>
-      <div class="navegacion">
-        <a class="botonNavegar" href=`${import.meta.env.BASE_URL}proyecto2`>←</a>
-        <a class="botonNavegar" href=`${import.meta.env.BASE_URL}`>→</a>
-      </div>
     </section>
   </main>
+
+  <NavegadorProyectos numeroProyecto={3} />
 </Plantilla>

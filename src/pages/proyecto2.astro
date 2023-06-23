@@ -1,9 +1,11 @@
 ---
 import Menu from '@/componentes/Menu.astro';
+import NavegadorProyectos from '@/componentes/NavegadorProyectos.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 ---
 
 <Plantilla titulo="VACS">
+  <NavegadorProyectos numeroProyecto={2} />
   <Menu />
 
   <main>
@@ -127,11 +129,9 @@ import Plantilla from '@/plantillas/Plantilla.astro';
         tipo de ACEs.
       </p>
     </section>
-    <div class="navegacion">
-      <a class="botonNavegar" href=`${import.meta.env.BASE_URL}proyecto1`>←</a>
-      <a class="botonNavegar" href=`${import.meta.env.BASE_URL}proyecto3`>→</a>
-    </div>
   </main>
+
+  <NavegadorProyectos numeroProyecto={2} />
 </Plantilla>
 
 <style lang="scss">
