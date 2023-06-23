@@ -31,7 +31,7 @@ export default () => {
        */
       duranteInterseccion(
         elemento,
-        (evento) => {
+        () => {
           const reloj = setInterval(() => {
             if (posicion < total) {
               elemento.innerText = texto.slice(0, posicion).join('');
