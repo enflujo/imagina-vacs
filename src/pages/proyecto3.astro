@@ -1,10 +1,12 @@
 ---
-import Plantilla from '../plantillas/Plantilla.astro';
+import Menu from '@/componentes/Menu.astro';
+import Plantilla from '@/plantillas/Plantilla.astro';
 ---
 
 <Plantilla titulo="VACS">
+  <Menu />
+
   <main>
-    <nav><a class="enlace" href="./">inicio</a></nav>
     <section id="introduccion" class="seccion apagado">
       <h1>
         Trayectorias de maltrato: El impacto de la violencia en la infancia y adolescencia como predictor de ser víctima
@@ -190,38 +192,5 @@ import Plantilla from '../plantillas/Plantilla.astro';
         <a class="botonNavegar" href=`${import.meta.env.BASE_URL}`>→</a>
       </div>
     </section>
-
-    <style lang="scss">
-      main {
-        background: rgb(50, 29, 47);
-        background: linear-gradient(180deg, rgba(50, 29, 47, 1) 0%, rgba(61, 46, 79, 1) 50%, rgba(76, 95, 122, 1) 100%);
-        color: #f6f1f1;
-        min-height: 100vh;
-        padding: 5em;
-      }
-
-      h1 {
-        font-size: 3em;
-        text-align: center;
-        margin-bottom: 1em;
-      }
-
-      h2 {
-        text-align: center;
-      }
-
-      // Borrar eventualmente esta clase
-      .comentario {
-        color: rgb(216, 213, 37);
-        font-weight: bold;
-
-        &::before {
-          content: '(';
-        }
-        &::after {
-          content: ')';
-        }
-      }
-    </style>
   </main>
 </Plantilla>

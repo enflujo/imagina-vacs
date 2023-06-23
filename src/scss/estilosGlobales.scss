@@ -16,7 +16,15 @@ html,
 body {
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: 'Open Sans', sans-serif;
+  background: rgb(50, 29, 47);
+  background: linear-gradient(180deg, rgba(50, 29, 47, 1) 0%, rgba(61, 46, 79, 1) 50%, rgba(76, 95, 122, 1) 100%);
+  color: #f6f1f1;
+  min-height: 100vh;
+  padding: 5em;
 }
 
 blockquote,
@@ -33,16 +41,6 @@ p,
 pre,
 time {
   margin: 0;
-}
-
-main {
-  padding: 0;
-  margin: 0;
-  background: rgb(50, 29, 47);
-  background: linear-gradient(180deg, rgba(50, 29, 47, 1) 0%, rgba(61, 46, 79, 1) 50%, rgba(76, 95, 122, 1) 100%);
-  color: #f6f1f1;
-  min-height: 100vh;
-  padding: 5em;
 }
 
 p {

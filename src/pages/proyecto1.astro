@@ -1,11 +1,12 @@
 ---
-import Mapa from '../componentes/Mapa.astro';
-import Plantilla from '../plantillas/Plantilla.astro';
+import Menu from '@/componentes/Menu.astro';
+import Plantilla from '@/plantillas/Plantilla.astro';
 ---
 
 <Plantilla titulo="VACS">
+  <Menu />
+
   <main id="proyecto1">
-    <nav><a class="enlace" href="./">inicio</a></nav>
     <section id="introduccion" class="seccion apagado">
       <h1>La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
       <h2 class="autores">Investigación:</h2>
@@ -173,7 +174,7 @@ import Plantilla from '../plantillas/Plantilla.astro';
         <p class="relato">
           Nosotros nos quedábamos solos y el vecino de al lado se masturbaba delante de mí y a mí me daba miedo decirle
           a mi tío, al hermano de mi mamá, porque él me pegaba y me maltrataba mucho… Yo tenía ocho años cuando él me
-          metió un ‘cablazo’.
+          metió un 'cablazo'.
         </p>
         <p class="destacado">
           El maltrato intrafamiliar que sufrían los menores a manos de sus cuidadores y factores como la presencia de
@@ -235,7 +236,7 @@ import Plantilla from '../plantillas/Plantilla.astro';
           domésticas y de cuidado en el hogar, forzadas a abandonar la escuela antes de tiempo, reclutadas para trabajos
           de inteligencia y espionaje, inducidas a abortar y hacer uso de métodos anticonceptivos desde temprana edad.
         </p>
-        <p class="escribiendo">
+        <p class="escribiendo" data-velocidad="30">
           Milena le contó a la Comisión cómo fue para ella su vivencia en grupos armados durante su infancia y
           adolescencia:
         </p>
@@ -368,11 +369,14 @@ import Plantilla from '../plantillas/Plantilla.astro';
 </Plantilla>
 
 <script>
+  import escritorAutomata from '@/utilidades/escritorAutomata';
   import { duranteInterseccion } from '../utilidades/observador';
   const secciones = document.querySelectorAll('.seccion');
   const intro = document.getElementById('introduccion');
   const males = document.querySelectorAll('.mal');
   const secuencia = document.getElementById('sec');
+
+  escritorAutomata();
 
   imprimirSecuencia(secuencia);
 
