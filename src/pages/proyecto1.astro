@@ -179,12 +179,17 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           contextos se hizo más probable la vulneración de los derechos y muchos sufrieron violencias físicas, sexuales
           y psicológicas, maltratados por las nuevas personas que asumieron su cuidado.
         </p>
+
         <p class="escribiendo">En el informe de la Comisión hay relatos como este:</p>
-        <p class="relato">
-          Nosotros nos quedábamos solos y el vecino de al lado se masturbaba delante de mí y a mí me daba miedo decirle
-          a mi tío, al hermano de mi mamá, porque él me pegaba y me maltrataba mucho… Yo tenía ocho años cuando él me
-          metió un 'cablazo'.
-        </p>
+
+        <div class="relato">
+          <p>
+            Nosotros nos quedábamos solos y el vecino de al lado se masturbaba delante de mí y a mí me daba miedo
+            decirle a mi tío, al hermano de mi mamá, porque él me pegaba y me maltrataba mucho… Yo tenía ocho años
+            cuando él me metió un 'cablazo'.
+          </p>
+        </div>
+
         <p class="destacado">
           El maltrato intrafamiliar que sufrían los menores a manos de sus cuidadores y factores como la presencia de
           grupos armados en el territorio influyeron mucho en su reclutamiento para la guerra.
@@ -201,10 +206,12 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           campamento militar de las FARC:
         </p>
 
-        <p class="relato">
-          Me acuerdo de que me llevaron a un punto de una molienda y ahí me quemaron toda la cara, estuve ocho meses en
-          el pabellón de un hospital.
-        </p>
+        <div class="relato">
+          <p>
+            Me acuerdo de que me llevaron a un punto de una molienda y ahí me quemaron toda la cara, estuve ocho meses
+            en el pabellón de un hospital.
+          </p>
+        </div>
 
         <p class="narracion">
           Pero el maltrato físico infantil en Colombia no sucede solo en los contextos de la guerra, también se da en
@@ -247,32 +254,42 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           Milena le contó a la Comisión cómo fue para ella su vivencia en grupos armados durante su infancia y
           adolescencia:
         </p>
-        <p class="relato">
-          Ellos decían: “Juguemos a la moneda, si sale tal cosa, nos comemos a esa hembra, y si no, la ponemos a lavar
-          ropa y de una vez a hacer la comida”. Cuando caía violarme, llegaban por la noche. Como dos o tres veces pasó
-          que se reunieron todos y me cogieron entre los cuatro. Me pegaron, se burlaron y luego me volaron cuatro
-          dientes. Ahí mismo me violaron y mientras tanto me decían: “Ahora sí quedó más fea de lo que es”. Sin los
-          dientes, decían: “Así nos lo puede hacer más rico”.
-        </p>
+        <div class="relato">
+          <p>
+            Ellos decían: “Juguemos a la moneda, si sale tal cosa, nos comemos a esa hembra, y si no, la ponemos a lavar
+            ropa y de una vez a hacer la comida”. Cuando caía violarme, llegaban por la noche. Como dos o tres veces
+            pasó que se reunieron todos y me cogieron entre los cuatro. Me pegaron, se burlaron y luego me volaron
+            cuatro dientes. Ahí mismo me violaron y mientras tanto me decían: “Ahora sí quedó más fea de lo que es”. Sin
+            los dientes, decían: “Así nos lo puede hacer más rico”.
+          </p>
+        </div>
+
         <p class="escribiendo">
           Cristina relató cómo quedó embarazada después de una violación y la obligaron a abortar:
         </p>
-        <p class="relato">
-          A partir de eso, de las violaciones, yo quedé en embarazo, entonces me obligaron a abortar con seis meses de
-          embarazo. Yo tenía dieciséis años. No podía llorar, no podía contarle a nadie. Todos los días era muy
-          doloroso, era muy difícil; pero ya después del aborto, pues yo siempre lloraba, pero cuando estaba de guardia,
-          porque pues es un momento en el que uno estaba prácticamente solo, y le pedía perdón a Dios por no haber
-          podido proteger esa criatura y era un cargo de conciencia que no me pertenecía porque yo traté de cuidarlo lo
-          más que pude; pero pues ya se me salió de las manos.
-        </p>
+
+        <div class="relato">
+          <p>
+            A partir de eso, de las violaciones, yo quedé en embarazo, entonces me obligaron a abortar con seis meses de
+            embarazo. Yo tenía dieciséis años. No podía llorar, no podía contarle a nadie. Todos los días era muy
+            doloroso, era muy difícil; pero ya después del aborto, pues yo siempre lloraba, pero cuando estaba de
+            guardia, porque pues es un momento en el que uno estaba prácticamente solo, y le pedía perdón a Dios por no
+            haber podido proteger esa criatura y era un cargo de conciencia que no me pertenecía porque yo traté de
+            cuidarlo lo más que pude; pero pues ya se me salió de las manos.
+          </p>
+        </div>
+
         <p class="escribiendo">
           Camila, por su parte, reveló cómo las niñas y adolescentes eran tratadas como propiedad de integrantes del
           grupo armado:
         </p>
-        <p class="relato">
-          Aunque no dejé entrar tanto la aguja, no me lo he podido quitar del todo, me tocó hacerme un tatuaje para
-          tapar ese nombre porque todo el mundo me preguntaba.
-        </p>
+
+        <div class="relato">
+          <p>
+            Aunque no dejé entrar tanto la aguja, no me lo he podido quitar del todo, me tocó hacerme un tatuaje para
+            tapar ese nombre porque todo el mundo me preguntaba.
+          </p>
+        </div>
 
         <p class="narracion">
           La EVCNNA ha ayudado a entender mejor el panorama de violencia sexual a nivel nacional y en los municipios más
@@ -374,10 +391,12 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 </Plantilla>
 
 <script>
-  import escritorAutomata from '@/utilidades/escritorAutomata';
+  import aparicionRelato from '@/ambages/aparicionRelato';
+  import escritorAutomata from '@/ambages/escritorAutomata';
   const males = document.querySelectorAll<HTMLElement>('.mal');
 
   escritorAutomata();
+  aparicionRelato();
 
   const esperar = (
     elementos: NodeListOf<HTMLElement>,
