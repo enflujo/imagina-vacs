@@ -9,9 +9,10 @@ import Plantilla from '@/plantillas/Plantilla.astro';
   <Menu />
 
   <main id="proyecto1">
-    <h1 class="tituloProyecto">La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
     <section id="introduccion" class="seccion apagado">
-      <h2 class="autores">Investigación:</h2>
+      <h1 class="tituloProyecto">La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
+      <h2 class="autores">Investigación: Karla ??? y Catalina ???</h2>
+
       <p class="narracion">
         La Comisión de la Verdad, en el capítulo “<a
           href="https://www.comisiondelaverdad.co/no-es-un-mal-menor"
@@ -20,7 +21,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
         colombiano.
       </p>
       <p class="escribiendo">Se estima que en las últimas tres décadas (entre 1985 y 2019):</p>
-      <!--PREGUNTA: ¿Por qué la presición de fechas?-->
+      <!--PREGUNTA: ¿Por qué la precisión de fechas?-->
       <!-- <div class="grafica">
           GRÁFICA / ILUSTRACIÓN 0.1: De 1985 a 2018, 64.084 niñas, niños y adolescentes perdieron la vida por el
           conflicto; de 1985 a 2016, 28.192 fueron desaparecidos de manera forzada; de 1990 a 2018 6.496 sufrieron
@@ -62,9 +63,9 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       </p>
     </section>
 
-    <div class="columnas seccion apagado" id="migracion">
-      <h2>I. Migración Forzada</h2>
-      <div class="columna columna1">
+    <section class="columnas seccion apagado" id="migracion">
+      <h3 class="subtitulo">I. Migración Forzada</h3>
+      <div class="columna">
         <p>
           Las <span class="resaltado">personas desplazadas</span> son aquellas que por situaciones de violencia o catástrofes
           naturales, han sido obligadas a huir de su hogar hacia otro lugar del país.
@@ -79,21 +80,22 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           dentro y fuera de Colombia son la búsqueda de oportunidades económicas o laborales y la reunión con familiares
           migrantes, la violencia es también un factor importante: cuarta causa de migración, tanto interna como externa.
         </p>
+        <p class="grafica">GRÁFICA 1.1: Causas de la migración</p>
         <p class="escribiendo">
           En Colombia más de 9.500.000 personas fueron desplazadas por el conflicto armado entre 1985 y 2022.
         </p>
         <p class="comentario">
           fuente: página web oficial del Registro Único de Víctimas, 2022 - Cómo ponemos las fuentes??
         </p>
+
+        <p class="grafica">GRÁFICA 1.2: Diferencias de migración debido a violencia por población (PDET – NO PDET)</p>
         <p>
           De todos los municipios del país, aquellos que han sido históricamente más afectados por la violencia (PDET),
           son los lugares donde la gente ha sufrido más el desplazamiento a causa del conflicto. En particular, los
           niños y hombres jóvenes han migrado más allí que en otros territorios debido, quizás, al mayor riesgo de ser
           reclutados para participar en grupos armados ilegales.
         </p>
-      </div>
 
-      <div class="columna columna2">
         <p class="comentario">
           Las tablas y gráficas originales están <a
             href="https://uniandes-my.sharepoint.com/:w:/r/personal/j_gonzalezj_uniandes_edu_co/Documents/EnFlujo/Laboratorio%20EnFlujo/Proyectos/2023/Imagina%20-%20Fellows%20VACS/Relatos.docx?d=w3f6475c27e7e4eac9d867ce34fa532b4&csf=1&web=1&e=0rK4Cl"
@@ -104,24 +106,23 @@ import Plantilla from '@/plantillas/Plantilla.astro';
             >aquí.</a
           >
         </p>
-        <p class="grafica">GRÁFICA 1.1: Causas de la migración</p>
-
-        <p class="grafica">GRÁFICA 1.2: Diferencias de migración debido a violencia por población (PDET – NO PDET)</p>
 
         <p class="grafica">GRÁFICA 1.3: Diferencias de migración debido a violencia por género y población.</p>
       </div>
-    </div>
+    </section>
 
     <div class="columnas seccion apagado" id="orfandad">
-      <h2>II. Orfandad</h2>
-      <div class="columna columna1">
+      <h3 class="subtitulo">II. Orfandad</h3>
+      <div class="columna">
         <p class="narracion">
-          Una niña o niño huérfano es quien ha sufrido la pérdida de uno o ambos padres. Esa ausencia aumenta el riesgo
-          de tener menor acceso a educación y a servicios médicos, y de sufrir de angustia psicosocial, abandono y
-          abusos. Hasta 2005 había más de 10.700.000 niñas, niños y adolescentes en situación de orfandad en América
-          Latina.
+          Se consideran huérfanos los niños y las niñas que han sufrido la pérdida de uno o ambos padres. Esa ausencia
+          aumenta el riesgo de tener menor acceso a educación y a servicios médicos, y de sufrir de angustia
+          psicosocial, abandono y abusos.
         </p>
-        <p class="grafica">
+        <p class="narracion">
+          Hasta 2005 había más de 10.700.000 niñas, niños y adolescentes en situación de orfandad en América Latina.
+        </p>
+        <p class="narracion">
           Además del dolor y el sufrimiento que produce la orfandad, es normal que los niños y niñas crean que hay una
           relación causal entre sus propios actos y la violencia sufrida, como si las cosas malas pasaran porque se
           portaron mal o porque dejaron de hacer algo. Sin embrago, que esos sentimientos permanezcan durante mucho
@@ -137,23 +138,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           Bienestar Familiar (ICBF) empezó a reportarla, registrando 1161 niñas, niños y adolescentes menores de 18 años
           huérfanos a causa del conflicto entre 2011 y 2021.
         </p>
-        <p class="narracion">
-          Estos datos, sin embargo, solo cuentan a quienes son huérfanos de ambos padres y han sido atendidos por la
-          institución, dejando por fuera a gran cantidad de niños y niñas que han perdido a uno solo de sus padres o
-          cuya custodia fue asumida por alguien más.
-        </p>
-        <p class="escribiendo">
-          Según la Comisión, entre 1985 y 2018 más de 620.000 personas, en su mayoría adultas, fueron asesinadas,
-          secuestradas o desaparecidas. ¿Qué pasó con sus hijas e hijos?
-        </p>
-        <p class="narracion">
-          Buscando entender este vacío, tomamos los resultados de la EVCNNA. Según la encuesta, en los municipios más
-          afectados por el conflicto hay 2.5% más huérfanos menores de 8 años que en el resto del país y es más común
-          que los niños, niñas y jóvenes hayan perdido a su padre.
-        </p>
-      </div>
 
-      <div class="columna columna2">
         <p class="grafica">
           GRÁFICA 2.1 (¿CÓMO?): desde el 2011 hasta abril de 2021 el ICBF registró 1.161 casos de niñas, niños y
           adolescentes menores de 18 años huérfanos a causa del conflicto y que estuvieron o están actualmente
@@ -161,19 +146,38 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           que “entre 1985 y el 2018, 450.666 personas fueron víctimas de homicidio; de 1985 a 2016, 121.768 de
           desaparición forzada y 50.770 de secuestro”
         </p>
+        <p class="narracion">
+          Sin embargo, estos datos solo cuentan a quienes han sido atendidos por la institución y son huérfanos de ambos
+          padres, dejando por fuera a gran cantidad de niños y niñas que han perdido a uno solo de sus padres o cuya
+          custodia fue asumida por alguien más.
+        </p>
+
+        <p class="escribiendo">
+          Según la Comisión, entre 1985 y 2018 más de 620.000 personas, en su mayoría adultas, fueron asesinadas,
+          secuestradas o desaparecidas. ¿Qué pasó con sus hijas e hijos?
+        </p>
+
+        <p class="narracion">
+          Para llenar en parte este vacío, comparamos esta información con los resultados de la EVCNNA.
+        </p>
 
         <p class="grafica">GRÁFICA 2.2: Orfandad - Diferencias de PDET en relación con el promedio nacional.</p>
+
+        <p class="narracion">
+          Econtramos que en los municipios más afectados por el conflicto hay 2.5% más huérfanos menores de 8 años que
+          en el resto del país y es más común que niños, niñas y jóvenes hayan perdido a su padre.
+        </p>
       </div>
     </div>
 
     <div class="columnas seccion apagado" id="violencia">
-      <h2>III. Violencia</h2>
-      <div class="columna columna1">
+      <h3 class="subtitulo">III. Violencia</h3>
+      <div class="columna">
         <p class="narracion">
           El conflicto armado causó en Colombia la desintegración de muchas familias. Niños y niñas quedaron al cuidado
           de personas distintas a sus padres o nuevas personas llegaron a integrar sus núcleos familiares. En esos
           contextos se hizo más probable la vulneración de los derechos y muchos sufrieron violencias físicas, sexuales
-          y psicológicas al ser maltratados por las nuevas personas que asumieron su cuidado.
+          y psicológicas, maltratados por las nuevas personas que asumieron su cuidado.
         </p>
         <p class="escribiendo">En el informe de la Comisión hay relatos como este:</p>
         <p class="relato">
@@ -208,7 +212,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
         </p>
         <p class="destacado">
           Para 2018 7 de cada 20 jóvenes (35%) sufrieron alguna agresión física antes de los 18 años. Las primeras
-          agresiones físicas suceden por lo general, entre los 9 y los 15 años.
+          suceden, por lo general, entre los 9 y los 15 años.
         </p>
         <p class="grafica">GRÁFICA 4.1: Diferencias de eventos de violencia física por población</p>
         <p class="grafica">GRÁFICA 4.2: Diferencias de eventos de violencia física por género y población</p>
@@ -226,9 +230,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           ridiculizada o menospreciada antes de cumplir 18 años.
         </p>
         <p class="grafica">GRÁFICA 4.3: Diferencias de eventos de violencia emocional por género y población</p>
-      </div>
 
-      <div class="columna columna2">
         <h3>Violencia sexual</h3>
         <p class="narracion">
           Aunque tanto las niñas como los niños sufrieron las consecuencias de la guerra, la Comisión desveló que las
@@ -274,9 +276,10 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 
         <p class="narracion">
           La EVCNNA ha ayudado a entender mejor el panorama de violencia sexual a nivel nacional y en los municipios más
-          afectados por el conflicto. Reveló, entre otras cosas, que las mujeres son las grandes afectadas de este tipo
-          de agresiones, y que quienes viven en municipios PDET tienden a tener el primer evento de sexo forzado
-          físicamente antes que el promedio nacional.
+          afectados por el conflicto. Reveló que las mujeres son las grandes afectadas de este tipo de agresiones, y que
+          quienes viven en municipios PDET tienden a tener el primer evento de sexo forzado físicamente antes que el
+          promedio nacional. El aborto, en cambio, parece ser menos recurrente en estos municipios, quizás debido a la
+          dificultad de realizar este procedimiento en regiones periféricas del país.
         </p>
 
         <p class="grafica">GRÁFICA 4.4: Diferencias de eventos de violencia sexual por género y población</p>
@@ -284,29 +287,25 @@ import Plantilla from '@/plantillas/Plantilla.astro';
         <p class="destacado">
           El 11.7% de los entrevistados entre 14 y 24 años afirmaron haber sido tocados de manera indeseada antes de
           cumplir la mayoría de edad, y se estima que sucedió por primera vez en promedio a los 12.6 años de edad.
-          Alrededor del 5.3% fue víctima de un intento frustrado de violación. El 2.14% fue físicamente forzado a tener
-          sexo y el 1.6% presionado a tener relaciones sexuales.
         </p>
-
-        <p class="narracion">
-          El aborto parece ser menos recurrente en estos municipios, quizás debido a la dificultad de realizar este
-          procedimiento en regiones periféricas del país.
+        <p class="destacado">Alrededor del 5.3% fue víctima de un intento frustrado de violación.</p>
+        <p class="destacado">
+          El 2.14% fue físicamente forzado a tener sexo y el 1.6% presionado a tener relaciones sexuales.
         </p>
       </div>
     </div>
 
     <div class="columnas seccion apagado" id="salud-mental">
-      <h2>IV. Salud Mental</h2>
-      <div class="columna columna1">
-        <p class="destacado">
-          Experiencias como el secuestro, el homicidio de un familiar o el desplazamiento forzado han dejado secuelas
-          físicas, psicológicas y afectivas en la vida de niñas, niños y adolescentes colombianos.
-        </p>
-
+      <h3 class="subtitulo">IV. Salud Mental</h3>
+      <div class="columna">
         <p class="narracion">
           La forma como murieron los padres, los relatos de otras personas y la propia imaginación sobre los hechos
           violentos vividos producen frecuentemente malestar emocional, ideas obsesivas, pesadillas, culpa, y hasta
           pensamientos suicidas. Estas secuelas pueden verse inmediatamente o aparecer años después.
+        </p>
+        <p class="destacado">
+          Experiencias como el secuestro, el homicidio de un familiar o el desplazamiento forzado han dejado secuelas
+          físicas, psicológicas y afectivas en la vida de niñas, niños y adolescentes colombianos.
         </p>
         <p class="grafica">
           En nueve de cada diez testimonios tomados por la Comisión, las víctimas hablaron de culpa, tristeza, rabia,
@@ -315,7 +314,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           sentido de la vida, pensamientos suicidas y depresión.
         </p>
 
-        <h3 class="escribiendo">¿La afectación es diferente en los municipios PDET?</h3>
+        <p class="escribiendo">¿La afectación es diferente en los municipios PDET?</p>
         <p class="narracion">
           Para identificar problemas de salud mental en jóvenes entre 14 y 18 años, la EVCNNA hizo preguntas como si en
           los últimos 30 días la persona se había sentido nerviosa, desesperada, ansiosa, intranquila, inútil o tan
@@ -323,14 +322,27 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           así, si había intentado hacerlo.
         </p>
 
-        <p class="narracion">
-          Según los resultados de la encuesta, la presencia de problemas de salud mental moderada en los jóvenes de la
-          muestra PDET fue 4% menor que en la muestra nacional y pensaron en hacerse daño 3.84% menos que el promedio
-          nacional. También se encontró que en todo el país las mujeres habían sufrido más afectaciones de salud mental
-          que los hombres. Y, en particular en los municipios PDET, hubo una diferencia de 29.27% en los intentos de
-          suicidio, siendo las mujeres las que más intentan acabar su vida. Del 16.91% de las mujeres que piensan en
-          terminar con su vida, el 57% efectivamente lo intenta.
+        <p class="grafica">
+          GRÁFICA(S) 3.1: En el informe, la CEV (2022a) afirma que El 63,5 % de los testimonios sobre secuestro hablan
+          de este tipo de consecuencias sobre la salud física y mental: problemas en el sueño o la alimentación,
+          migraña, depresión, ansiedad, recuerdos recurrentes sobre el hecho e intentos de suicidio, entre otros (p. 49)
         </p>
+
+        <p class="narracion">
+          Según los resultados, la presencia de problemas de salud mental moderada en los jóvenes de la muestra PDET fue
+          4% menor que en la muestra nacional y pensaron en hacerse daño 3.84% menos que el promedio nacional.
+        </p>
+
+        <p class="grafica">GRÁFICA 3.2: Diferencias de variables relacionadas a salud mental por población.</p>
+
+        <p>
+          También se encontró que en todo el país las mujeres habían sufrido más afectaciones de salud mental que los
+          hombres. Y, en particular en los municipios PDET, hubo una diferencia de 29.27% en los intentos de suicidio,
+          siendo las mujeres las que más intentan acabar su vida, pues del 16.91% de las mujeres que piensan en terminar
+          con su vida, el 57% efectivamente lo intenta.
+        </p>
+
+        <p class="grafica">GRÁFICA 3.3 Diferencias de variables relacionadas a salud mental por género y población.</p>
 
         <p class="narracion">
           Esta diferencia podría explicarse por la cruda realidad a la que han estado expuestas las mujeres en el marco
@@ -338,34 +350,24 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           quedar embarazadas, ser obligadas a abortar, a dar sus hijos en adopción o a ejercer una maternidad forzada.
         </p>
       </div>
-
-      <div class="columna columna2">
-        <p class="grafica">
-          GRÁFICA(S) 3.1: En el informe, la CEV (2022a) afirma que El 63,5 % de los testimonios sobre secuestro hablan
-          de este tipo de consecuencias sobre la salud física y mental: problemas en el sueño o la alimentación,
-          migraña, depresión, ansiedad, recuerdos recurrentes sobre el hecho e intentos de suicidio, entre otros (p. 49)
+    </div>
+    <div class="columnas seccion apagado" id="final">
+      <h3 class="subtitulo">Conclusión</h3>
+      <div class="columna">
+        <p class="destacado">
+          El conflicto armado afectó a la juventud colombiana en diferentes dimensiones. Niñas, niños y adolescentes han
+          sufrido múltiples formas de violencia y abuso que marcaron su experiencia de vida y alteraron su mundo
+          infantil y adolescente.
         </p>
-
-        <p class="grafica">GRÁFICA 3.2: Diferencias de variables relacionadas a salud mental por población.</p>
-
-        <p class="grafica">GRÁFICA 3.3 Diferencias de variables relacionadas a salud mental por género y población.</p>
+        <p class="narracion">
+          Las personas entrevistadas por la CEV que sufrieron la desaparición u homicidio de un familiar durante las
+          primeras décadas de su vida quedaron con severas afectaciones a su salud mental expresadas en malestar
+          emocional, pesadillas, sentimientos de culpa, ideas obsesivas y pensamientos suicidas. De estas violencias
+          sufridas durante el crecimiento también se derivan afectaciones a la salud física y reproductiva como
+          enfermedades de transmisión sexual, daños en el sistema reproductor, dolores y problemas en la salud general.
+        </p>
       </div>
     </div>
-
-    <section class="seccion apagado">
-      <p class="destacado">
-        El conflicto armado afectó a la juventud colombiana en diferentes dimensiones. Niñas, niños y adolescentes han
-        sufrido múltiples formas de violencia y abuso que marcaron su experiencia de vida y alteraron su mundo infantil
-        y adolescente.
-      </p>
-      <p class="narracion">
-        Las personas entrevistadas por la CEV que sufrieron la desaparición u homicidio de un familiar durante las
-        primeras décadas de su vida quedaron con severas afectaciones a su salud mental expresadas en malestar
-        emocional, pesadillas, sentimientos de culpa, ideas obsesivas y pensamientos suicidas. De estas violencias
-        sufridas durante el crecimiento también se derivan afectaciones a la salud física y reproductiva como
-        enfermedades de transmisión sexual, daños en el sistema reproductor, dolores y problemas en la salud general.
-      </p>
-    </section>
   </main>
 
   <NavegadorProyectos numeroProyecto={1} />
@@ -387,7 +389,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
     let t = '';
     if (elemento) {
       let texto = elemento.getAttribute('data-texto');
-      for (let i = 0; i < texto.length; i++) {
+      for (let i = 0; i <= texto.length; i++) {
         t += texto[i];
         elemento.innerHTML = `${t}`;
         console.log('mi');
@@ -480,6 +482,8 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 
 <style lang="scss" is:global>
   #proyecto1 {
+    font-family: 'Source Sans Pro', sans-serif;
+
     h1 {
       font-size: 5em;
       text-align: center;
@@ -510,16 +514,6 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 
       100% {
         width: 50%;
-      }
-    }
-
-    font-family: 'Source Sans Pro', sans-serif;
-    .columnas {
-      display: flex;
-      justify-content: space-around;
-
-      .columna {
-        flex-basis: 30%;
       }
     }
 

@@ -8,14 +8,18 @@ import Plantilla from '@/plantillas/Plantilla.astro';
   <NavegadorProyectos numeroProyecto={3} />
   <Menu />
 
-  <main>
+  <main id="proyecto3">
     <section id="introduccion" class="seccion apagado">
       <h1>
         Trayectorias de maltrato: El impacto de la violencia en la infancia y adolescencia como predictor de ser víctima
         y victimario en la adultez
       </h1>
       <h2 class="autores">Investigación: Mónica Tatiana Moreno Ángel y Joaquín Daniel Ramírez Cabarcas</h2>
-      <div class="resumen">
+    </section>
+
+    <section class="columnas seccion apagado">
+      <h3 class="subtitulo">Crecer con miedo</h3>
+      <div class="columna">
         <p class="narracion">
           La infancia y la adolescencia son etapas claves para el desarrollo humano. En estos periodos se configuran
           nuestros procesos de lenguaje, cognitivos, conductuales y emocionales. Las experiencias tempranas determinan
@@ -23,19 +27,16 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           entornos a los cuales estamos expuestos configuran la arquitectura del cerebro y afectan en gran medida cómo
           se desarrolla.
         </p>
-
         <p class="narracion">
           El contexto social, las interacciones con un entorno sensible y disponible y la existencia de vínculos seguros
           son fundamentales en las primeras etapas de vida. La relación que tenemos con nuestros cuidadores y con los
           adultos importantes en la infancia es la esencia del impacto del medio ambiente en nuestra vida futura.
         </p>
-
         <p class="narracion">
           La exposición temprana a la violencia puede generar durante nuestra vida problemas de salud física y mental,
           afectar la configuración de relaciones sociales saludables, disminuir nuestra capacidad de confiar y conectar
           con los demás, hacer más difícil que regulemos las emociones e incluso afectar los procesos económicos.
         </p>
-
         <p class="destacado">
           Según la teoría de los ciclos de violencia, ser víctima de violencia (física y emocional) por parte de los
           padres o cuidadores principales aumenta las probabilidades de ser víctima de violencia por parte de la pareja
@@ -43,26 +44,22 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           durante la infancia influye en la normalización y réplica de la violencia en las relaciones de pareja y en la
           crianza, perpetuando el ciclo.
         </p>
-
         <p class="escribiendo">
           Para entender qué pasa con este tema en nuestro país, estudiamos los datos obtenidos por la EVCNNA en 2018 y
           el reporte FORENSIS (2020) de Medicina Legal. Encontramos que, efectivamente, hay una relación entre el
           maltrato infantil y la repetición del ciclo de violencia, aunque no todos los tipos de violencia tienen el
           mismo impacto en el futuro.
         </p>
-
         <p class="grafica">
           <a
             href="https://uniandes-my.sharepoint.com/:w:/r/personal/j_gonzalezj_uniandes_edu_co/Documents/EnFlujo/Laboratorio%20EnFlujo/Proyectos/2023/Imagina%20-%20Fellows%20VACS/Relatos%20-%20M%C3%93NICA%20Y%20JOAQU%C3%8DN.docx?d=w6af4e0c71eee4230ad0d687702f99877&csf=1&web=1&e=NFTiSD"
             >GRÁFICA 3.1.1</a
           > Relación de Polivictimización y Victimización, Perpetración y Creencias en Colombia
         </p>
-
         <p class="comentario">
           Cosas para resaltar en la gráfica anterior (4.1.1). Quizás no es necesario escribirlo sino que se puede
           mostrar de otra forma (?)
         </p>
-
         <p class="narracion">
           Se estima que haber sufrido violencia física (VF) o emocional (VE) por parte de los padres antes de los 18
           años se relaciona con un aumento de la probabilidad de que una persona sea perpetradora de violencia física
@@ -90,39 +87,33 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           (después de los 18 años) es del 5% y con validar comportamientos agresivos contra los niños como métodos
           educativos del 13%.
         </p>
+      </div>
+    </section>
 
-        <p class="separador"></p>
-
-        <h3>Datos de violencia en Colombia</h3>
-
+    <section class="columnas seccion apagado">
+      <h3 class="subtitulo">Datos de violencia en Colombia</h3>
+      <div class="columna">
         <p class="narracion">
           En 2020 fueron reportados 5.069 casos de violencia contra niños, niñas y adolescentes en el país.
           Específicamente, la violencia contra niñas y adolescentes fue mayor comparada con los niños, 2.677 casos y
           2.392 casos respectivamente. Estos datos muestran que, en general, ha habido un incremento progresivo durante
           los últimos 8 años.
         </p>
-
         <p class="destacado">
           En más del 85% de los casos de violencia sexual reportados en 2020 en Medicina Legal, las víctimas fueron
           niños, niñas y adolescentes (15.370 casos). En este rango, el 40.21% tenían entre 10 y 14 años (7.259 casos),
           y el 22.53% entre 5 y 9 años (4.067 casos).
         </p>
-
         <p class="narracion">La tasa en el grupo de 10 a 14 años (182.58) es cinco veces la tasa general (35.84).</p>
-
         <p class="comentario">Esto que sigue podría graficarse?</p>
-
         <p class="grafica">
           En el 81.03% de los casos, los agresores tienen algún grado de cercanía con la víctima: el 48.67% es un
           familiar, el 23.09% un conocido, y el 9.27% un amigo.
         </p>
-
         <a href="https://www.medicinalegal.gov.co/documents/20143/787115/Forensis_2020.pdf">Fuente: FORENSIS (2020)</a>
-
         <p class="escribiendo">
           Estos datos de Medicina Legal son congruentes con lo que encontramos en la EVCNNA (2018):
         </p>
-
         <p class="comentario">Esto que sigue podría graficarse?</p>
         <p class="grafica">
           Aproximadamente 2 de cada 5 mujeres (40.8%) y hombres (42.1%) han sido víctimas de violencia física, sexual o
@@ -130,7 +121,6 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           sufrió violencia física; y 1 de cada 5 mujeres (21.2%) y 1 de cada 10 hombres (9.5%) sufrió violencia
           psicológica por parte de los padres, cuidadores o parientes adultos.
         </p>
-
         <p>
           <a
             href="https://uniandes-my.sharepoint.com/:w:/r/personal/j_gonzalezj_uniandes_edu_co/Documents/EnFlujo/Laboratorio%20EnFlujo/Proyectos/2023/Imagina%20-%20Fellows%20VACS/Relatos%20-%20M%C3%93NICA%20Y%20JOAQU%C3%8DN.docx?d=w6af4e0c71eee4230ad0d687702f99877&csf=1&web=1&e=NFTiSD"
@@ -138,24 +128,24 @@ import Plantilla from '@/plantillas/Plantilla.astro';
             Incluyendo muestra PDET
           </a>
         </p>
-
         <p>
           Sobre los mismos datos de la encuesta comparamos los municipios PDET y No-PDET y encontramos que,
           aparentemente, no existen diferencias significativas entre los dos tipos de territorios. Así, la probabilidad
           de ser víctima o perpetrador de violencia intrafamiliar si se sufrió maltrato en la infancia es muy similar en
           los municipios más afectados históricamente por el conflicto armado, y en el resto del país.
         </p>
+      </div>
+    </section>
 
-        <p class="separador"></p>
-
-        <h3>En conclusión</h3>
+    <section class="columnas seccion apagado">
+      <h3 class="subtitulo">En conclusión</h3>
+      <div class="columna">
         <p class="narracion">
           Los recursos, políticas y acciones que se ejecutan en la primera infancia son los fundamentos de una sociedad.
           Nuestro desarrollo como seres humanos se cimienta en los primeros años de vida, cuando se crea una base para
           el futuro académico, la productividad económica, la ciudadanía responsable, la salud física y mental, el
           fortalecimiento de comunidades e, incluso, la capacidad de ser padres y madres de las próximas generaciones.
         </p>
-
         <p class="narracion">
           Creer que se tiene el derecho de maltratar física o emocionalmente a la pareja, permitir que alguien
           transgreda a su pareja, o validar y naturalizar la violencia como método para disciplinar a un niño no son
@@ -164,24 +154,20 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           psicológico y social. Parte de esas consecuencias es que la violencia produce otras dinámicas de violencia que
           dificultan que nuestras formas de relacionamos se modifiquen.
         </p>
-
         <p class="destacado">
           Las cifras de violencia contra niños, niñas y adolescentes en Colombia evidencian un problema de salud pública
           que no disminuye con el tiempo, sino que se mantiene o aumenta.
         </p>
-
         <p class="comentario">Esto que sigue podría quizás ilustrarse / animarse?</p>
         <p class="grafica">
           Es en el hogar donde sucede la mayor parte de las agresiones contra niños, niñas y adolescentes. En el 33.75%
           de los casos quien violenta es el padre, seguido de la madre en el 28.19% y el padrastro en el 11.38%.
         </p>
-
         <p class="narracion">
           Los resultados que encontramos en este estudio son preocupantes. Muchos niñas, niños y adolescentes sufren o
           presencian hechos violencios en su casa, en la comunidad o entre sus pares. Esta cadena se replica cuando se
           considera la violencia un método efectivo y válido para la educación y la disciplina.
         </p>
-
         <p class="destacado">
           El hogar, un espacio que debería ser seguro para crecer, donde niños y niñas deberían sentirse resguardados,
           es el primer lugar en que se exponen a la violencia física y emocional. La familia, primer núcleo maltratante,

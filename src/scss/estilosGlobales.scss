@@ -54,6 +54,33 @@ a:link {
   color: #57c5b6;
 }
 
+h1 {
+  font-size: 4em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.seccion {
+  transition: opacity 1.6s ease-out;
+  transition-delay: 250ms;
+  margin-bottom: 10em;
+  opacity: 1;
+}
+
+.subtitulo {
+  margin-right: 2em;
+}
+
+.columnas {
+  display: flex;
+  justify-content: space-around;
+
+  .columna {
+    flex-basis: 50%;
+    margin-right: 15%;
+  }
+}
+
 .autores {
   text-align: center;
   padding-bottom: 2em;
