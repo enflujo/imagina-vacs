@@ -33,7 +33,7 @@ export default () => {
         elemento,
         () => {
           const reloj = setInterval(() => {
-            if (posicion < total) {
+            if (posicion <= total) {
               elemento.innerText = texto.slice(0, posicion).join('');
 
               posicion++;
