@@ -1,52 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-html {
-  box-sizing: border-box;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
+@import './constantes';
+@import './normalizar';
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background: rgb(50, 29, 47);
-  background: linear-gradient(180deg, rgba(50, 29, 47, 1) 0%, rgba(61, 46, 79, 1) 50%, rgba(76, 95, 122, 1) 100%);
+  background: var(--colorFondo);
   color: #f6f1f1;
   min-height: 100vh;
   line-height: 1.7;
   padding: 5em;
-}
-
-blockquote,
-dl,
-dd,
-figure,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-pre,
-time {
-  margin: 0;
-}
-
-p {
-  margin: 1em 0;
-  line-height: 1.2;
 }
 
 a,
@@ -92,6 +54,11 @@ h1 {
   padding: 1em;
   font-style: italic;
   font-size: 1.1em;
+  min-height: 80vh;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .resaltado {
