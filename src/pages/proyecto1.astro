@@ -9,12 +9,15 @@ import Plantilla from '@/plantillas/Plantilla.astro';
   <Menu />
 
   <main id="proyecto1">
+    <h1 class="tituloProyecto">La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
     <section id="introduccion" class="seccion apagado">
-      <h1>La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
       <h2 class="autores">Investigación:</h2>
       <p class="narracion">
-        La Comisión de la Verdad, en el capítulo “No es un mal menor” del Informe Final, relata las violencias que
-        niñas, niños y adolescentes han sufrido en el conflicto armado colombiano.
+        La Comisión de la Verdad, en el capítulo “<a
+          href="https://www.comisiondelaverdad.co/no-es-un-mal-menor"
+          target="_blank">No es un mal menor</a
+        >” del Informe Final, relata las violencias que niñas, niños y adolescentes han sufrido en el conflicto armado
+        colombiano.
       </p>
       <p class="escribiendo">Se estima que en las últimas tres décadas (entre 1985 y 2019):</p>
       <!--PREGUNTA: ¿Por qué la presición de fechas?-->
@@ -35,7 +38,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 
       <div class="grafica">Más de 3.000.000 fueron víctimas de desplazamiento forzado.</div>
 
-      <div class="separador"></div>
+      <div style="width: 45vw; " class="separador"></div>
 
       <p class="narracion">
         Sin embargo, la recopilación de la información para el informe, a partir de entrevistas y bases de datos de
@@ -478,9 +481,10 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 <style lang="scss" is:global>
   #proyecto1 {
     h1 {
-      font-size: 4em;
+      font-size: 5em;
       text-align: center;
       margin-bottom: 1em;
+      line-height: 1em;
     }
 
     .seccion {
@@ -520,8 +524,10 @@ import Plantilla from '@/plantillas/Plantilla.astro';
     }
 
     #introduccion {
+      margin: 4vh auto;
+      padding: 0 4vw;
       min-height: 100vh;
-      margin-bottom: 0;
+      max-width: 1000px;
 
       #mal {
         color: rgb(224, 169, 222);
