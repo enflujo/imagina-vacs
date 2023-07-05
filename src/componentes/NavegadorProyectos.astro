@@ -6,7 +6,7 @@ export interface Props {
 
 const { numeroProyecto } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const rutas = ['proyecto1', 'proyecto2', 'proyecto3', 'proyecto4'];
+const rutas = ['proyecto1', 'proyecto2', 'proyecto3'];
 
 const urlAnterior = numeroProyecto > 1 ? `${base}${rutas[numeroProyecto - 2]}` : base;
 const urlSiguiente = numeroProyecto < rutas.length ? `${base}${rutas[numeroProyecto]}` : base;
