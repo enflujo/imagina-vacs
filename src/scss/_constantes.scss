@@ -1,3 +1,29 @@
+$fuenteTitulos: 'Nohemi', 'Brush Script MT', sans-serif;
+$fuenteSubtitulos: 'Nohemi', 'Brush Script MT', sans-serif;
+$fuenteTexto: 'Blinker', 'Arial', Arial, sans-serif;
+$fuenteEscribiendo: 'Chivo Mono', 'Segoe', monospace;
+$fuenteDestacado: 'Red Hat Display', 'Courier New', Courier, monospace;
+$fuenteTestimonio: 'Alegreya', 'Times New Roman', serif;
+$fuenteTabla: 'Blinker', 'Arial', Arial, sans-serif;
+
 :root {
-  --colorFondo: linear-gradient(180deg, rgb(50, 29, 47, 1) 0%, rgb(61, 46, 79, 1) 50%, rgb(76, 95, 122, 1) 100%);
+  //paleta 1
+  --rosaIntenso: #fc6dab;
+  --amarilloSol: #ffbc42;
+  --verdeBiche: #ccff66;
+
+  //fondos
+  --amarilloEdadMedia: #fff8cc;
+  --verdeTeVerde: #ccffcc;
+  --azulCielo: #c9f0ff;
+  --moraAzul: #531cb3;
+  --rosaHermanosGrimm: #fcc5dd;
+
+  //variables color
+  --colorFondoTranquilo: var(--azulCielo);
+
+  // fondo
+  --fondo1: rgb(50, 29, 47, 1);
+  --fondo2: rgb(61, 46, 79, 1);
+  --fondo3: rgb(76, 95, 122, 1);
 }
