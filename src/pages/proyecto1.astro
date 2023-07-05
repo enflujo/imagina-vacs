@@ -375,37 +375,13 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 
 <script>
   import escritorAutomata from '@/utilidades/escritorAutomata';
-  import { duranteInterseccion } from '../utilidades/observador';
-  const secciones = document.querySelectorAll('.seccion');
-  const intro = document.getElementById('introduccion');
-  const males = document.querySelectorAll('.mal');
-  const secuencia = document.getElementById('sec');
+  const males = document.querySelectorAll<HTMLElement>('.mal');
 
   escritorAutomata();
 
-  imprimirSecuencia(secuencia);
-
-  function imprimir(elemento: HTMLElement) {
-    let t = '';
-    if (elemento) {
-      let texto = elemento.getAttribute('data-texto');
-      for (let i = 0; i <= texto.length; i++) {
-        t += texto[i];
-        elemento.innerHTML = `${t}`;
-        console.log('mi');
-      }
-    }
-  }
-
-  function imprimirSecuencia(elemento) {
-    let temporizador = setTimeout(() => {
-      imprimir(elemento);
-    }, 2000);
-  }
-
   const esperar = (
-    elementos: HTMLElement[],
-    funcion: (evento, elemento: HTMLElement) => void,
+    elementos: NodeListOf<HTMLElement>,
+    funcion: (evento: () => void, elemento: HTMLElement) => void,
     tiempoEspera: number
   ) => {
     let temporizador = null;
