@@ -36,11 +36,12 @@ body {
 
 body {
   font-family: $fuenteTexto;
-  background: --moraAzul;
-  background: linear-gradient(180deg, rgba(50, 29, 47, 1) 0%, rgba(61, 46, 79, 1) 50%, rgba(76, 95, 122, 1) 100%);
-  color: #f6f1f1;
+  background: --blancoNube;
+  //background: linear-gradient(180deg, rgba(50, 29, 47, 1) 0%, rgba(61, 46, 79, 1) 50%, rgba(76, 95, 122, 1) 100%);
+  color: --grisTexto;
   min-height: 100vh;
-  line-height: 1.7;
+  font-size: 1.125em;
+  line-height: 1.5em;
   padding: 5em;
 }
 
@@ -100,6 +101,11 @@ h1 {
 .autores {
   text-align: center;
   padding-bottom: 2em;
+}
+
+.narracion {
+  font-size: 1.1em;
+  line-height: 1.5em;
 }
 
 .relato {
