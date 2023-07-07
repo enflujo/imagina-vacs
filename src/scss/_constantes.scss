@@ -1,3 +1,21 @@
+@property --fondo1 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: rgb(50, 29, 47, 1);
+}
+
+@property --fondo2 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: rgb(61, 46, 79, 1);
+}
+
+@property --fondo3 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: rgb(76, 95, 122, 1);
+}
+
 $fuenteTitulos: 'Nohemi', 'Brush Script MT', sans-serif;
 $fuenteSubtitulos: 'Nohemi', 'Brush Script MT', sans-serif;
 $fuenteTexto: 'Blinker', 'Arial', Arial, sans-serif;
@@ -21,4 +39,13 @@ $fuenteTabla: 'Blinker', 'Arial', Arial, sans-serif;
 
   //variables color
   --colorFondoTranquilo: var(--azulCielo);
+
+  --fondo1: rgb(50, 29, 47, 1);
+  --fondo2: rgb(61, 46, 79, 1);
+  --fondo3: rgb(76, 95, 122, 1);
+}
+
+@mixin fuenteRelato {
+  font-family: $fuenteTestimonio;
+  font-weight: 415;
 }
