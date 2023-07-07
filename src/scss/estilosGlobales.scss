@@ -1,69 +1,32 @@
 @import './constantes';
+@import './normalizar';
 
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0..1,0..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0..1,0..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400..900&display=swap');
 
 @font-face {
   font-family: 'Blinker';
-  src: url('../fuentes/Blinker_variable_font.ttf') format('truetype-variations');
+  src: url('/fuentes/Blinker_variable_font.ttf') format('truetype-variations');
   font-weight: 1 900;
 }
 
 @font-face {
   font-family: 'Nohemi';
-  src: url('../fuentes/Nohemi-VF.ttf') format('truetype-variations');
+  src: url('/fuentes/Nohemi-VF.ttf') format('truetype-variations');
   font-weight: 1 900;
-}
-
-html {
-  box-sizing: border-box;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
 }
 
 body {
   font-family: $fuenteTexto;
   background: --blancoNube;
-  //background: linear-gradient(180deg, rgba(50, 29, 47, 1) 0%, rgba(61, 46, 79, 1) 50%, rgba(76, 95, 122, 1) 100%);
   color: --grisTexto;
+  background: linear-gradient(180deg, var(--fondo1) 0%, var(--fondo2) 50%, var(--fondo3) 100%);
   min-height: 100vh;
   font-size: 1.125em;
   line-height: 1.5em;
   padding: 5em;
-}
-
-blockquote,
-dl,
-dd,
-figure,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-pre,
-time {
-  margin: 0;
-}
-
-p {
-  margin: 1em 0;
-  line-height: 1.2;
+  transition: --fondo1 0.3s, --fondo2 0.3s, --fondo3 0.3s;
 }
 
 a,
@@ -110,10 +73,15 @@ h1 {
 
 .relato {
   background-color: rgba(210, 105, 30, 0.89);
-  font-family: $fuenteTestimonio;
+  @include fuenteRelato();
   border-radius: 15px;
   padding: 1em;
   font-size: 1.1em;
+  min-height: 80vh;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .resaltado {
@@ -123,7 +91,6 @@ h1 {
 .separador {
   height: 2px;
   width: 70vw;
-  //background-color: rgb(241, 208, 16);
   margin: 3em 0;
   border-top: rgb(137 123 153) dashed 2px;
 }
@@ -139,7 +106,6 @@ h1 {
 .escribiendo {
   text-decoration: blink;
   font-family: $fuenteEscribiendo;
-  // animation: openclose 5s ease-in-out;
   background-color: rgb(137 123 153);
   padding: 0.4em;
   width: fit-content;

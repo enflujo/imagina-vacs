@@ -7,9 +7,9 @@
  */
 export const duranteInterseccion = (
   elemento: HTMLElement,
-  accion: (InterdectionObserverEntry) => void,
+  accion: (objObservador: IntersectionObserverEntry) => void,
   desconectarInmediatamente = true,
-  opciones = { threshold: 0 }
+  opciones?: IntersectionObserverInit
 ) => {
   const observador = new IntersectionObserver(([elementoObservado]) => {
     if (elementoObservado && elementoObservado.isIntersecting) {
