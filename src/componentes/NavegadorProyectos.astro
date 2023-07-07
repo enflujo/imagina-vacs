@@ -1,17 +1,16 @@
 ---
+import { rutaBase, rutas } from '@/utilidades/constantes';
 export interface Props {
   // Número del proyecto
   numeroProyecto: number;
 }
 
 const { numeroProyecto } = Astro.props;
-const base = import.meta.env.BASE_URL;
-const rutas = ['proyecto1', 'proyecto2', 'proyecto3'];
 
-const urlAnterior = numeroProyecto > 1 ? `${base}${rutas[numeroProyecto - 2]}` : base;
-const urlSiguiente = numeroProyecto < rutas.length ? `${base}${rutas[numeroProyecto]}` : base;
-const iconoAnterior = urlAnterior === base ? '← inicio' : '←';
-const iconoSiguiente = urlSiguiente === base ? 'inicio →' : '→';
+const urlAnterior = numeroProyecto > 1 ? `${rutaBase}${rutas[numeroProyecto - 2]}` : rutaBase;
+const urlSiguiente = numeroProyecto < rutas.length ? `${rutaBase}${rutas[numeroProyecto]}` : rutaBase;
+const iconoAnterior = urlAnterior === rutaBase ? '← inicio' : '←';
+const iconoSiguiente = urlSiguiente === rutaBase ? 'inicio →' : '→';
 ---
 
 <div class="navegacion">

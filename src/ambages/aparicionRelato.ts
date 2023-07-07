@@ -10,7 +10,6 @@ export type ColorGradiante = {
  * En el HTML se pueden asignar los siguientes parámetros:
  * - color1: HEX o rgb()
  * - color2: HEX o rgb()
- * - color3: HEX o rgb()
  * - velocidad: velocidad de CSS, por ejemplo: '2s'
  *
  * @Ejemplo
@@ -22,6 +21,7 @@ export type ColorGradiante = {
  *
  * ```
  */
+
 export default () => {
   const relatos = document.querySelectorAll<HTMLDivElement>('.relato');
 
@@ -32,7 +32,7 @@ export default () => {
     const contenedorFondo = document.body;
     const velocidad = seccion.dataset.velocidad || '2s';
     const parrafos = seccion.querySelectorAll<HTMLParagraphElement>('p');
-    const { color1, color2, color3 } = seccion.dataset;
+    const { color1, color2 } = seccion.dataset;
 
     parrafos.forEach((parrafo) => {
       Object.assign(parrafo.style, {
@@ -52,14 +52,12 @@ export default () => {
       }
 
       if (enVista) {
-        contenedorFondo.style.transition = `--fondo1 ${velocidad},--fondo2 ${velocidad},--fondo3 ${velocidad}`;
-        contenedorFondo.style.setProperty('--fondo1', color1 ? color1 : null);
-        contenedorFondo.style.setProperty('--fondo2', color2 ? color2 : null);
-        contenedorFondo.style.setProperty('--fondo3', color3 ? color3 : null);
+        contenedorFondo.style.transition = `--fondo1 ${velocidad}, --fondo2 ${velocidad}`;
+        contenedorFondo.style.setProperty('--fondo1', color1 || '#000');
+        contenedorFondo.style.setProperty('--fondo2', color2 || '#000');
       } else {
         document.body.style.setProperty('--fondo1', null);
         document.body.style.setProperty('--fondo2', null);
-        document.body.style.setProperty('--fondo3', null);
       }
     };
 

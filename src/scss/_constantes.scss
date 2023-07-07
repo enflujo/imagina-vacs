@@ -1,22 +1,15 @@
 @property --fondo1 {
   syntax: '<color>';
   inherits: false;
-  initial-value: rgb(50, 29, 47, 1);
+  initial-value: #c9f0ff;
 }
 
 @property --fondo2 {
   syntax: '<color>';
   inherits: false;
-  initial-value: rgb(61, 46, 79, 1);
+  initial-value: #fff;
 }
 
-@property --fondo3 {
-  syntax: '<color>';
-  inherits: false;
-  initial-value: rgb(76, 95, 122, 1);
-}
-
-$fuenteTitulos: 'Nohemi', 'Brush Script MT', sans-serif;
 $fuenteSubtitulos: 'Nohemi', 'Brush Script MT', sans-serif;
 $fuenteTexto: 'Blinker', 'Arial', Arial, sans-serif;
 $fuenteEscribiendo: 'Chivo Mono', 'Segoe', monospace;
@@ -25,6 +18,7 @@ $fuenteTestimonio: 'Alegreya', 'Times New Roman', serif;
 $fuenteTabla: 'Blinker', 'Arial', Arial, sans-serif;
 
 :root {
+  --fuenteTitulos: 'Nohemi', 'Brush Script MT', sans-serif;
   //paleta 1
   --rosaIntenso: #fc6dab;
   --amarilloSol: #ffbc42;
@@ -43,12 +37,18 @@ $fuenteTabla: 'Blinker', 'Arial', Arial, sans-serif;
   //variables color
   --colorFondoTranquilo: var(--azulCielo);
 
-  --fondo1: rgb(50, 29, 47, 1);
-  --fondo2: rgb(61, 46, 79, 1);
-  --fondo3: rgb(76, 95, 122, 1);
+  --azulVaALlover: #0081a7;
+  --fondo1: #c9f0ff;
+  --fondo2: #fff;
+
+  // tamaños pantallas
 }
 
 @mixin fuenteRelato {
   font-family: $fuenteTestimonio;
   font-weight: 415;
 }
+
+$corte1: 450px;
+$corte2: 1000px;
+$corte3: 1300px;

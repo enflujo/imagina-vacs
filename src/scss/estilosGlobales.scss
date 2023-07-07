@@ -7,37 +7,41 @@
 
 @font-face {
   font-family: 'Blinker';
-  src: url('/fuentes/Blinker_variable_font.ttf') format('truetype-variations');
+  src: url('/especiales/vacs/fuentes/Blinker_variable_font.ttf') format('truetype-variations');
   font-weight: 1 900;
 }
 
 @font-face {
   font-family: 'Nohemi';
-  src: url('/fuentes/Nohemi-VF.ttf') format('truetype-variations');
+  src: url('/especiales/vacs/fuentes/Nohemi-VF.ttf') format('truetype-variations');
   font-weight: 1 900;
 }
 
 body {
-  font-family: $fuenteTexto;
-  background: --blancoNube;
-  color: --grisTexto;
-  background: linear-gradient(180deg, var(--fondo1) 0%, var(--fondo2) 50%, var(--fondo3) 100%);
+  background: var(--blancoNube);
+  background: linear-gradient(180deg, var(--fondo1) 0%, var(--fondo2) 20%, var(--fondo2) 80%, var(--fondo1) 100%);
   min-height: 100vh;
-  font-size: 1.125em;
-  line-height: 1.5em;
-  padding: 5em;
-  transition: --fondo1 0.3s, --fondo2 0.3s, --fondo3 0.3s;
+  transition: --fondo1 0.3s, --fondo2 0.3s;
 }
 
 a,
 a:link {
   color: #57c5b6;
+  text-decoration: none;
 }
 
 h1 {
   font-size: 4em;
   text-align: center;
   margin-bottom: 1em;
+}
+
+main {
+  font-family: $fuenteTexto;
+  color: var(--grisTexto);
+  font-size: 1.125em;
+  line-height: 1.5em;
+  padding-top: 10em;
 }
 
 .seccion {
@@ -72,16 +76,16 @@ h1 {
 }
 
 .relato {
-  background-color: rgba(210, 105, 30, 0.89);
   @include fuenteRelato();
   border-radius: 15px;
   padding: 1em;
   font-size: 1.1em;
-  min-height: 80vh;
-  font-size: 2em;
+  min-height: 100vh;
+  font-size: 3em;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: var(--blancoNube);
 }
 
 .resaltado {
@@ -127,7 +131,7 @@ h1 {
 
 .tituloProyecto {
   max-width: 1111px;
-  font-family: $fuenteTitulos;
+  font-family: var(--fuenteTitulos);
   margin: 4vh auto;
   padding: 0 4vw;
 }
