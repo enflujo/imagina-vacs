@@ -1,4 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import './constantes';
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0..1,0..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0..1,0..900&display=swap');
+
+@font-face {
+  font-family: 'Blinker';
+  src: url('../fuentes/Blinker_variable_font.ttf') format('truetype-variations');
+  font-weight: 1 900;
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  src: url('../fuentes/Nohemi-VF.ttf') format('truetype-variations');
+  font-weight: 1 900;
+}
 
 html {
   box-sizing: border-box;
@@ -19,8 +35,8 @@ body {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  background: rgb(50, 29, 47);
+  font-family: $fuenteTexto;
+  background: --moraAzul;
   background: linear-gradient(180deg, rgba(50, 29, 47, 1) 0%, rgba(61, 46, 79, 1) 50%, rgba(76, 95, 122, 1) 100%);
   color: #f6f1f1;
   min-height: 100vh;
@@ -88,9 +104,9 @@ h1 {
 
 .relato {
   background-color: rgba(210, 105, 30, 0.89);
+  font-family: $fuenteTestimonio;
   border-radius: 15px;
   padding: 1em;
-  font-style: italic;
   font-size: 1.1em;
 }
 
@@ -108,6 +124,7 @@ h1 {
 
 .grafica {
   width: fit-content;
+  font-family: $fuenteTabla;
   border: solid 1px rgb(137 123 153);
   padding: 0.5em;
   margin: 1em;
@@ -115,6 +132,7 @@ h1 {
 
 .escribiendo {
   text-decoration: blink;
+  font-family: $fuenteEscribiendo;
   // animation: openclose 5s ease-in-out;
   background-color: rgb(137 123 153);
   padding: 0.4em;
@@ -123,6 +141,7 @@ h1 {
 
 .destacado {
   font-size: 1.3em;
+  font-family: $fuenteDestacado;
   color: rgb(50, 29, 47);
   background-color: rgba(245, 186, 57, 0.836);
   padding: 0.5em;
@@ -136,6 +155,7 @@ h1 {
 
 .tituloProyecto {
   max-width: 1111px;
+  font-family: $fuenteTitulos;
   margin: 4vh auto;
   padding: 0 4vw;
 }
