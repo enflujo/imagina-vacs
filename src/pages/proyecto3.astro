@@ -1,4 +1,5 @@
 ---
+import Desliza from '@/componentes/Desliza.astro';
 import Menu from '@/componentes/Menu.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 ---
@@ -7,12 +8,14 @@ import Plantilla from '@/plantillas/Plantilla.astro';
   <Menu numeroProyecto={3} />
 
   <main id="proyecto3">
-    <section id="introduccion" class="seccion apagado">
-      <h1>
-        Trayectorias de maltrato: El impacto de la violencia en la infancia y adolescencia como predictor de ser víctima
-        y victimario en la adultez
-      </h1>
-      <h2 class="autores">Investigación: Mónica Tatiana Moreno Ángel y Joaquín Daniel Ramírez Cabarcas</h2>
+    <section id="introduccion" class="contenidoColumna alto100">
+      <h1 class="tituloProyecto">Trayectorias de maltrato</h1>
+      <h2 class="subtitulo">
+        El impacto de la violencia en la infancia y adolescencia como predictor de ser víctima y victimario en la
+        adultez
+      </h2>
+      <h3 class="autores">Investigación: Mónica Tatiana Moreno Ángel y Joaquín Daniel Ramírez Cabarcas</h3>
+      <Desliza />
     </section>
 
     <section class="columnas seccion apagado">

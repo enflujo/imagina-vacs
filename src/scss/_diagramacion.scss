@@ -8,8 +8,19 @@
 }
 
 .tituloProyecto {
-  font-size: 3.5em;
+  font-size: 2.3em;
   margin-bottom: 0.3em;
+}
+
+.subtitulo {
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.autores {
+  margin-top: 1em;
+  font-weight: 400;
 }
 
 @media screen and (min-width: $corte3) {
@@ -18,6 +29,6 @@
   }
 
   .tituloProyecto {
-    font-size: 7em;
+    font-size: 5em;
   }
 }

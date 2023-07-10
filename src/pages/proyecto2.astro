@@ -1,4 +1,5 @@
 ---
+import Desliza from '@/componentes/Desliza.astro';
 import Menu from '@/componentes/Menu.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 ---
@@ -7,11 +8,11 @@ import Plantilla from '@/plantillas/Plantilla.astro';
   <Menu numeroProyecto={2} />
 
   <main id="proyecto2">
-    <section id="introduccion" class="seccion apagado">
-      <h1 class="tiutlo">
-        Experiencias Adversas en la Infancia: Estudio Comparativo de Colombia, Honduras y El Salvador
-      </h1>
-      <h2 class="autores">Investigación: Jorge Leonardo Rodríguez Arenas y Julián David López Céspedes</h2>
+    <section id="introduccion" class="contenidoColumna alto100">
+      <h1 class="tituloProyecto">Experiencias Adversas en la Infancia</h1>
+      <h2 class="subtitulo">Estudio Comparativo de Colombia, Honduras y El Salvador</h2>
+      <h3 class="autores">Investigación: Jorge Leonardo Rodríguez Arenas y Julián David López Céspedes</h3>
+      <Desliza />
     </section>
 
     <section class="columnas seccion apagado" id="aes">
@@ -163,14 +164,6 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 </Plantilla>
 
 <style lang="scss">
-  h1 {
-    font-size: 5em;
-    text-align: center;
-    margin-bottom: 1em;
-    max-width: 1111px;
-    margin: 0 auto 24px;
-  }
-
   // Borrar eventualmente esta clase
   .comentario {
     color: rgb(216, 213, 37);
