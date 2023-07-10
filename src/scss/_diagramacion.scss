@@ -7,8 +7,17 @@
   margin: 0 auto;
 }
 
+.tituloProyecto {
+  font-size: 3.5em;
+  margin-bottom: 0.3em;
+}
+
 @media screen and (min-width: $corte3) {
   .contenidoColumna {
     max-width: $corte3;
+  }
+
+  .tituloProyecto {
+    font-size: 7em;
   }
 }

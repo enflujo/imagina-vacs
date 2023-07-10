@@ -1,4 +1,5 @@
 ---
+import Desliza from '@/componentes/Desliza.astro';
 import Glosario from '@/componentes/Glosario.astro';
 import Mapa from '@/componentes/Mapa.astro';
 import Menu from '@/componentes/Menu.astro';
@@ -11,10 +12,8 @@ import Plantilla from '@/plantillas/Plantilla.astro';
   <main id="paginaIntroduccion">
     <section id="inicio" class="alto100 contenidoColumna">
       <h1>Un título relajado pero conmovedor</h1>
-
       <h2>Identificando violencias para no repetirlas</h2>
-
-      <div class="deslizaHaciaAbajo">Desliza hacia abajo <span></span><span></span><span></span></div>
+      <Desliza />
     </section>
 
     <section id="introduccion" class="seccion">
@@ -233,7 +232,6 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       #inicio {
         h1 {
           font-size: 7em;
-          margin-bottom: 0.3em;
         }
         h2 {
           font-weight: 300;

@@ -37,6 +37,15 @@ p {
   line-height: 1.2;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+  font-family: var(--fuenteTitulos);
+}
+
 h1 {
   font-size: 4em;
   margin-bottom: 1em;

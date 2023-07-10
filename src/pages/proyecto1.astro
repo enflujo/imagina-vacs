@@ -1,5 +1,6 @@
 ---
 import Menu from '@/componentes/Menu.astro';
+import Desliza from '@/componentes/Desliza.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 ---
 
@@ -7,10 +8,14 @@ import Plantilla from '@/plantillas/Plantilla.astro';
   <Menu numeroProyecto={1} />
 
   <main id="proyecto1">
-    <section id="introduccion" class="seccion apagado">
+    <section id="introduccion" class="contenidoColumna alto100">
       <h1 class="tituloProyecto">La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
       <h2 class="autores">Investigación: Karla ??? y Catalina ???</h2>
 
+      <Desliza />
+    </section>
+
+    <section>
       <p class="narracion">
         La Comisión de la Verdad, en el capítulo “<a
           href="https://www.comisiondelaverdad.co/no-es-un-mal-menor"
@@ -473,12 +478,6 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 
 <style lang="scss" is:global>
   #proyecto1 {
-    h1 {
-      font-size: 7em;
-      margin-bottom: 1em;
-      line-height: 1em;
-    }
-
     .seccion {
       transition: opacity 1.6s ease-out;
       transition-delay: 250ms;
@@ -506,11 +505,6 @@ import Plantilla from '@/plantillas/Plantilla.astro';
     }
 
     #introduccion {
-      margin: 4vh auto;
-      padding: 0 4vw;
-      min-height: 100vh;
-      max-width: 1000px;
-
       #mal {
         color: rgb(224, 169, 222);
         display: inline-block;

@@ -3,9 +3,6 @@
 @import './normalizar';
 @import './diagramacion';
 
-// Componentes individuales
-@import './componentes/desliza';
-
 @property --fondo1 {
   syntax: '<color>';
   inherits: false;
@@ -174,13 +171,6 @@ section {
 .navegacion {
   display: flex;
   justify-content: space-between;
-}
-
-.tituloProyecto {
-  max-width: 1111px;
-  font-family: var(--fuenteTitulos);
-  margin: 4vh auto;
-  padding: 0 4vw;
 }
 
 // Borrar eventualmente esta clase
