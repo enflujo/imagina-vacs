@@ -1,0 +1,14 @@
+.alto100 {
+  min-height: 100vh;
+}
+
+.contenidoColumna {
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: $corte3) {
+  .contenidoColumna {
+    max-width: $corte3;
+  }
+}

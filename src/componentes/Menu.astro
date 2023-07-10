@@ -1,25 +1,67 @@
 ---
 import { rutaBase, rutas } from '@/utilidades/constantes';
+export interface Props {
+  // Número del proyecto
+  numeroProyecto: number;
+}
+
+const { numeroProyecto } = Astro.props;
+const conAnterior = numeroProyecto !== 0;
+const urlAnterior = numeroProyecto > 1 ? `${rutas[numeroProyecto - 2].ruta}` : rutaBase;
+const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ruta}` : rutaBase;
 ---
 
 <nav id="menu">
   <div id="encabezado">
-    <a class="enlace" href=`${rutaBase}`>Menú</a>
-    <p id="historias">Historias <span class="flecha anterior"></span><span class="flecha siguiente"></span></p>
+    <p class="enlaceMenu" id="botonMenu">Menú</p>
+    <div class="historias">
+      <p>Historias</p>
+      <a class=`botonNavegar anterior${!conAnterior ? ' inactivo': ''}` href=`${urlAnterior}`></a>
+      <a class="botonNavegar siguiente" href=`${urlSiguiente}`></a>
+    </div>
   </div>
 
   <ul id="lista">
-    {
-      rutas.map((proyecto) => {
-        return (
-          <li>
-            <a href={`${proyecto.ruta}`}>{proyecto.nombre}</a>
-          </li>
-        );
-      })
-    }
+    <li><a href={`${rutaBase}`}>Inicio</a></li>
+    <ul>
+      <h3>Historias</h3>
+      {
+        rutas.map((proyecto) => {
+          return (
+            <li>
+              <a class="enlaceHistoria" href={`${proyecto.ruta}`}>
+                {proyecto.nombre}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+
+    <li><a href={`${rutaBase}creditos`}>Créditos</a></li>
+    <li><a href={`${rutaBase}glosario`}>Glosario</a></li>
   </ul>
 </nav>
+
+<script>
+  const contenedorMenu = document.getElementById('menu');
+  const botonMenu = document.getElementById('botonMenu');
+  const lista = document.getElementById('lista');
+
+  botonMenu.onclick = () => {
+    lista.classList.toggle('visible');
+  };
+
+  document.body.addEventListener('click', clicFuera);
+
+  function clicFuera(evento: MouseEvent) {
+    const elemento = evento.target as HTMLElement;
+
+    if (!(contenedorMenu === elemento || contenedorMenu.contains(elemento))) {
+      lista.classList.remove('visible');
+    }
+  }
+</script>
 
 <style lang="scss">
   @import '@/scss/constantes';
@@ -33,44 +75,26 @@ import { rutaBase, rutas } from '@/utilidades/constantes';
     left: 50%;
     transform: translateX(-50%);
 
-    #encabezado {
-      font-weight: 650;
-      font-size: 1.3em;
-      justify-content: space-between;
-
-      p {
-        margin: 0;
-        line-height: 1;
-      }
-
-      #historias {
-        .flecha {
-          background-image: url(/especiales/vacs/iconos/flecha.svg);
-          background-repeat: no-repeat;
-          width: 21px;
-          height: 21px;
-          display: inline-block;
-          vertical-align: top;
-
-          &:hover {
-            opacity: 0.5;
-          }
-
-          &.anterior {
-            transform: rotate(180deg);
-            margin-right: 8px;
-          }
-        }
-      }
-    }
-
     a,
     a:link {
       color: var(--grisTexto);
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        opacity: 0.75;
+        opacity: 0.6;
+      }
+    }
+
+    p {
+      margin: 0;
+      line-height: 1;
+    }
+
+    .enlaceMenu {
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.6;
       }
     }
   }
@@ -78,18 +102,74 @@ import { rutaBase, rutas } from '@/utilidades/constantes';
   #encabezado {
     display: flex;
     flex-direction: row;
+    font-weight: 650;
+    font-size: 1.3em;
+    justify-content: space-between;
+  }
+
+  .historias {
+    display: flex;
+
+    p {
+      padding-right: 0.5em;
+      font-weight: 500;
+    }
+
+    .botonNavegar {
+      background-image: url(/especiales/vacs/iconos/flecha.svg);
+      background-color: #efefef;
+      background-repeat: no-repeat;
+      background-size: 70%;
+      background-position: center;
+      width: 21px;
+      height: 21px;
+      display: inline-block;
+      vertical-align: top;
+      transform: rotate(270deg);
+
+      &:hover {
+        opacity: 0.3;
+      }
+
+      &.anterior {
+        transform: rotate(90deg);
+        margin-right: 8px;
+      }
+
+      &.inactivo {
+        display: none;
+      }
+    }
   }
 
   #lista {
     display: none;
     position: absolute;
     background-color: white;
-    list-style: none;
-    margin: 0;
+    margin: 1.1em 0 0;
     padding: 1em 0.5em 1em 0.5em;
-    width: calc(100% - 10em);
+    width: calc(100%);
     li {
       margin: 0.5em 0;
+      font-weight: 500;
+    }
+
+    &.visible {
+      display: block;
+    }
+
+    .enlaceHistoria {
+      padding-left: 0.3em;
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-right: 5px;
+        background-color: var(--azulVaALlover);
+      }
     }
   }
 

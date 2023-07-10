@@ -1,12 +1,10 @@
 ---
 import Menu from '@/componentes/Menu.astro';
-import NavegadorProyectos from '@/componentes/NavegadorProyectos.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 ---
 
 <Plantilla titulo="VACS">
-  <NavegadorProyectos numeroProyecto={3} />
-  <Menu />
+  <Menu numeroProyecto={3} />
 
   <main id="proyecto3">
     <section id="introduccion" class="seccion apagado">
@@ -177,6 +175,4 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       </div>
     </section>
   </main>
-
-  <NavegadorProyectos numeroProyecto={3} />
 </Plantilla>
