@@ -1,12 +1,10 @@
 ---
 import Menu from '@/componentes/Menu.astro';
-import NavegadorProyectos from '@/componentes/NavegadorProyectos.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 ---
 
 <Plantilla titulo="VACS">
-  <NavegadorProyectos numeroProyecto={1} />
-  <Menu />
+  <Menu numeroProyecto={1} />
 
   <main id="proyecto1">
     <section id="introduccion" class="seccion apagado">
@@ -182,7 +180,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 
         <p class="escribiendo">En el informe de la Comisión hay relatos como este:</p>
 
-        <div class="relato" data-color1="#19DB69" data-color2="#FFF" data-color3="#000" data-velocidad="5s">
+        <div class="relato" data-color1="#19DB69" data-color2="#353547" data-velocidad="5s">
           <p>
             Nosotros nos quedábamos solos y el vecino de al lado se masturbaba delante de mí y a mí me daba miedo
             decirle a mi tío, al hermano de mi mamá, porque él me pegaba y me maltrataba mucho… Yo tenía ocho años
@@ -386,8 +384,6 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       </div>
     </div>
   </main>
-
-  <NavegadorProyectos numeroProyecto={1} />
 </Plantilla>
 
 <script>
@@ -479,7 +475,6 @@ import Plantilla from '@/plantillas/Plantilla.astro';
   #proyecto1 {
     h1 {
       font-size: 7em;
-      text-align: center;
       margin-bottom: 1em;
       line-height: 1em;
     }

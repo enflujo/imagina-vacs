@@ -1,11 +1,21 @@
 ---
 import Mapa from '@/componentes/Mapa.astro';
+import Menu from '@/componentes/Menu.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 ---
 
 <Plantilla titulo="VACS">
+  <Menu numeroProyecto={0} />
+
   <main id="paginaIntroduccion">
-    <h1>Un título relajado pero conmovedor</h1>
+    <section id="inicio" class="alto100 contenidoColumna">
+      <h1>Un título relajado pero conmovedor</h1>
+
+      <h2>Identificando violencias para no repetirlas</h2>
+
+      <div class="deslizaHaciaAbajo">Desliza hacia abajo <span></span><span></span><span></span></div>
+    </section>
+
     <section id="introduccion" class="seccion">
       <h2>Violencias contra niños y jóvenes</h2>
       <div>
@@ -200,69 +210,67 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 
 <script></script>
 
-<style lang="scss">
-  .ampliar {
-    color: #57c5b6;
-    cursor: pointer;
-  }
-
-  .ampliacion {
-    display: none;
-
-    &.visible {
-      display: block;
+<style is:global lang="scss">
+  @import '@/scss/constantes';
+  #paginaIntroduccion {
+    .ampliar {
+      color: #57c5b6;
+      cursor: pointer;
     }
-  }
 
-  #pdet {
-    position: relative;
-    width: 30vw;
-    border: #f6f1f1 solid 4px;
-    padding: 1em;
-    background-color: rgb(196, 160, 229);
-    color: rgb(50, 29, 47);
+    .ampliacion {
+      display: none;
 
-    a {
-      color: white;
+      &.visible {
+        display: block;
+      }
     }
-  }
-  #glosarioViolencias {
-    li {
-      padding-bottom: 0em;
-    }
-  }
 
-  #contenedorEnlaces {
-    display: flex;
-    justify-content: space-between;
-    width: 80vw;
-  }
-
-  .enlace {
-    border: 1px white solid;
-    text-align: center;
-    padding: 0.5em;
-    margin: 1em;
-    border-radius: 15px;
-
-    &:hover {
+    #pdet {
+      position: relative;
+      width: 30vw;
+      border: #f6f1f1 solid 4px;
+      padding: 1em;
       background-color: rgb(196, 160, 229);
       color: rgb(50, 29, 47);
+
+      a {
+        color: white;
+      }
     }
-  }
-
-  .doble {
-    display: flex;
-
-    .seccion {
-      flex-basis: 50%;
-      position: relative;
+    #glosarioViolencias {
+      li {
+        padding-bottom: 0em;
+      }
     }
-  }
-</style>
 
-<style is:global lang="scss">
-  #paginaIntroduccion {
+    #contenedorEnlaces {
+      display: flex;
+      justify-content: space-between;
+      width: 80vw;
+    }
+
+    .enlace {
+      border: 1px white solid;
+      text-align: center;
+      padding: 0.5em;
+      margin: 1em;
+      border-radius: 15px;
+
+      &:hover {
+        background-color: rgb(196, 160, 229);
+        color: rgb(50, 29, 47);
+      }
+    }
+
+    .doble {
+      display: flex;
+
+      .seccion {
+        flex-basis: 50%;
+        position: relative;
+      }
+    }
     .mapa {
       .municipio {
         fill: rgb(218, 241, 243);
@@ -276,18 +284,44 @@ import Plantilla from '@/plantillas/Plantilla.astro';
         }
       }
     }
-  }
 
-  // Borrar eventualmente esta clase
-  .comentario {
-    color: rgb(216, 213, 37);
-    font-weight: bold;
+    // Borrar eventualmente esta clase
+    .comentario {
+      color: rgb(216, 213, 37);
+      font-weight: bold;
 
-    &::before {
-      content: '(';
+      &::before {
+        content: '(';
+      }
+      &::after {
+        content: ')';
+      }
     }
-    &::after {
-      content: ')';
+
+    /** SECCIONES - Contenido */
+    #inicio {
+      h1 {
+        font-size: 3.5em;
+        margin-bottom: 0.3em;
+      }
+      h2 {
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1;
+      }
+    }
+
+    @media screen and (min-width: $corte3) {
+      #inicio {
+        h1 {
+          font-size: 7em;
+          margin-bottom: 0.3em;
+        }
+        h2 {
+          font-weight: 300;
+          font-size: 3em;
+        }
+      }
     }
   }
 </style>

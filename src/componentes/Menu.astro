@@ -1,3 +1,189 @@
-<nav>
-  <a class="enlace" href=`${import.meta.env.BASE_URL}`>inicio</a>
+---
+import { rutaBase, rutas } from '@/utilidades/constantes';
+export interface Props {
+  // Número del proyecto
+  numeroProyecto: number;
+}
+
+const { numeroProyecto } = Astro.props;
+const conAnterior = numeroProyecto !== 0;
+const urlAnterior = numeroProyecto > 1 ? `${rutas[numeroProyecto - 2].ruta}` : rutaBase;
+const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ruta}` : rutaBase;
+---
+
+<nav id="menu">
+  <div id="encabezado">
+    <p class="enlaceMenu" id="botonMenu">Menú</p>
+    <div class="historias">
+      <p>Historias</p>
+      <a class=`botonNavegar anterior${!conAnterior ? ' inactivo': ''}` href=`${urlAnterior}`></a>
+      <a class="botonNavegar siguiente" href=`${urlSiguiente}`></a>
+    </div>
+  </div>
+
+  <ul id="lista">
+    <li><a href={`${rutaBase}`}>Inicio</a></li>
+    <ul>
+      <h3>Historias</h3>
+      {
+        rutas.map((proyecto) => {
+          return (
+            <li>
+              <a class="enlaceHistoria" href={`${proyecto.ruta}`}>
+                {proyecto.nombre}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+
+    <li><a href={`${rutaBase}creditos`}>Créditos</a></li>
+    <li><a href={`${rutaBase}glosario`}>Glosario</a></li>
+  </ul>
 </nav>
+
+<script>
+  const contenedorMenu = document.getElementById('menu');
+  const botonMenu = document.getElementById('botonMenu');
+  const lista = document.getElementById('lista');
+
+  botonMenu.onclick = () => {
+    lista.classList.toggle('visible');
+  };
+
+  document.body.addEventListener('click', clicFuera);
+
+  function clicFuera(evento: MouseEvent) {
+    const elemento = evento.target as HTMLElement;
+
+    if (!(contenedorMenu === elemento || contenedorMenu.contains(elemento))) {
+      lista.classList.remove('visible');
+    }
+  }
+</script>
+
+<style lang="scss">
+  @import '@/scss/constantes';
+  #menu {
+    margin: 2em 1em;
+    font-family: var(--fuenteTitulos);
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--azulVaALlover);
+    position: fixed;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    a,
+    a:link {
+      color: var(--grisTexto);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    p {
+      margin: 0;
+      line-height: 1;
+    }
+
+    .enlaceMenu {
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  #encabezado {
+    display: flex;
+    flex-direction: row;
+    font-weight: 650;
+    font-size: 1.3em;
+    justify-content: space-between;
+  }
+
+  .historias {
+    display: flex;
+
+    p {
+      padding-right: 0.5em;
+      font-weight: 500;
+    }
+
+    .botonNavegar {
+      background-image: url(/especiales/vacs/iconos/flecha.svg);
+      background-color: #efefef;
+      background-repeat: no-repeat;
+      background-size: 70%;
+      background-position: center;
+      width: 21px;
+      height: 21px;
+      display: inline-block;
+      vertical-align: top;
+      transform: rotate(270deg);
+
+      &:hover {
+        opacity: 0.3;
+      }
+
+      &.anterior {
+        transform: rotate(90deg);
+        margin-right: 8px;
+      }
+
+      &.inactivo {
+        display: none;
+      }
+    }
+  }
+
+  #lista {
+    display: none;
+    position: absolute;
+    background-color: white;
+    margin: 1.1em 0 0;
+    padding: 1em 0.5em 1em 0.5em;
+    width: calc(100%);
+    li {
+      margin: 0.5em 0;
+      font-weight: 500;
+    }
+
+    &.visible {
+      display: block;
+    }
+
+    .enlaceHistoria {
+      padding-left: 0.3em;
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-right: 5px;
+        background-color: var(--azulVaALlover);
+      }
+    }
+  }
+
+  @media screen and (min-width: $corte1) {
+    #menu {
+      margin: 2em 5em;
+    }
+  }
+
+  @media screen and (min-width: $corte3) {
+    #menu {
+      max-width: $corte3;
+      margin: 2em 0;
+      display: block;
+    }
+  }
+</style>
