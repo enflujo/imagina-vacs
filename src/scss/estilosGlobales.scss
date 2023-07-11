@@ -69,7 +69,13 @@
 
 body {
   background: var(--blancoNube);
-  background: linear-gradient(180deg, var(--fondo1) 0%, var(--fondo2) 20%, var(--fondo2) 80%, var(--fondo1) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--fondo1) 0%,
+    var(--fondo2) 100vh,
+    var(--fondo2) calc(100% - 100vh),
+    var(--fondo1) 100%
+  );
   min-height: 100vh;
   transition: --fondo1 0.3s, --fondo2 0.3s;
 }
