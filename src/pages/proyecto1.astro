@@ -2,6 +2,7 @@
 import Menu from '@/componentes/Menu.astro';
 import Desliza from '@/componentes/Desliza.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
+import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
 ---
 
 <Plantilla titulo="VACS">
@@ -14,7 +15,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       <Desliza />
     </section>
 
-    <section>
+    <section class="contenidoColumna">
       <p class="narracion">
         La Comisión de la Verdad, en el capítulo "<a
           href="https://www.comisiondelaverdad.co/no-es-un-mal-menor"
@@ -84,9 +85,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           migrantes, la violencia es también un factor importante: cuarta causa de migración, tanto interna como externa.
         </p>
 
-        <div id="grafica1">
-          <p class="grafica">GRÁFICA 1.1: Causas de la migración</p>
-        </div>
+        <Grafica1 />
 
         <p class="escribiendo">
           En Colombia más de 9.500.000 personas fueron desplazadas por el conflicto armado entre 1985 y 2022.
@@ -398,10 +397,8 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 <script>
   import aparicionRelato from '@/ambages/aparicionRelato';
   import escritorAutomata from '@/ambages/escritorAutomata';
-  import proyecto1grafica1 from '@/graficas/proyecto1grafica1';
 
   const males = document.querySelectorAll<HTMLElement>('.mal');
-  proyecto1grafica1(document.getElementById('grafica1'));
   escritorAutomata();
   aparicionRelato();
 

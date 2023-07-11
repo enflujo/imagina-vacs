@@ -1,6 +1,6 @@
 const datos = {
+  infoIndicador: 'Personas que migraron debido a las BACRIM, conflicto armado y violencia.',
   info: [
-    'Violencia: Personas que migraron debido a las BACRIM, conflicto armado y violencia.',
     'Los datos corresponden a las respuestas de jóvenes entre los 14 y 18 años de ambas muestras: PDET y Colombia, que migraron en algún punto de sus vidas',
   ],
   pais: [

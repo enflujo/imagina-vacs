@@ -1,0 +1,58 @@
+---
+import Colombina from '@/componentes/Colombina.astro';
+import datos from '@/datos/migracionMenores18';
+---
+
+<section id="grafica1" class="grafica">
+  <h3>Causas de la migración</h3>
+
+  <div>
+    <h4 class="tituloGrafica">Migración a otro país</h4>
+
+    <div class="colombinas">
+      {
+        datos.pais.map((variable) => {
+          return (
+            <Colombina
+              datos={variable}
+              resaltado={variable.nombre === 'Violencia'}
+              info={variable.nombre === 'Violencia' ? datos.infoIndicador : null}
+              color={variable.nombre === 'Violencia' ? '#f5ba39d5' : '#000'}
+              alto={variable.nombre === 'Violencia' ? 15 : 4}
+            />
+          );
+        })
+      }
+    </div>
+
+    <h4 class="tituloGrafica">Migración entre municipios</h4>
+
+    <div class="colombinas">
+      {
+        datos.municipio.map((variable) => {
+          return (
+            <Colombina
+              datos={variable}
+              resaltado={variable.nombre === 'Violencia'}
+              color={variable.nombre === 'Violencia' ? '#f5ba39d5' : '#000'}
+              info={variable.nombre === 'Violencia' ? datos.infoIndicador : null}
+              alto={variable.nombre === 'Violencia' ? 15 : 4}
+            />
+          );
+        })
+      }
+    </div>
+  </div>
+
+  <p class="anotacionGrafica">{datos.info}</p>
+</section>
+
+<style lang="scss">
+  .tituloGrafica {
+    margin-top: 1em;
+  }
+
+  .colombinas {
+    margin: 0.5em 0 1em 0;
+  }
+</style>
