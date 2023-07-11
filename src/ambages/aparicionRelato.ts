@@ -8,13 +8,12 @@ export type ColorGradiante = {
 /**
  * A los elementos con clase `relato`, hace aparecer todos los `<p>` que tenga internamente. También cambia el color del fondo animando el gradiente.
  * En el HTML se pueden asignar los siguientes parámetros:
- * - color1: HEX o rgb()
- * - color2: HEX o rgb()
+ * - color: HEX o rgb()
  * - velocidad: velocidad de CSS, por ejemplo: '2s'
  *
  * @Ejemplo
  * ```html
- * <div class="relato" data-color1="#19DB69" data-color2="#FFF" data-color3="#000" data-volecidad="5s">
+ * <div class="relato" data-color="#FFF" data-volecidad="5s">
  *  <p>Este texto va a crecer apenas este visible el contenedor</p>
  *  <p>Este párrafo también</p>
  * </div>
@@ -32,7 +31,7 @@ export default () => {
     const contenedorFondo = document.body;
     const velocidad = seccion.dataset.velocidad || '2s';
     const parrafos = seccion.querySelectorAll<HTMLParagraphElement>('p');
-    const { color1, color2 } = seccion.dataset;
+    const { color } = seccion.dataset;
 
     parrafos.forEach((parrafo) => {
       Object.assign(parrafo.style, {
@@ -53,8 +52,8 @@ export default () => {
 
       if (enVista) {
         contenedorFondo.style.transition = `--fondo1 ${velocidad}, --fondo2 ${velocidad}`;
-        contenedorFondo.style.setProperty('--fondo1', color1 || '#000');
-        contenedorFondo.style.setProperty('--fondo2', color2 || '#000');
+        contenedorFondo.style.setProperty('--fondo1', color || '#000');
+        contenedorFondo.style.setProperty('--fondo2', color || '#000');
       } else {
         document.body.style.setProperty('--fondo1', null);
         document.body.style.setProperty('--fondo2', null);
