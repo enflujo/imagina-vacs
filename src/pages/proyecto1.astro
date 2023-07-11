@@ -83,7 +83,11 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           dentro y fuera de Colombia son la búsqueda de oportunidades económicas o laborales y la reunión con familiares
           migrantes, la violencia es también un factor importante: cuarta causa de migración, tanto interna como externa.
         </p>
-        <p class="grafica">GRÁFICA 1.1: Causas de la migración</p>
+
+        <div id="grafica1">
+          <p class="grafica">GRÁFICA 1.1: Causas de la migración</p>
+        </div>
+
         <p class="escribiendo">
           En Colombia más de 9.500.000 personas fueron desplazadas por el conflicto armado entre 1985 y 2022.
         </p>
@@ -394,8 +398,10 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 <script>
   import aparicionRelato from '@/ambages/aparicionRelato';
   import escritorAutomata from '@/ambages/escritorAutomata';
-  const males = document.querySelectorAll<HTMLElement>('.mal');
+  import proyecto1grafica1 from '@/graficas/proyecto1grafica1';
 
+  const males = document.querySelectorAll<HTMLElement>('.mal');
+  proyecto1grafica1(document.getElementById('grafica1'));
   escritorAutomata();
   aparicionRelato();
 
