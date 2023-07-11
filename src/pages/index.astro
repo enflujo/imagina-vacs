@@ -1,9 +1,9 @@
 ---
 import Desliza from '@/componentes/Desliza.astro';
-import Glosario from '@/componentes/Glosario.astro';
 import Mapa from '@/componentes/Mapa.astro';
 import Menu from '@/componentes/Menu.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
+import Glosario from '@/componentes/Glosario.astro';
 ---
 
 <Plantilla titulo="VACS">
@@ -16,7 +16,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       <Desliza />
     </section>
 
-    <section id="introduccion" class="seccion">
+    <section id="introduccion" class="seccion contenidoColumna">
       <h2>Violencias contra niños y jóvenes</h2>
       <div>
         <p>
@@ -38,7 +38,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       </div>
     </section>
 
-    <div class="doble">
+    <div class="contenidoColumna">
       <section id="evcnna" class="seccion medio">
         <h2>CONTEXTO</h2>
 
@@ -56,33 +56,21 @@ import Plantilla from '@/plantillas/Plantilla.astro';
             onclick="pdet.classList.toggle('visible')">Programas de Desarrollo con Enfoque Territorial (PDET)</span
           >.
         </p>
-        <div id="pdet" class="ampliacion">
-          Los Programas de Desarrollo con Enfoque Territorial (PDET) fueron creados por el acuerdo de paz de La Habana y
-          son un instrumento especial de planificación y gestión a 15 años, que tiene como objetivo estabilizar y
-          transformar los territorios más afectados por la violencia, la pobreza, las economías ilícitas y la debilidad
-          institucional, y así lograr el desarrollo rural que requieren estos 170 municipios. <a
-            href="https://www.eltiempo.com/politica/proceso-de-paz/pdet-significado-y-cuales-son-los-municipios-pdet-en-colombia-615965"
-          >
-            fuente</a
-          >
-        </div>
+
         <p>
           Las investigaciones que presentamos a continuación se basan en datos recopilados por la EVCNNA en Colombia
           (2018), Honduras (2017) y El Salvador (2017); la encuesta FORENSIS (2020) en Colombia, y el capítulo “No es un
           mal menor” del Informe Final de la Comisión de la Verdad (2022).
         </p>
-      </section>
 
-      <div id="mapa-pdet" class="seccion">
-        <Mapa alto={50} />
-      </div>
+        <p>
+          Para consultar las definiciones de los tipos de violencia y otros términos que se utilizan en estas
+          narraciones, consulte el <a href="./glosario">glosario</a>.
+        </p>
+      </section>
     </div>
 
-    <section id="glosarioViolencias" class="seccion">
-      <Glosario />
-    </section>
-
-    <div id="contenedorEnlaces">
+    <div id="contenedorEnlaces" class="contenidoColumna">
       <a class="enlace" href=`${import.meta.env.BASE_URL}proyecto1`
         >La huella del conflicto armado en la niñez y adolescencia colombianas</a
       >
@@ -95,7 +83,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       >
     </div>
 
-    <section>
+    <section class="contenidoColumna">
       <h3 style="border-top: 1px solid currentColor; margin-top:6em; padding-top:6em">CONCLUSIONES</h3>
       <p class="comentario">
         Anto: propongo una conclusión de este tipo. No sé aún dónde debería ir... . Juli: ¿y si es como una sección
@@ -135,31 +123,31 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       cursor: pointer;
     }
 
-    .ampliacion {
-      display: none;
+    // .ampliacion {
+    //   display: none;
 
-      &.visible {
-        display: block;
-      }
-    }
+    //   &.visible {
+    //     display: block;
+    //   }
+    // }
 
-    #pdet {
-      position: relative;
-      width: 30vw;
-      border: #f6f1f1 solid 4px;
-      padding: 1em;
-      background-color: rgb(196, 160, 229);
-      color: rgb(50, 29, 47);
+    // #pdet {
+    //   position: relative;
+    //   width: 30vw;
+    //   border: #f6f1f1 solid 4px;
+    //   padding: 1em;
+    //   background-color: rgb(196, 160, 229);
+    //   color: rgb(50, 29, 47);
 
-      a {
-        color: white;
-      }
-    }
-    #glosarioViolencias {
-      li {
-        padding-bottom: 0em;
-      }
-    }
+    //   a {
+    //     color: white;
+    //   }
+    // }
+    // #glosarioViolencias {
+    //   li {
+    //     padding-bottom: 0em;
+    //   }
+    // }
 
     #contenedorEnlaces {
       display: flex;
