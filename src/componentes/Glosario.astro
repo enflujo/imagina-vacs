@@ -1,32 +1,31 @@
-<div id="glosario">
-  <h2>Definiciones</h2>
+---
+import Mapa from './Mapa.astro';
+---
 
+<div id="glosario" class="contenido">
+  <h2 id="titulo">Glosario</h2>
+  <h3>Definiciones de violencias y maltratos</h3>
   <ul>
-    <li>
-      <h3>Violencia</h3>
+    <li id="violencia">
+      <h4>Violencia</h4>
       <p>
         La violencia es definida como “el uso intencional de la fuerza física o del poder, ya sea en grado de amenaza de
         ejecución real, ejercida contra uno mismo, contra otra persona, o contra un grupo o comunidad, siempre que la
         conducta produzca o tenga una alta probabilidad de producir lesiones, muerte, daño psicológico, trastornos en el
         desarrollo o privaciones”.
       </p>
-      <p>
-        Según la EVCNNA, en Colombia los castigos físicos y la violencia psicológica son prácticas comunes utilizadas
-        por los padres como forma de educación. Además, las normas sociales suelen justificar la violencia ejercida
-        dentro del hogar como un asunto privado y se espera que los niños se sometan a la voluntad de sus padres.
-      </p>
     </li>
 
-    <li>
-      <h3>Experiencias adversas en la infancia</h3>
+    <li id="aces">
+      <h4>Experiencias adversas en la infancia</h4>
       <p>
         También llamadas ACEs, por sus siglas en inglés. Eventos potencialmente traumáticos sufridos durante la infancia
-        y la juventud (como sufrir o presenciar abuso emocional, físico o sexual y disfunción del hogar en la infancia)
+        y la juventud (como sufrir o presenciar abuso emocional, físico o sexual y disfunción del hogar en la infancia).
       </p>
     </li>
 
-    <li>
-      <h3>Maltrato infantil y adolescente</h3>
+    <li id="maltratoInfantil">
+      <h4>Maltrato infantil y adolescente</h4>
       <p>
         Cualquier acto o serie de actos por parte de un padre, madre u otro cuidador que resulte en un daño, un
         potencial daño o una amenaza de daño. Las cuatro formas principales de maltrato son: físico, emocional o
@@ -38,18 +37,18 @@
       </p>
     </li>
 
-    <li>
-      <h3>Orfandad y/o separación parental</h3>
+    <li id="orfandad">
+      <h4>Orfandad y/o separación parental</h4>
       <p>Que el padre o madre haya fallecido; haber estado separado del padre o madre por 6 meses o más.</p>
     </li>
 
-    <li>
-      <h3>Violencia en la comunidad</h3>
-      <p>Haber visto a alguien ser atacado o haber sufrido violencia fuera de la casa o ambiente familiar.</p>
+    <li id="violenciaComunidad">
+      <h4>Violencia en la comunidad</h4>
+      <p>Haber sufrido violencia en la comunidad, fuera de la casa o ambiente familiar.</p>
     </li>
 
-    <li>
-      <h3>Violencia emocional</h3>
+    <li id="violenciaEmocional">
+      <h4>Violencia emocional</h4>
       <p>
         Que padres, tutores, o cuidadores le hayan dicho que no merecía ser querido, que hubiesen preferido que no
         hubiese nacido o estuviese muerto o haber sido menospreciado, ridiculizado o humillado por estos. Haber sido
@@ -58,8 +57,8 @@
       </p>
     </li>
 
-    <li>
-      <h3>Violencia física</h3>
+    <li id="violenciaFisica">
+      <h4>Violencia física</h4>
       <p>
         Haber sido abofeteado, empujado, sacudido, golpeado con un objeto, pateado, estrangulado, asfixiado, ahogado,
         quemado, amenazado con armas blancas o de fuego intencionalmente por una persona de la misma edad, la pareja,
@@ -67,8 +66,8 @@
       </p>
     </li>
 
-    <li>
-      <h3>Violencia intrafamiliar (VIF) o doméstica</h3>
+    <li id="violenciaIntrafamiliar">
+      <h4>Violencia intrafamiliar (VIF) o doméstica</h4>
       <p>
         Toda acción u omisión cometida por algún miembro de la familia en relación de poder, sin importar el espacio
         físico donde ocurra, que perjudique el bienestar, la integridad física, psicológica o la libertad y el derecho
@@ -76,8 +75,8 @@
       </p>
     </li>
 
-    <li>
-      <h3>Violencia sexual</h3>
+    <li id="violenciaSexual">
+      <h4>Violencia sexual</h4>
       <p>
         Haber recibido el ofrecimiento de apoyo económico o material a cambio de relaciones sexuales; haber recibido
         tocamientos de manera sexual y no consentida sin concluir en relaciones sexuales; haber sido presionado a tener
@@ -87,18 +86,94 @@
       </p>
     </li>
 
-    <li>
-      <h3>Presenciar violencia en el hogar</h3>
+    <li id="testigoViolenciaHogar">
+      <h4>Ser testigo de violencia en el hogar</h4>
+      <p>Haber presenciado violencia intrafamiliar en el hogar.</p>
+    </li>
+
+    <li id="testigoViolenciaComunidad">
+      <h4>Ser testigo de violencia en la comunidad</h4>
+      <p>Haber presenciado violencia en la comunidad.</p>
+    </li>
+  </ul>
+
+  <h3>Otras definiciones</h3>
+  <div id="botonCerrar">X</div>
+  <ul>
+    <li id="pdet">
+      <h4>Programas de Desarrollo con Enfoque Territorial (PDET)</h4>
       <p>
-        Haber visto u oído a la madre o madrastra ser golpeada por el padre o padrastro; haber visto a los padres
-        golpear a los hermanos o hermanas.
+        Fuerton creados por el acuerdo de paz de La Habana como un instrumento especial de planificación y gestión a 15
+        años. Su objetivo es estabilizar y transformar los territorios más afectados por la violencia, la pobreza, las
+        economías ilícitas y la debilidad institucional, y así lograr el desarrollo rural que requieren estos 170
+        municipios. <a
+          href="https://www.eltiempo.com/politica/proceso-de-paz/pdet-significado-y-cuales-son-los-municipios-pdet-en-colombia-615965"
+        >
+          (Fuente)</a
+        >)
       </p>
+      <div id="mapa-pdet" class="seccion">
+        <Mapa alto={50} />
+      </div>
+
+      <li id="evcnna">
+        <h4>EVCNNA: Encuesta de Violencia contra Niños, Niñas y Adolescentes</h4>
+        <p>
+          En 2018 Colombia realizó por primera vez la Encuesta de Violencia contra Niños, Niñas y Adolescentes, que fue
+          parte de la estrategia INSPIRE de la Organización Mundial de la Salud para prevenir la violencia infantil. Su
+          objetivo era medir la prevalencia y las circunstancias alrededor de la violencia sexual, física y psicológica
+          durante la infancia, adolescencia y la adultez temprana. La encuesta se aplicó a dos grupos de jóvenes entre
+          los 14 y 24 años: una muestra nacional y otra de municipios históricamente afectados por la violencia, que
+          están cubiertos por los Programas de Desarrollo con Enfoque Territorial (PDET).
+        </p>
+      </li>
     </li>
   </ul>
 </div>
 
+<script>
+  const glosario = document.getElementById('glosario');
+
+  // Cerrar el glosario con click afuera
+  function clicFuera(evento: MouseEvent) {
+    const elemento = evento.target as HTMLElement;
+
+    if (elemento.id === 'botonGlosario') {
+      return;
+    }
+
+    if (!(glosario === elemento || glosario.contains(elemento) || elemento.classList.contains('abrirGlosario'))) {
+      glosario.classList.remove('visible');
+    }
+  }
+
+  document.body.addEventListener('click', clicFuera);
+</script>
+
 <style lang="scss">
   #glosario {
-    max-width: 80%;
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    left: 0;
+    background-color: #c9f0fff2;
+    width: 55%;
+    height: 100%;
+    padding: 7em 16em;
+    z-index: 1;
+    visibility: hidden;
+
+    h3,
+    h4 {
+      margin-top: 2em;
+    }
+
+    p {
+      margin: 0.5em 0;
+    }
+
+    &.visible {
+      visibility: visible;
+    }
   }
 </style>

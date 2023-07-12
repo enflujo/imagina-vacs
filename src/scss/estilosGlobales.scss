@@ -86,7 +86,8 @@ a:link {
   text-decoration: none;
 }
 
-main {
+main,
+.contenido {
   font-family: var(--fuenteTexto);
   color: var(--grisTexto);
   font-size: 1.125em;
@@ -176,4 +177,18 @@ main {
 .anotacionGrafica {
   font-style: italic;
   font-size: 0.9em;
+}
+
+.mapa {
+  .municipio {
+    fill: rgb(218, 241, 243);
+    shape-rendering: geometricPrecision;
+    stroke: rgba(149, 216, 222, 0.736);
+    stroke-width: 0.8px;
+
+    &.pdet {
+      fill: rgb(230, 102, 95);
+      stroke: rgba(229, 169, 169, 0.791);
+    }
+  }
 }

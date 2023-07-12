@@ -1,9 +1,7 @@
 ---
 import Desliza from '@/componentes/Desliza.astro';
-import Mapa from '@/componentes/Mapa.astro';
 import Menu from '@/componentes/Menu.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
-import Glosario from '@/componentes/Glosario.astro';
 ---
 
 <Plantilla titulo="VACS">
@@ -44,28 +42,29 @@ import Glosario from '@/componentes/Glosario.astro';
 
         <h3>Encuesta de Violencia contra Niños, Niñas y Adolescentes</h3>
         <p>
-          En 2018 Colombia realizó por primera vez la Encuesta de Violencia contra Niños, Niñas y Adolescentes (EVCNNA),
-          que fue parte de la estrategia INSPIRE de la Organización Mundial de la Salud para prevenir la violencia
+          En 2018 Colombia realizó por primera vez la Encuesta de Violencia contra Niños, Niñas y Adolescentes <span
+            class="abrirGlosario">(EVCNNA)</span
+          >, que fue parte de la estrategia INSPIRE de la Organización Mundial de la Salud para prevenir la violencia
           infantil. Su objetivo era medir la prevalencia y las circunstancias alrededor de la violencia sexual, física y
           psicológica durante la infancia, adolescencia y la adultez temprana.
         </p>
         <p>
           La encuesta se aplicó a dos grupos de jóvenes entre los 14 y 24 años: una muestra nacional y otra de
-          municipios históricamente afectados por la violencia, que están cubiertos por los <span
-            class="ampliar"
-            onclick="pdet.classList.toggle('visible')">Programas de Desarrollo con Enfoque Territorial (PDET)</span
-          >.
+          municipios históricamente afectados por la violencia, que están cubiertos por los Programas de Desarrollo con
+          Enfoque Territorial <span class="abrirGlosario">(PDET)</span>
+          .
+        </p>
+
+        <p>
+          Según la EVCNNA, en Colombia los castigos físicos y la violencia psicológica son prácticas comunes utilizadas
+          por los padres como forma de educación. Además, las normas sociales suelen justificar la violencia ejercida
+          dentro del hogar como un asunto privado y se espera que los niños se sometan a la voluntad de sus padres.
         </p>
 
         <p>
           Las investigaciones que presentamos a continuación se basan en datos recopilados por la EVCNNA en Colombia
           (2018), Honduras (2017) y El Salvador (2017); la encuesta FORENSIS (2020) en Colombia, y el capítulo “No es un
           mal menor” del Informe Final de la Comisión de la Verdad (2022).
-        </p>
-
-        <p>
-          Para consultar las definiciones de los tipos de violencia y otros términos que se utilizan en estas
-          narraciones, consulte el <a href="./glosario">glosario</a>.
         </p>
       </section>
     </div>
@@ -113,7 +112,19 @@ import Glosario from '@/componentes/Glosario.astro';
   </main>
 </Plantilla>
 
-<script></script>
+<script>
+  const glosario = document.getElementById('glosario');
+  const terminosGlosario = document.getElementsByClassName('abrirGlosario');
+
+  // Función para abrir el glosario cuando aparece un término que esté definido allá
+  const abrirGlosario = function () {
+    glosario.classList.toggle('visible');
+  };
+
+  for (var i = 0; i < terminosGlosario.length; i++) {
+    terminosGlosario[i].addEventListener('click', abrirGlosario, false);
+  }
+</script>
 
 <style is:global lang="scss">
   @import '@/scss/constantes';
@@ -187,6 +198,14 @@ import Glosario from '@/componentes/Glosario.astro';
           fill: rgb(230, 102, 95);
           stroke: rgba(229, 169, 169, 0.791);
         }
+      }
+    }
+
+    .abrirGlosario {
+      cursor: pointer;
+      color: #57c5b6;
+      &:hover {
+        font-weight: 700;
       }
     }
 
