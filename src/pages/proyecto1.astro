@@ -3,6 +3,7 @@ import Menu from '@/componentes/Menu.astro';
 import Desliza from '@/componentes/Desliza.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
+import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
 ---
 
 <Plantilla titulo="VACS">
@@ -32,6 +33,25 @@ import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
           secuestro; de 1990 a 2017, 16.238 fueron reclutados por grupos armados y de 1985 a 2019, 3.049.527 fueron
           víctimas de desplazamiento forzado
         </div> -->
+    </section>
+
+    <section>
+      <Puntos
+        cantidad={64084}
+        fechaInicio="1985"
+        fechaFin="2018"
+        texto="niñas, niños y adolescentes perdieron la vida por el conflicto."
+      />
+
+      <Puntos cantidad={28192} fechaInicio="1985" fechaFin="2016" texto="fueron desaparecidos de manera forzada." />
+      <Puntos cantidad={6496} fechaInicio="1990" fechaFin="2018" texto="sufrieron secuestro." />
+      <Puntos cantidad={16238} fechaInicio="1990" fechaFin="2017" texto="fueron reclutados por grupos armados." />
+      <Puntos
+        cantidad={3049527}
+        fechaInicio="1985"
+        fechaFin="2019"
+        texto="fueron víctimas de desplazamiento forzado."
+      />
 
       <div class="grafica">Más de 64.084 niñas, niños y adolescentes perdieron la vida por el conflicto.</div>
 
