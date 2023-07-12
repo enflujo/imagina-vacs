@@ -140,7 +140,7 @@ import Mapa from './Mapa.astro';
   function clicFuera(evento: MouseEvent) {
     const elemento = evento.target as HTMLElement;
 
-    if (!(glosario === elemento || contenedorMenu.contains(elemento))) {
+    if (!(glosario === elemento || contenedorMenu.contains(elemento) || elemento.classList.contains('abrirGlosario'))) {
       glosario.classList.remove('visible');
     }
   }
