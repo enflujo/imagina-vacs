@@ -14,6 +14,7 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
 <nav id="menu">
   <div id="encabezado">
     <p class="enlaceMenu" id="botonMenu">Menú</p>
+    <p id="botonGlosario" class="enlaceMenu"><a href="#glosario">Glosario</a></p>
     <div class="historias">
       <p>Historias</p>
       <a class=`botonNavegar anterior${!conAnterior ? ' inactivo': ''}` href=`${urlAnterior}`></a>
@@ -45,10 +46,16 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
 <script>
   const contenedorMenu = document.getElementById('menu');
   const botonMenu = document.getElementById('botonMenu');
+  const botonGlosario = document.getElementById('botonGlosario');
   const lista = document.getElementById('lista');
+  const glosario = document.getElementById('glosario');
 
   botonMenu.onclick = () => {
     lista.classList.toggle('visible');
+  };
+
+  botonGlosario.onclick = () => {
+    glosario.classList.toggle('visible');
   };
 
   document.body.addEventListener('click', clicFuera);

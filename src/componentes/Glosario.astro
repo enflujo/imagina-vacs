@@ -1,24 +1,20 @@
 ---
+import { rutaBase } from '@/utilidades/constantes';
 import Mapa from './Mapa.astro';
 ---
 
-<div id="glosario" class="contenidoColumna">
+<main id="glosario">
   <h2 id="titulo">Glosario</h2>
-
+  <div id="botonCerrar"><a>X</a></div>
   <h3>Definiciones de violencias y maltratos</h3>
   <ul>
     <li id="violencia">
       <h4>Violencia</h4>
       <p>
         La violencia es definida como “el uso intencional de la fuerza física o del poder, ya sea en grado de amenaza de
-        ejecución real, ejercida contra uno mismmargin-top: 10em;o, contra otra persona, o contra un grupo o comunidad,
-        siempre que la conducta produzca o tenga una alta probabilidad de producir lesiones, muerte, daño psicológico,
-        trastornos en el desarrollo o privaciones”.
-      </p>
-      <p>
-        Según la EVCNNA, en Colombia los castigos físicos y la violencia psicológica son prácticas comunes utilizadas
-        por los padres como forma de educación. Además, las normas sociales suelen justificar la violencia ejercida
-        dentro del hogar como un asunto privado y se espera que los niños se sometan a la voluntad de sus padres.
+        ejecución real, ejercida contra uno mismo, contra otra persona, o contra un grupo o comunidad, siempre que la
+        conducta produzca o tenga una alta probabilidad de producir lesiones, muerte, daño psicológico, trastornos en el
+        desarrollo o privaciones”.
       </p>
     </li>
 
@@ -106,16 +102,16 @@ import Mapa from './Mapa.astro';
   <h3>Otras definiciones</h3>
   <ul>
     <li id="pdet">
-      <h4>Municipios PDET</h4>
+      <h4>Programas de Desarrollo con Enfoque Territorial (PDET)</h4>
       <p>
-        Municipios incluídos dentro de los Programas de Desarrollo con Enfoque Territorial (PDET), creados por el
-        acuerdo de paz de La Habana como un instrumento especial de planificación y gestión a 15 años. Su objetivo es
-        estabilizar y transformar los territorios más afectados por la violencia, la pobreza, las economías ilícitas y
-        la debilidad institucional, y así lograr el desarrollo rural que requieren estos 170 municipios. <a
+        Fuerton creados por el acuerdo de paz de La Habana como un instrumento especial de planificación y gestión a 15
+        años. Su objetivo es estabilizar y transformar los territorios más afectados por la violencia, la pobreza, las
+        economías ilícitas y la debilidad institucional, y así lograr el desarrollo rural que requieren estos 170
+        municipios. <a
           href="https://www.eltiempo.com/politica/proceso-de-paz/pdet-significado-y-cuales-son-los-municipios-pdet-en-colombia-615965"
         >
-          fuente</a
-        >
+          (Fuente)</a
+        >)
       </p>
       <div id="mapa-pdet" class="seccion">
         <Mapa alto={50} />
@@ -134,15 +130,51 @@ import Mapa from './Mapa.astro';
       </li>
     </li>
   </ul>
+</main>
 
-  <style lang="scss">
-    #glosario {
-      max-width: 80%;
-      padding-top: 12em;
+<script>
+  const botonCerrar = document.getElementById('botonCerrar');
+  const glosario = document.getElementById('glosario');
 
-      h3 {
-        margin-top: 2em;
+  botonCerrar.onclick = () => {
+    glosario.classList.toggle('visible');
+  };
+</script>
+
+<style lang="scss">
+  #glosario {
+    position: fixed;
+    overflow: scroll;
+    top: 0;
+    left: 0;
+    background-color: var(--fondo1);
+    width: 100vw;
+    height: 100%;
+    padding: 7em 19em;
+    z-index: 1;
+    visibility: hidden;
+
+    h3,
+    h4 {
+      margin-top: 2em;
+    }
+
+    #botonCerrar {
+      position: fixed;
+      top: 6em;
+      right: 10em;
+      cursor: pointer;
+      font-weight: 700;
+      padding: 0.4em 0.6em;
+      border-radius: 50%;
+
+      &:hover {
+        background-color: var(--blancoNube);
       }
     }
-  </style>
-</div>
+
+    &.visible {
+      visibility: visible;
+    }
+  }
+</style>
