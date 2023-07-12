@@ -5,7 +5,6 @@ import Mapa from './Mapa.astro';
 
 <main id="glosario">
   <h2 id="titulo">Glosario</h2>
-  <div id="botonCerrar">X</div>
   <h3>Definiciones de violencias y maltratos</h3>
   <ul>
     <li id="violencia">
@@ -100,6 +99,7 @@ import Mapa from './Mapa.astro';
   </ul>
 
   <h3>Otras definiciones</h3>
+  <div id="botonCerrar">X</div>
   <ul>
     <li id="pdet">
       <h4>Programas de Desarrollo con Enfoque Territorial (PDET)</h4>
@@ -133,24 +133,31 @@ import Mapa from './Mapa.astro';
 </main>
 
 <script>
-  const botonCerrar = document.getElementById('botonCerrar');
   const glosario = document.getElementById('glosario');
+  const contenedorMenu = document.getElementById('menu');
 
-  botonCerrar.onclick = () => {
-    glosario.classList.toggle('visible');
-  };
+  // Cerrar el glosario con click afuera
+  function clicFuera(evento: MouseEvent) {
+    const elemento = evento.target as HTMLElement;
+
+    if (!(glosario === elemento || contenedorMenu.contains(elemento))) {
+      glosario.classList.remove('visible');
+    }
+  }
+
+  document.body.addEventListener('click', clicFuera);
 </script>
 
 <style lang="scss">
   #glosario {
     position: fixed;
-    overflow: scroll;
+    overflow-y: scroll;
     top: 0;
     left: 0;
-    background-color: var(--fondo1);
-    width: 100vw;
+    background-color: #c9f0fff2;
+    width: 55%;
     height: 100%;
-    padding: 7em 19em;
+    padding: 7em 16em;
     z-index: 1;
     visibility: hidden;
 
@@ -161,20 +168,6 @@ import Mapa from './Mapa.astro';
 
     p {
       margin: 0.5em 0;
-    }
-
-    #botonCerrar {
-      position: fixed;
-      top: 6em;
-      right: 10em;
-      cursor: pointer;
-      font-weight: 700;
-      padding: 0.4em 0.6em;
-      border-radius: 50%;
-
-      &:hover {
-        background-color: var(--blancoNube);
-      }
     }
 
     &.visible {
