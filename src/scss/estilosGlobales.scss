@@ -86,7 +86,8 @@ a:link {
   text-decoration: none;
 }
 
-main {
+main,
+.contenido {
   font-family: var(--fuenteTexto);
   color: var(--grisTexto);
   font-size: 1.125em;
