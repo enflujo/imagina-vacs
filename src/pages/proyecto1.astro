@@ -40,7 +40,7 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
         </div> -->
     </section>
 
-    <section>
+    <div>
       <Puntos
         cantidad={64084}
         fechaInicio="1985"
@@ -48,28 +48,33 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
         texto="niñas, niños y adolescentes perdieron la vida por el conflicto."
       />
 
-      <Puntos cantidad={28192} fechaInicio="1985" fechaFin="2016" texto="fueron desaparecidos de manera forzada." />
-      <Puntos cantidad={6496} fechaInicio="1990" fechaFin="2018" texto="sufrieron secuestro." />
-      <Puntos cantidad={16238} fechaInicio="1990" fechaFin="2017" texto="fueron reclutados por grupos armados." />
+      <Puntos
+        cantidad={28192}
+        fechaInicio="1985"
+        fechaFin="2016"
+        texto="niñas, niños y adolescentes fueron desaparecidos de manera forzada."
+      />
+      <Puntos
+        cantidad={6496}
+        fechaInicio="1990"
+        fechaFin="2018"
+        texto="niñas, niños y adolescentes sufrieron secuestro."
+      />
+      <Puntos
+        cantidad={16238}
+        fechaInicio="1990"
+        fechaFin="2017"
+        texto="niñas, niños y adolescentes fueron reclutados por grupos armados."
+      />
       <Puntos
         cantidad={3049527}
         fechaInicio="1985"
         fechaFin="2019"
-        texto="fueron víctimas de desplazamiento forzado."
+        texto="niñas, niños y adolescentes fueron víctimas de desplazamiento forzado."
       />
+    </div>
 
-      <div class="grafica">Más de 64.084 niñas, niños y adolescentes perdieron la vida por el conflicto.</div>
-
-      <div class="grafica">Más de 28.000 fueron desaparecidos de manera forzada.</div>
-
-      <div class="grafica">Más de 6.000 sufrieron secuestro.</div>
-
-      <div class="grafica">Más de 16.000 fueron reclutados por grupos armados.</div>
-
-      <div class="grafica">Más de 3.000.000 fueron víctimas de desplazamiento forzado.</div>
-
-      <div style="width: 45vw; " class="separador"></div>
-
+    <section class="contenidoColumna">
       <p class="narracion">
         Sin embargo, la recopilación de la información para el informe, a partir de entrevistas y bases de datos de
         organizaciones sociales, reveló un gran vacío:
@@ -92,8 +97,9 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
       </p>
     </section>
 
-    <section class="columnas seccion apagado" id="migracion">
+    <section id="seccionMigracion" class="columnas seccion">
       <h3 class="subtitulo">I. Migración Forzada</h3>
+
       <div class="columna">
         <p>
           Las <span class="resaltado">personas desplazadas</span> son aquellas que por situaciones de violencia o catástrofes
@@ -142,8 +148,9 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
       </div>
     </section>
 
-    <div class="columnas seccion apagado">
+    <div id="seccionOrfandad" class="columnas seccion">
       <h3 class="subtitulo">II. Orfandad</h3>
+
       <div class="columna">
         <p class="narracion">
           Se consideran huérfanos los niños y las niñas que han sufrido la pérdida de uno o ambos padres. Esa ausencia
@@ -201,8 +208,9 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
       </div>
     </div>
 
-    <div class="columnas seccion apagado">
+    <div id="seccionViolencia" class="columnas seccion">
       <h3 class="subtitulo">III. Violencia</h3>
+
       <div class="columna">
         <p class="narracion">
           El conflicto armado causó en Colombia la desintegración de muchas familias. Niños y niñas quedaron al cuidado
@@ -343,8 +351,9 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
       </div>
     </div>
 
-    <div class="columnas seccion apagado" id="salud-mental">
+    <div id="seccionSaludMental" class="columnas seccion">
       <h3 class="subtitulo">IV. Salud Mental</h3>
+
       <div class="columna">
         <p class="narracion">
           La forma como murieron los padres, los relatos de otras personas y la propia imaginación sobre los hechos
@@ -399,7 +408,8 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
         </p>
       </div>
     </div>
-    <div class="columnas seccion apagado" id="final">
+
+    <div id="seccionConclusiones" class="columnas seccion apagado">
       <h3 class="subtitulo">Conclusión</h3>
       <div class="columna">
         <p class="destacado">

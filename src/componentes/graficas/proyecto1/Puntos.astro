@@ -9,13 +9,15 @@ export interface Props {
 const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
 ---
 
-<enflujo-lienzo data-texto={texto}>
+<enflujo-lienzo data-texto={texto} data-fechainicio={fechaInicio} data-fechafin={fechaFin} data-cantidad={cantidad}>
   <div class="contenedor">
     <canvas class="lienzo"></canvas>
   </div>
 </enflujo-lienzo>
 
 <script>
+  import { duranteInterseccion } from '@/utilidades/observador';
+
   class Lienzo extends HTMLElement {
     constructor() {
       super();
@@ -23,48 +25,76 @@ const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
       const lienzo = this.querySelector('canvas');
       const ctx = lienzo.getContext('2d');
       const dims: { y: number; alto: number } = { y: 0, alto: 0 };
-      const texto = this.dataset.texto;
+      const { cantidad, texto, fechainicio, fechafin } = this.dataset;
+      const textoFechas = `Desde ${fechainicio} a ${fechafin}`;
+      let relojLienzo = 0;
+      let opacidad = 0;
+      let conteo = 0;
+      const formatoNumero = new Intl.NumberFormat('es-CO');
+      const totalVictimas = +cantidad;
+      const pasoConteo = (totalVictimas / 100) | 0;
       // let reloj: NodeJS.Timer;
       escalar();
       window.onresize = escalar;
 
-      const observador = new IntersectionObserver(
-        ([entrada]) => {
-          if (entrada.intersectionRatio > 0) {
-            console.log('entrada', texto);
-            // const { y, height } = entrada.boundingClientRect;
-            // reloj = setInterval(() => {
-            //   console.log('activo', window.scrollY > y && window.scrollY + lienzo.height < y);
-            //   if (window.scrollY > y && window.scrollY + lienzo.height < height + y) {
-            //     lienzo.style.top = `${window.scrollY - y}px`;
-            //   }
-            // }, 10);
-          } else {
-            console.log('salida', texto);
-            // lienzo.style.top = `0px`;
-            // clearInterval(reloj);
-          }
-        },
-        { threshold: 0 }
-      );
+      duranteInterseccion(contenedor, enVista, false, { threshold: 0 }, fueraDeVista);
 
-      observador.observe(contenedor);
+      function enVista() {
+        ctx.fillStyle = 'rgba(255, 0, 0, .3)';
+        relojLienzo = requestAnimationFrame(pintar);
+        // const { y, height } = entrada.boundingClientRect;
+        // reloj = setInterval(() => {
+        //   console.log('activo', window.scrollY > y && window.scrollY + lienzo.height < y);
+        //   if (window.scrollY > y && window.scrollY + lienzo.height < height + y) {
+        //     lienzo.style.top = `${window.scrollY - y}px`;
+        //   }
+        // }, 10);
+      }
+
+      function fueraDeVista() {
+        cancelAnimationFrame(relojLienzo);
+        ctx.fillStyle = 'red';
+        ctx.fillRect(0, 0, lienzo.width, lienzo.height);
+        opacidad = 0;
+        conteo = 0;
+      }
 
       function escalar() {
-        const { top, height, width } = contenedor.getBoundingClientRect();
-        lienzo.width = width; // Ancho pantalla sin contar barra "scroll"
-        lienzo.height = window.innerHeight;
+        const menu = document.getElementById('menu');
+        const altoMenu = menu.clientHeight;
+        const { top, width } = contenedor.getBoundingClientRect();
+        dims.y = top + altoMenu;
+        lienzo.style.top = `${altoMenu}px`;
 
-        dims.y = top;
-        dims.alto = height;
-        ctx.fillStyle = 'rgba(255, 0, 0, 0.1)';
-        pintar();
+        dims.alto = window.innerHeight - altoMenu;
+        lienzo.width = width; // Ancho pantalla sin contar barra "scroll"
+        lienzo.height = dims.alto;
       }
 
       function pintar() {
+        // if (opacidad < 1) {
+        //   opacidad += 0.01;
+        //   ctx.globalAlpha = opacidad;
+        // }
+
+        if (conteo < totalVictimas) {
+          conteo += pasoConteo;
+        } else {
+          conteo = totalVictimas;
+        }
+
         ctx.fillRect(0, 0, lienzo.width, lienzo.height);
-        ctx.font = '30px Arial';
-        ctx.fillText('id', 10, 50);
+        ctx.save();
+        ctx.fontKerning = 'none';
+        ctx.font = '600 2em Nohemi';
+        ctx.fillStyle = '#FFF';
+        ctx.fillText(textoFechas, 10, 100);
+        ctx.font = '900 3em Nohemi';
+        ctx.fillText(formatoNumero.format(conteo), 40, 174);
+        ctx.font = '600 2em Nohemi';
+        ctx.fillText(texto, 100, 230);
+        ctx.restore();
+        relojLienzo = requestAnimationFrame(pintar);
       }
     }
   }
@@ -75,8 +105,7 @@ const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
 <style lang="scss">
   .contenedor {
     height: 200vh;
-    background-color: yellow;
-    margin-bottom: 120vh;
+    background-color: red;
   }
 
   .lienzo {
