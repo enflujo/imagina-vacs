@@ -1,5 +1,6 @@
 ---
 import Glosario from '@/componentes/Glosario.astro';
+import { rutaBase } from '@/utilidades/constantes';
 export interface Props {
   titulo: string;
   descripcion?: string;
@@ -9,7 +10,7 @@ export interface Props {
 const { titulo, descripcion, imagen } = Astro.props;
 const ruta = new URL(Astro.url.pathname, Astro.site);
 const tituloPagina = `${titulo} | Imagina + EnFlujo`;
-const img = imagen || { url: '', titulo: '', ancho: '', alto: '' };
+const img = imagen || { url: `${rutaBase}og-EnFlujo-predeterminado.jpg`, titulo: 'Vacs', ancho: '1200', alto: '630' };
 ---
 
 <!DOCTYPE html>
