@@ -60,6 +60,8 @@
   --azulVaALlover: #0081a7;
   --fondo1: #c9f0ff;
   --fondo2: #fff;
+
+  --margenSuperior: 10em;
 }
 
 @mixin fuenteRelato {
@@ -92,7 +94,7 @@ main,
   color: var(--grisTexto);
   font-size: 1.125em;
   line-height: 1.5em;
-  padding-top: 10em;
+  padding-top: var(--margenSuperior);
 }
 
 .subtitulo {
@@ -191,4 +193,9 @@ main,
       stroke: rgba(229, 169, 169, 0.791);
     }
   }
+}
+
+.pegarTitulo {
+  position: sticky;
+  top: var(--margenSuperior);
 }
