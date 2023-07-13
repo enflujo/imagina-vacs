@@ -4,13 +4,13 @@ import { rutaBase } from '@/utilidades/constantes';
 export interface Props {
   titulo: string;
   descripcion?: string;
-  imagen?: { url: string; titulo: string; ancho: string; alto: string };
+  imagen?: { url: string; titulo: string };
 }
 
 const { titulo, descripcion, imagen } = Astro.props;
 const ruta = new URL(Astro.url.pathname, Astro.site);
 const tituloPagina = `${titulo} | Imagina + EnFlujo`;
-const img = imagen || { url: `${rutaBase}og-EnFlujo-predeterminado.jpg`, titulo: 'Vacs', ancho: '1200', alto: '630' };
+const img = imagen || { url: `${rutaBase}og-EnFlujo-predeterminado.jpg`, titulo: 'Vacs' };
 ---
 
 <!DOCTYPE html>
@@ -34,8 +34,8 @@ const img = imagen || { url: `${rutaBase}og-EnFlujo-predeterminado.jpg`, titulo:
     <meta property="og:description" content={descripcion} />
     <meta property="og:image" content={img.url} />
     <meta property="og:image:alt" content={img.titulo} />
-    <meta property="og:image:width" content={img.ancho} />
-    <meta property="og:image:height" content={img.alto} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@labenflujo" />
