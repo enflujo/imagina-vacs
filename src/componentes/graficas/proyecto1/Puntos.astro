@@ -51,9 +51,10 @@ const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
       observador.observe(contenedor);
 
       function escalar() {
-        lienzo.width = window.innerWidth;
+        const { top, height, width } = contenedor.getBoundingClientRect();
+        lienzo.width = width; // Ancho pantalla sin contar barra "scroll"
         lienzo.height = window.innerHeight;
-        const { top, height } = contenedor.getBoundingClientRect();
+
         dims.y = top;
         dims.alto = height;
         ctx.fillStyle = 'rgba(255, 0, 0, 0.1)';
