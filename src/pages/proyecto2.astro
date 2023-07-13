@@ -4,14 +4,17 @@ import Menu from '@/componentes/Menu.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 ---
 
-<Plantilla titulo="VACS">
+<Plantilla titulo="VACS" descripcion="...">
   <Menu numeroProyecto={2} />
 
   <main id="proyecto2">
     <section id="introduccion" class="contenidoColumna alto100">
-      <h1 class="tituloProyecto">Experiencias Adversas en la Infancia</h1>
-      <h2 class="subtitulo">Estudio Comparativo de Colombia, Honduras y El Salvador</h2>
-      <h3 class="autores">Investigación: Jorge Leonardo Rodríguez Arenas y Julián David López Céspedes</h3>
+      <div class="pegarTitulo">
+        <h1 class="tituloProyecto">Experiencias Adversas en la Infancia</h1>
+        <h2 class="subtitulo">Estudio Comparativo de Colombia, Honduras y El Salvador</h2>
+        <h3 class="autores">Investigación: Jorge Leonardo Rodríguez Arenas y Julián David López Céspedes</h3>
+      </div>
+
       <Desliza />
     </section>
 
@@ -162,6 +165,12 @@ import Plantilla from '@/plantillas/Plantilla.astro';
     </section>
   </main>
 </Plantilla>
+
+<script>
+  import desvanecer from '@/ambages/desvanecer';
+
+  desvanecer(document.getElementById('introduccion'));
+</script>
 
 <style lang="scss">
   // Borrar eventualmente esta clase

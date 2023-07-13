@@ -4,13 +4,15 @@ import Menu from '@/componentes/Menu.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 ---
 
-<Plantilla titulo="VACS">
+<Plantilla titulo="VACS" descripcion="...">
   <Menu numeroProyecto={0} />
 
   <main id="paginaIntroduccion">
     <section id="inicio" class="alto100 contenidoColumna">
-      <h1>Un título relajado pero conmovedor</h1>
-      <h2>Identificando violencias para no repetirlas</h2>
+      <div class="pegarTitulo">
+        <h1>Un título relajado pero conmovedor</h1>
+        <h2>Identificando violencias para no repetirlas</h2>
+      </div>
       <Desliza />
     </section>
 
@@ -37,7 +39,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
     </section>
 
     <div class="contenidoColumna">
-      <section id="evcnna" class="seccion medio">
+      <section class="seccion medio">
         <h2>CONTEXTO</h2>
 
         <h3>Encuesta de Violencia contra Niños, Niñas y Adolescentes</h3>
@@ -113,17 +115,21 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 </Plantilla>
 
 <script>
+  import desvanecer from '@/ambages/desvanecer';
+
   const glosario = document.getElementById('glosario');
-  const terminosGlosario = document.getElementsByClassName('abrirGlosario');
+  const terminosGlosario = document.querySelectorAll('.abrirGlosario');
 
   // Función para abrir el glosario cuando aparece un término que esté definido allá
-  const abrirGlosario = function () {
+  const abrirGlosario = () => {
     glosario.classList.toggle('visible');
   };
 
-  for (var i = 0; i < terminosGlosario.length; i++) {
-    terminosGlosario[i].addEventListener('click', abrirGlosario, false);
-  }
+  terminosGlosario.forEach((termino) => {
+    termino.addEventListener('click', abrirGlosario, false);
+  });
+
+  desvanecer(document.getElementById('inicio'));
 </script>
 
 <style is:global lang="scss">

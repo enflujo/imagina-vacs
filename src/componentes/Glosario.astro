@@ -2,6 +2,7 @@
 import Mapa from './Mapa.astro';
 ---
 
+
 <div id="glosario" class="contenido">
   <div id="cerrarGlosario">X</div>
   <h2 id="titulo">Glosario</h2>
@@ -160,7 +161,7 @@ import Mapa from './Mapa.astro';
   @import '@/scss/constantes';
   #glosario {
     position: fixed;
-    overflow-y: scroll;
+    overflow-y: auto;
     top: 0;
     left: 0;
     background-color: var(--blancoNube);
@@ -168,7 +169,8 @@ import Mapa from './Mapa.astro';
     width: 90vw;
     padding: 2em 2em 3em 2.2em;
     z-index: 1;
-    visibility: hidden;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease-out;
 
     h3,
     h4 {
@@ -180,7 +182,7 @@ import Mapa from './Mapa.astro';
     }
 
     &.visible {
-      visibility: visible;
+      transform: translateX(0);
     }
     #cerrarGlosario {
       font-size: 1.6em;

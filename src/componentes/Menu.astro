@@ -13,44 +13,39 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
 
 <nav id="menu">
   <div id="encabezado">
-    <p class="enlaceMenu" id="botonMenu">Menú</p>
+    <a href={`${rutaBase}`}>Inicio</a>
     <p id="botonGlosario" class="enlaceMenu">Glosario</p>
+    <a href={`${rutaBase}creditos`}>Créditos</a>
     <div class="historias">
-      <p>Historias</p>
+      <p id="botonHistorias" class="enlaceMenu">Historias</p>
       <a class=`botonNavegar anterior${!conAnterior ? ' inactivo': ''}` href=`${urlAnterior}`></a>
       <a class="botonNavegar siguiente" href=`${urlSiguiente}`></a>
     </div>
   </div>
 
   <ul id="lista">
-    <li><a href={`${rutaBase}`}>Inicio</a></li>
-    <ul>
-      <h3>Historias</h3>
-      {
-        rutas.map((proyecto) => {
-          return (
-            <li>
-              <a class="enlaceHistoria" href={`${proyecto.ruta}`}>
-                {proyecto.nombre}
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-
-    <li><a href={`${rutaBase}creditos`}>Créditos</a></li>
+    {
+      rutas.map((proyecto) => {
+        return (
+          <li>
+            <a class="enlaceHistoria" href={`${proyecto.ruta}`}>
+              {proyecto.nombre}
+            </a>
+          </li>
+        );
+      })
+    }
   </ul>
 </nav>
 
 <script>
   const contenedorMenu = document.getElementById('menu');
-  const botonMenu = document.getElementById('botonMenu');
+  const botonHistorias = document.getElementById('botonHistorias');
   const botonGlosario = document.getElementById('botonGlosario');
   const lista = document.getElementById('lista');
   const glosario = document.getElementById('glosario');
 
-  botonMenu.onclick = () => {
+  botonHistorias.onclick = () => {
     lista.classList.toggle('visible');
   };
 
@@ -72,14 +67,16 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
 <style lang="scss">
   @import '@/scss/constantes';
   #menu {
-    margin: 2em 1em;
+    margin: 0;
     font-family: var(--fuenteTitulos);
-    padding-bottom: 1em;
+    font-size: 0.8em;
+    padding: 1em;
     border-bottom: 1px solid var(--azulVaALlover);
     position: fixed;
+    top: 0;
     width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 9;
 
     a,
     a:link {
@@ -181,15 +178,14 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
 
   @media screen and (min-width: $corte1) {
     #menu {
-      margin: 2em 5em;
+      font-size: 1em;
     }
   }
 
   @media screen and (min-width: $corte4) {
     #menu {
-      max-width: $corte4;
-      margin: 2em 0;
-      display: block;
+      padding: 1em calc((100vw - $corte4) / 2);
+
     }
   }
 </style>

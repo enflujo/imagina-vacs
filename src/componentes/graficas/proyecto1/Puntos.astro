@@ -1,0 +1,94 @@
+---
+export interface Props {
+  cantidad: number;
+  fechaInicio: string;
+  fechaFin: string;
+  texto: string;
+}
+
+const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
+---
+
+<enflujo-lienzo data-texto={texto}>
+  <div class="contenedor">
+    <canvas class="lienzo"></canvas>
+  </div>
+</enflujo-lienzo>
+
+<script>
+  class Lienzo extends HTMLElement {
+    constructor() {
+      super();
+      const contenedor = this.querySelector('.contenedor') as HTMLDivElement;
+      const lienzo = this.querySelector('canvas');
+      const ctx = lienzo.getContext('2d');
+      const dims: { y: number; alto: number } = { y: 0, alto: 0 };
+      const texto = this.dataset.texto;
+      // let reloj: NodeJS.Timer;
+      escalar();
+      window.onresize = escalar;
+
+      const observador = new IntersectionObserver(
+        ([entrada]) => {
+          if (entrada.intersectionRatio > 0) {
+            console.log('entrada', texto);
+            // const { y, height } = entrada.boundingClientRect;
+            // reloj = setInterval(() => {
+            //   console.log('activo', window.scrollY > y && window.scrollY + lienzo.height < y);
+            //   if (window.scrollY > y && window.scrollY + lienzo.height < height + y) {
+            //     lienzo.style.top = `${window.scrollY - y}px`;
+            //   }
+            // }, 10);
+          } else {
+            console.log('salida', texto);
+            // lienzo.style.top = `0px`;
+            // clearInterval(reloj);
+          }
+        },
+        { threshold: 0 }
+      );
+
+      observador.observe(contenedor);
+
+      function escalar() {
+        const { top, height, width } = contenedor.getBoundingClientRect();
+        lienzo.width = width; // Ancho pantalla sin contar barra "scroll"
+        lienzo.height = window.innerHeight;
+
+        dims.y = top;
+        dims.alto = height;
+        ctx.fillStyle = 'rgba(255, 0, 0, 0.1)';
+        pintar();
+      }
+
+      function pintar() {
+        ctx.fillRect(0, 0, lienzo.width, lienzo.height);
+        ctx.font = '30px Arial';
+        ctx.fillText('id', 10, 50);
+      }
+    }
+  }
+
+  customElements.define('enflujo-lienzo', Lienzo);
+</script>
+
+<style lang="scss">
+  .contenedor {
+    height: 200vh;
+    background-color: yellow;
+    margin-bottom: 120vh;
+  }
+
+  .lienzo {
+    position: sticky;
+    top: 0;
+    // left: 0;
+  }
+
+  .puntos {
+    margin-bottom: 3em;
+    background-image: radial-gradient(#474bff 2px, transparent 2px);
+    background-size: 5px 5px;
+    background-color: #ffffff;
+  }
+</style>

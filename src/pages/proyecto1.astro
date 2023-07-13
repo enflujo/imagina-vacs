@@ -3,19 +3,25 @@ import Menu from '@/componentes/Menu.astro';
 import Desliza from '@/componentes/Desliza.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
+import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
 ---
 
-<Plantilla titulo="VACS">
+<Plantilla titulo="VACS" descripcion="...">
   <Menu numeroProyecto={1} />
 
   <main id="proyecto1">
     <section id="introduccion" class="contenidoColumna alto100">
-      <h1 class="tituloProyecto">La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
-      <h3 class="autores">Investigación: Karla ??? y Catalina ???</h3>
+      <div class="pegarTitulo">
+        <h1 class="tituloProyecto">La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
+        <h3 class="autores">Investigación: Karla ??? y Catalina ???</h3>
+      </div>
+
       <Desliza />
     </section>
 
     <section class="contenidoColumna">
+      <h3 class="subtitulo">Contexto</h3>
+
       <p class="narracion">
         La Comisión de la Verdad, en el capítulo "<a
           href="https://www.comisiondelaverdad.co/no-es-un-mal-menor"
@@ -32,6 +38,25 @@ import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
           secuestro; de 1990 a 2017, 16.238 fueron reclutados por grupos armados y de 1985 a 2019, 3.049.527 fueron
           víctimas de desplazamiento forzado
         </div> -->
+    </section>
+
+    <section>
+      <Puntos
+        cantidad={64084}
+        fechaInicio="1985"
+        fechaFin="2018"
+        texto="niñas, niños y adolescentes perdieron la vida por el conflicto."
+      />
+
+      <Puntos cantidad={28192} fechaInicio="1985" fechaFin="2016" texto="fueron desaparecidos de manera forzada." />
+      <Puntos cantidad={6496} fechaInicio="1990" fechaFin="2018" texto="sufrieron secuestro." />
+      <Puntos cantidad={16238} fechaInicio="1990" fechaFin="2017" texto="fueron reclutados por grupos armados." />
+      <Puntos
+        cantidad={3049527}
+        fechaInicio="1985"
+        fechaFin="2019"
+        texto="fueron víctimas de desplazamiento forzado."
+      />
 
       <div class="grafica">Más de 64.084 niñas, niños y adolescentes perdieron la vida por el conflicto.</div>
 
@@ -117,7 +142,7 @@ import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
       </div>
     </section>
 
-    <div class="columnas seccion apagado" id="orfandad">
+    <div class="columnas seccion apagado">
       <h3 class="subtitulo">II. Orfandad</h3>
       <div class="columna">
         <p class="narracion">
@@ -176,7 +201,7 @@ import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
       </div>
     </div>
 
-    <div class="columnas seccion apagado" id="violencia">
+    <div class="columnas seccion apagado">
       <h3 class="subtitulo">III. Violencia</h3>
       <div class="columna">
         <p class="narracion">
@@ -188,7 +213,7 @@ import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
 
         <p class="escribiendo">En el informe de la Comisión hay relatos como este:</p>
 
-        <div class="relato" data-color="#353547" data-velocidad="5s">
+        <div class="relato">
           <p>
             Nosotros nos quedábamos solos y el vecino de al lado se masturbaba delante de mí y a mí me daba miedo
             decirle a mi tío, al hermano de mi mamá, porque él me pegaba y me maltrataba mucho… Yo tenía ocho años
@@ -396,11 +421,13 @@ import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
 
 <script>
   import aparicionRelato from '@/ambages/aparicionRelato';
+  import desvanecer from '@/ambages/desvanecer';
   import escritorAutomata from '@/ambages/escritorAutomata';
 
   const males = document.querySelectorAll<HTMLElement>('.mal');
   escritorAutomata();
   aparicionRelato();
+  desvanecer(document.getElementById('introduccion'));
 
   const esperar = (
     elementos: NodeListOf<HTMLElement>,
@@ -467,27 +494,10 @@ import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
       }
     }
   }
-
-  //secciones.forEach((seccion) => duranteInterseccion(seccion, detectar, false, { threshold: [0, 0.5, 1] }));
-
-  function detectar(elemento: IntersectionObserverEntry) {
-    if (elemento.intersectionRatio < 0.5) {
-      //  elemento.target.classList.add('apagado');
-    } else if (elemento.intersectionRatio >= 0.5) {
-      // elemento.target.classList.remove('apagado');
-    }
-  }
 </script>
 
 <style lang="scss" is:global>
   #proyecto1 {
-    .seccion {
-      transition: opacity 1.6s ease-out;
-      transition-delay: 250ms;
-      margin-bottom: 10em;
-      opacity: 1;
-    }
-
     // Dejo la opacidad en 1 por ahora para que no desaparezca y nos deje leer fácilmente
     .apagado {
       opacity: 1;
