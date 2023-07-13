@@ -11,12 +11,17 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
 
   <main id="proyecto1">
     <section id="introduccion" class="contenidoColumna alto100">
-      <h1 class="tituloProyecto">La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
-      <h3 class="autores">Investigación: Karla ??? y Catalina ???</h3>
+      <div class="pegarTitulo">
+        <h1 class="tituloProyecto">La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
+        <h3 class="autores">Investigación: Karla ??? y Catalina ???</h3>
+      </div>
+
       <Desliza />
     </section>
 
     <section class="contenidoColumna">
+      <h3 class="subtitulo">Contexto</h3>
+
       <p class="narracion">
         La Comisión de la Verdad, en el capítulo "<a
           href="https://www.comisiondelaverdad.co/no-es-un-mal-menor"
@@ -208,7 +213,7 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
 
         <p class="escribiendo">En el informe de la Comisión hay relatos como este:</p>
 
-        <div class="relato" data-color="#353547" data-velocidad="5s">
+        <div class="relato">
           <p>
             Nosotros nos quedábamos solos y el vecino de al lado se masturbaba delante de mí y a mí me daba miedo
             decirle a mi tío, al hermano de mi mamá, porque él me pegaba y me maltrataba mucho… Yo tenía ocho años
@@ -416,11 +421,13 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
 
 <script>
   import aparicionRelato from '@/ambages/aparicionRelato';
+  import desvanecer from '@/ambages/desvanecer';
   import escritorAutomata from '@/ambages/escritorAutomata';
 
   const males = document.querySelectorAll<HTMLElement>('.mal');
   escritorAutomata();
   aparicionRelato();
+  desvanecer(document.getElementById('introduccion'));
 
   const esperar = (
     elementos: NodeListOf<HTMLElement>,
@@ -487,27 +494,10 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
       }
     }
   }
-
-  //secciones.forEach((seccion) => duranteInterseccion(seccion, detectar, false, { threshold: [0, 0.5, 1] }));
-
-  function detectar(elemento: IntersectionObserverEntry) {
-    if (elemento.intersectionRatio < 0.5) {
-      //  elemento.target.classList.add('apagado');
-    } else if (elemento.intersectionRatio >= 0.5) {
-      // elemento.target.classList.remove('apagado');
-    }
-  }
 </script>
 
 <style lang="scss" is:global>
   #proyecto1 {
-    .seccion {
-      transition: opacity 1.6s ease-out;
-      transition-delay: 250ms;
-      margin-bottom: 10em;
-      opacity: 1;
-    }
-
     // Dejo la opacidad en 1 por ahora para que no desaparezca y nos deje leer fácilmente
     .apagado {
       opacity: 1;

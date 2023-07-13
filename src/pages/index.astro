@@ -9,7 +9,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 
   <main id="paginaIntroduccion">
     <section id="inicio" class="alto100 contenidoColumna">
-      <div id="titulos">
+      <div class="pegarTitulo">
         <h1>Un título relajado pero conmovedor</h1>
         <h2>Identificando violencias para no repetirlas</h2>
       </div>
@@ -39,7 +39,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
     </section>
 
     <div class="contenidoColumna">
-      <section id="evcnna" class="seccion medio">
+      <section class="seccion medio">
         <h2>CONTEXTO</h2>
 
         <h3>Encuesta de Violencia contra Niños, Niñas y Adolescentes</h3>
@@ -115,12 +115,10 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 </Plantilla>
 
 <script>
-  import { convertirEscala } from '@enflujo/alquimia';
+  import desvanecer from '@/ambages/desvanecer';
 
   const glosario = document.getElementById('glosario');
   const terminosGlosario = document.querySelectorAll('.abrirGlosario');
-
-  animacionInicio();
 
   // Función para abrir el glosario cuando aparece un término que esté definido allá
   const abrirGlosario = () => {
@@ -131,40 +129,12 @@ import Plantilla from '@/plantillas/Plantilla.astro';
     termino.addEventListener('click', abrirGlosario, false);
   });
 
-  function animacionInicio() {
-    const titulos = document.getElementById('inicio');
-    const desliza = document.querySelector('.deslizaHaciaAbajo');
-
-    let reloj: NodeJS.Timer;
-    const observador = new IntersectionObserver(
-      ([elemento]) => {
-        if (elemento.intersectionRatio > 0) {
-          reloj = setInterval(() => {
-            const opacidad = convertirEscala(window.scrollY, 0, elemento.boundingClientRect.height * 0.5, 1, 0);
-            titulos.style.opacity = `${opacidad}`;
-
-            if (opacidad > 0.95) {
-              desliza.classList.remove('desactivado');
-            }
-          }, 10);
-        } else {
-          clearInterval(reloj);
-        }
-      },
-      { threshold: 0 }
-    );
-
-    observador.observe(titulos);
-  }
+  desvanecer(document.getElementById('inicio'));
 </script>
 
 <style is:global lang="scss">
   @import '@/scss/constantes';
   #paginaIntroduccion {
-    #titulos {
-      position: sticky;
-      top: 10em;
-    }
     .ampliar {
       color: #57c5b6;
       cursor: pointer;
