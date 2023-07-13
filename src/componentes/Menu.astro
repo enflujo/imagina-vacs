@@ -16,7 +16,7 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
     <a href={`${rutaBase}`}>Inicio</a>
     <p id="botonGlosario" class="enlaceMenu">Glosario</p>
     <a href={`${rutaBase}recursos`}>Recursos</a>
-    <a href={`${rutaBase}creditos`}>Créditos</a>
+    <p id="botonCreditos" class="enlaceMenu">Créditos</p>
     <div class="historias">
       <p id="botonHistorias" class="enlaceMenu">Historias</p>
       <a class=`botonNavegar anterior${!conAnterior ? ' inactivo': ''}` href=`${urlAnterior}`></a>
@@ -43,8 +43,10 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
   const contenedorMenu = document.getElementById('menu');
   const botonHistorias = document.getElementById('botonHistorias');
   const botonGlosario = document.getElementById('botonGlosario');
+  const botonCreditos = document.getElementById('botonCreditos');
   const lista = document.getElementById('lista');
   const glosario = document.getElementById('glosario');
+  const creditos = document.getElementById('creditos');
 
   botonHistorias.onclick = () => {
     lista.classList.toggle('visible');
@@ -52,6 +54,10 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
 
   botonGlosario.onclick = () => {
     glosario.classList.toggle('visible');
+  };
+
+  botonCreditos.onclick = () => {
+    creditos.classList.toggle('visible');
   };
 
   document.body.addEventListener('click', clicFuera);
