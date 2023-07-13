@@ -1,51 +1,7 @@
-<div id="creditos" class="contenido">
+---
+import Desplegable from './Desplegable.astro';
+---
+
+<Desplegable id="creditos">
   <h2 id="titulo">Créditos</h2>
-</div>
-
-<script>
-  const creditos = document.getElementById('creditos');
-
-  // Cerrar el glosario con click afuera
-  function clicFuera(evento: MouseEvent) {
-    const elemento = evento.target as HTMLElement;
-
-    if (elemento.id === 'botonCreditos') {
-      return;
-    }
-
-    if (!(creditos === elemento || creditos.contains(elemento))) {
-      creditos.classList.remove('visible');
-    }
-  }
-
-  document.body.addEventListener('click', clicFuera);
-</script>
-
-<style lang="scss">
-  #creditos {
-    position: fixed;
-    overflow-y: auto;
-    top: 0;
-    left: 0;
-    background-color: #c9f0fff2;
-    width: 55%;
-    height: 100%;
-    padding: 7em 16em;
-    z-index: 1;
-    transform: translateX(-100%);
-    transition: transform 0.25s ease-out;
-
-    h3,
-    h4 {
-      margin-top: 2em;
-    }
-
-    p {
-      margin: 0.5em 0;
-    }
-
-    &.visible {
-      transform: translateX(0);
-    }
-  }
-</style>
+</Desplegable>
