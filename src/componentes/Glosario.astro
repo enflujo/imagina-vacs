@@ -147,11 +147,11 @@ import Mapa from './Mapa.astro';
     if (!(glosario === elemento || glosario.contains(elemento) || elemento.classList.contains('abrirGlosario'))) {
       glosario.classList.remove('visible');
     }
-
-    cerrarGlosario.addEventListener('click', () => {
-      glosario.classList.remove('visible');
-    });
   }
+
+  cerrarGlosario.addEventListener('click', () => {
+    glosario.classList.remove('visible');
+  });
 
   document.body.addEventListener('click', clicFuera);
 </script>
@@ -207,8 +207,6 @@ import Mapa from './Mapa.astro';
 
   @media screen and (min-width: $corte3) {
     #glosario {
-      //padding: 2em 2em 3em 2.2em;
-
       width: 60%;
       height: 100%;
       padding: 7em 7em;
@@ -219,8 +217,6 @@ import Mapa from './Mapa.astro';
 
   @media screen and (min-width: $corte4) {
     #glosario {
-      //padding: 2em 2em 3em 2.2em;
-
       width: 35%;
       height: 100%;
       padding: 7em 7em;
