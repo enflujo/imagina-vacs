@@ -42,6 +42,8 @@
   --fuenteMono2: 'Red Hat Display', 'Courier New', Courier, monospace;
 
   // Paleta 1
+  --moradoUva: #cc2986;
+  --rosaChicle: #f93d96;
   --rosaIntenso: #fc6dab;
   --amarilloSol: #ffbc42;
   --naranjaMandarina: #ff934f;
@@ -66,6 +68,9 @@
   --margenSuperior: 10em;
 }
 
+::selection {
+  background-color: var(--verdeBiche);
+}
 @mixin fuenteRelato {
   font-family: var(--fuenteTexto2);
   font-weight: 415;
