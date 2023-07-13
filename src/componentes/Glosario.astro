@@ -5,6 +5,7 @@ import Mapa from './Mapa.astro';
 <div id="glosario" class="contenido">
   <div id="cerrarGlosario">X</div>
   <h2 id="titulo">Glosario</h2>
+
   <h3>Definiciones de violencias y maltratos</h3>
   <ul>
     <li id="violencia">
@@ -174,6 +175,28 @@ import Mapa from './Mapa.astro';
     h3,
     h4 {
       margin-top: 2em;
+    }
+
+    ul {
+      border-bottom: 1px solid;
+      padding-bottom: 2em;
+    }
+
+    h3 {
+      border-bottom: 1px solid;
+      padding-bottom: 2em;
+      font-size: 1.8em;
+      line-height: 1.2;
+    }
+
+    h4 {
+      font-size: 1.6em;
+      font-weight: 400;
+    }
+
+    #titulo {
+      border-bottom: 1px solid var(--grisTexto);
+      padding-bottom: 0.8em;
     }
 
     p {
