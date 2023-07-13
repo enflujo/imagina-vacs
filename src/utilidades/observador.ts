@@ -7,16 +7,27 @@
  */
 export const duranteInterseccion = (
   elemento: HTMLElement,
-  accion: (objObservador: IntersectionObserverEntry) => void,
+  accion?: (objObservador: IntersectionObserverEntry) => void,
   desconectarInmediatamente = true,
-  opciones?: IntersectionObserverInit
+  opciones?: IntersectionObserverInit,
+  accionFuera?: (objObservador: IntersectionObserverEntry) => void
 ) => {
+  function desconectar(elemento: Element) {
+    if (desconectarInmediatamente) {
+      observador.unobserve(elemento);
+    }
+  }
   const observador = new IntersectionObserver(([elementoObservado]) => {
-    if (elementoObservado && elementoObservado.isIntersecting) {
-      accion(elementoObservado);
-
-      if (desconectarInmediatamente) {
-        observador.unobserve(elementoObservado.target);
+    if (!accionFuera) {
+      if (elementoObservado && elementoObservado.isIntersecting) {
+        accion(elementoObservado);
+        desconectar(elementoObservado.target);
+      }
+    } else {
+      if (elementoObservado && elementoObservado.isIntersecting) {
+        accion(elementoObservado);
+      } else {
+        accionFuera(elementoObservado);
       }
     }
   }, opciones);
