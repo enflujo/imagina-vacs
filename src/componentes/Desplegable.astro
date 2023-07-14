@@ -37,8 +37,18 @@ const { id } = Astro.props;
   document.body.addEventListener('click', clicFuera);
 </script>
 
-<style lang="scss">
+<style lang="scss" is:global>
   @import '@/scss/constantes';
+
+  #glosario {
+    .titulo {
+      font-size: 2.2em;
+      color: var(--rosaChicle);
+
+      border-bottom: 1px solid var(--grisTexto);
+      padding-bottom: 1.2em;
+    }
+  }
   .desplegable {
     position: fixed;
     overflow-y: auto;
@@ -52,31 +62,56 @@ const { id } = Astro.props;
     transform: translateX(-100%);
     transition: transform 0.25s ease-out;
 
+    h3,
+    h4 {
+      margin-top: 2em;
+      padding-bottom: 0.2em;
+    }
+
+    li {
+      padding-bottom: 0.2em;
+    }
+
+    ul {
+      border-bottom: 1px solid;
+      padding-bottom: 2em;
+    }
+
+    h3 {
+      border-bottom: 1px solid;
+      padding-bottom: 2em;
+      font-size: 1.4em;
+      line-height: 1.2;
+    }
+
+    h4 {
+      font-size: 1.2em;
+      line-height: 1.3em;
+      font-weight: 400;
+      padding-bottom: 0.1em;
+    }
+
+    p {
+      margin: 0.5em 0;
+      line-height: 1.3em;
+    }
+
     &.visible {
       transform: translateX(0);
     }
-  }
 
-  h3,
-  h4 {
-    margin-top: 2em;
-  }
+    .cerrar {
+      font-size: 1.6em;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      transition: opacity 0.15s ease-out;
+      text-align: right;
+      margin-right: -1em;
 
-  p {
-    margin: 0.5em 0;
-  }
-
-  .cerrar {
-    font-size: 1.6em;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    transition: opacity 0.15s ease-out;
-    text-align: right;
-    margin-right: -1em;
-
-    &:hover {
-      opacity: 0.7;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 
