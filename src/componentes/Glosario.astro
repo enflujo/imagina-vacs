@@ -100,7 +100,6 @@ import Mapa from './Mapa.astro';
   </ul>
 
   <h3>Otras definiciones</h3>
-  <div id="botonCerrar">X</div>
   <ul>
     <li id="pdet">
       <h4>Programas de Desarrollo con Enfoque Territorial (PDET)</h4>
@@ -114,7 +113,7 @@ import Mapa from './Mapa.astro';
           (Fuente)</a
         >)
       </p>
-      <div id="mapa-pdet" class="seccion">
+      <div id="mapaPdet" class="seccion">
         <Mapa alto={50} />
       </div>
 
@@ -131,5 +130,10 @@ import Mapa from './Mapa.astro';
       </li>
     </li>
   </ul>
-
 </Desplegable>
+
+<style lang="scss">
+  #mapaPdet {
+    position: relative;
+  }
+</style>
