@@ -5,6 +5,7 @@
 .contenidoColumna {
   max-width: 90vw;
   margin: 0 auto;
+  font-size: 1.2em;
 }
 
 .tituloProyecto {
@@ -23,12 +24,22 @@
   font-weight: 400;
 }
 
+.anchoTitulo {
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
 @media screen and (min-width: $corte4) {
   .contenidoColumna {
-    max-width: $corte4;
+    max-width: 50vw;
   }
 
   .tituloProyecto {
     font-size: 5em;
+    max-width: 80vw;
+  }
+  .anchoTitulo {
+    max-width: 70vw;
+    margin: 0 auto;
   }
 }
