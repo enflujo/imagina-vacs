@@ -65,6 +65,12 @@ const img = imagen || { url: `${rutaBase}og-EnFlujo-predeterminado.jpg`, titulo:
     <slot />
   </body>
 </html>
+
+<script>
+  import abrirGlosario from '@/utilidades/abrirGlosario';
+
+  abrirGlosario();
+</script>
 <style is:global lang="scss">
   @import '@/scss/estilosGlobales.scss';
 </style>

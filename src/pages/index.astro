@@ -45,7 +45,8 @@ import Plantilla from '@/plantillas/Plantilla.astro';
         <h3>Encuesta de Violencia contra Niños, Niñas y Adolescentes</h3>
         <p>
           En 2018 Colombia realizó por primera vez la Encuesta de Violencia contra Niños, Niñas y Adolescentes <span
-            class="abrirGlosario">(EVCNNA)</span
+            class="abrirGlosario"
+            data-ancla="evcnna">(EVCNNA)</span
           >, que fue parte de la estrategia INSPIRE de la Organización Mundial de la Salud para prevenir la violencia
           infantil. Su objetivo era medir la prevalencia y las circunstancias alrededor de la violencia sexual, física y
           psicológica durante la infancia, adolescencia y la adultez temprana.
@@ -53,7 +54,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
         <p>
           La encuesta se aplicó a dos grupos de jóvenes entre los 14 y 24 años: una muestra nacional y otra de
           municipios históricamente afectados por la violencia, que están cubiertos por los Programas de Desarrollo con
-          Enfoque Territorial <span class="abrirGlosario">(PDET)</span>
+          Enfoque Territorial <span class="abrirGlosario" data-ancla="pdet">(PDET)</span>
           .
         </p>
 
@@ -116,18 +117,6 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 
 <script>
   import desvanecer from '@/ambages/desvanecer';
-
-  const glosario = document.getElementById('glosario');
-  const terminosGlosario = document.querySelectorAll('.abrirGlosario');
-
-  // Función para abrir el glosario cuando aparece un término que esté definido allá
-  const abrirGlosario = () => {
-    glosario.classList.toggle('visible');
-  };
-
-  terminosGlosario.forEach((termino) => {
-    termino.addEventListener('click', abrirGlosario, false);
-  });
 
   desvanecer(document.getElementById('inicio'));
 </script>

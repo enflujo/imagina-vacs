@@ -25,7 +25,13 @@ const { id } = Astro.props;
       return;
     }
 
-    if (!(contenedorDesplegable === elemento || contenedorDesplegable.contains(elemento))) {
+    if (
+      !(
+        contenedorDesplegable === elemento ||
+        contenedorDesplegable.contains(elemento) ||
+        elemento.classList.contains('abrirGlosario')
+      )
+    ) {
       contenedorDesplegable.classList.remove('visible');
     }
   }
