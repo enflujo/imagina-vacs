@@ -133,15 +133,18 @@ const { ancho, alto } = Astro.props;
     pointer-events: none;
     opacity: 0;
     max-width: 200px;
-    padding: 0.5em;
+    padding: 0.3em 0.5em;
     font-size: 0.8em;
     font-weight: bold;
-
     background-color: rgb(253, 253, 250);
     color: black;
     z-index: 9;
     transition: opacity 0.42s ease-out;
     transform: translate(-50%, -105%);
+
+    p {
+      margin: 0.1em;
+    }
 
     &.visible {
       opacity: 1;
