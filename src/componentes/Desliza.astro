@@ -1,8 +1,40 @@
-<div class="deslizaHaciaAbajo">Desliza hacia abajo<span></span><span></span><span></span></div>
+<enflujo-deslizador class="deslizador">
+  <div class="deslizaHaciaAbajo">Desliza hacia abajo<span></span><span></span><span></span></div>
+</enflujo-deslizador>
+<script>
+  import { duranteInterseccion } from '@/utilidades/observador';
+
+  class Deslizador extends HTMLElement {
+    constructor() {
+      super();
+      const contenedor = this.parentElement;
+
+      const mostrar = () => {
+        this.classList.add('visible');
+      };
+
+      const esconder = () => {
+        this.classList.remove('visible');
+      };
+
+      if (contenedor) {
+        duranteInterseccion(contenedor, mostrar, false, { threshold: 0.7 }, esconder);
+      }
+    }
+  }
+
+  customElements.define('enflujo-deslizador', Deslizador);
+</script>
 
 <style lang="scss">
   $anchoFlechaDesliza: 15px;
 
+  .deslizador {
+    display: none;
+    &.visible {
+      display: block;
+    }
+  }
   .deslizaHaciaAbajo {
     position: fixed;
     bottom: 5em;
