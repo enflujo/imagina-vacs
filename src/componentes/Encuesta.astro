@@ -3,140 +3,200 @@ import Desplegable from './Desplegable.astro';
 ---
 
 <!-- <Desplegable id="creditos"> -->
-<h2 id="titulo">¿Sufriste violencia o maltrato en la infancia o adolescencia?</h2>
-<p>¿Consideras que durante la infancia y adolescencia estuviste expuesto/a a algún tipo de violencia?</p>
-<input type="checkbox" id="general101" name="general1" value="si" />
-<label for="general101"> Sí</label>
-<input type="checkbox" id="general102" name="general1" value="no" />
-<label for="general102"> No</label>
-<input type="checkbox" id="general103" name="general1" value="ns" />
-<label for="general103"> No estoy segurx</label>
+<div>
+  <h2 id="titulo">¿Sufriste violencia o maltrato en la infancia o adolescencia?</h2>
 
-<h3>EMOCIONAL</h3>
-<p>
-  ¿Alguna vez durante tu infancia o adolescencia tu padre o madre, acudientes, cuidador, tutor u otro familiar adulto:
-</p>
+  <form id="general" class="pregunta general">
+    <p>¿Consideras que durante la infancia y adolescencia estuviste expuesto/a a algún tipo de violencia?</p>
+    <input type="radio" id="g101" name="g1" value="1" />
+    <label for="g101"> Sí</label>
+    <input type="radio" id="g102" name="g1" value="0" />
+    <label for="g102"> No</label>
+    <input type="radio" id="g103" name="g1" value="0.2" />
+    <label for="g103"> No estoy segurx</label>
+  </form>
 
-<p>Te dijeron que no te querían o que no merecías ser querida/o?</p>
-<input type="checkbox" id="emocional101" name="emocional1" value="si" />
-<label for="emocional101"> Sí</label>
-<input type="checkbox" id="emocional102" name="emocional1" value="no" />
-<label for="emocional102"> No</label>
-<input type="checkbox" id="emocional103" name="emocional1" value="ns" />
-<label for="emocional103"> No estoy segurx</label>
+  <h3>EMOCIONAL</h3>
 
-<p>Te dijeron que hubieran deseado que nunca hubieras nacido o que estuvieras muerta?</p>
-<input type="checkbox" id="emocional201" name="emocional2" value="si" />
-<label for="emocional201"> Sí</label>
-<input type="checkbox" id="emocional202" name="emocional2" value="no" />
-<label for="emocional202"> No</label>
-<input type="checkbox" id="emocional203" name="emocional2" value="ns" />
-<label for="emocional203"> No estoy segurx</label>
+  <p>
+    ¿Alguna vez durante tu infancia o adolescencia tu padre o madre, acudientes, cuidador, tutor u otro familiar adulto:
+  </p>
 
-<p>
-  Te dijeron palabras vulgares o fuiste ridiculizada/o, menospreciada/o o humillada/o, por ejemplo diciéndote que eras
-  estúpida/o o inútil?
-</p>
-<input type="checkbox" id="emocional301" name="emocional3" value="si" />
-<label for="emocional301"> Sí</label>
-<input type="checkbox" id="emocional302" name="emocional3" value="no" />
-<label for="emocional302"> No</label>
-<input type="checkbox" id="emocional303" name="emocional3" value="ns" />
-<label for="emocional303"> No estoy segurx</label>
+  <form id="emocional" class="pregunta emocional">
+    <p>Te dijeron que no te querían o que no merecías ser querida/o?</p>
+    <input type="radio" id="e101" name="e1" value="1" />
+    <label for="e101"> Sí</label>
+    <input type="radio" id="e102" name="e1" value="0" />
+    <label for="e102"> No</label>
+    <input type="radio" id="e103" name="e1" value="0.2" />
+    <label for="e103"> No estoy segurx</label>
 
-<h3>FISICA - CUIDADORES</h3>
+    <p>Te dijeron que hubieran deseado que nunca hubieras nacido o que estuvieras muerta?</p>
+    <input type="radio" id="e201" name="e2" value="1" />
+    <label for="e201"> Sí</label>
+    <input type="radio" id="e202" name="e2" value="0" />
+    <label for="e202"> No</label>
+    <input type="radio" id="e203" name="e2" value="0.2" />
+    <label for="e203"> No estoy segurx</label>
 
-<p>te golpearon, empujaron, encerraron, quemaron, zarandearon o asfixiaron?</p>
-<input type="checkbox" id="fisica101" name="fisica1" value="si" />
-<label for="fisica101"> Sí</label>
-<input type="checkbox" id="fisica102" name="fisica1" value="no" />
-<label for="fisica102"> No</label>
-<input type="checkbox" id="fisica103" name="fisica1" value="ns" />
-<label for="fisica103"> No estoy segurx</label>
+    <p>
+      Te dijeron palabras vulgares o fuiste ridiculizada/o, menospreciada/o o humillada/o, por ejemplo diciéndote que
+      eras estúpida/o o inútil?
+    </p>
+    <input type="radio" id="301" name="3" value="1" />
+    <label for="301"> Sí</label>
+    <input type="radio" id="302" name="3" value="0" />
+    <label for="302"> No</label>
+    <input type="radio" id="303" name="3" value="0.2" />
+    <label for="303"> No estoy segurx</label>
+  </form>
 
-<p>te amenazaron con un cuchillo, pistola u otra arma?</p>
-<input type="checkbox" id="fisica201" name="fisica2" value="si" />
-<label for="fisica201"> Sí</label>
-<input type="checkbox" id="fisica202" name="fisica2" value="no" />
-<label for="fisica202"> No</label>
-<input type="checkbox" id="fisica203" name="fisica2" value="ns" />
-<label for="fisica203"> No estoy segurx</label>
+  <h3>FISICA - CUIDADORES</h3>
 
-<p>impartieron castigos físicos justificados bajo la idea de disciplina?</p>
-<input type="checkbox" id="fisica301" name="fisica3" value="si" />
-<label for="fisica301"> Sí</label>
-<input type="checkbox" id="fisica302" name="fisica3" value="no" />
-<label for="fisica302"> No</label>
-<input type="checkbox" id="fisica303" name="fisica3" value="ns" />
-<label for="fisica303"> No estoy segurx</label>
+  <form id="fisica" class="pregunta fisica">
+    <p>te golpearon, empujaron, encerraron, quemaron, zarandearon o asfixiaron?</p>
+    <input type="radio" id="fisica101" name="fisica1" value="1" />
+    <label for="fisica101"> Sí</label>
+    <input type="radio" id="fisica102" name="fisica1" value="0" />
+    <label for="fisica102"> No</label>
+    <input type="radio" id="fisica103" name="fisica1" value="0.2" />
+    <label for="fisica103"> No estoy segurx</label>
 
-<h3>SEXUAL</h3>
+    <p>te amenazaron con un cuchillo, pistola u otra arma?</p>
+    <input type="radio" id="fisica201" name="fisica2" value="1" />
+    <label for="fisica201"> Sí</label>
+    <input type="radio" id="fisica202" name="fisica2" value="0" />
+    <label for="fisica202"> No</label>
+    <input type="radio" id="fisica203" name="fisica2" value="0.2" />
+    <label for="fisica203"> No estoy segurx</label>
 
-<p>te tocaron de manera sexual sin tu consentimiento?</p>
-<input type="checkbox" id="sexual101" name="sexual1" value="si" />
-<label for="sexual101"> Sí</label>
-<input type="checkbox" id="sexual102" name="sexual1" value="no" />
-<label for="sexual102"> No</label>
-<input type="checkbox" id="sexual103" name="sexual1" value="ns" />
-<label for="sexual103"> No estoy segurx</label>
+    <p>impartieron castigos físicos justificados bajo la idea de disciplina?</p>
+    <input type="radio" id="fisica301" name="fisica3" value="1" />
+    <label for="fisica301"> Sí</label>
+    <input type="radio" id="fisica302" name="fisica3" value="0" />
+    <label for="fisica302"> No</label>
+    <input type="radio" id="fisica303" name="fisica3" value="0.2" />
+    <label for="fisica303"> No estoy segurx</label>
+  </form>
 
-<p>te forzaron o presionaron a tener relaciones sexuales a través de acoso, amenazas o engaños?</p>
-<input type="checkbox" id="sexual201" name="sexual2" value="si" />
-<label for="sexual201"> Sí</label>
-<input type="checkbox" id="sexual202" name="sexual2" value="no" />
-<label for="sexual202"> No</label>
-<input type="checkbox" id="sexual203" name="sexual2" value="ns" />
-<label for="sexual203"> No estoy segurx</label>
+  <h3>SEXUAL</h3>
 
-<p>compartieron fotos íntimas tuyas sin tu consentimiento?</p>
-<input type="checkbox" id="sexual301" name="sexual3" value="si" />
-<label for="sexual301"> Sí</label>
-<input type="checkbox" id="sexual302" name="sexual3" value="no" />
-<label for="sexual302"> No</label>
-<input type="checkbox" id="sexual303" name="sexual3" value="ns" />
-<label for="sexual303"> No estoy segurx</label>
+  <form id="sexual" class="pregunta sexual">
+    <p>te tocaron de manera sexual sin tu consentimiento?</p>
+    <input type="radio" id="fisica101" name="sexual1" value="1" />
+    <label for="sexual101"> Sí</label>
+    <input type="radio" id="fisica102" name="sexual1" value="0" />
+    <label for="sexual102"> No</label>
+    <input type="radio" id="fisica103" name="sexual1" value="0.2" />
+    <label for="sexual103"> No estoy segurx</label>
 
-<p>te ofrecieron beneficios a cambio de favores sexuales?</p>
-<input type="checkbox" id="sexual401" name="sexual4" value="si" />
-<label for="sexual401"> Sí</label>
-<input type="checkbox" id="sexual402" name="sexual4" value="no" />
-<label for="sexual402"> No</label>
-<input type="checkbox" id="sexual403" name="sexual4" value="ns" />
-<label for="sexual403"> No estoy segurx</label>
+    <p>te forzaron o presionaron a tener relaciones sexuales a través de acoso, amenazas o engaños?</p>
+    <input type="radio" id="sexual201" name="sexual2" value="1" />
+    <label for="sexual201"> Sí</label>
+    <input type="radio" id="sexual202" name="sexual2" value="0" />
+    <label for="sexual202"> No</label>
+    <input type="radio" id="sexual203" name="sexual2" value="0.2" />
+    <label for="sexual203"> No estoy segurx</label>
 
-<h3>EN EL HOGAR</h3>
-<p>
-  ¿Alguna vez fuiste testigo de interacciones violentas o maltrato entre tus padres o tus cuidadores principales? 13.
-</p>
-<input type="checkbox" id="hogar101" name="hogar1" value="si" />
-<label for="hogar101"> Sí</label>
-<input type="checkbox" id="hogar102" name="hogar1" value="no" />
-<label for="hogar102"> No</label>
-<input type="checkbox" id="hogar103" name="hogar1" value="ns" />
-<label for="hogar103"> No estoy segurx</label>
+    <p>compartieron fotos íntimas tuyas sin tu consentimiento?</p>
+    <input type="radio" id="sexual301" name="sexual3" value="1" />
+    <label for="sexual301"> Sí</label>
+    <input type="radio" id="sexual302" name="sexual3" value="0" />
+    <label for="sexual302"> No</label>
+    <input type="radio" id="sexual303" name="sexual3" value="0.2" />
+    <label for="sexual303"> No estoy segurx</label>
 
-<p>
-  ¿Alguna vez viste u oíste a tus padres o cuidadores maltratar a tus hermanos, hermanas u otros familiares menores de
-  edad?
-</p>
-<input type="checkbox" id="hogar201" name="hogar2" value="si" />
-<label for="hogar201"> Sí</label>
-<input type="checkbox" id="hogar202" name="hogar2" value="no" />
-<label for="hogar202"> No</label>
-<input type="checkbox" id="hogar203" name="hogar2" value="ns" />
-<label for="hogar203"> No estoy segurx</label>
-<input type="checkbox" id="hogar203" name="hogar2" value="na" />
-<label for="hogar203"> No tengo hermanxs</label>
+    <p>te ofrecieron beneficios a cambio de favores sexuales?</p>
+    <input type="radio" id="sexual401" name="sexual4" value="1" />
+    <label for="sexual401"> Sí</label>
+    <input type="radio" id="sexual402" name="sexual4" value="0" />
+    <label for="sexual402"> No</label>
+    <input type="radio" id="sexual403" name="sexual4" value="0.2" />
+    <label for="sexual403"> No estoy segurx</label>
+  </form>
 
-<h3>EN LA COMUNIDAD</h3>
-<p>
-  ¿Alguna vez presenciaste ataques o actos violentos en fuera de tu casa o ambiente familiar (en el barrio, en el
-  colegio, etc.)?
-</p>
-<input type="checkbox" id="comunidad101" name="comunidad1" value="si" />
-<label for="comunidad101"> Sí</label>
-<input type="checkbox" id="comunidad102" name="comunidad1" value="no" />
-<label for="comunidad102"> No</label>
-<input type="checkbox" id="comunidad103" name="comunidad1" value="ns" />
-<label for="comunidad103"> No estoy segurx</label>
-<!-- </Desplegable> -->
+  <h3>EN EL HOGAR</h3>
+  <p>
+    ¿Alguna vez fuiste testigo de interacciones violentas o maltrato entre tus padres o tus cuidadores principales? 13.
+  </p>
+  <form id="hogar" class="pregunta">
+    <input type="radio" id="hogar101" name="hogar1" value="1" />
+    <label for="hogar101"> Sí</label>
+    <input type="radio" id="hogar102" name="hogar1" value="0" />
+    <label for="hogar102"> No</label>
+    <input type="radio" id="hogar103" name="hogar1" value="0.2" />
+    <label for="hogar103"> No estoy segurx</label>
+  </form>
+
+  <p>
+    ¿Alguna vez viste u oíste a tus padres o cuidadores maltratar a tus hermanos, hermanas u otros familiares menores de
+    edad?
+  </p>
+  <input type="radio" id="hogar201" name="hogar2" value="1" />
+  <label for="hogar201"> Sí</label>
+  <input type="radio" id="hogar202" name="hogar2" value="0" />
+  <label for="hogar202"> No</label>
+  <input type="radio" id="hogar203" name="hogar2" value="0.2" />
+  <label for="hogar203"> No estoy segurx</label>
+  <input type="radio" id="hogar203" name="hogar2" value="0" />
+  <label for="hogar203"> No tengo hermanxs</label>
+
+  <h3>EN LA COMUNIDAD</h3>
+  <p>
+    ¿Alguna vez presenciaste ataques o actos violentos en fuera de tu casa o ambiente familiar (en el barrio, en el
+    colegio, etc.)?
+  </p>
+  <form id="comunidad" class="pregunta">
+    <input type="radio" id="comunidad101" name="comunidad1" value="1" />
+    <label for="comunidad101"> Sí</label>
+    <input type="radio" id="comunidad102" name="comunidad1" value="0" />
+    <label for="comunidad102"> No</label>
+    <input type="radio" id="comunidad103" name="comunidad1" value="0.2" />
+    <label for="comunidad103"> No estoy segurx</label>
+  </form>
+  <!-- </Desplegable> -->
+  <div>
+    <input id="enviar" type="submit" value="Enviar" />
+  </div>
+
+  <script>
+    const botonEnviar = document.getElementById('enviar');
+    const general = document.getElementById('general');
+    const emocional = document.getElementById('emocional');
+    const fisica = document.getElementById('fisica');
+    const sexual = document.getElementById('sexual');
+    const hogar = document.getElementById('hogar');
+    const comunidad = document.getElementById('comunidad');
+    const preguntasTodas = { general: 0, emocional: 0, fisica: 0, sexual: 0, hogar: 0, comunidad: 0 };
+
+    function sumarTodo() {
+      sumar(general, 'general');
+      sumar(emocional, 'emocional');
+      sumar(fisica, 'fisica');
+      sumar(sexual, 'sexual');
+      // let total = [];
+      // preguntasEmocional.forEach((pregunta) => {
+      //   console.log(pregunta.elements);
+      //   pregunta.onchange = (evento) => {
+      //     console.log(pregunta, evento.target.value);
+      //   };
+      // });
+    }
+
+    // Función para sumar los puntos de cada categoría
+    function sumar(categoria, nombreCategoria) {
+      var opciones = categoria.querySelectorAll('input');
+      opciones.forEach((input) => {
+        if (input.checked) {
+          preguntasTodas[`${nombreCategoria}`] += +input.value;
+        }
+      });
+
+      console.log(preguntasTodas);
+    }
+
+    botonEnviar.addEventListener('click', () => sumarTodo());
+  </script>
+
+  <style lang="scss"></style>
+</div>
