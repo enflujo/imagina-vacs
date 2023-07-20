@@ -54,6 +54,8 @@
   --amarilloEdadMedia: #fff8cc;
   --verdeTeVerde: #ccffcc;
   --azulCielo: #c9f0ff;
+  --azulMapa: rgb(218, 241, 243);
+  --rojoMapa: rgb(243, 85, 41);
   --moraAzul: #531cb3;
   --rosaHermanosGrimm: #fcc5dd;
   --blancoNube: #ffffff;
@@ -91,7 +93,7 @@ body {
 
 a,
 a:link {
-  color: #57c5b6;
+  color: var(--naranjaMandarina);
   text-decoration: none;
 }
 
@@ -195,12 +197,13 @@ main {
   .municipio {
     fill: rgb(218, 241, 243);
     shape-rendering: geometricPrecision;
-    stroke: rgba(149, 216, 222, 0.736);
-    stroke-width: 0.8px;
+    stroke: var(--azulVaALlover);
+    stroke-width: 0.2px;
 
     &.pdet {
-      fill: rgb(230, 102, 95);
-      stroke: rgba(229, 169, 169, 0.791);
+      fill: var(--rojoMapa);
+      stroke: rgba(246, 220, 220, 0.791);
+      stroke-width: 0.35px;
     }
   }
 }
