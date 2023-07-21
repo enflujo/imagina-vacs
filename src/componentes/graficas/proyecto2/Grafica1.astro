@@ -1,0 +1,63 @@
+---
+import Colombina from '@/componentes/Colombina.astro';
+import datos from '@/datos/p2Aces';
+---
+
+<section id="p2Grafica1" class="grafica">
+  <h3>Experiencias adversas en la infancia</h3>
+
+  <div>
+    <h4 class="tituloGrafica">Colombia</h4>
+
+    <div class="colombinas">
+      {
+        datos.colombia.map((variable) => {
+          return <Colombina datos={variable} color={'#000'} />;
+        })
+      }
+    </div>
+  </div>
+
+  <div>
+    <h4 class="tituloGrafica">Honduras</h4>
+
+    <div class="colombinas">
+      {
+        datos.honduras.map((variable) => {
+          return <Colombina datos={variable} color={'#000'} />;
+        })
+      }
+    </div>
+  </div>
+
+  <div>
+    <h4 class="tituloGrafica">El Salvador</h4>
+
+    <div class="colombinas">
+      {
+        datos.salvador.map((variable) => {
+          return <Colombina datos={variable} color={'#000'} />;
+        })
+      }
+    </div>
+  </div>
+
+  <p class="anotacionGrafica">{datos.info}</p>
+</section>
+
+<style lang="scss">
+  .grafica {
+    padding: 3em 0;
+  }
+  h3 {
+    font-size: 1.9em;
+  }
+  .tituloGrafica {
+    font-size: 1.35em;
+    margin-top: 1em;
+  }
+
+  .colombinas {
+    margin: 0.5em 0 1em 0;
+  }
+</style>

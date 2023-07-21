@@ -1,6 +1,7 @@
 ---
 import Desliza from '@/componentes/Desliza.astro';
 import Menu from '@/componentes/Menu.astro';
+import Grafica1 from '@/componentes/graficas/proyecto2/Grafica1.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 ---
 
@@ -42,40 +43,30 @@ import Plantilla from '@/plantillas/Plantilla.astro';
         </p>
         <p class="destacado">
           Sin embargo, este ciclo puede romperse o disminuir si las personas acceden a experiencias positivas y
-          acompañamiento psicológico que ayuden a reducir el riesgo de transmisión. De ahí la importancia de la
-          existencia de políticas públicas de prevención que, a mediano y largo plazo, contribuyan a minimizar la
-          violencia y el maltrato en el hogar.
+          acompañamiento psicológico que ayuden a reducir el riesgo de transmisión.
         </p>
       </div>
     </section>
 
-    <section class="columnas seccion apagado" id="encuesta">
+    <!-- <section class="columnas seccion apagado" id="encuesta">
       <h3 class="subtitulo">¿Identificamos la violencia? (encuesta)</h3>
       <diV class="columna">
-        <p class="narracion">
-          En esta y otras investigaciones se ha encontrado que una parte de la población colombiana ha normalizado el
-          maltrato y la violencia como formas válidas de disciplina y de crianza.
-        </p>
-        <p class="escribiendo">
-          La siguiente encuesta tiene como objetivo reflexionar sobre la identificación y perpetuación de violencia como
-          individuos y miembros de la comunidad.
-        </p>
-        <p class="narracion">
-          Son 22 preguntas que buscan evaluar conocimientos y experiencias relacionadas con diferentes tipos de
-          violencia.
-        </p>
-        <p class="narracion">
-          Los datos recopilados serán usados únicamente con fines investigativos y no serán compartidos con entes
-          externos al proyecto. La información obtenida durante la encuesta será manejada con completa confidencialidad
-          y anonimato. Por este motivo, no se recolectarán datos personales diferentes a la edad y sexo.
+        <p class="narracion">encontramos que en Colombia el 82% de ellos ha tenido
+          alguna experiencia ACE en su vida, más de la mitad ha presenciado violencia en la comunidad y alrededor de 1
+          de cada 3 ha sido víctima de violencia física.
+          Son preguntas relacionadas con las experiencias personales de maltrato en la infancia y la adolescencia. Los
+          datos no serán recopilados, almacenados ni compartidos con entes externos al proyecto. La información obtenida
+          durante la encuesta será manejada con completa confidencialidad y anonimato, y estará disponible solo hasta
+          que el lector cierre o recargue la página.
         </p>
         <p class="destacado">
           Los temas abordados pueden generar malestar o revivir hechos victimizantes que hayan sido traumáticos. Si
           siente que este es su caso, por favor retírese en el momento que lo desee o absténgase de contestarla.
         </p>
         <p class="comentario">Enlace a la encuesta aquí?</p>
-      </diV>
-    </section>
+        <Encuesta />
+      </div>
+    </section> -->
 
     <section class="columnas seccion apagado">
       <h3 class="subtitulo">Diferencias entre países</h3>
@@ -87,38 +78,26 @@ import Plantilla from '@/plantillas/Plantilla.astro';
         </p>
         <p class="narracion">
           El objetivo era identificar cuáles son los ACEs más comúnes en cada país y comprender los efectos que pueden
-          tener sobre la salud mental y física en la adultez.
-        </p>
-        <p class="grafica">
-          DATOS PARA VISUALIZAR: En Colombia y Honduras alrededor de uno de cada tres jóvenes entre 13 y 24 años fue
-          víctima de violencia física, mientras que en El Salvador se reporta una menor prevalencia de este tipo de
-          violencia ya que solo uno de cada cinco jóvenes la sufre. Honduras es el país que mayor prevalencia tiene en
-          violencia emocional y sexual de estos tres países. La orfandad de uno o ambos padres es relativamente simular
-          en los tres países y esta es de alrededor del 10%. En cuanto a la separación de uno o ambos padres en Colombia
-          y Honduras uno de cada tres jóvenes lo vive mientras que en El Salvador esta prevalencia es menor. La
-          proporción de jóvenes que es testigo de violencia en el hogar es de 33,4% en Colombia siendo esta la más alta
-          de los tres países, y más del 50% de la población joven de este país ha sido testigo de violencia en la
-          comunidad, siendo esta más del doble de lo reportado en El Salvador y un 22% más alta que en Honduras. La
-          prevalencia de cualquier ACEs es de más del 50% para los tres países, para los cuales alrededor del 47%
-          reporta haber vivido una o dos ACEs y el 34,4%, 25,8% y el 13,3% para Colombia, Honduras y El Salvador
-          respectivamente la población reporta haber vivido tres o más ACEs.
+          tener sobre la salud mental y física en la adultez. Partimos de los datos sobre la prevalencia de experiencias
+          adversas en la infancia (ACEs) en jóvenes de 13 a 24 años en cada país.
         </p>
 
-        <p class="comentario">
-          *Los datos anteriores salen de esta tabla. Podría visualizarse todo y apuntar o resaltar lo de arriba.
+        <p class="resaltado">
+          Encontramos que en Colombia el 82% ha tenido alguna experiencia ACE en su vida, más de la mitad ha presenciado
+          violencia en la comunidad y alrededor de 1 de cada 3 ha sido víctima de violencia física.
         </p>
-        <p>
-          <a
-            href="https://uniandes-my.sharepoint.com/:w:/r/personal/j_gonzalezj_uniandes_edu_co/Documents/EnFlujo/Laboratorio%20EnFlujo/Proyectos/2023/Imagina%20-%20Fellows%20VACS/Relatos%20-%20%20JORGE%20Y%20JULI%C3%81N%20(ACE%27S).docx?d=w4722815dfc12452fbbc86e2fedf14dbc&csf=1&web=1&e=Qu5d2a"
-            >GRÁFICA 2.1.1</a
-          >: Prevalencia de experiencias adversas en la infancia (ACEs) en jóvenes de 13 a 24 años.
-        </p>
+
+        <Grafica1 />
       </div>
     </section>
     <section class="columnas seccion apagado">
-      <h3 class="subtitulo">Resultados</h3>
+      <h3 class="subtitulo">Conductas de riesgo</h3>
       <div class="columna">
-        <p class="comentario">Sería bueno conversar con los autores para que nos expliquen un poco las tablas.</p>
+        <p>
+          A partir de estos datos exploramos la relación entre una mayor exposición a las ACEs y la presencia de
+          conductas de riesgo en la adultez como beber en exceso, fumar, consumir drogas, sufrir desórdenes
+          psicológicos, o haber intentado suicidarse.
+        </p>
         <p class="destacado">
           Los resultados confirmaron que la exposición a distintos ACEs en la infancia tiene efectos significativos
           sobre la salud mental y física, e influye en la probabilidad de tener conductas de riesgo en la adultez.
@@ -129,21 +108,9 @@ import Plantilla from '@/plantillas/Plantilla.astro';
         </p>
         <p class="comentario">¿Cómo visualizar esto? ¿Todas las tablas del paper?</p>
         <p>
-          En Colombia, el haber estado expuestos a tres o más ACEs aumenta en promedio 21 puntos porcentuales la
+          En Colombia, haber estado expuestos a tres o más ACEs aumenta en promedio 21 puntos porcentuales la
           probabilidad de pensar en o de intentar suicidarse, y 27.4 puntos porcentuales la probabilidad de tener
           desórdenes psicológicos y un 10.1 puntos porcentuales la probabilidad de fumar.
-        </p>
-        <p>
-          En Honduras la prevalencia de uno o dos ACEs provoca un aumento de 9 puntos porcentuales en la probabilidad de
-          beber en exceso y 7 puntos porcentuales la probabilidad de fumar, tener ideación suicida o tener desórdenes
-          psicológicos. Al presentar una prevalencia de tres o más ACEs la probabilidad de beber en exceso aumenta 17.7
-          puntos porcentuales.
-        </p>
-        <p>
-          En el Salvador la prevalencia de tres o más ACEs no representa un aumento significativo en el uso de drogas,
-          fumar o beber en exceso. Sin embargo, el resultado más alarmante es el que indica que tres o más ACEs aumentan
-          en 20 puntos porcentuales la probabilidad de desórdenes psicológicos y aumentan 17 puntos porcentuales la
-          probabilidad de ideación o intento de suicidio.
         </p>
         <p>
           En el caso de Honduras, se requiere de tan solo uno o dos ACEs para que la relación con los efectos sea
@@ -152,14 +119,9 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           una exposición mayor a esta para que los efectos tengan significancia.
         </p>
         <p>
-          La prevalencia de ACEs más común en Colombia es ser testigo de violencia en la comunidad o el hogar y la
-          violencia física, mientras que en Honduras y El Salvador la más frecuente es la separación de uno o ambos
-          padres. Al examinar los efectos sobre los resultados de salud, en Colombia la mayor afectación de las ACEs se
-          traduce en una mayor probabilidad de tener desordenes psicológicos y en el intento o ideación suicida; este
-          patrón es similar en los otros dos países. Finalmente, al realizar un primer ejercicio que combina diferentes
-          ACEs y mide sus efectos sobre resultados de salud se encuentra que, para el caso de Colombia, Honduras y El
-          Salvador, las combinaciones más perjudiciales son aquellas que tienen una o dos tipos de violencia y algún
-          otro tipo de ACEs.
+          Finalmente, al realizar un primer ejercicio que combina diferentes ACEs y mide sus efectos sobre resultados de
+          salud se encuentra que, para el caso de Colombia, Honduras y El Salvador, las combinaciones más perjudiciales
+          son aquellas que tienen una o dos tipos de violencia y algún otro tipo de ACEs.
         </p>
       </div>
     </section>
