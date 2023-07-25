@@ -7,9 +7,10 @@ export interface Props {
   };
   color: string;
   alto?: number;
+  info?: string;
 }
 
-const { datos, color, alto } = Astro.props;
+const { datos, color, alto, info } = Astro.props;
 ---
 
 <div class="contenedorPuntos">
@@ -19,16 +20,27 @@ const { datos, color, alto } = Astro.props;
       class="punto unoODos"
       style={`width:${datos.unoODosAces.puntosPorcentuales}%;background-color:${color};height:${alto ? alto : 3}px`}
     ></span>
+  </div>
+  <div>
     <span
       class="punto TresOMas"
-      style={`width:${datos.tresOMasAces.puntosPorcentuales}%;background-color:${color};height:${alto ? alto : 3}px`}
+      style={`width:${datos.tresOMasAces.puntosPorcentuales}%;background-color:pink;height:${alto ? alto : 3}px`}
     ></span>
   </div>
+
+  {info && <span class="info">{info}</span>}
 </div>
 
 <style lang="scss">
   .nombre {
     margin: 0;
     flex-basis: 200px;
+  }
+
+  .punto {
+    width: 3px;
+    background-color: rgb(68, 68, 26);
+    display: block;
+    margin-right: 5px;
   }
 </style>

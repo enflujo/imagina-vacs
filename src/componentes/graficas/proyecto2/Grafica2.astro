@@ -1,6 +1,6 @@
 ---
 import datos from '@/datos/p2ConductasRiesgo';
-console.log(datos.colombia);
+import PuntosPorcentuales from '@/componentes/PuntosPorcentuales.astro';
 ---
 
 <section id="p2Grafica2" class="grafica">
@@ -8,14 +8,46 @@ console.log(datos.colombia);
   <h4>Colombia</h4>
 
   <div class="puntosPorcentuales">
-    {datos.colombia}
     {
       datos.colombia.map((variable) => {
-        return <puntosPorcentuales datos={variable} color={'#000'} />;
+        if (variable.unoODosAces.significativo || variable.tresOMasAces.significativo)
+          return <PuntosPorcentuales datos={variable} color={'#000'} />;
       })
     }
+  </div>
+  <div class="contenedorReferencias">
+    <p class="referenciaColor"><span class="cuadroColor" id="unoODos"></span> Uno o dos ACEs</p>
+    <p class="referenciaColor"><span class="cuadroColor" id="tresOMas"></span> Tres o más ACEs</p>
   </div>
   <p class="anotacionGrafica">{datos.info}</p>
 </section>
 
 <script></script>
+
+<style lang="scss">
+  .referenciaColor {
+    display: flex;
+    margin-right: 1em;
+  }
+  .cuadroColor {
+    height: 0.7em;
+    width: 0.7em;
+    display: block;
+    margin-right: 0.3em;
+  }
+
+  .contenedorReferencias {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #unoODos {
+    background-color: black;
+  }
+
+  #tresOMas {
+    background-color: pink;
+  }
+</style>
