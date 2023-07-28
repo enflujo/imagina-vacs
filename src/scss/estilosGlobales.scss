@@ -57,6 +57,7 @@
   --azulMapa: rgb(218, 241, 243);
   --rojoMapa: rgb(243, 85, 41);
   --moraAzul: #531cb3;
+  --moradoLavanda: #e7e2f7;
   --rosaHermanosGrimm: #fcc5dd;
   --blancoNube: #ffffff;
 
@@ -154,18 +155,22 @@ main {
 
 .escribiendo {
   text-decoration: blink;
+  color: var(--moraAzul);
+  margin: 10em 5em 10em 5em;
   font-family: var(--fuenteMono);
-  background-color: rgb(137 123 153);
+  background-color: var(--moradoLavanda);
   padding: 0.4em;
   width: fit-content;
 }
 
 .destacado {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-family: var(--fuenteMono2);
-  color: rgb(50, 29, 47);
-  background-color: rgba(245, 186, 57, 0.836);
-  padding: 0.5em;
+  color: var(--grisTexto);
+  background-color: var(--amarilloSol);
+  margin: 15em 5em 15em 5em;
+  padding: 3em;
+  line-height: 1.5em;
   width: 85%;
 }
 
