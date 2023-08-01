@@ -212,3 +212,15 @@ main {
   position: sticky;
   top: var(--margenSuperior);
 }
+
+.seccion {
+  margin-bottom: 7em;
+}
+
+.tituloSeccion {
+  margin-top: 1.5em;
+  .subtitulo {
+    position: sticky;
+    top: 100px;
+  }
+}
