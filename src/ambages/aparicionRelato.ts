@@ -65,7 +65,6 @@ export default () => {
 };
 
 function mostrar(parrafos: NodeListOf<HTMLParagraphElement>) {
-  console.log('miau');
   parrafos.forEach((parrafo) => {
     Object.assign(parrafo.style, {
       transform: 'scale(1)',
