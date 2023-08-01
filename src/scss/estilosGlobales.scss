@@ -116,7 +116,7 @@ main {
 
 .columnas {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 
   .columna {
     flex-basis: 50%;
@@ -223,7 +223,7 @@ main {
 }
 
 .tituloSeccion {
-  margin-top: 1.5em;
+  margin: 1.5em 0 0 4em;
   .subtitulo {
     position: sticky;
     top: 100px;
