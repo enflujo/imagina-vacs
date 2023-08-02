@@ -109,12 +109,6 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           psicológicos, o haber intentado suicidarse.
         </p>
 
-        <p class="comentario">
-          Agregar esto como comentario a la gráfica: "Las variables de control utilizadas fueron: Proporción de mujeres,
-          Edad, Proporción de estudiantes,Proporción de trabajadores, Proporción Jefa de hogar y Número de cuartos para
-          dormir por hogar"
-        </p>
-
         <p class="destacado">
           Los resultados confirmaron que la exposición a distintos ACEs en la infancia tiene efectos significativos
           sobre la salud mental y física, e influye en la probabilidad de tener conductas de riesgo en la adultez.
@@ -123,22 +117,61 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           Algunos de los hallazgos más preocupantes y que evidencian la urgencia de plantear políticas públicas de
           prevención son los siguientes:
         </p>
-        <p class="comentario">¿Cómo visualizar esto? ¿Todas las tablas del paper?</p>
-        <p>
+
+        <p class="narracion">
           En Colombia, haber estado expuestos a tres o más ACEs aumenta en promedio 21 puntos porcentuales la
           probabilidad de pensar en o de intentar suicidarse, y 27.4 puntos porcentuales la probabilidad de tener
           desórdenes psicológicos y un 10.1 puntos porcentuales la probabilidad de fumar.
         </p>
-        <p>
+        <p class="narracion">
           En el caso de Honduras, se requiere de tan solo uno o dos ACEs para que la relación con los efectos sea
           significativa, mientras que en Colombia se requieren de tres o más ACEs para que la relación con los efectos
           sea significativa. Esto podría inferir que en Colombia está tan normalizada la violencia, que se requiere de
           una exposición mayor a esta para que los efectos tengan significancia.
         </p>
-        <p>
-          Finalmente, al realizar un primer ejercicio que combina diferentes ACEs y mide sus efectos sobre resultados de
-          salud se encuentra que, para el caso de Colombia, Honduras y El Salvador, las combinaciones más perjudiciales
-          son aquellas que tienen una o dos tipos de violencia y algún otro tipo de ACEs.
+        <p class="narracion">
+          Al realizar un primer ejercicio que combina diferentes ACEs y mide sus efectos sobre resultados de salud
+          encontramos que, para el caso de Colombia, Honduras y El Salvador, las combinaciones más perjudiciales son
+          aquellas que tienen una o dos tipos de violencia y algún otro tipo de ACEs.
+        </p>
+      </div>
+    </section>
+
+    <section class="columnas seccion apagado">
+      <div class="tituloSeccion">
+        <h3 class="subtitulo">Tomar medidas para mejorar la situación</h3>
+      </div>
+      <div class="columna">
+        <p class="destacado">
+          Dada la alta prevalencia de experiencias adversas en la infancia en Colombia, es fundamental reevaluar y
+          reestructurar los servicios de salud y atención para adoptar un enfoque informado sobre trauma y sus posibles
+          efectos.
+        </p>
+        <p class="narracion">
+          Comprendiendo que muchas personas que buscan tratamiento pueden tener historias de trauma, es esencial crear
+          un entorno que priorice la seguridad y el apoyo. A través de políticas que aseguren la seguridad física,
+          psicológica y emocional tanto de los usuarios como del personal, se deben implementar medidas para evitar la
+          re-victimización y fomentar un ambiente seguro. Es crucial construir confianza entre todas las partes
+          interesadas, promoviendo la colaboración y la toma de decisiones compartida.
+        </p>
+        <p class="narracion">
+          Además, los responsables de la formulación de políticas deben centrarse en reconocer la agencia de las
+          personas en su proceso de recuperación ofreciéndoles opciones e involucrándolos en el establecimiento de sus
+          propias metas. Reconociendo que la exposición a eventos potencialmente traumáticos puede llevar a la
+          impotencia, las políticas deben diseñarse para validar sentimientos e inquietudes, apoyando a las personas en
+          la toma de decisiones.
+        </p>
+        <p class="destacado">
+          Para abordar eficazmente los efectos de la adversidad, es fundamental un enfoque culturalmente sensible,
+          reconociendo y superando estereotipos y prejuicios.
+        </p>
+        <p class="narracion">
+          Es clave salirse de enfoques deterministas que terminen por estigmatizar a quienes reportan haber sufrido
+          alguna o varias experiencias adversas. De la misma forma, debe prestarse atención al bienestar de aquellos que
+          trabajan de primera mano en la atención de estas situaciones. La exposición constante a estas experiencias
+          adversas, aunque ajenas, puede afectar la salud del personal y su rendimiento perjudicando así a quienes
+          acceden a los servicios. Un enfoque que contemple el bienestar de todos los actores involucrados es
+          fundamental para lidiar efectivamente contra la adversidad.
         </p>
       </div>
     </section>
@@ -147,7 +180,6 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 
 <script>
   import desvanecer from '@/ambages/desvanecer';
-
   desvanecer(document.getElementById('introduccion'));
 </script>
 
