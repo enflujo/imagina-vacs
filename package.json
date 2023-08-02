@@ -23,7 +23,6 @@
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.1",
     "postcss": "^8.4.26",
-    "prettier-plugin-astro": "^0.11.0",
     "sass": "^1.63.6"
   }
 }
