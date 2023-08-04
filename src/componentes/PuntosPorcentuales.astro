@@ -5,42 +5,78 @@ export interface Props {
     unoODosAces: { puntosPorcentuales: Number; significativo: Boolean };
     tresOMasAces: { puntosPorcentuales: Number; significativo: Boolean };
   };
-  color: string;
+  colorUno: string;
+  colorTres: string;
   alto?: number;
   info?: string;
 }
 
-const { datos, color, alto, info } = Astro.props;
+const { datos, colorUno, colorTres, info } = Astro.props;
 ---
 
-<div class="contenedorPuntos">
+<div class="contenedorGrafica">
+  <div class="contenedorLineas">
+    <div class="elementoGrafica">
+      <p class="leyenda" style={`opacity: ${datos.unoODosAces.significativo ? 1 : 0}`}>
+        {datos.unoODosAces.puntosPorcentuales}
+      </p>
+      <span
+        class="punto unoODos"
+        style={`border-color:${colorUno};display: ${datos.unoODosAces.significativo ? 'block' : 'none'};height:${
+          +datos.unoODosAces.puntosPorcentuales * 10
+        }px`}></span>
+    </div>
+    <div class="elementoGrafica">
+      <p class="leyenda" style={`opacity: ${datos.tresOMasAces.significativo ? 1 : 0}`}>
+        {datos.tresOMasAces.puntosPorcentuales}
+      </p>
+      <span
+        class="punto TresOMas"
+        style={`border-color:${colorTres};display: ${datos.tresOMasAces.significativo ? 'block' : 'none'};height:${
+          +datos.tresOMasAces.puntosPorcentuales * 10
+        }px`}></span>
+    </div>
+  </div>
   <p class="nombre">{datos.nombre}</p>
-  <div class="elementoGrafica">
-    <span
-      class="punto unoODos"
-      style={`width:${datos.unoODosAces.puntosPorcentuales}%;background-color:${color};height:${alto ? alto : 3}px`}
-    ></span>
-  </div>
-  <div>
-    <span
-      class="punto TresOMas"
-      style={`width:${datos.tresOMasAces.puntosPorcentuales}%;background-color:pink;height:${alto ? alto : 3}px`}
-    ></span>
-  </div>
-
   {info && <span class="info">{info}</span>}
 </div>
 
 <style lang="scss">
   .nombre {
     margin: 0;
-    flex-basis: 200px;
+    height: 100px;
+    text-align: center;
+    font-size: 0.9em;
+    max-width: 150px;
   }
 
   .punto {
-    width: 3px;
-    background-color: rgb(68, 68, 26);
+    width: 4px;
     display: block;
     margin-right: 5px;
+    border: solid 2px black;
+  }
+
+  .leyenda {
+    font-size: 0.8em;
+  }
+
+  .contenedorGrafica {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5em;
+  }
+
+  .contenedorLineas {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+
+  .elementoGrafica {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 </style>
