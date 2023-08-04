@@ -1,0 +1,21 @@
+---
+import datos from '@/datos/p2ConductasRiesgo';
+console.log(datos.colombia);
+---
+
+<section id="p2Grafica2" class="grafica">
+  <h3>Cómo afectan las ACEs en la infancia la probabilidad de tener actitudes de riesgo en la adultez</h3>
+  <h4>Colombia</h4>
+
+  <div class="puntosPorcentuales">
+    {datos.colombia}
+    {
+      datos.colombia.map((variable) => {
+        return <puntosPorcentuales datos={variable} color={'#000'} />;
+      })
+    }
+  </div>
+  <p class="anotacionGrafica">{datos.info}</p>
+</section>
+
+<script></script>

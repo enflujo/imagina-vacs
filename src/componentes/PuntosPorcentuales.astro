@@ -1,0 +1,34 @@
+---
+export interface Props {
+  datos: {
+    nombre: string;
+    unoODosAces: { puntosPorcentuales: Number; significativo: Boolean };
+    tresOMasAces: { puntosPorcentuales: Number; significativo: Boolean };
+  };
+  color: string;
+  alto?: number;
+}
+
+const { datos, color, alto } = Astro.props;
+---
+
+<div class="contenedorPuntos">
+  <p class="nombre">{datos.nombre}</p>
+  <div class="elementoGrafica">
+    <span
+      class="punto unoODos"
+      style={`width:${datos.unoODosAces.puntosPorcentuales}%;background-color:${color};height:${alto ? alto : 3}px`}
+    ></span>
+    <span
+      class="punto TresOMas"
+      style={`width:${datos.tresOMasAces.puntosPorcentuales}%;background-color:${color};height:${alto ? alto : 3}px`}
+    ></span>
+  </div>
+</div>
+
+<style lang="scss">
+  .nombre {
+    margin: 0;
+    flex-basis: 200px;
+  }
+</style>
