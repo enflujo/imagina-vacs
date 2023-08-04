@@ -22,8 +22,8 @@ const { datos, colorUno, colorTres, info } = Astro.props;
       </p>
       <span
         class="punto unoODos"
-        style={`border-color:${colorUno};display: ${datos.unoODosAces.significativo ? 'block' : 'none'};height:${
-          +datos.unoODosAces.puntosPorcentuales * 10
+        style={`background-color:${colorUno};display: ${datos.unoODosAces.significativo ? 'block' : 'none'};height:${
+          +datos.unoODosAces.puntosPorcentuales * 8
         }px`}></span>
     </div>
     <div class="elementoGrafica">
@@ -32,8 +32,8 @@ const { datos, colorUno, colorTres, info } = Astro.props;
       </p>
       <span
         class="punto TresOMas"
-        style={`border-color:${colorTres};display: ${datos.tresOMasAces.significativo ? 'block' : 'none'};height:${
-          +datos.tresOMasAces.puntosPorcentuales * 10
+        style={`background-color:${colorTres};display: ${datos.tresOMasAces.significativo ? 'block' : 'none'};height:${
+          +datos.tresOMasAces.puntosPorcentuales * 8
         }px`}></span>
     </div>
   </div>
@@ -54,7 +54,6 @@ const { datos, colorUno, colorTres, info } = Astro.props;
     width: 4px;
     display: block;
     margin-right: 5px;
-    border: solid 2px black;
   }
 
   .leyenda {
