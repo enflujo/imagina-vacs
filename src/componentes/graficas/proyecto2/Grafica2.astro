@@ -4,7 +4,9 @@ import PuntosPorcentuales from '@/componentes/PuntosPorcentuales.astro';
 ---
 
 <section id="p2Grafica2" class="grafica">
-  <h3 class="titulo">¿Las ACEs en la infancia afectan la probabilidad de tener actitudes de riesgo en la adultez?</h3>
+  <h3 class="titulo">
+    ¿Cómo influyen las ACEs en la infancia la probabilidad de tener actitudes de riesgo en la adultez?
+  </h3>
   <h4>Colombia</h4>
   <p class="referencia">Valores en puntos porcentuales</p>
   <div class="puntosPorcentuales">
@@ -39,7 +41,14 @@ import PuntosPorcentuales from '@/componentes/PuntosPorcentuales.astro';
     <p class="referencia"><span class="cuadroColor" id="unoODos"></span> Uno o dos ACEs, significativo</p>
     <p class="referencia"><span class="cuadroColor" id="tresOMas"></span> Tres o más ACEs</p>
   </div>
-  <p class="anotacionGrafica">{datos.info}</p>
+  <div>
+    {
+      datos.info.map((dato) => {
+        return <p class="anotacionGrafica">{dato}</p>;
+      })
+    }
+  </div>
+  <!-- <p class="anotacionGrafica">{datos.info}<br /></p> -->
 </section>
 
 <script></script>
@@ -53,7 +62,7 @@ import PuntosPorcentuales from '@/componentes/PuntosPorcentuales.astro';
   .referencia {
     display: flex;
     margin-right: 1em;
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
   .cuadroColor {
     height: 0.7em;

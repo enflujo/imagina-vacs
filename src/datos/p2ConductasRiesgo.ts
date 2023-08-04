@@ -2,7 +2,9 @@ const datos = {
   infoIndicador:
     'Prevalencia de experiencias adversas en la infancia (ACEs) en jóvenes de 18 a 24 años sobre actitudes de riesgo - Colombia ',
   info: [
-    'Fuente VACS Colombia 2018, Honduras 2017 y el Salvador 2017. Las variables de control utilizadas fueron: Proporción de mujeres, Edad, Proporción de estudiantes, Proporción de trabajadores, Proporción Jefa de hogar y Número de cuartos para dormir por hogar.',
+    'Fuente: VACS Colombia 2018, Honduras 2017 y el Salvador 2017.',
+    'Las variables de control utilizadas fueron: Proporción de mujeres, Edad, Proporción de estudiantes, Proporción de trabajadores, Proporción Jefa de hogar y Número de cuartos para dormir por hogar.',
+    'Solo se muestran resultados significativos, p<0.01.',
   ],
   colombia: [
     {
