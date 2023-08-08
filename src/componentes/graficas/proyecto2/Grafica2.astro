@@ -7,8 +7,16 @@ import PuntosPorcentuales from '@/componentes/PuntosPorcentuales.astro';
   <h3 class="titulo">
     ¿Cómo influyen las ACEs en la infancia la probabilidad de tener actitudes de riesgo en la adultez?
   </h3>
+  <div class="contenedorReferencias">
+    <p class="referencia"><span class="cuadroColor" id="unoODos"></span> Uno o dos ACEs, significativo</p>
+    <p class="referencia"><span class="cuadroColor" id="tresOMas"></span> Tres o más ACEs</p>
+  </div>
+  <p class="referencia">
+    *Valores en puntos porcentuales, es decir, la diferencia porcentual entre el promedio nacional y la población que
+    respondió haber sufrido ACEs en la infancia.
+  </p>
   <h4>Colombia</h4>
-  <p class="referencia">Valores en puntos porcentuales</p>
+
   <div class="puntosPorcentuales">
     {
       datos.colombia.map((variable) => {
@@ -18,7 +26,6 @@ import PuntosPorcentuales from '@/componentes/PuntosPorcentuales.astro';
     }
   </div>
   <h4>Honduras</h4>
-  <p class="referencia">Valores en puntos porcentuales</p>
   <div class="puntosPorcentuales">
     {
       datos.honduras.map((variable) => {
@@ -28,7 +35,6 @@ import PuntosPorcentuales from '@/componentes/PuntosPorcentuales.astro';
     }
   </div>
   <h4>El Salvador</h4>
-  <p class="referencia">Valores en puntos porcentuales</p>
   <div class="puntosPorcentuales">
     {
       datos.salvador.map((variable) => {
@@ -37,10 +43,7 @@ import PuntosPorcentuales from '@/componentes/PuntosPorcentuales.astro';
       })
     }
   </div>
-  <div class="contenedorReferencias">
-    <p class="referencia"><span class="cuadroColor" id="unoODos"></span> Uno o dos ACEs, significativo</p>
-    <p class="referencia"><span class="cuadroColor" id="tresOMas"></span> Tres o más ACEs</p>
-  </div>
+
   <div>
     {
       datos.info.map((dato) => {
@@ -48,7 +51,6 @@ import PuntosPorcentuales from '@/componentes/PuntosPorcentuales.astro';
       })
     }
   </div>
-  <!-- <p class="anotacionGrafica">{datos.info}<br /></p> -->
 </section>
 
 <script></script>
@@ -63,6 +65,7 @@ import PuntosPorcentuales from '@/componentes/PuntosPorcentuales.astro';
     display: flex;
     margin-right: 1em;
     font-size: 0.9em;
+    max-width: 60%;
   }
   .cuadroColor {
     height: 0.7em;
