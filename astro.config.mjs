@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
-import compress from 'astro-compress';
+import compress from '@otterlord/astro-compress';
 
 export default defineConfig({
   outDir: './publico',
