@@ -3,6 +3,7 @@ import Menu from '@/componentes/Menu.astro';
 import Desliza from '@/componentes/Desliza.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
+import Grafica2 from '@/componentes/graficas/proyecto1/Grafica2.astro';
 import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
 ---
 
@@ -31,13 +32,6 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
       </p>
 
       <p class="escribiendo" data-velocidad="50">Se estima que en las últimas tres décadas (entre 1985 y 2019):</p>
-      <!--PREGUNTA: ¿Por qué la precisión de fechas?-->
-      <!-- <div class="grafica">
-          GRÁFICA / ILUSTRACIÓN 0.1: De 1985 a 2018, 64.084 niñas, niños y adolescentes perdieron la vida por el
-          conflicto; de 1985 a 2016, 28.192 fueron desaparecidos de manera forzada; de 1990 a 2018 6.496 sufrieron
-          secuestro; de 1990 a 2017, 16.238 fueron reclutados por grupos armados y de 1985 a 2019, 3.049.527 fueron
-          víctimas de desplazamiento forzado
-        </div> -->
     </section>
 
     <div>
@@ -76,8 +70,8 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
 
     <section class="contenidoColumna">
       <p class="narracion">
-        Sin embargo, la recopilación de la información para el informe, a partir de entrevistas y bases de datos de
-        organizaciones sociales, reveló un gran vacío:
+        La recopilación de la información para el informe, a partir de entrevistas y bases de datos de organizaciones
+        sociales, reveló un gran vacío:
       </p>
 
       <p class="destacado">
@@ -103,7 +97,7 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
       </div>
 
       <div class="columna">
-        <p>
+        <p class="destacado">
           Las <span class="resaltado">personas desplazadas</span> son aquellas que por situaciones de violencia o catástrofes
           naturales, han sido obligadas a huir de su hogar hacia otro lugar del país.
         </p>
@@ -121,32 +115,18 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
         <Grafica1 />
 
         <p class="escribiendo" data-velocidad="50">
-          En Colombia más de 9.500.000 personas fueron desplazadas por el conflicto armado entre 1985 y 2022.
-        </p>
-        <p class="comentario">
-          fuente: página web oficial del Registro Único de Víctimas, 2022 - Cómo ponemos las fuentes??
+          En Colombia más de 8 millones de personas fueron desplazadas por el conflicto armado entre 1985 y 2022, según
+          el Registro Único de Víctimas.
         </p>
 
-        <p class="grafica">GRÁFICA 1.2: Diferencias de migración debido a violencia por población (PDET – NO PDET)</p>
         <p class="narracion">
-          De todos los municipios del país, aquellos que han sido históricamente más afectados por la violencia (PDET),
-          son los lugares donde la gente ha sufrido más el desplazamiento a causa del conflicto. En particular, los
-          niños y hombres jóvenes han migrado más allí que en otros territorios debido, quizás, al mayor riesgo de ser
-          reclutados para participar en grupos armados ilegales.
+          Los datos muestran que los municipios históricamente más afectados por la violencia (PDET) son los lugares
+          donde los menores han sufrido más el desplazamiento a causa del conflicto. Esta situación ha afectado
+          particularmente a los niños y hombres jóvenes debido, quizás, al mayor riesgo de ser reclutados para
+          participar en grupos armados ilegales.
         </p>
 
-        <p class="comentario">
-          Las tablas y gráficas originales están <a
-            href="https://uniandes-my.sharepoint.com/:w:/r/personal/j_gonzalezj_uniandes_edu_co/Documents/EnFlujo/Laboratorio%20EnFlujo/Proyectos/2023/Imagina%20-%20Fellows%20VACS/Relatos.docx?d=w3f6475c27e7e4eac9d867ce34fa532b4&csf=1&web=1&e=0rK4Cl"
-            >aquí.</a
-          >
-          Los datos pasados a excel están <a
-            href="https://uniandes-my.sharepoint.com/:x:/r/personal/j_gonzalezj_uniandes_edu_co/Documents/EnFlujo/Laboratorio%20EnFlujo/Proyectos/2023/Imagina%20-%20Fellows%20VACS/Tablas.xlsx?d=w11a113ce93d042939fb720b3f53cdada&csf=1&web=1&e=7QhwQG"
-            >aquí.</a
-          >
-        </p>
-
-        <p class="grafica">GRÁFICA 1.3: Diferencias de migración debido a violencia por género y población.</p>
+        <Grafica2 />
       </div>
     </section>
 
@@ -157,7 +137,7 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
 
       <div class="columna">
         <p class="narracion">
-          Se consideran huérfanos los niños y las niñas que han sufrido la pérdida de uno o ambos padres. Esa ausencia
+          Se consideran huérfanos los niños y niñas que han sufrido la pérdida de uno o ambos padres. Esa ausencia
           aumenta el riesgo de tener menor acceso a educación y a servicios médicos, y de sufrir de angustia
           psicosocial, abandono y abusos.
         </p>
@@ -175,24 +155,6 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
           En Colombia la orfandad es un fenómeno frecuente pero poco estudiado y, también, una de las principales y más
           invisibilizadas consecuencias de la guerra.
         </p>
-        <p class="narracion">
-          El Registro Único de Víctimas (RUV) no tiene datos de orfandad y solo hasta 2011 el Instituto Colombiano de
-          Bienestar Familiar (ICBF) empezó a reportarla, registrando 1161 niñas, niños y adolescentes menores de 18 años
-          huérfanos a causa del conflicto entre 2011 y 2021.
-        </p>
-
-        <p class="grafica">
-          GRÁFICA 2.1 (¿CÓMO?): desde el 2011 hasta abril de 2021 el ICBF registró 1.161 casos de niñas, niños y
-          adolescentes menores de 18 años huérfanos a causa del conflicto y que estuvieron o están actualmente
-          recibiendo atención. Sin embargo, el proceso de sistematización y análisis que realizó la Comisión encontró
-          que “entre 1985 y el 2018, 450.666 personas fueron víctimas de homicidio; de 1985 a 2016, 121.768 de
-          desaparición forzada y 50.770 de secuestro”
-        </p>
-        <p class="narracion">
-          Sin embargo, estos datos solo cuentan a quienes han sido atendidos por la institución y son huérfanos de ambos
-          padres, dejando por fuera a gran cantidad de niños y niñas que han perdido a uno solo de sus padres o cuya
-          custodia fue asumida por alguien más.
-        </p>
 
         <p class="escribiendo" data-velocidad="50">
           Según la Comisión, entre 1985 y 2018 más de 620.000 personas, en su mayoría adultas, fueron asesinadas,
@@ -200,7 +162,21 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
         </p>
 
         <p class="narracion">
-          Para llenar en parte este vacío, comparamos esta información con los resultados de la EVCNNA.
+          El Registro Único de Víctimas (RUV) no tiene datos de orfandad y solo hasta 2011 el Instituto Colombiano de
+          Bienestar Familiar (ICBF) empezó a reportarla, registrando 1161 niñas, niños y adolescentes menores de 18 años
+          huérfanos a causa del conflicto entre 2011 y 2021.
+        </p>
+
+        <p class="narracion">
+          Sin embargo, estos datos solo cuentan a quienes han sido atendidos por la institución y son huérfanos de ambos
+          padres, dejando por fuera a gran cantidad de niños y niñas que han perdido a uno solo de sus padres o cuya
+          custodia fue asumida por alguien más.
+        </p>
+
+        <p class="narracion">
+          Para complementar estos datos, la EVCNNA 2018 indagó por la orfandad teniendo en cuenta aspectos más
+          específicos como el tipo de pérdida,(muerte de la madre, el padre o ambos), y la edad a la que tuvieron esta
+          pérdida.
         </p>
 
         <p class="grafica">GRÁFICA 2.2: Orfandad - Diferencias de PDET en relación con el promedio nacional.</p>
@@ -259,8 +235,8 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
         </div>
 
         <p class="narracion">
-          Pero el maltrato físico infantil en Colombia no sucede solo en los contextos de la guerra, también se da en
-          los hogares y en la comunidad.
+          Pero el maltrato físico infantil en Colombia no sucede solo en contextos de guerra, también se da en los
+          hogares y en la comunidad.
         </p>
         <p class="destacado">
           Para 2018 7 de cada 20 jóvenes (35%) sufrieron alguna agresión física antes de los 18 años. Las primeras
