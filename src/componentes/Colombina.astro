@@ -19,6 +19,7 @@ const { datos, color, alto, resaltado, info } = Astro.props;
       <span class="porcentaje">{datos.porcentaje}%</span>
     </div>
   </div>
+
   {info && <span class="info">{info}</span>}
 </div>
 
@@ -64,5 +65,19 @@ const { datos, color, alto, resaltado, info } = Astro.props;
     font-weight: 400;
     font-size: 0.85em;
     flex: 1;
+  }
+
+  .muestraColor {
+    height: 3px;
+    width: 3px;
+    display: block;
+  }
+
+  #unoODos {
+    background-color: black;
+  }
+
+  #tresOMas {
+    background-color: pink;
   }
 </style>

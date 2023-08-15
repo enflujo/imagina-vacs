@@ -1,0 +1,95 @@
+---
+import datos from '@/datos/p2ConductasRiesgo';
+import PuntosPorcentuales from '@/componentes/PuntosPorcentuales.astro';
+---
+
+<section id="p2Grafica2" class="grafica">
+  <h3 class="titulo">
+    ¿Cómo influyen las ACEs en la infancia la probabilidad de tener actitudes de riesgo en la adultez?
+  </h3>
+  <div class="contenedorReferencias">
+    <p class="referencia"><span class="cuadroColor" id="unoODos"></span> Uno o dos ACEs, significativo</p>
+    <p class="referencia"><span class="cuadroColor" id="tresOMas"></span> Tres o más ACEs</p>
+  </div>
+  <p class="referencia">
+    *Valores en puntos porcentuales, es decir, la diferencia porcentual entre el promedio nacional y la población que
+    respondió haber sufrido ACEs en la infancia.
+  </p>
+  <h4>Colombia</h4>
+
+  <div class="puntosPorcentuales">
+    {
+      datos.colombia.map((variable) => {
+        if (variable.unoODosAces.significativo || variable.tresOMasAces.significativo)
+          return <PuntosPorcentuales datos={variable} colorUno="#531cb3" colorTres="#ffbc42" />;
+      })
+    }
+  </div>
+  <h4>Honduras</h4>
+  <div class="puntosPorcentuales">
+    {
+      datos.honduras.map((variable) => {
+        if (variable.unoODosAces.significativo || variable.tresOMasAces.significativo)
+          return <PuntosPorcentuales datos={variable} colorUno="#531cb3" colorTres="#ffbc42" />;
+      })
+    }
+  </div>
+  <h4>El Salvador</h4>
+  <div class="puntosPorcentuales">
+    {
+      datos.salvador.map((variable) => {
+        if (variable.unoODosAces.significativo || variable.tresOMasAces.significativo)
+          return <PuntosPorcentuales datos={variable} colorUno="#531cb3" colorTres="#ffbc42" />;
+      })
+    }
+  </div>
+
+  <div>
+    {
+      datos.info.map((dato) => {
+        return <p class="anotacionGrafica">{dato}</p>;
+      })
+    }
+  </div>
+</section>
+
+<script></script>
+
+<style lang="scss">
+  .puntosPorcentuales {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+  }
+  .referencia {
+    display: flex;
+    margin-right: 1em;
+    font-size: 0.9em;
+    max-width: 60%;
+  }
+  .cuadroColor {
+    height: 0.7em;
+    width: 0.7em;
+    display: block;
+    margin-right: 0.3em;
+  }
+
+  .contenedorReferencias {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .titulo {
+    margin-bottom: 1em;
+  }
+
+  #unoODos {
+    background-color: #531cb3;
+  }
+
+  #tresOMas {
+    background-color: #ffbc42;
+  }
+</style>

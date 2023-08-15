@@ -195,7 +195,15 @@ main {
 
 .anotacionGrafica {
   font-style: italic;
-  font-size: 0.9em;
+  font-size: 0.8em;
+}
+
+.grafica {
+  margin: 3em 0;
+
+  h3 {
+    font-size: 1.9em;
+  }
 }
 
 .mapa {
@@ -227,5 +235,6 @@ main {
   .subtitulo {
     position: sticky;
     top: 100px;
+    max-width: 14em;
   }
 }

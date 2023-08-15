@@ -1,0 +1,81 @@
+---
+export interface Props {
+  datos: {
+    nombre: string;
+    unoODosAces: { puntosPorcentuales: Number; significativo: Boolean };
+    tresOMasAces: { puntosPorcentuales: Number; significativo: Boolean };
+  };
+  colorUno: string;
+  colorTres: string;
+  alto?: number;
+  info?: string;
+}
+
+const { datos, colorUno, colorTres, info } = Astro.props;
+---
+
+<div class="contenedorGrafica">
+  <div class="contenedorLineas">
+    <div class="elementoGrafica">
+      <p class="leyenda" style={`opacity: ${datos.unoODosAces.significativo ? 1 : 0}`}>
+        {datos.unoODosAces.puntosPorcentuales}
+      </p>
+      <span
+        class="punto unoODos"
+        style={`background-color:${colorUno};display: ${datos.unoODosAces.significativo ? 'block' : 'none'};height:${
+          +datos.unoODosAces.puntosPorcentuales * 8
+        }px`}></span>
+    </div>
+    <div class="elementoGrafica">
+      <p class="leyenda" style={`opacity: ${datos.tresOMasAces.significativo ? 1 : 0}`}>
+        {datos.tresOMasAces.puntosPorcentuales}
+      </p>
+      <span
+        class="punto TresOMas"
+        style={`background-color:${colorTres};display: ${datos.tresOMasAces.significativo ? 'block' : 'none'};height:${
+          +datos.tresOMasAces.puntosPorcentuales * 8
+        }px`}></span>
+    </div>
+  </div>
+  <p class="nombre">{datos.nombre}</p>
+  {info && <span class="info">{info}</span>}
+</div>
+
+<style lang="scss">
+  .nombre {
+    margin: 0;
+    height: 100px;
+    text-align: center;
+    font-size: 0.9em;
+    max-width: 150px;
+  }
+
+  .punto {
+    width: 4px;
+    display: block;
+    margin-right: 5px;
+  }
+
+  .leyenda {
+    font-size: 0.8em;
+  }
+
+  .contenedorGrafica {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5em;
+  }
+
+  .contenedorLineas {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+
+  .elementoGrafica {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+</style>
