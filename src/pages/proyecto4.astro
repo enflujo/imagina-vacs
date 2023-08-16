@@ -39,12 +39,12 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           niños y jóvenes en todo el mundo (CDC, 2022; Nace et al., 2021).
         </p>
 
-        <p class="destacado">
+        <p class="narracion">
           Sin embargo, estos eventos son raramente reportados. Existen múltiples factores que limitan que los adultos,
           niños, niñas y jóvenes reporten eventos de violencia sexual (ocurridos durante la infancia y/o la adultez) y
           busquen ayuda.
         </p>
-        <p class="narracion">
+        <p class="destacado">
           Un factor importante es el estigma, normas sociales y de género 'nocivas' que promueven una cultura de
           silencio, vergüenza y culpa alrededor de la violencia sexual en todo el mundo.
         </p>
@@ -117,11 +117,11 @@ import Plantilla from '@/plantillas/Plantilla.astro';
         <div class="relato">
           <p>'El abuso sexual solo sucede en la noche.'</p>
         </div>
-        <div></div>
+        <div class="separador">----</div>
         <div class="relato">
           <p>'Algo habrá hecho para que la violaran. ¿Llevaba minifalda, caminaba sola en la noche...?'</p>
         </div>
-        <div></div>
+        <div class="separador">----</div>
         <div class="relato">
           <p>'Debe estar mintiendo para conseguir algo a cambio.'</p>
         </div>
@@ -205,5 +205,8 @@ import Plantilla from '@/plantillas/Plantilla.astro';
   li {
     list-style-image: url('/especiales/vacs/iconos/flor_2.svg');
     margin: 1em 0 0 1em;
+  }
+  .separador {
+    opacity: 0;
   }
 </style>
