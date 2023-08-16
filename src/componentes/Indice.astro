@@ -1,0 +1,102 @@
+---
+export interface Props {
+  // Enlaces internos de cada historia
+  elementos: { nombre: String; enlace: String }[];
+}
+
+const { elementos } = Astro.props;
+const elementosAbreviados = ['intro', 'I.', 'II.', 'III.', 'IV.', 'conclusion'];
+---
+
+<nav id="indice">
+  <ul id="lista">
+    {
+      elementos.map((elemento, i) => {
+        if (i === 0) {
+          return (
+            <li class="enlaceIndice">
+              <a href={`#${elemento.enlace}`}>
+                <img class="icono" src="/especiales/vacs/iconos/flor_1.svg" />{' '}
+                <span class="nombre">{elemento.nombre}</span>
+              </a>
+            </li>
+          );
+        } else if (i === elementos.length - 1) {
+          return (
+            <li class="enlaceIndice">
+              <a href={`#${elemento.enlace}`}>
+                <img class="icono" src="/especiales/vacs/iconos/flor_2.svg" />{' '}
+                <span class="nombre">{elemento.nombre}</span>
+              </a>
+            </li>
+          );
+        } else {
+          return (
+            <a href={`#${elemento.enlace}`}>
+              <li class="enlaceIndice">
+                {elementosAbreviados[i]} <span class="nombre">{elemento.nombre}</span>
+              </li>
+            </a>
+          );
+        }
+      })
+    }
+  </ul>
+</nav>
+
+<script>
+  const elementosIndice = document.querySelectorAll<HTMLElement>('.enlaceIndice');
+  const nombresElementos = document.querySelectorAll<HTMLElement>('.nombre');
+
+  elementosIndice.forEach((elemento, i) => {
+    elemento.onmouseover = () => {
+      nombresElementos[i + 1].classList.add('visible');
+    };
+    elemento.onmouseleave = () => {
+      nombresElementos[i + 1].classList.remove('visible');
+    };
+  });
+</script>
+
+<style lang="scss">
+  #indice {
+    position: fixed;
+    margin-left: 2em;
+    font-weight: 600;
+    font-size: 1.1em;
+    a {
+      color: black;
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+    li {
+      margin-bottom: 0.7em;
+    }
+  }
+
+  .enlaceIndice {
+    cursor: pointer;
+
+    .icono {
+      height: 0.8em;
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(1) brightness(0);
+    }
+
+    &:hover {
+      color: var(--amarilloSol);
+
+      .icono {
+        filter: none;
+      }
+    }
+  }
+
+  .nombre {
+    opacity: 0;
+    &.visible {
+      opacity: 1;
+      color: var(--amarilloSol);
+    }
+  }
+</style>

@@ -5,12 +5,23 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
 import Grafica2 from '@/componentes/graficas/proyecto1/Grafica2.astro';
 import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
+import Indice from '@/componentes/Indice.astro';
+
+const elementosIndice = [
+  { nombre: 'Contexto', enlace: 'seccionContexto' },
+  { nombre: 'Migración', enlace: 'seccionMigracion' },
+  { nombre: 'Orfandad', enlace: 'seccionOrfandad' },
+  { nombre: 'Violencia', enlace: 'seccionViolencia' },
+  { nombre: 'Salud Mental', enlace: 'seccionSaludMental' },
+  { nombre: 'Conclusiones', enlace: 'seccionConclusiones' },
+];
 ---
 
 <Plantilla titulo="VACS" descripcion="...">
   <Menu numeroProyecto={1} />
 
   <main id="proyecto1">
+    <Indice elementos={elementosIndice} />
     <section id="introduccion" class="anchoTitulo alto100">
       <div class="pegarTitulo">
         <h1 class="tituloProyecto">La huella del conflicto armado en la niñez y adolescencia colombianas</h1>
@@ -20,8 +31,10 @@ import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
       <Desliza />
     </section>
 
-    <section class="contenidoColumna">
-      <h3 class="subtitulo">Contexto</h3>
+    <section id="seccionContexto" class="columnas seccion">
+      <div class="tituloSeccion">
+        <h3 class="subtitulo">Contexto</h3>
+      </div>
 
       <p class="narracion">
         La Comisión de la Verdad, en el capítulo "<a

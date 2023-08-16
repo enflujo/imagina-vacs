@@ -2,12 +2,21 @@
 import Desliza from '@/componentes/Desliza.astro';
 import Menu from '@/componentes/Menu.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
+import Indice from '@/componentes/Indice.astro';
+
+const elementosIndice = [
+  { nombre: 'Antecedentes', enlace: 'seccionAntecedentes' },
+  { nombre: 'Resultados', enlace: 'seccionResultados' },
+  { nombre: 'Conclusiones', enlace: 'seccionConclusiones' },
+  { nombre: 'Puntos Clave', enlace: 'seccionPuntosClave' },
+];
 ---
 
 <Plantilla titulo="VACS" descripcion="...">
   <Menu numeroProyecto={4} />
 
   <main id="proyecto3">
+    <Indice elementos={elementosIndice} />
     <section id="introduccion" class="anchoTitulo alto100">
       <div class="pegarTitulo">
         <h1 class="tituloProyecto">
@@ -28,7 +37,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       <Desliza />
     </section>
 
-    <section class="columnas seccion apagado">
+    <section id="seccionAntecedentes" class="columnas seccion">
       <div class="tituloSeccion">
         <h3 class="subtitulo">Antecedentes</h3>
       </div>
@@ -76,7 +85,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       </div>
     </section>
 
-    <section class="columnas seccion apagado">
+    <section id="seccionResultados" class="columnas seccion">
       <div class="tituloSeccion">
         <h3 class="subtitulo">Resultados</h3>
       </div>
@@ -134,7 +143,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       </div>
     </section>
 
-    <section class="columnas seccion apagado">
+    <section id="seccionConclusiones" class="columnas seccion">
       <div class="tituloSeccion">
         <h3 class="subtitulo">Conclusiones</h3>
       </div>
@@ -157,7 +166,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       </div>
     </section>
 
-    <section class="columnas seccion apagado">
+    <section id="seccionPuntosClave" class="columnas seccion">
       <div class="tituloSeccion">
         <h3 class="subtitulo">Puntos claves</h3>
       </div>
