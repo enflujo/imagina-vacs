@@ -29,9 +29,15 @@
   margin: 0 auto;
 }
 
+@media screen and (min-width: $corte3) {
+  .contenidoColumna {
+    max-width: 60vw;
+  }
+}
+
 @media screen and (min-width: $corte4) {
   .contenidoColumna {
-    max-width: 50vw;
+    max-width: 41vw;
   }
 
   .tituloProyecto {
