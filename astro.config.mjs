@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
-import compress from '@otterlord/astro-compress';
+import compress from 'astro-compress';
 
 export default defineConfig({
   outDir: './publico',
@@ -10,9 +10,7 @@ export default defineConfig({
   integrations: [
     sitemap(),
     robotsTxt(),
-    compress({
-      path: './publico',
-    }),
+    compress(),
   ],
   base: '/especiales/vacs',
   build: {
