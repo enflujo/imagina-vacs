@@ -7,11 +7,7 @@ export default defineConfig({
   outDir: './publico',
   publicDir: './recursos',
   site: 'https://imagina.uniandes.edu.co',
-  integrations: [
-    sitemap(),
-    robotsTxt(),
-    compress(),
-  ],
+  integrations: [sitemap(), robotsTxt(), compress({ path: './publico' })],
   base: '/especiales/vacs',
   build: {
     assets: 'recursos',
