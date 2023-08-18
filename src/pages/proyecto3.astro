@@ -2,12 +2,20 @@
 import Desliza from '@/componentes/Desliza.astro';
 import Menu from '@/componentes/Menu.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
+import Indice from '@/componentes/Indice.astro';
+
+const elementosIndice = [
+  { nombre: 'Contexto', enlace: 'seccionContexto' },
+  { nombre: 'Violencia en Colombia', enlace: 'seccionViolencia' },
+  { nombre: 'Conclusiones', enlace: 'seccionConclusiones' },
+];
 ---
 
 <Plantilla titulo="VACS" descripcion="...">
   <Menu numeroProyecto={3} />
 
   <main id="proyecto3">
+    <Indice elementos={elementosIndice} />
     <section id="introduccion" class="anchoTitulo alto100">
       <div class="pegarTitulo">
         <h1 class="tituloProyecto">Trayectorias de maltrato</h1>
@@ -21,7 +29,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       <Desliza />
     </section>
 
-    <section class="columnas seccion apagado">
+    <section id="seccionContexto" class="columnas seccion">
       <div class="tituloSeccion">
         <h3 class="subtitulo">Crecer con miedo</h3>
       </div>
@@ -101,7 +109,7 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       </div>
     </section>
 
-    <section class="columnas seccion apagado">
+    <section id="seccionViolencia" class="columnas seccion">
       <div class="tituloSeccion">
         <h3 class="subtitulo">Datos de violencia en Colombia</h3>
       </div>
@@ -152,9 +160,9 @@ import Plantilla from '@/plantillas/Plantilla.astro';
       </div>
     </section>
 
-    <section class="columnas seccion apagado">
+    <section id="seccionConclusiones" class="columnas seccion">
       <div class="tituloSeccion">
-        <h3 class="subtitulo">En conclusión</h3>
+        <h3 class="subtitulo">Conclusiones</h3>
       </div>
 
       <div class="columna">
