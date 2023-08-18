@@ -21,6 +21,5 @@ const datos = {
     },
   ],
 };
-//datos.edad.sort((a, b) => b.porcentaje - a.porcentaje);
 
 export default datos;
