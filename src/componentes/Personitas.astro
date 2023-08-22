@@ -1,0 +1,41 @@
+---
+export interface Props {
+  felices: number;
+  tristes: number;
+  rutaSVG: string;
+  descripcion: number;
+}
+
+const { felices, tristes, rutaSVG, descripcion } = Astro.props;
+---
+
+<div class="contenedorPersonas">
+  <span class="persona"></span>
+  <span class="persona"></span>
+  <span class="persona"></span>
+  <span class="persona"></span>
+  <span class="persona"></span>
+  <span class="persona"></span>
+  <span class="persona"></span>
+  <span class="persona"></span>
+  <span class="persona"></span>
+
+  <span class="persona darks"></span>
+</div>
+
+<style lang="scss">
+  .contenedorPersonas {
+    display: flex;
+  }
+  .persona {
+    display: block;
+    border-radius: 50%;
+    background-color: rgb(255, 168, 158);
+    height: 2em;
+    width: 2em;
+    margin: 0.2em;
+    &.darks {
+      background-color: rgb(68, 68, 68);
+    }
+  }
+</style>
