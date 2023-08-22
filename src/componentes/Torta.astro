@@ -1,0 +1,104 @@
+---
+export interface Props {
+  datos: { nombre: string; numero: number }[];
+  total: number;
+  colores: string[];
+  anchoGrafica: number;
+  altoGrafica: number;
+}
+
+const { datos, total, colores, anchoGrafica, altoGrafica } = Astro.props;
+const porcionesTorta = [];
+const infoVisible = false;
+const posInfo = { x: 0, y: 0 };
+
+/**
+ * Graficar datos en forma de torta
+ */
+function dibujarTorta() {
+  const datosMapeados = datos.map((dato, i) => {
+    return {
+      nombre: dato.nombre,
+      valor: dato.numero,
+      color: colores[i],
+    };
+  });
+
+  let anguloActual = 0;
+
+  datosMapeados.forEach((dato) => {
+    // Dibujar círculo
+    const ang = (360 * dato.valor) / total;
+    calcularPorcion(anguloActual, anguloActual + ang, dato);
+    anguloActual += ang;
+  });
+}
+
+function calcularPorcion(ang1, ang2, dato) {
+  const cx = 150;
+  const cy = 250;
+  const radio = 150;
+
+  // Radianes angulares
+  const gradosARadianes = (ang) => (ang * Math.PI) / 180;
+
+  function punto(ang) {
+    // Coordenadas según el ángulo
+    return {
+      x: cx + radio * Math.sin(gradosARadianes(ang)),
+      y: cy - radio * Math.cos(gradosARadianes(ang)),
+    };
+  }
+
+  // Dibujar
+  const linea = [];
+
+  // Primer paso
+  const { x: x1, y: y1 } = punto(ang1);
+  // Dibujar la primera línea
+  linea.push(`M ${cx} ${cy} L ${x1} ${y1}`);
+  // Segundo paso
+  const { x: x2, y: y2 } = punto(ang2);
+  // Dibujar el arco
+  linea.push(`A ${radio} ${radio} 0 ${ang2 - ang1 > 180 ? 1 : 0} 1 ${x2} ${y2}`);
+  // Tercer paso: cerrar
+  linea.push('Z');
+
+  porcionesTorta.push({
+    nombre: dato.nombre,
+    valor: dato.valor,
+    color: dato.color,
+    linea: linea.join(' '),
+  });
+
+  return linea;
+}
+
+function eventoMovimiento(evento) {
+  posInfo.x = evento.clientX;
+  posInfo.y = evento.clientY;
+}
+
+dibujarTorta();
+---
+
+<div class="contenedorTorta">
+  <svg id="grafica" width=`${anchoGrafica}px` height=`${altoGrafica}px`>
+    {
+      porcionesTorta.map((porcion) => {
+        return <path d={porcion.linea} fill={porcion.color} />;
+      })
+    }
+  </svg>
+  {
+    porcionesTorta.map((porcion) => {
+      return (
+        <p style={`color:${porcion.color}`}>
+          {porcion.nombre}: {porcion.valor}
+        </p>
+      );
+    })
+  }
+</div>
+<div id="infoPorcion" style=`opacity:${infoVisible ? 1 : 0};left:${posInfo.x}px; top:${posInfo.y}px`></div>
+<script></script>
