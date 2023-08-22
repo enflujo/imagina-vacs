@@ -4,11 +4,11 @@ const datos = {
   total: 5069,
   genero: [
     {
-      nombre: 'Niños y adolescentes hombres',
+      nombre: 'Niños',
       numero: 2392,
     },
     {
-      nombre: 'Niñas y adolescentes mujeres',
+      nombre: 'Niñas',
       numero: 2677,
     },
   ],

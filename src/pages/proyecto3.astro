@@ -11,6 +11,7 @@ const elementosIndice = [
 ];
 import Grafica1 from '@/componentes/graficas/proyecto3/Grafica1.astro';
 import Grafica2 from '@/componentes/graficas/proyecto3/Grafica2.astro';
+import Grafica3 from '@/componentes/graficas/proyecto3/Grafica3.astro';
 ---
 
 <Plantilla titulo="VACS" descripcion="...">
@@ -123,13 +124,16 @@ import Grafica2 from '@/componentes/graficas/proyecto3/Grafica2.astro';
           2.392 casos respectivamente. Estos datos muestran que, en general, ha habido un incremento progresivo durante
           los últimos 8 años.
         </p>
+
+        <Grafica3 />
+
         <p class="destacado">
           En más del 85% de los casos de violencia sexual reportados en 2020 en Medicina Legal, las víctimas fueron
           niños, niñas y adolescentes.
         </p>
 
         <Grafica1 />
-        <p class="narracion">La tasa en el grupo de 10 a 14 años (182.58) es cinco veces la tasa general (35.84).</p>
+        <p class="destacado">La tasa en el grupo de 10 a 14 años (182.58) es cinco veces la tasa general (35.84).</p>
         <p class="destacado">En el 81.03% de los casos, los agresores tienen algún grado de cercanía con la víctima:</p>
         <Grafica2 />
         <p class="escribiendo" data-velocidad="50">
@@ -150,7 +154,7 @@ import Grafica2 from '@/componentes/graficas/proyecto3/Grafica2.astro';
             Incluyendo muestra PDET
           </a>
         </p>
-        <p>
+        <p class="narracion">
           Sobre los mismos datos de la encuesta comparamos los municipios PDET y No-PDET y encontramos que,
           aparentemente, no existen diferencias significativas entre los dos tipos de territorios. Así, la probabilidad
           de ser víctima o perpetrador de violencia intrafamiliar si se sufrió maltrato en la infancia es muy similar en

@@ -9,7 +9,6 @@ export interface Props {
 
 const { datos, total, colores, anchoGrafica, altoGrafica } = Astro.props;
 const porcionesTorta = [];
-const infoVisible = false;
 const posInfo = { x: 0, y: 0 };
 
 /**
@@ -74,31 +73,97 @@ function calcularPorcion(ang1, ang2, dato) {
   return linea;
 }
 
-function eventoMovimiento(evento) {
-  posInfo.x = evento.clientX;
-  posInfo.y = evento.clientY;
-}
-
 dibujarTorta();
 ---
 
-<div class="contenedorTorta">
-  <svg id="grafica" width=`${anchoGrafica}px` height=`${altoGrafica}px`>
+<div id="contenedorTorta">
+  <svg id="grafica" width=`${anchoGrafica}px` height=`${altoGrafica}px` data-total={total}>
     {
       porcionesTorta.map((porcion) => {
-        return <path d={porcion.linea} fill={porcion.color} />;
+        return (
+          <path
+            class="porcion"
+            d={porcion.linea}
+            fill={porcion.color}
+            data-nombre={porcion.nombre}
+            data-valor={porcion.valor}
+          />
+        );
       })
     }
   </svg>
-  {
-    porcionesTorta.map((porcion) => {
-      return (
-        <p style={`color:${porcion.color}`}>
-          {porcion.nombre}: {porcion.valor}
-        </p>
-      );
-    })
-  }
+  <div>
+    <div id="contenedorReferencias">
+      {
+        porcionesTorta.map((porcion) => {
+          return (
+            <p class="referencia" style={`color:${porcion.color}`}>
+              {porcion.nombre}: {((porcion.valor / +total) * 100).toFixed(2)}%
+            </p>
+          );
+        })
+      }
+    </div>
+  </div>
 </div>
-<div id="infoPorcion" style=`opacity:${infoVisible ? 1 : 0};left:${posInfo.x}px; top:${posInfo.y}px`></div>
-<script></script>
+
+<div id="infoPorcion"></div>
+
+<script>
+  const infoPorcion = document.getElementById('infoPorcion');
+  const porciones = document.querySelectorAll('.porcion');
+  const grafica = document.getElementById('grafica') as HTMLElement;
+  const { total } = grafica.dataset;
+
+  function mostrarInfo(nombre: string, valor: number) {
+    infoPorcion.innerText = `${nombre}: ${valor} de ${total} casos reportados.`;
+    if (!infoPorcion.classList.contains('visible')) {
+      infoPorcion.classList.add('visible');
+    }
+  }
+
+  function ocultarInfo() {
+    infoPorcion.classList.remove('visible');
+  }
+
+  function eventoMovimiento({ clientX, clientY }: MouseEvent) {
+    Object.assign(infoPorcion.style, {
+      left: `${clientX}px`,
+      top: `${clientY - 25}px`,
+    });
+  }
+
+  porciones.forEach((porcion: SVGPathElement) => {
+    porcion.addEventListener('mouseenter', () => {
+      const { nombre, valor } = porcion.dataset;
+      mostrarInfo(nombre, +valor);
+    });
+
+    porcion.addEventListener('mouseleave', ocultarInfo);
+  });
+
+  grafica.addEventListener('mousemove', eventoMovimiento);
+</script>
+
+<style lang="scss">
+  #infoPorcion {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0 0.5em;
+    font-size: 0.8em;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+  #contenedorReferencias {
+    display: flex;
+    width: fit-content;
+    flex-direction: row-reverse;
+  }
+  .referencia {
+    margin: 1em;
+  }
+</style>
