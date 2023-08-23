@@ -1,4 +1,5 @@
 ---
+import { aRadianes } from '@enflujo/alquimia';
 export interface Props {
   datos: { nombre: string; numero: number }[];
   total: number;
@@ -11,7 +12,7 @@ const { datos, total, colores, anchoGrafica, altoGrafica } = Astro.props;
 const porcionesTorta = [];
 
 /**
- * Graficar datos en forma de torta
+ * Graficar datos en forma de tortagradosARadianes
  */
 function dibujarTorta() {
   const datosMapeados = datos.map((dato, i) => {
@@ -37,14 +38,11 @@ function calcularPorcion(ang1: number, ang2: number, dato: { nombre: string; val
   const cy = 250;
   const radio = 150;
 
-  // Radianes angulares
-  const gradosARadianes = (ang: number) => (ang * Math.PI) / 180;
-
-  function punto(ang) {
+  function punto(ang: number) {
     // Coordenadas según el ángulo
     return {
-      x: cx + radio * Math.sin(gradosARadianes(ang)),
-      y: cy - radio * Math.cos(gradosARadianes(ang)),
+      x: cx + radio * Math.sin(aRadianes(ang)),
+      y: cy - radio * Math.cos(aRadianes(ang)),
     };
   }
 
