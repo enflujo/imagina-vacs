@@ -1,0 +1,166 @@
+---
+import { aRadianes } from '@enflujo/alquimia';
+export interface Props {
+  datos: { nombre: string; numero: number }[];
+  total: number;
+  colores: string[];
+  anchoGrafica: number;
+  altoGrafica: number;
+}
+
+const { datos, total, colores, anchoGrafica, altoGrafica } = Astro.props;
+const porcionesTorta = [];
+
+/**
+ * Graficar datos en forma de torta
+ */
+function dibujarTorta() {
+  const datosMapeados = datos.map((dato, i) => {
+    return {
+      nombre: dato.nombre,
+      valor: dato.numero,
+      color: colores[i],
+    };
+  });
+
+  let anguloActual = 0;
+
+  datosMapeados.forEach((dato) => {
+    // Dibujar círculo
+    const ang = (360 * dato.valor) / total;
+    calcularPorcion(anguloActual, anguloActual + ang, dato);
+    anguloActual += ang;
+  });
+}
+
+function calcularPorcion(ang1: number, ang2: number, dato: { nombre: string; valor: number; color: string }) {
+  const cx = 150;
+  const cy = 250;
+  const radio = 150;
+
+  function punto(ang: number) {
+    // Coordenadas según el ángulo
+    return {
+      x: cx + radio * Math.sin(aRadianes(ang)),
+      y: cy - radio * Math.cos(aRadianes(ang)),
+    };
+  }
+
+  // Dibujar
+  const linea = [];
+
+  // Primer paso
+  const { x: x1, y: y1 } = punto(ang1);
+  // Dibujar la primera línea
+  linea.push(`M ${cx} ${cy} L ${x1} ${y1}`);
+  // Segundo paso
+  const { x: x2, y: y2 } = punto(ang2);
+  // Dibujar el arco
+  linea.push(`A ${radio} ${radio} 0 ${ang2 - ang1 > 180 ? 1 : 0} 1 ${x2} ${y2}`);
+  // Tercer paso: cerrar
+  linea.push('Z');
+
+  porcionesTorta.push({
+    nombre: dato.nombre,
+    valor: dato.valor,
+    color: dato.color,
+    linea: linea.join(' '),
+  });
+
+  return linea;
+}
+
+dibujarTorta();
+---
+
+<div id="contenedorTorta">
+  <svg id="grafica" width=`${anchoGrafica}px` height=`${altoGrafica}px` data-total={total}>
+    {
+      porcionesTorta.map((porcion) => {
+        return (
+          <path
+            class="porcion"
+            d={porcion.linea}
+            fill={porcion.color}
+            data-nombre={porcion.nombre}
+            data-valor={porcion.valor}
+          />
+        );
+      })
+    }
+  </svg>
+  <div>
+    <div id="contenedorReferencias">
+      {
+        porcionesTorta.map((porcion) => {
+          return (
+            <p class="referencia" style={`color:${porcion.color}`}>
+              {porcion.nombre}: {((porcion.valor / +total) * 100).toFixed(2)}%
+            </p>
+          );
+        })
+      }
+    </div>
+  </div>
+</div>
+
+<div id="infoPorcion"></div>
+
+<script>
+  const infoPorcion = document.getElementById('infoPorcion');
+  const porciones = document.querySelectorAll('.porcion');
+  const grafica = document.getElementById('grafica') as HTMLElement;
+  const { total } = grafica.dataset;
+
+  function mostrarInfo(nombre: string, valor: number) {
+    infoPorcion.innerText = `${nombre}: ${valor} de ${total} casos reportados.`;
+    if (!infoPorcion.classList.contains('visible')) {
+      infoPorcion.classList.add('visible');
+    }
+  }
+
+  function ocultarInfo() {
+    infoPorcion.classList.remove('visible');
+  }
+
+  function eventoMovimiento({ clientX, clientY }: MouseEvent) {
+    Object.assign(infoPorcion.style, {
+      left: `${clientX}px`,
+      top: `${clientY - 25}px`,
+    });
+  }
+
+  porciones.forEach((porcion: SVGPathElement) => {
+    porcion.addEventListener('mouseenter', () => {
+      const { nombre, valor } = porcion.dataset;
+      mostrarInfo(nombre, +valor);
+    });
+
+    porcion.addEventListener('mouseleave', ocultarInfo);
+  });
+
+  grafica.addEventListener('mousemove', eventoMovimiento);
+</script>
+
+<style lang="scss">
+  #infoPorcion {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0 0.5em;
+    font-size: 0.8em;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+  #contenedorReferencias {
+    display: flex;
+    width: fit-content;
+    flex-direction: row-reverse;
+  }
+  .referencia {
+    margin: 1em;
+  }
+</style>

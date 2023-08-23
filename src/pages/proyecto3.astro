@@ -9,6 +9,9 @@ const elementosIndice = [
   { nombre: 'Violencia en Colombia', enlace: 'seccionViolencia' },
   { nombre: 'Conclusiones', enlace: 'seccionConclusiones' },
 ];
+import Grafica1 from '@/componentes/graficas/proyecto3/Grafica1.astro';
+import Grafica2 from '@/componentes/graficas/proyecto3/Grafica2.astro';
+import Grafica3 from '@/componentes/graficas/proyecto3/Grafica3.astro';
 ---
 
 <Plantilla titulo="VACS" descripcion="...">
@@ -121,18 +124,18 @@ const elementosIndice = [
           2.392 casos respectivamente. Estos datos muestran que, en general, ha habido un incremento progresivo durante
           los últimos 8 años.
         </p>
+
+        <Grafica3 />
+
         <p class="destacado">
           En más del 85% de los casos de violencia sexual reportados en 2020 en Medicina Legal, las víctimas fueron
-          niños, niñas y adolescentes (15.370 casos). En este rango, el 40.21% tenían entre 10 y 14 años (7.259 casos),
-          y el 22.53% entre 5 y 9 años (4.067 casos).
+          niños, niñas y adolescentes.
         </p>
-        <p class="narracion">La tasa en el grupo de 10 a 14 años (182.58) es cinco veces la tasa general (35.84).</p>
-        <p class="comentario">Esto que sigue podría graficarse?</p>
-        <p class="grafica">
-          En el 81.03% de los casos, los agresores tienen algún grado de cercanía con la víctima: el 48.67% es un
-          familiar, el 23.09% un conocido, y el 9.27% un amigo.
-        </p>
-        <a href="https://www.medicinalegal.gov.co/documents/20143/787115/Forensis_2020.pdf">Fuente: FORENSIS (2020)</a>
+
+        <Grafica1 />
+        <p class="destacado">La tasa en el grupo de 10 a 14 años (182.58) es cinco veces la tasa general (35.84).</p>
+        <p class="destacado">En el 81.03% de los casos, los agresores tienen algún grado de cercanía con la víctima:</p>
+        <Grafica2 />
         <p class="escribiendo" data-velocidad="50">
           Estos datos de Medicina Legal son congruentes con lo que encontramos en la EVCNNA (2018):
         </p>
@@ -151,7 +154,7 @@ const elementosIndice = [
             Incluyendo muestra PDET
           </a>
         </p>
-        <p>
+        <p class="narracion">
           Sobre los mismos datos de la encuesta comparamos los municipios PDET y No-PDET y encontramos que,
           aparentemente, no existen diferencias significativas entre los dos tipos de territorios. Así, la probabilidad
           de ser víctima o perpetrador de violencia intrafamiliar si se sufrió maltrato en la infancia es muy similar en
