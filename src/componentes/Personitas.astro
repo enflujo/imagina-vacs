@@ -2,40 +2,67 @@
 export interface Props {
   felices: number;
   tristes: number;
-  rutaSVG: string;
-  descripcion: number;
+  rutaSvgFeliz: string;
+  rutaSvgTriste: string;
+  descripcion: string;
 }
 
-const { felices, tristes, rutaSVG, descripcion } = Astro.props;
+const { felices, tristes, rutaSvgFeliz, rutaSvgTriste, descripcion } = Astro.props;
 ---
 
-<div class="contenedorPersonas">
-  <span class="persona"></span>
-  <span class="persona"></span>
-  <span class="persona"></span>
-  <span class="persona"></span>
-  <span class="persona"></span>
-  <span class="persona"></span>
-  <span class="persona"></span>
-  <span class="persona"></span>
-  <span class="persona"></span>
-
-  <span class="persona darks"></span>
+<div
+  class="contenedorPersonas"
+  data-felices={felices}
+  data-tristes={tristes}
+  data-rutafeliz={rutaSvgFeliz}
+  data-rutatriste={rutaSvgTriste}
+  data-descripcion={descripcion}
+>
 </div>
 
-<style lang="scss">
-  .contenedorPersonas {
+<script>
+  const contenedorPersonas = document.getElementsByClassName('contenedorPersonas');
+
+  for (let contenedor of contenedorPersonas) {
+    dibujarPersonas(contenedor as HTMLElement);
+  }
+
+  function dibujarPersonas(contenedor: HTMLElement) {
+    const descripcion = document.createElement('p');
+    const personas = document.createElement('div');
+    descripcion.innerText = contenedor.dataset.descripcion;
+    contenedor.appendChild(descripcion);
+
+    // Agregar personas felices
+    for (let i = 0; i < +contenedor.dataset.felices; i++) {
+      const personita = document.createElement('span');
+      personita.classList.add('personita');
+      personita.style.backgroundImage = `url('${contenedor.dataset.rutafeliz}')`;
+      personas.appendChild(personita);
+    }
+
+    // Agregar personas tristes
+    for (let i = 0; i < +contenedor.dataset.tristes; i++) {
+      const personita = document.createElement('span');
+      personita.classList.add('personita');
+      personita.style.backgroundImage = `url('${contenedor.dataset.rutatriste}')`;
+      personas.appendChild(personita);
+    }
+    personas.classList.add('personas');
+    contenedor.appendChild(personas);
+  }
+</script>
+
+<style lang="scss" is:global>
+  .personas {
     display: flex;
   }
-  .persona {
+
+  .personita {
     display: block;
     border-radius: 50%;
-    background-color: rgb(255, 168, 158);
     height: 2em;
     width: 2em;
     margin: 0.2em;
-    &.darks {
-      background-color: rgb(68, 68, 68);
-    }
   }
 </style>
