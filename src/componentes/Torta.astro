@@ -32,13 +32,13 @@ function dibujarTorta() {
   });
 }
 
-function calcularPorcion(ang1, ang2, dato) {
+function calcularPorcion(ang1: number, ang2: number, dato: { nombre: string; valor: number; color: string }) {
   const cx = 150;
   const cy = 250;
   const radio = 150;
 
   // Radianes angulares
-  const gradosARadianes = (ang) => (ang * Math.PI) / 180;
+  const gradosARadianes = (ang: number) => (ang * Math.PI) / 180;
 
   function punto(ang) {
     // Coordenadas según el ángulo
