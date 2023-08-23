@@ -19,6 +19,8 @@ const { datos, color, alto, resaltado, info } = Astro.props;
       <span class="porcentaje">{datos.porcentaje}%</span>
     </div>
   </div>
+
+  {info && <span class="info">{info}</span>}
 </div>
 
 <style lang="scss">
