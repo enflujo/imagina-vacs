@@ -21,10 +21,10 @@ const { felices, tristes, rutaSvgFeliz, rutaSvgTriste, descripcion } = Astro.pro
 </div>
 
 <script>
-  const contenedorPersonas = document.getElementsByClassName('contenedorPersonas');
+  const contenedorPersonas = document.querySelectorAll<HTMLElement>('.contenedorPersonas');
 
   for (let contenedor of contenedorPersonas) {
-    dibujarPersonas(contenedor as HTMLElement);
+    dibujarPersonas(contenedor);
   }
 
   function dibujarPersonas(contenedor: HTMLElement) {
@@ -54,15 +54,17 @@ const { felices, tristes, rutaSvgFeliz, rutaSvgTriste, descripcion } = Astro.pro
 </script>
 
 <style lang="scss" is:global>
-  .personas {
-    display: flex;
-  }
+  .contenedorPersonas {
+    .personas {
+      display: flex;
+    }
 
-  .personita {
-    display: block;
-    border-radius: 50%;
-    height: 2em;
-    width: 2em;
-    margin: 0.2em;
+    .personita {
+      display: block;
+      border-radius: 50%;
+      height: 2em;
+      width: 2em;
+      margin: 0.2em;
+    }
   }
 </style>
