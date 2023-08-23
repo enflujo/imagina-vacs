@@ -29,6 +29,14 @@
   margin: 0 auto;
 }
 
+.abrirGlosario {
+  cursor: pointer;
+  color: var(--moradoUva);
+  &:hover {
+    font-weight: 700;
+  }
+}
+
 @media screen and (min-width: $corte3) {
   .contenidoColumna {
     max-width: 60vw;

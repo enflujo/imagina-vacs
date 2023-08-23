@@ -31,20 +31,21 @@ const elementosIndice = [
       <Desliza />
     </section>
 
-    <section id="seccionContexto" class="columnas seccion">
+    <section class="columnas seccion">
       <div class="tituloSeccion">
-        <h3 class="subtitulo">Contexto</h3>
+        <h3 class="subtitulo">Introducción</h3>
       </div>
 
-      <p class="narracion">
-        La Comisión de la Verdad, en el capítulo "<a
-          href="https://www.comisiondelaverdad.co/no-es-un-mal-menor"
-          target="_blank">No es un mal menor</a
-        >" del Informe Final, relata las violencias que niñas, niños y adolescentes han sufrido en el conflicto armado
-        colombiano.
-      </p>
-
-      <p class="escribiendo" data-velocidad="50">Se estima que en las últimas tres décadas (entre 1985 y 2019):</p>
+      <div class="columna">
+        <p class="narracion">
+          La Comisión de la Verdad, en el capítulo "<a
+            href="https://www.comisiondelaverdad.co/no-es-un-mal-menor"
+            target="_blank">No es un mal menor</a
+          >" del Informe Final, relata las violencias que niñas, niños y adolescentes han sufrido en el conflicto armado
+          colombiano.
+        </p>
+        <p class="escribiendo" data-velocidad="50">Se estima que en las últimas tres décadas (entre 1985 y 2019):</p>
+      </div>
     </section>
 
     <div>
@@ -81,27 +82,39 @@ const elementosIndice = [
       />
     </div>
 
-    <section class="contenidoColumna">
-      <p class="narracion">
-        La recopilación de la información para el informe, a partir de entrevistas y bases de datos de organizaciones
-        sociales, reveló un gran vacío:
-      </p>
+    <section id="seccionContexto" class="columnas seccion">
+      <div class="tituloSeccion">
+        <h3 class="subtitulo">Contexto</h3>
+      </div>
 
-      <p class="destacado">
-        Durante años muchos hechos violentos no fueron denunciados ni registrados debido al miedo a los actores armados,
-        la ausencia de entidades institucionales en los territorios, la desconfianza, la falta de investigación y la
-        naturalización del reclutamiento de niñas y niños por parte de grupos armados ilegales en algunas comunidades.
-      </p>
+      <div class="columna">
+        <p class="narracion">
+          La recopilación de la información para el informe, a partir de entrevistas y bases de datos de organizaciones
+          sociales, reveló un gran vacío:
+        </p>
 
-      <p class="narracion">
-        Buscando comprender mejor las consecuencias sociales y psicológicas que el conflicto armado ha tenido en la vida
-        de niños, niñas y adolescentes en Colombia, esta investigación revisa los resultados de la EVCNNA para
-        contrastar y complementar los hallazgos de la Comisión con respecto a cuatro ejes principales: <a
-          href="#migracion">Migración forzada</a
-        >,
-        <a href="#orfandad">Orfandad</a>, <a href="#violencia">Violencia</a> y <a href="#salud-mental">Salud mental</a>.
-        Además, permite comparar los datos nacionales con los datos recogidos en los municipios <span>PDET</span>.
-      </p>
+        <p class="destacado">
+          Durante años muchos hechos violentos no fueron denunciados ni registrados debido al miedo a los actores
+          armados, la ausencia de entidades institucionales en los territorios, la desconfianza, la falta de
+          investigación y la naturalización del reclutamiento de niñas y niños por parte de grupos armados ilegales en
+          algunas comunidades.
+        </p>
+
+        <p class="narracion">
+          Buscando comprender mejor las consecuencias sociales y psicológicas que el conflicto armado ha tenido en la
+          vida de niños, niñas y adolescentes en Colombia, esta investigación revisa los resultados de la <span
+            class="abrirGlosario"
+            data-ancla="evcnna">EVCNNA</span
+          > para contrastar y complementar los hallazgos de la Comisión con respecto a cuatro ejes principales: <a
+            href="#migracion">Migración forzada</a
+          >,
+          <a href="#orfandad">Orfandad</a>, <a href="#violencia">Violencia</a> y <a href="#salud-mental">Salud mental</a
+          >. Además, permite comparar los datos nacionales con los datos recogidos en los municipios <span
+            class="abrirGlosario"
+            data-ancla="pdet">PDET</span
+          >.
+        </p>
+      </div>
     </section>
 
     <section id="seccionMigracion" class="columnas seccion">
@@ -110,7 +123,7 @@ const elementosIndice = [
       </div>
 
       <div class="columna">
-        <p class="destacado">
+        <p class="narracion">
           Las <span class="resaltado">personas desplazadas</span> son aquellas que por situaciones de violencia o catástrofes
           naturales, han sido obligadas a huir de su hogar hacia otro lugar del país.
         </p>
@@ -182,7 +195,7 @@ const elementosIndice = [
 
         <p class="narracion">
           Sin embargo, estos datos solo cuentan a quienes han sido atendidos por la institución y son huérfanos de ambos
-          padres, dejando por fuera a gran cantidad de niños y niñas que han perdido a uno solo de sus padres o cuya
+          padres, dejando por fuera a una gran cantidad de niños y niñas que han perdido a uno solo de sus padres o cuya
           custodia fue asumida por alguien más.
         </p>
 
