@@ -12,35 +12,35 @@ const { id } = Astro.props;
 </div>
 
 <script define:vars={{ id }}>
-  const contenedorDesplegable = document.getElementById(id);
-  const cerrar = contenedorDesplegable.querySelector('.cerrar');
+const contenedorDesplegable = document.getElementById(id);
+const cerrar = contenedorDesplegable.querySelector('.cerrar');
 
-  // Cerrar el glosario con click afuera
-  function clicFuera(evento) {
-    const elemento = evento.target;
+// Cerrar el glosario con click afuera
+function clicFuera(evento) {
+  const elemento = evento.target;
 
-    if (id === 'glosario' && elemento.id === 'botonGlosario') {
-      return;
-    } else if (id === 'creditos' && elemento.id === 'botonCreditos') {
-      return;
-    }
-
-    if (
-      !(
-        contenedorDesplegable === elemento ||
-        contenedorDesplegable.contains(elemento) ||
-        elemento.classList.contains('abrirGlosario')
-      )
-    ) {
-      contenedorDesplegable.classList.remove('visible');
-    }
+  if (id === 'glosario' && elemento.id === 'botonGlosario') {
+    return;
+  } else if (id === 'creditos' && elemento.id === 'botonCreditos') {
+    return;
   }
 
-  cerrar.addEventListener('click', () => {
+  if (
+    !(
+      contenedorDesplegable === elemento ||
+      contenedorDesplegable.contains(elemento) ||
+      elemento.classList.contains('abrirGlosario')
+    )
+  ) {
     contenedorDesplegable.classList.remove('visible');
-  });
+  }
+}
 
-  document.body.addEventListener('click', clicFuera);
+cerrar.addEventListener('click', () => {
+  contenedorDesplegable.classList.remove('visible');
+});
+
+document.body.addEventListener('click', clicFuera);
 </script>
 
 <style lang="scss" is:global>
