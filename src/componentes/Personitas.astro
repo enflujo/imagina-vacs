@@ -10,61 +10,38 @@ export interface Props {
 const { felices, tristes, rutaSvgFeliz, rutaSvgTriste, descripcion } = Astro.props;
 ---
 
-<div
-  class="contenedorPersonas"
-  data-felices={felices}
-  data-tristes={tristes}
-  data-rutafeliz={rutaSvgFeliz}
-  data-rutatriste={rutaSvgTriste}
-  data-descripcion={descripcion}
->
+<div class="contenedorPersonas">
+  <div class="personas">
+    {
+      Array(felices)
+        .fill(0)
+        .map(() => {
+          return <span class="personita feliz" style={`background-image:url(${rutaSvgFeliz})`} />;
+        })
+    }
+
+    {
+      Array(tristes)
+        .fill(0)
+        .map(() => {
+          return <span class="personita triste" style={`background-image:url(${rutaSvgTriste})`} />;
+        })
+    }
+  </div>
+
+  <p class="descripcion">{descripcion}</p>
 </div>
 
-<script>
-  const contenedorPersonas = document.querySelectorAll<HTMLElement>('.contenedorPersonas');
-
-  for (let contenedor of contenedorPersonas) {
-    dibujarPersonas(contenedor);
+<style lang="scss">
+  .personas {
+    display: flex;
   }
 
-  function dibujarPersonas(contenedor: HTMLElement) {
-    const descripcion = document.createElement('p');
-    const personas = document.createElement('div');
-    descripcion.innerText = contenedor.dataset.descripcion;
-    contenedor.appendChild(descripcion);
-
-    // Agregar personas felices
-    for (let i = 0; i < +contenedor.dataset.felices; i++) {
-      const personita = document.createElement('span');
-      personita.classList.add('personita');
-      personita.style.backgroundImage = `url('${contenedor.dataset.rutafeliz}')`;
-      personas.appendChild(personita);
-    }
-
-    // Agregar personas tristes
-    for (let i = 0; i < +contenedor.dataset.tristes; i++) {
-      const personita = document.createElement('span');
-      personita.classList.add('personita');
-      personita.style.backgroundImage = `url('${contenedor.dataset.rutatriste}')`;
-      personas.appendChild(personita);
-    }
-    personas.classList.add('personas');
-    contenedor.appendChild(personas);
-  }
-</script>
-
-<style lang="scss" is:global>
-  .contenedorPersonas {
-    .personas {
-      display: flex;
-    }
-
-    .personita {
-      display: block;
-      border-radius: 50%;
-      height: 2em;
-      width: 2em;
-      margin: 0.2em;
-    }
+  .personita {
+    display: block;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    margin: 0.2em;
   }
 </style>

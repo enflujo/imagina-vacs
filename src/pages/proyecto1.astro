@@ -4,10 +4,9 @@ import Desliza from '@/componentes/Desliza.astro';
 import Plantilla from '@/plantillas/Plantilla.astro';
 import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
 import Grafica2 from '@/componentes/graficas/proyecto1/Grafica2.astro';
-import PersonasSaludMental1 from '@/componentes/graficas/proyecto1/PersonasSaludMental1.astro';
-import PersonasSaludMental2 from '@/componentes/graficas/proyecto1/PersonasSaludMental2.astro';
 import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
 import Indice from '@/componentes/Indice.astro';
+import Personitas from '@/componentes/Personitas.astro';
 
 const elementosIndice = [
   { nombre: 'Contexto', enlace: 'seccionContexto' },
@@ -375,8 +374,21 @@ const elementosIndice = [
           físicas, psicológicas y afectivas en la vida de niñas, niños y adolescentes colombianos.
         </p>
 
-        <PersonasSaludMental1 />
-        <PersonasSaludMental2 />
+        <Personitas
+          felices={1}
+          tristes={9}
+          rutaSvgFeliz="/especiales/vacs/iconos/flor_1.svg"
+          rutaSvgTriste="/especiales/vacs/iconos/flor_2.svg"
+          descripcion="En nueve de cada diez testimonios tomados por la Comisión, las víctimas hablaron de culpa, tristeza, rabia, indignación e impotencia como impactos de la pérdida."
+        />
+
+        <Personitas
+          felices={9}
+          tristes={1}
+          rutaSvgFeliz="/especiales/vacs/iconos/flor_1.svg"
+          rutaSvgTriste="/especiales/vacs/iconos/flor_2.svg"
+          descripcion="Además, una de cada diez personas entrevistadas que quedaron huérfanas por el conflicto armado afirmó que esta violencia le dejó una sensación de pérdida del sentido de la vida, pensamientos suicidas y depresión."
+        />
 
         <p class="escribiendo" data-velocidad="50">¿La afectación es diferente en los municipios PDET?</p>
         <p class="narracion">
