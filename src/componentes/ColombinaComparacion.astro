@@ -1,0 +1,112 @@
+---
+export interface Props {
+  datos: { nombre: string; porcentajeNoPdet: number; porcentajePdet: number };
+  color1: string;
+  color2: string;
+  alto?: number;
+  resaltado?: boolean;
+  info?: string;
+}
+
+const { datos, color1, color2, alto, resaltado, info } = Astro.props;
+---
+
+<div class=`${resaltado ? ' resaltado': ''}`>
+  <div class="contenedorColombina">
+    <p class="nombre">{datos.nombre}</p>
+
+    <div class="elementoGrafica">
+      <span
+        class="colombina"
+        style={`width:${datos.porcentajeNoPdet}%;background-color:${color1};height:${alto ? alto : 22}px`}
+        ><span class="porcentaje">{datos.porcentajeNoPdet}%</span></span
+      >
+
+      <span
+        class="colombina"
+        style={`width:${datos.porcentajePdet}%;background-color:${color2};height:${alto ? alto : 22}px`}
+      >
+        <span class="porcentaje">{datos.porcentajePdet}%</span></span
+      >
+    </div>
+  </div>
+
+  {info && <span class="info">{info}</span>}
+</div>
+
+<style lang="scss">
+  .resaltado {
+    background-color: #ff934f26;
+  }
+  .contenedorColombina {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 0.5em;
+  }
+
+  .referenciaColor {
+    display: block;
+    height: 5px;
+    widows: 5px;
+  }
+
+  .colombina {
+    position: relative;
+    height: 8px;
+    background-color: rgb(68, 68, 26);
+    display: block;
+    margin-right: 5px;
+    margin-left: 4px;
+    margin-top: 3px;
+  }
+
+  .porcentaje {
+    position: absolute;
+    font-size: 0.8em;
+    left: calc(100% + 8px);
+    bottom: -1%;
+  }
+
+  .nombre {
+    margin: 0;
+    flex-basis: 200px;
+  }
+
+  .elementoGrafica {
+    align-items: flex-start;
+    display: flex;
+    flex-basis: 80%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-left: 0.3em;
+  }
+
+  .resaltado {
+    font-size: 1.1em;
+    .nombre {
+      font-weight: 700;
+    }
+  }
+
+  .info {
+    font-weight: 400;
+    font-size: 0.85em;
+    flex: 1;
+  }
+
+  .muestraColor {
+    height: 3px;
+    width: 3px;
+    display: block;
+  }
+
+  #unoODos {
+    background-color: black;
+  }
+
+  #tresOMas {
+    background-color: pink;
+  }
+</style>

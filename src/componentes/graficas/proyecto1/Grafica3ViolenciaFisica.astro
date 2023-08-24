@@ -1,0 +1,66 @@
+---
+import ColombinaComparacion from '@/componentes/ColombinaComparacion.astro';
+import datos from '@/datos/p1ViolenciaFisicaPdetNoPdet';
+
+const colorNoPdet = '#ffbc42';
+const colorPdet = '#531cb3';
+---
+
+<section id="grafica1" class="grafica">
+  <h3>Diferencias de eventos de violencia física a menores por población</h3>
+
+  <div>
+    <div class="colombinas">
+      <div class="contenedorReferencia">
+        <span class="referenciaColor" style={`background-color:${colorNoPdet}`}></span> Municipios No PDET
+      </div>
+      <div class="contenedorReferencia">
+        <span class="referenciaColor" style={`background-color:${colorPdet}`}></span> Municipios PDET
+      </div>
+    </div>
+  </div>
+  {
+    datos.comparados.map((variable) => {
+      return (
+        <ColombinaComparacion
+          datos={variable}
+          resaltado={variable.nombre === 'Violencia'}
+          color1={colorNoPdet}
+          color2={colorPdet}
+        />
+      );
+    })
+  }
+</section>
+
+<p class="anotacionGrafica">{datos.info}</p>
+
+<style lang="scss">
+  .grafica {
+    padding: 3em 0;
+  }
+  h3 {
+    font-size: 1.9em;
+  }
+  .tituloGrafica {
+    font-size: 1.35em;
+    margin-top: 1em;
+  }
+
+  .colombinas {
+    margin: 0.5em 0 1em 0;
+  }
+
+  .contenedorReferencia {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .referenciaColor {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin-right: 0.5em;
+  }
+</style>

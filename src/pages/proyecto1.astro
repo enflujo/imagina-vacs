@@ -7,6 +7,7 @@ import Grafica2 from '@/componentes/graficas/proyecto1/Grafica2.astro';
 import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
 import Indice from '@/componentes/Indice.astro';
 import Personitas from '@/componentes/Personitas.astro';
+import Grafica3ViolenciaFisica from '@/componentes/graficas/proyecto1/Grafica3ViolenciaFisica.astro';
 
 const elementosIndice = [
   { nombre: 'Contexto', enlace: 'seccionContexto' },
@@ -213,7 +214,7 @@ const elementosIndice = [
 
         <p class="narracion">
           Para complementar estos datos, la EVCNNA 2018 indagó por la orfandad teniendo en cuenta aspectos más
-          específicos como el tipo de pérdida,(muerte de la madre, el padre o ambos), y la edad a la que tuvieron esta
+          específicos como el tipo de pérdida, (muerte de la madre, el padre o ambos), y la edad a la que tuvieron esta
           pérdida.
         </p>
 
@@ -250,8 +251,8 @@ const elementosIndice = [
         </div>
 
         <p class="destacado">
-          El maltrato intrafamiliar que sufrían los menores a manos de sus cuidadores y factores como la presencia de
-          grupos armados en el territorio influyeron mucho en su reclutamiento para la guerra.
+          El maltrato intrafamiliar que sufrían los menores a manos de los cuidadores y la presencia de grupos armados
+          en el territorio influyeron mucho en su reclutamiento para la guerra.
         </p>
 
         <h3>Violencia física y emocional</h3>
@@ -280,7 +281,9 @@ const elementosIndice = [
           Para 2018 7 de cada 20 jóvenes (35%) sufrieron alguna agresión física antes de los 18 años. Las primeras
           suceden, por lo general, entre los 9 y los 15 años.
         </p>
-        <p class="grafica">GRÁFICA 4.1: Diferencias de eventos de violencia física por población</p>
+
+        <Grafica3ViolenciaFisica />
+
         <p class="grafica">GRÁFICA 4.2: Diferencias de eventos de violencia física por género y población</p>
 
         <p class="narracion">
