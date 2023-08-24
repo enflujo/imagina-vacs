@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  datos: { nombre: string; porcentajeNoPdet: number; porcentajePdet: number };
+  datos: { nombre: string; porcentaje1: number; porcentaje2: number };
   color1: string;
   color2: string;
   alto?: number;
@@ -18,15 +18,15 @@ const { datos, color1, color2, alto, resaltado, info } = Astro.props;
     <div class="elementoGrafica">
       <span
         class="colombina"
-        style={`width:${datos.porcentajeNoPdet}%;background-color:${color1};height:${alto ? alto : 22}px`}
-        ><span class="porcentaje">{datos.porcentajeNoPdet}%</span></span
+        style={`width:${datos.porcentaje1}%;background-color:${color1};height:${alto ? alto : 8}px`}
+        ><span class="porcentaje">{datos.porcentaje1}%</span></span
       >
 
       <span
         class="colombina"
-        style={`width:${datos.porcentajePdet}%;background-color:${color2};height:${alto ? alto : 22}px`}
+        style={`width:${datos.porcentaje2}%;background-color:${color2};height:${alto ? alto : 8}px`}
       >
-        <span class="porcentaje">{datos.porcentajePdet}%</span></span
+        <span class="porcentaje">{datos.porcentaje2}%</span></span
       >
     </div>
   </div>
@@ -54,19 +54,17 @@ const { datos, color1, color2, alto, resaltado, info } = Astro.props;
 
   .colombina {
     position: relative;
-    height: 8px;
+    height: 10px;
     background-color: rgb(68, 68, 26);
     display: block;
-    margin-right: 5px;
-    margin-left: 4px;
-    margin-top: 3px;
+    margin: 5px 4px 3px 0;
   }
 
   .porcentaje {
     position: absolute;
     font-size: 0.8em;
     left: calc(100% + 8px);
-    bottom: -1%;
+    bottom: -8px;
   }
 
   .nombre {
