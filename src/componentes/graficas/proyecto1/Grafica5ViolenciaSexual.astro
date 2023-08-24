@@ -1,0 +1,85 @@
+---
+import ColombinaComparacion from '@/componentes/ColombinaComparacion.astro';
+import datos from '@/datos/p1ViolenciaSexualGenero';
+
+const colorHombres = '#0081a7';
+const colorMujeres = '#531cb3';
+---
+
+<section id="grafica1" class="grafica">
+  <h3>Diferencias de eventos de violencia sexual a menores por género y población</h3>
+
+  <div>
+    <h4 class="tituloGrafica">En municipios NO-PDET</h4>
+
+    <div>
+      <div class="colombinas">
+        <div class="contenedorReferencia">
+          <span class="referenciaColor" style={`background-color:${colorHombres}`}></span> Hombres
+        </div>
+        <div class="contenedorReferencia">
+          <span class="referenciaColor" style={`background-color:${colorMujeres}`}></span> Mujeres
+        </div>
+      </div>
+    </div>
+    {
+      datos.noPdet.map((variable) => {
+        return (
+          <ColombinaComparacion
+            datos={variable}
+            resaltado={variable.nombre === 'Violencia'}
+            color1={colorHombres}
+            color2={colorMujeres}
+          />
+        );
+      })
+    }
+  </div>
+
+  <div>
+    <h4 class="tituloGrafica">En municipios PDET</h4>
+    {
+      datos.pdet.map((variable) => {
+        return (
+          <ColombinaComparacion
+            datos={variable}
+            resaltado={variable.nombre === 'Violencia'}
+            color1={colorHombres}
+            color2={colorMujeres}
+          />
+        );
+      })
+    }
+  </div>
+  <p class="anotacionGrafica">{datos.info}</p>
+</section>
+
+<style lang="scss">
+  .grafica {
+    padding: 3em 0;
+  }
+  h3 {
+    font-size: 1.9em;
+  }
+  .tituloGrafica {
+    font-size: 1.35em;
+    margin-top: 1em;
+  }
+
+  .colombinas {
+    margin: 0.5em 0 1em 0;
+  }
+
+  .contenedorReferencia {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .referenciaColor {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin-right: 0.5em;
+  }
+</style>
