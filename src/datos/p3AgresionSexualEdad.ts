@@ -1,7 +1,7 @@
 const datos = {
-  infoIndicador:
-    'Exámenes médico legales por presunto delito sexual según grupo de edad de la víctima. Colombia, año 2020.',
-  info: 'Fuente: FORENSIS 2020',
+  infoIndicador: '',
+  info: 'Exámenes médico legales por presunto delito sexual según grupo de edad de la víctima. Colombia, año 2020.',
+  fuente: 'FORENSIS 2020',
   edad: [
     {
       nombre: 'De 0 a 4',

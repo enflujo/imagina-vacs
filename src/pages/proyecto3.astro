@@ -12,6 +12,8 @@ const elementosIndice = [
 import Grafica1 from '@/componentes/graficas/proyecto3/Grafica1.astro';
 import Grafica2 from '@/componentes/graficas/proyecto3/Grafica2.astro';
 import Grafica3 from '@/componentes/graficas/proyecto3/Grafica3.astro';
+import Grafica4AgresorFisico from '@/componentes/graficas/proyecto3/Grafica4AgresorFisico.astro';
+import Personitas from '@/componentes/Personitas.astro';
 ---
 
 <Plantilla titulo="VACS" descripcion="...">
@@ -78,10 +80,6 @@ import Grafica3 from '@/componentes/graficas/proyecto3/Grafica3.astro';
             >GRÁFICA 3.1.1</a
           > Relación de Polivictimización y Victimización, Perpetración y Creencias en Colombia
         </p>
-        <p class="comentario">
-          Cosas para resaltar en la gráfica anterior (4.1.1). Quizás no es necesario escribirlo sino que se puede
-          mostrar de otra forma (?)
-        </p>
         <p class="narracion">
           Se estima que haber sufrido violencia física (VF) o emocional (VE) por parte de los padres antes de los 18
           años se relaciona con un aumento de la probabilidad de que una persona sea perpetradora de violencia física
@@ -140,13 +138,46 @@ import Grafica3 from '@/componentes/graficas/proyecto3/Grafica3.astro';
           Estos datos de Medicina Legal son congruentes con lo que encontramos en la EVCNNA (2018):
         </p>
 
-        <p class="comentario">Esto que sigue podría graficarse?</p>
-        <p class="grafica">
-          Aproximadamente 2 de cada 5 mujeres (40.8%) y hombres (42.1%) han sido víctimas de violencia física, sexual o
-          psicológica en su infancia o adolescencia. Cerca de 1 de cada 4 mujeres (26.5%) y 1 de cada 3 hombres (37.5%)
-          sufrió violencia física; y 1 de cada 5 mujeres (21.2%) y 1 de cada 10 hombres (9.5%) sufrió violencia
-          psicológica por parte de los padres, cuidadores o parientes adultos.
-        </p>
+        <Personitas
+          felices={3}
+          tristes={2}
+          rutaSvgFeliz="/especiales/vacs/iconos/flor_1.svg"
+          rutaSvgTriste="/especiales/vacs/iconos/flor_2.svg"
+          descripcion="Aproximadamente 2 de cada 5 personas en Colombia han sido víctimas de violencia física, sexual o psicológica en su infancia o adolescencia."
+        />
+
+        <Personitas
+          felices={3}
+          tristes={1}
+          rutaSvgFeliz="/especiales/vacs/iconos/flor_1.svg"
+          rutaSvgTriste="/especiales/vacs/iconos/flor_2.svg"
+          descripcion="Cerca de 1 de cada 4 mujeres (26.5%) sufrió violencia física en su infancia o adolescencia."
+        />
+
+        <Personitas
+          felices={2}
+          tristes={1}
+          rutaSvgFeliz="/especiales/vacs/iconos/flor_1.svg"
+          rutaSvgTriste="/especiales/vacs/iconos/flor_2.svg"
+          descripcion="Cerca de 1 de cada 3 hombres (37.5%) sufrió violencia física en su infancia o adolescencia."
+        />
+
+        <Personitas
+          felices={4}
+          tristes={1}
+          rutaSvgFeliz="/especiales/vacs/iconos/flor_1.svg"
+          rutaSvgTriste="/especiales/vacs/iconos/flor_2.svg"
+          descripcion="1 de cada 5 mujeres (21.2%) sufrió violencia psicológica por parte de los padres, cuidadores o parientes adultos."
+        />
+
+        <Personitas
+          felices={9}
+          tristes={1}
+          rutaSvgFeliz="/especiales/vacs/iconos/flor_1.svg"
+          rutaSvgTriste="/especiales/vacs/iconos/flor_2.svg"
+          descripcion="1 de cada 10 hombres (9.5%) sufrió violencia psicológica por parte de los padres, cuidadores o parientes adultos."
+        />
+
         <p>
           <a
             href="https://uniandes-my.sharepoint.com/:w:/r/personal/j_gonzalezj_uniandes_edu_co/Documents/EnFlujo/Laboratorio%20EnFlujo/Proyectos/2023/Imagina%20-%20Fellows%20VACS/Relatos%20-%20M%C3%93NICA%20Y%20JOAQU%C3%8DN.docx?d=w6af4e0c71eee4230ad0d687702f99877&csf=1&web=1&e=NFTiSD"
@@ -187,11 +218,14 @@ import Grafica3 from '@/componentes/graficas/proyecto3/Grafica3.astro';
           Las cifras de violencia contra niños, niñas y adolescentes en Colombia evidencian un problema de salud pública
           que no disminuye con el tiempo, sino que se mantiene o aumenta.
         </p>
-        <p class="comentario">Esto que sigue podría quizás ilustrarse / animarse?</p>
-        <p class="grafica">
-          Es en el hogar donde sucede la mayor parte de las agresiones contra niños, niñas y adolescentes. En el 33.75%
-          de los casos quien violenta es el padre, seguido de la madre en el 28.19% y el padrastro en el 11.38%.
+
+        <p class="narracion">
+          Es en el hogar donde sucede la mayor parte de las agresiones contra niños, niñas y adolescentes. El maltrato
+          es ejercido sobre todo por familiares cercanos.
         </p>
+
+        <Grafica4AgresorFisico />
+
         <p class="narracion">
           Los resultados que encontramos en este estudio son preocupantes. Muchos niñas, niños y adolescentes sufren o
           presencian hechos violencios en su casa, en la comunidad o entre sus pares. Esta cadena se replica cuando se

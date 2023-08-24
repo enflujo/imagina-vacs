@@ -1,6 +1,7 @@
 const datos = {
-  infoIndicador: 'Violencia contra Niños, niñas y adolescentes. Colombia, año 2020.',
-  info: 'Fuente: FORENSIS 2020',
+  infoIndicador: '',
+  info: 'Violencia contra Niños, niñas y adolescentes. Colombia, año 2020.',
+  fuente: 'FORENSIS 2020',
   total: 5069,
   genero: [
     {
