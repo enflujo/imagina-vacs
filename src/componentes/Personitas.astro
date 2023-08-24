@@ -1,0 +1,50 @@
+---
+export interface Props {
+  felices: number;
+  tristes: number;
+  rutaSvgFeliz: string;
+  rutaSvgTriste: string;
+  descripcion: string;
+}
+
+const { felices, tristes, rutaSvgFeliz, rutaSvgTriste, descripcion } = Astro.props;
+---
+
+<div class="contenedorPersonas">
+  <p class="descripcion">{descripcion}</p>
+  <div class="personas">
+    {
+      Array(felices)
+        .fill(0)
+        .map(() => {
+          return <span class="personita feliz" style={`background-image:url(${rutaSvgFeliz})`} />;
+        })
+    }
+
+    {
+      Array(tristes)
+        .fill(0)
+        .map(() => {
+          return <span class="personita triste" style={`background-image:url(${rutaSvgTriste})`} />;
+        })
+    }
+  </div>
+</div>
+
+<style lang="scss">
+  .contenedorPersonas {
+    margin-top: 6em;
+  }
+
+  .personas {
+    display: flex;
+  }
+
+  .personita {
+    display: block;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    margin: 0.2em;
+  }
+</style>

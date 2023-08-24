@@ -6,6 +6,7 @@ import Grafica1 from '@/componentes/graficas/proyecto1/Grafica1.astro';
 import Grafica2 from '@/componentes/graficas/proyecto1/Grafica2.astro';
 import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
 import Indice from '@/componentes/Indice.astro';
+import Personitas from '@/componentes/Personitas.astro';
 
 const elementosIndice = [
   { nombre: 'Contexto', enlace: 'seccionContexto' },
@@ -147,12 +148,23 @@ const elementosIndice = [
 
         <p class="narracion">
           Los datos muestran que los municipios históricamente más afectados por la violencia (PDET) son los lugares
-          donde los menores han sufrido más el desplazamiento a causa del conflicto. Esta situación ha afectado
-          particularmente a los niños y hombres jóvenes debido, quizás, al mayor riesgo de ser reclutados para
-          participar en grupos armados ilegales.
+          donde los menores han sufrido más el desplazamiento a causa del conflicto.
         </p>
 
         <Grafica2 />
+
+        <p class="destacado">
+          Los municipios históricamente afectados por la violencia presentan 2.88% más probabilidad de migrar a otro
+          municipio debido a violencia que el promedio nacional.
+        </p>
+
+        <p class="narracion">
+          El desplazamiento interno ha afectado particularmente a los <strong>niños y hombres jóvenes</strong> quienes, en
+          los municipios PDET, migraron al interior del país <strong>3.95%</strong> más que los hombres del resto del país.
+          Esto se debe, quizás, al <strong
+            >mayor riesgo de ser reclutados para participar en grupos armados ilegales</strong
+          >.
+        </p>
       </div>
     </section>
 
@@ -374,12 +386,22 @@ const elementosIndice = [
           Experiencias como el secuestro, el homicidio de un familiar o el desplazamiento forzado han dejado secuelas
           físicas, psicológicas y afectivas en la vida de niñas, niños y adolescentes colombianos.
         </p>
-        <p class="grafica">
-          En nueve de cada diez testimonios tomados por la Comisión, las víctimas hablaron de culpa, tristeza, rabia,
-          indignación e impotencia como impactos de la pérdida. Además, una de cada diez personas entrevistadas que
-          quedaron huérfanas por el conflicto armado afirmó que esta violencia le dejó una sensación de pérdida del
-          sentido de la vida, pensamientos suicidas y depresión.
-        </p>
+
+        <Personitas
+          felices={1}
+          tristes={9}
+          rutaSvgFeliz="/especiales/vacs/iconos/flor_1.svg"
+          rutaSvgTriste="/especiales/vacs/iconos/flor_2.svg"
+          descripcion="En nueve de cada diez testimonios tomados por la Comisión, las víctimas hablaron de culpa, tristeza, rabia, indignación e impotencia como impactos de la pérdida."
+        />
+
+        <Personitas
+          felices={9}
+          tristes={1}
+          rutaSvgFeliz="/especiales/vacs/iconos/flor_1.svg"
+          rutaSvgTriste="/especiales/vacs/iconos/flor_2.svg"
+          descripcion="Además, una de cada diez personas entrevistadas que quedaron huérfanas por el conflicto armado afirmó que esta violencia le dejó una sensación de pérdida del sentido de la vida, pensamientos suicidas y depresión."
+        />
 
         <p class="escribiendo" data-velocidad="50">¿La afectación es diferente en los municipios PDET?</p>
         <p class="narracion">
