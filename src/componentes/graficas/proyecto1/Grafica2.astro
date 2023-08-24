@@ -15,10 +15,8 @@ import datos from '@/datos/migracionViolenciaPdet';
           return (
             <Colombina
               datos={variable}
-              resaltado={variable.nombre === 'Violencia'}
               info={variable.nombre === 'Violencia' ? datos.infoIndicador : null}
               color={variable.nombre === 'Violencia' ? '#f5ba39d5' : '#000'}
-              alto={variable.nombre === 'Violencia' ? 15 : 4}
             />
           );
         })

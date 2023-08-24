@@ -14,9 +14,11 @@ const { datos, color, alto, resaltado, info } = Astro.props;
   <div class="contenedorColombina">
     <p class="nombre">{datos.nombre}</p>
     <div class="elementoGrafica">
-      <span class="colombina" style={`width:${datos.porcentaje}%;background-color:${color};height:${alto ? alto : 3}px`}
-      ></span>
-      <span class="porcentaje">{datos.porcentaje}%</span>
+      <span
+        class="colombina"
+        style={`width:${datos.porcentaje}%;background-color:${color};height:${alto ? alto : 10}px`}
+        ><span class="porcentaje">{datos.porcentaje}%</span></span
+      >
     </div>
   </div>
 
@@ -36,10 +38,18 @@ const { datos, color, alto, resaltado, info } = Astro.props;
   }
 
   .colombina {
-    height: 4px;
+    position: relative;
+    height: 10px;
     background-color: rgb(68, 68, 26);
     display: block;
-    margin-right: 5px;
+    margin: 5px 4px 3px 0;
+  }
+
+  .porcentaje {
+    position: absolute;
+    font-size: 0.8em;
+    left: calc(100% + 8px);
+    bottom: -8px;
   }
 
   .nombre {
@@ -53,6 +63,7 @@ const { datos, color, alto, resaltado, info } = Astro.props;
     flex-wrap: nowrap;
     align-items: center;
     flex-basis: 100%;
+    margin-left: 0.3em;
   }
 
   .resaltado {
