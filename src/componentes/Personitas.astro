@@ -11,6 +11,7 @@ const { felices, tristes, rutaSvgFeliz, rutaSvgTriste, descripcion } = Astro.pro
 ---
 
 <div class="contenedorPersonas">
+  <p class="descripcion">{descripcion}</p>
   <div class="personas">
     {
       Array(felices)
@@ -28,11 +29,13 @@ const { felices, tristes, rutaSvgFeliz, rutaSvgTriste, descripcion } = Astro.pro
         })
     }
   </div>
-
-  <p class="descripcion">{descripcion}</p>
 </div>
 
 <style lang="scss">
+  .contenedorPersonas {
+    margin-top: 6em;
+  }
+
   .personas {
     display: flex;
   }
