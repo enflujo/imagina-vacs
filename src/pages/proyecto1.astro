@@ -7,6 +7,11 @@ import Grafica2 from '@/componentes/graficas/proyecto1/Grafica2.astro';
 import Puntos from '@/componentes/graficas/proyecto1/Puntos.astro';
 import Indice from '@/componentes/Indice.astro';
 import Personitas from '@/componentes/Personitas.astro';
+import Grafica3ViolenciaFisica from '@/componentes/graficas/proyecto1/Grafica3ViolenciaFisica.astro';
+import Grafica4ViolenciaEmocional from '@/componentes/graficas/proyecto1/Grafica4ViolenciaEmocional.astro';
+import Grafica5ViolenciaSexual from '@/componentes/graficas/proyecto1/Grafica5ViolenciaSexual.astro';
+import Grafica6SaludMentalPdet from '@/componentes/graficas/proyecto1/Grafica6SaludMentalPdet.astro';
+import Grafica7SaludMentalGenero from '@/componentes/graficas/proyecto1/Grafica7SaludMentalGenero.astro';
 
 const elementosIndice = [
   { nombre: 'Contexto', enlace: 'seccionContexto' },
@@ -213,7 +218,7 @@ const elementosIndice = [
 
         <p class="narracion">
           Para complementar estos datos, la EVCNNA 2018 indagó por la orfandad teniendo en cuenta aspectos más
-          específicos como el tipo de pérdida,(muerte de la madre, el padre o ambos), y la edad a la que tuvieron esta
+          específicos como el tipo de pérdida, (muerte de la madre, el padre o ambos), y la edad a la que tuvieron esta
           pérdida.
         </p>
 
@@ -250,8 +255,8 @@ const elementosIndice = [
         </div>
 
         <p class="destacado">
-          El maltrato intrafamiliar que sufrían los menores a manos de sus cuidadores y factores como la presencia de
-          grupos armados en el territorio influyeron mucho en su reclutamiento para la guerra.
+          El maltrato intrafamiliar que sufrían los menores a manos de los cuidadores y la presencia de grupos armados
+          en el territorio influyeron mucho en su reclutamiento para la guerra.
         </p>
 
         <h3>Violencia física y emocional</h3>
@@ -276,26 +281,33 @@ const elementosIndice = [
           Pero el maltrato físico infantil en Colombia no sucede solo en contextos de guerra, también se da en los
           hogares y en la comunidad.
         </p>
+
+        <Grafica3ViolenciaFisica />
+
         <p class="destacado">
           Para 2018 7 de cada 20 jóvenes (35%) sufrieron alguna agresión física antes de los 18 años. Las primeras
           suceden, por lo general, entre los 9 y los 15 años.
         </p>
-        <p class="grafica">GRÁFICA 4.1: Diferencias de eventos de violencia física por población</p>
-        <p class="grafica">GRÁFICA 4.2: Diferencias de eventos de violencia física por género y población</p>
 
         <p class="narracion">
-          Los resultados de la EVCNNA muestran que niños, niñas y jóvenes en Colombia también sufren violencia
-          emocional. Cuando se les preguntó si sus padres o apoderados alguna vez habían dicho algo hiriente como que no
-          merecían haber nacido o si los habían ridiculizado o amenazado con deshacerse de ellos, respondieron:
+          En cuanto a diferencias de género, encontramos que los hombres en Colombia son 7.33% más propensos a ser
+          abofeteados, 12.3% a ser golpeados y 5.76% a ser amenazados con cuchillo que las mujeres. También en los
+          munidicpios PDET los hombres también son más vulnerables a estas agresiones, en particular son 6.52% más
+          golpeados y 3.05% más amenazados con cuchillo que las mujeres.
         </p>
 
-        <p class="grafica">GRÁFICA 4.2: Tabla 8. Diferencias de eventos de violencia emocional por población</p>
+        <p class="narracion">
+          Niños, niñas y jóvenes en Colombia también sufren violencia emocional. Cuando se les preguntó si sus padres o
+          apoderados alguna vez habían dicho algo hiriente como que no merecían haber nacido o si los habían
+          ridiculizado o amenazado con deshacerse de ellos, respondieron:
+        </p>
+
+        <Grafica4ViolenciaEmocional />
 
         <p class="destacado">
           En general, las mujeres en Colombia son agredidas emocionalmente más que los hombres. 1 de cada 10 mujeres es
           ridiculizada o menospreciada antes de cumplir 18 años.
         </p>
-        <p class="grafica">GRÁFICA 4.3: Diferencias de eventos de violencia emocional por género y población</p>
 
         <h3>Violencia sexual</h3>
         <p class="narracion">
@@ -358,15 +370,19 @@ const elementosIndice = [
           dificultad de realizar este procedimiento en regiones periféricas del país.
         </p>
 
-        <p class="grafica">GRÁFICA 4.4: Diferencias de eventos de violencia sexual por género y población</p>
-
         <p class="destacado">
-          El 11.7% de los entrevistados entre 14 y 24 años afirmaron haber sido tocados de manera indeseada antes de
-          cumplir la mayoría de edad, y se estima que sucedió por primera vez en promedio a los 12.6 años de edad.
+          A nivel nacional 11.7% de los entrevistados entre 14 y 24 años afirmaron haber sido tocados de manera
+          indeseada antes de cumplir la mayoría de edad, y se estima que sucedió por primera vez en promedio a los 12.6
+          años de edad.
         </p>
-        <p class="destacado">Alrededor del 5.3% fue víctima de un intento frustrado de violación.</p>
-        <p class="destacado">
-          El 2.14% fue físicamente forzado a tener sexo y el 1.6% presionado a tener relaciones sexuales.
+
+        <Grafica5ViolenciaSexual />
+
+        <p class="narracion">
+          Las mujeres a nivel nacional sufren 6.85% más de tocamientos indeseados que los hombres, para municipios PDET
+          la diferencia es del 7.34%. También son alrededor de 4% más propensas a sufrir de un intento de sexo sin
+          consentimiento, un 2.4% a ser forzadas físicamente a tener sexo y un 1% a ser forzadas a tener relaciones
+          sexuales por presión.
         </p>
       </div>
     </div>
@@ -400,8 +416,14 @@ const elementosIndice = [
           tristes={1}
           rutaSvgFeliz="/especiales/vacs/iconos/flor_1.svg"
           rutaSvgTriste="/especiales/vacs/iconos/flor_2.svg"
-          descripcion="Además, una de cada diez personas entrevistadas que quedaron huérfanas por el conflicto armado afirmó que esta violencia le dejó una sensación de pérdida del sentido de la vida, pensamientos suicidas y depresión."
+          descripcion="Una de cada diez personas entrevistadas que quedaron huérfanas por el conflicto armado afirmó que esta violencia le dejó una sensación de pérdida del sentido de la vida, pensamientos suicidas y depresión."
         />
+
+        <p class="grafica">
+          Así mismo, el informe, la CEV afirma que el 63,5 % de los testimonios sobre secuestro hablan de consecuencias
+          sobre la salud física y mental como problemas en el sueño o la alimentación, migraña, depresión, ansiedad,
+          recuerdos recurrentes sobre el hecho e intentos de suicidio, entre otros.
+        </p>
 
         <p class="escribiendo" data-velocidad="50">¿La afectación es diferente en los municipios PDET?</p>
         <p class="narracion">
@@ -411,27 +433,25 @@ const elementosIndice = [
           así, si había intentado hacerlo.
         </p>
 
-        <p class="grafica">
-          GRÁFICA(S) 3.1: En el informe, la CEV (2022a) afirma que El 63,5 % de los testimonios sobre secuestro hablan
-          de este tipo de consecuencias sobre la salud física y mental: problemas en el sueño o la alimentación,
-          migraña, depresión, ansiedad, recuerdos recurrentes sobre el hecho e intentos de suicidio, entre otros (p. 49)
-        </p>
-
         <p class="narracion">
           Según los resultados, la presencia de problemas de salud mental moderada en los jóvenes de la muestra PDET fue
           4% menor que en la muestra nacional y pensaron en hacerse daño 3.84% menos que el promedio nacional.
         </p>
 
-        <p class="grafica">GRÁFICA 3.2: Diferencias de variables relacionadas a salud mental por población.</p>
+        <Grafica6SaludMentalPdet />
 
-        <p>
+        <p class="destacado">
           También se encontró que en todo el país las mujeres habían sufrido más afectaciones de salud mental que los
-          hombres. Y, en particular en los municipios PDET, hubo una diferencia de 29.27% en los intentos de suicidio,
-          siendo las mujeres las que más intentan acabar su vida, pues del 16.91% de las mujeres que piensan en terminar
-          con su vida, el 57% efectivamente lo intenta.
+          hombres.
         </p>
 
-        <p class="grafica">GRÁFICA 3.3 Diferencias de variables relacionadas a salud mental por género y población.</p>
+        <Grafica7SaludMentalGenero />
+
+        <p class="narracion">
+          En los municipios PDET, hubo una diferencia de 29.27% en los intentos de suicidio, siendo las mujeres las que
+          más intentan acabar su vida, pues del 16.91% de las mujeres que piensan en terminar con su vida, el 57%
+          efectivamente lo intenta.
+        </p>
 
         <p class="narracion">
           Esta diferencia podría explicarse por la cruda realidad a la que han estado expuestas las mujeres en el marco

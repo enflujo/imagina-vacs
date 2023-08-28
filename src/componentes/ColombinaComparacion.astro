@@ -1,23 +1,32 @@
 ---
 export interface Props {
-  datos: { nombre: string; porcentaje: number };
-  color: string;
+  datos: { nombre: string; porcentaje1: number; porcentaje2: number };
+  color1: string;
+  color2: string;
   alto?: number;
   resaltado?: boolean;
   info?: string;
 }
 
-const { datos, color, alto, resaltado, info } = Astro.props;
+const { datos, color1, color2, alto, resaltado, info } = Astro.props;
 ---
 
 <div class=`${resaltado ? ' resaltado': ''}`>
   <div class="contenedorColombina">
     <p class="nombre">{datos.nombre}</p>
+
     <div class="elementoGrafica">
       <span
         class="colombina"
-        style={`width:${datos.porcentaje}%;background-color:${color};height:${alto ? alto : 10}px`}
-        ><span class="porcentaje">{datos.porcentaje}%</span></span
+        style={`width:${datos.porcentaje1}%;background-color:${color1};height:${alto ? alto : 8}px`}
+        ><span class="porcentaje">{datos.porcentaje1}%</span></span
+      >
+
+      <span
+        class="colombina"
+        style={`width:${datos.porcentaje2}%;background-color:${color2};height:${alto ? alto : 8}px`}
+      >
+        <span class="porcentaje">{datos.porcentaje2}%</span></span
       >
     </div>
   </div>
@@ -34,7 +43,13 @@ const { datos, color, alto, resaltado, info } = Astro.props;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    margin-top: 0.2em;
+    margin-top: 0.5em;
+  }
+
+  .referenciaColor {
+    display: block;
+    height: 5px;
+    widows: 5px;
   }
 
   .colombina {
@@ -58,11 +73,11 @@ const { datos, color, alto, resaltado, info } = Astro.props;
   }
 
   .elementoGrafica {
+    align-items: flex-start;
     display: flex;
-    flex-direction: row;
+    flex-basis: 80%;
+    flex-direction: column;
     flex-wrap: nowrap;
-    align-items: center;
-    flex-basis: 100%;
     margin-left: 0.3em;
   }
 
