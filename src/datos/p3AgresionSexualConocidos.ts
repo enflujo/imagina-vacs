@@ -1,6 +1,7 @@
 const datos = {
-  infoIndicador: 'Exámenes médico-legales por presunto delito sexual según presunto agresor. Colombia, año 2020.',
-  info: 'Fuente: FORENSIS 2020',
+  infoIndicador: '',
+  info: 'Exámenes médico-legales por presunto delito sexual según presunto agresor. Colombia, año 2020.',
+  fuente: 'FORENSIS 2020',
   presuntoAgresor: [
     {
       nombre: 'Familiar',

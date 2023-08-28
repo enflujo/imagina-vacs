@@ -14,18 +14,17 @@ const { felices, tristes, rutaSvgFeliz, rutaSvgTriste, descripcion } = Astro.pro
   <p class="descripcion">{descripcion}</p>
   <div class="personas">
     {
-      Array(felices)
-        .fill(0)
-        .map(() => {
-          return <span class="personita feliz" style={`background-image:url(${rutaSvgFeliz})`} />;
-        })
-    }
-
-    {
       Array(tristes)
         .fill(0)
         .map(() => {
           return <span class="personita triste" style={`background-image:url(${rutaSvgTriste})`} />;
+        })
+    }
+    {
+      Array(felices)
+        .fill(0)
+        .map(() => {
+          return <span class="personita feliz" style={`background-image:url(${rutaSvgFeliz})`} />;
         })
     }
   </div>

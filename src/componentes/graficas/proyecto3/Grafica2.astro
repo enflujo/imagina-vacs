@@ -4,7 +4,7 @@ import datos from '@/datos/p3AgresionSexualConocidos';
 ---
 
 <section id="grafica1" class="grafica">
-  <h3>Presuntos agresores sexuales en Colombia 2020</h3>
+  <h3>Agresiones sexuales a menores en Colombia por presunto agresor (2020)</h3>
 
   <div>
     <div class="colombinas">
@@ -15,7 +15,7 @@ import datos from '@/datos/p3AgresionSexualConocidos';
               datos={variable}
               resaltado={variable.personaCercana === true}
               color={variable.personaCercana === true ? '#f5ba39d5' : '#000'}
-              alto={variable.personaCercana === true ? 12 : 4}
+              alto={variable.personaCercana === true ? 15 : 10}
             />
           );
         })
@@ -23,8 +23,8 @@ import datos from '@/datos/p3AgresionSexualConocidos';
     </div>
   </div>
   <div class="anotacionGrafica">
-    {datos.infoIndicador}
-    <a href="https://www.medicinalegal.gov.co/documents/20143/787115/Forensis_2020.pdf">{datos.info}</a>
+    {datos.info}
+    <a href="https://www.medicinalegal.gov.co/documents/20143/787115/Forensis_2020.pdf">{datos.fuente}</a>
   </div>
 </section>
 
