@@ -167,12 +167,12 @@ main {
 
 .destacado {
   font-size: 1.2em;
-  //font-family: var(--fuenteMono2);
   font-family: var(--fuenteMono2);
   color: var(--grisTexto);
   background-color: var(--blancoNube);
-  border-image: linear-gradient(45deg, var(--moraAzul), var(--azulVaALlover)) 1;
-  border: 4px solid transparent;
+  //border-image: linear-gradient(90deg, var(--moraAzul), var(--azulVaALlover)) 1;
+  //border: 4px solid transparent;
+  border: 4px solid var(--moraAzul);
   margin: 8em 5em 10em 5em;
   padding: 3em;
   line-height: 1.5em;

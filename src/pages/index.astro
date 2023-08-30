@@ -157,13 +157,19 @@ import Plantilla from '@/plantillas/Plantilla.astro';
 
     #contenedorEnlaces {
       display: flex;
-      justify-content: space-between;
+      // justify-content: space-between;
+      justify-content: flex-end;
+      flex-direction: column;
       width: 80vw;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: flex-start;
     }
 
     .enlace {
-      border: 1px white solid;
-      text-align: center;
+      // border: 1px var(--grisTexto);
+      border-color: var(--grisTexto);
+      text-align: left;
       padding: 0.5em;
       margin: 1em;
       border-radius: 15px;
