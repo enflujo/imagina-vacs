@@ -81,13 +81,22 @@
 
 body {
   background: var(--blancoNube);
-  background: linear-gradient(
+  background: 
+  // linear-gradient(
+  //   180deg,
+  //   var(--fondo1) 0%,
+  //   var(--fondo2) 100vh,
+  //   var(--fondo2) calc(100% - 250vh),
+  //   var(--fondo1) 100%
+  // );
+    linear-gradient(
     180deg,
     var(--fondo1) 0%,
     var(--fondo2) 100vh,
-    var(--fondo2) calc(100% - 100vh),
+    var(--fondo2) calc(100% - 200vh),
     var(--fondo1) 100%
   );
+
   min-height: 100vh;
   transition: --fondo1 0.3s, --fondo2 0.3s;
 }
@@ -238,7 +247,11 @@ main {
 }
 
 .seccion {
-  margin-bottom: 7em;
+  margin-bottom: 4em;
+}
+
+.medio {
+  margin-top: 7em;
 }
 
 .tituloSeccion {
