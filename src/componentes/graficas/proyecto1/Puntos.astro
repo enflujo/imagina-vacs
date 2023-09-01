@@ -40,7 +40,7 @@ const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
       duranteInterseccion(contenedor, enVista, false, { threshold: 0 }, fueraDeVista);
 
       function enVista() {
-        ctx.fillStyle = 'rgba(255, 0, 0, .3)';
+        ctx.fillStyle = '#531cb3';
         relojLienzo = requestAnimationFrame(pintar);
         // const { y, height } = entrada.boundingClientRect;
         // reloj = setInterval(() => {
@@ -53,7 +53,7 @@ const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
 
       function fueraDeVista() {
         cancelAnimationFrame(relojLienzo);
-        ctx.fillStyle = 'red';
+        ctx.fillStyle = 'black';
         ctx.fillRect(0, 0, lienzo.width, lienzo.height);
         opacidad = 0;
         conteo = 0;
@@ -87,12 +87,13 @@ const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
         ctx.save();
         ctx.fontKerning = 'none';
         ctx.font = '600 2em Nohemi';
-        ctx.fillStyle = '#FFF';
-        ctx.fillText(textoFechas, 10, 100);
-        ctx.font = '900 3em Nohemi';
-        ctx.fillText(formatoNumero.format(conteo), 40, 174);
-        ctx.font = '600 2em Nohemi';
-        ctx.fillText(texto, 100, 230);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.line;
+        ctx.fillText(textoFechas, 90, 200);
+        ctx.font = '900 10em Nohemi';
+        ctx.fillText(formatoNumero.format(conteo), 100, 400);
+        ctx.font = '500 1.6em Nohemi';
+        ctx.fillText(texto, 200, 450);
         ctx.restore();
         relojLienzo = requestAnimationFrame(pintar);
       }
@@ -104,8 +105,8 @@ const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
 
 <style lang="scss">
   .contenedor {
-    height: 200vh;
-    background-color: red;
+    height: 120vh;
+    background-color: #531cb3;
   }
 
   .lienzo {
