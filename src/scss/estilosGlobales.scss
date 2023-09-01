@@ -81,13 +81,22 @@
 
 body {
   background: var(--blancoNube);
-  background: linear-gradient(
+  background: 
+  // linear-gradient(
+  //   180deg,
+  //   var(--fondo1) 0%,
+  //   var(--fondo2) 100vh,
+  //   var(--fondo2) calc(100% - 250vh),
+  //   var(--fondo1) 100%
+  // );
+    linear-gradient(
     180deg,
     var(--fondo1) 0%,
     var(--fondo2) 100vh,
-    var(--fondo2) calc(100% - 100vh),
+    var(--fondo2) calc(100% - 200vh),
     var(--fondo1) 100%
   );
+
   min-height: 100vh;
   transition: --fondo1 0.3s, --fondo2 0.3s;
 }
@@ -167,12 +176,12 @@ main {
 
 .destacado {
   font-size: 1.2em;
-  //font-family: var(--fuenteMono2);
   font-family: var(--fuenteMono2);
   color: var(--grisTexto);
   background-color: var(--blancoNube);
-  border-image: linear-gradient(45deg, var(--moraAzul), var(--azulVaALlover)) 1;
-  border: 4px solid transparent;
+  //border-image: linear-gradient(90deg, var(--moraAzul), var(--azulVaALlover)) 1;
+  //border: 4px solid transparent;
+  border: 4px solid var(--moraAzul);
   margin: 8em 5em 10em 5em;
   padding: 3em;
   line-height: 1.5em;
@@ -238,7 +247,11 @@ main {
 }
 
 .seccion {
-  margin-bottom: 7em;
+  margin-bottom: 4em;
+}
+
+.medio {
+  margin-top: 7em;
 }
 
 .tituloSeccion {
