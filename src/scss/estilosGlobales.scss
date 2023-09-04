@@ -137,7 +137,7 @@ main {
 .narracion {
   font-size: 1.1em;
   line-height: 1.5em;
-  margin-top: 6.5em;
+  //  margin-top: 6.5em;
 }
 
 .relato {
@@ -255,7 +255,8 @@ main {
 }
 
 .tituloSeccion {
-  margin: 1.5em 0 0 4em;
+  margin: 1.5em 0 0 7em;
+  z-index: -1;
   .subtitulo {
     position: sticky;
     top: 128px;
