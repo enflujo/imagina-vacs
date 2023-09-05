@@ -1,5 +1,5 @@
 ---
-import { aRadianes } from '@enflujo/alquimia';
+import alquimia from '@enflujo/alquimia';
 export interface Props {
   datos: { nombre: string; numero: number }[];
   total: number;
@@ -41,8 +41,8 @@ function calcularPorcion(ang1: number, ang2: number, dato: { nombre: string; val
   function punto(ang: number) {
     // Coordenadas según el ángulo
     return {
-      x: cx + radio * Math.sin(aRadianes(ang)),
-      y: cy - radio * Math.cos(aRadianes(ang)),
+      x: cx + radio * Math.sin(alquimia.aRadianes(ang)),
+      y: cy - radio * Math.cos(alquimia.aRadianes(ang)),
     };
   }
 
