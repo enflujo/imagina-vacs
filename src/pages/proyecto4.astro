@@ -6,7 +6,7 @@ import Indice from '@/componentes/Indice.astro';
 
 const elementosIndice = [
   { nombre: 'Antecedentes', enlace: 'seccionAntecedentes' },
-  { nombre: 'Resultados', enlace: 'seccionResultados' },
+  { nombre: 'Lo que encontramos', enlace: 'seccionResultados' },
   { nombre: 'Conclusiones', enlace: 'seccionConclusiones' },
 ];
 ---
@@ -14,22 +14,16 @@ const elementosIndice = [
 <Plantilla titulo="VACS" descripcion="...">
   <Menu numeroProyecto={4} />
 
-  <main id="proyecto3">
+  <main id="proyecto4">
     <Indice elementos={elementosIndice} />
     <section id="introduccion" class="anchoTitulo alto100">
       <div class="pegarTitulo">
-        <h1 class="tituloProyecto">
-          El rol del estigma en los patrones de reporte y búsqueda de ayuda después de un evento de abuso sexual
+        <h1 id="tituloProyecto4" class="tituloProyecto">
+          Subreporte de violencia sexual: estigma, normas sociales y de género
         </h1>
-        <h2 class="subtitulo">Una revisión global de alcance</h2>
+        <h2 class="subtitulo">Una revisión de alcance global</h2>
         <h3 class="autores">
-          Autores:
-          <ul>
-            <li>Liliana Arias-Urueña, Imagina - Universidad de los Andes</li>
-            <li>Julian Lopez-Céspedes (investigador), Imagina - Universidad de los Andes</li>
-            <li>Arturo Harker- Roa, Imagina - Universidad de los Andes</li>
-            <li>Prof. Catherine Maternowska - Universidad de Edimburgo</li>
-          </ul>
+          Investigación: Liliana Arias Urueña, Julián López Céspedes, Arturo Harker Roa y Prof. Catherine Maternowska
         </h3>
       </div>
 
@@ -43,98 +37,148 @@ const elementosIndice = [
 
       <div class="columna">
         <p class="narracion">
-          El abuso sexual infantil (ASI) es un problema de salud pública mundial. Afecta a más de 120 millones de niñas,
-          niños y jóvenes en todo el mundo (CDC, 2022; Nace et al., 2021).
+          El abuso sexual infantil
+          <span class="abrirGlosario" data-ancla="asi">(ASI)</span>
+          es un problema de salud pública mundial. Afecta a más de 120 millones de niñas, niños y jóvenes en todo el mundo
+          (CDC, 2022; Nace et al., 2021).
         </p>
 
         <p class="destacado">
-          Sin embargo, estos eventos son raramente reportados. Existen múltiples factores que limitan que los adultos,
-          niños, niñas y jóvenes reporten eventos de violencia sexual (ocurridos durante la infancia y/o la adultez) y
-          busquen ayuda.
+          Sin embargo, estos eventos son raramente reportados a pesar de su frecuencia. Según datos de la Encuesta de
+          Violencia contra Niños, Niñas y Adolescentes <span class="abrirGlosario" data-ancla="evcnna">(EVCNNA)</span>,
+          para el caso colombiano, entre las personas que experimentaron violencia sexual en su infancia, apenas la
+          mitad (54.3% mujeres y 48.1% hombres) le contaron a alguien (amigos, vecinos, familiares) acerca del incidente
+          y menos del 14% trataron de acudir a servicios de ayuda como la policía, hospitales, el ICBF o la Fiscalía
+          (Ministerio de Salud y Protección Social, 2019).
         </p>
         <p class="narracion">
-          Un factor importante es el estigma, normas sociales y de género 'nocivas' que promueven una cultura de
-          silencio, vergüenza y culpa alrededor de la violencia sexual en todo el mundo.
+          Existen varios factores que están vinculados con la baja cantidad de denuncias de violencia sexual que ocurre
+          durante la infancia y la adultez. Uno de los más significativos es el estigma junto con las nocivas normas
+          sociales y de género que perpetúan una cultura de silencio, vergüenza y culpabilidad en torno a este problema
+          a nivel global.
         </p>
-        <p class="narracion">
-          Las investigaciones sobre cómo el estigma asociado a la violencia sexual, las normas sociales y de género
-          relacionadas dan forma a los patrones de divulgación y búsqueda de ayuda entre los sobrevivientes son
-          alarmantemente escasas y rara vez se centran en las opiniones y experiencias de los jóvenes, niñas y niños.
-          Esto es problemático porque dos principales razones:
-        </p>
-        <p class="narracion">
-          1. No tener un claro entendimiento de la influencia del estigma, normas sociales y de genero 'nocivas' en las
-          decisiones de los sobrevivientes de reportar o no sus experiencias, significa que las políticas públicas y
-          estrategias dirigidas a incrementar el reporte de estos eventos pueden no estar suficientemente informadas. Es
-          importante informar a los hacedores de políticas y programas de salud pública los complejos mecanismos y
-          dinámicas a través de los cuales el estigma y estas normas nocivas limitan que los sobrevivientes de violencia
-          sexual reporten y busquen la ayuda que necesitan.
-        </p>
-        <p class="narracion">
-          2. El proceso de estigmatización que experimenta los niños puede ser diferente al que enfrentan los adultos.
-          No tener datos generados con niños, niñas y jóvenes significa que las futuras intervenciones para prevenir el
-          estigma pueden no abordar sus necesidades, sino únicamente la de los adultos sobrevivientes.
-        </p>
-        <p class="narracion">
-          Para poder entender cómo el estigma alrededor de la violencia sexual, normas 'nocivas' sociales y de género
-          contribuyen al subreporte, hicimos una revisión de alcance ('scoping review') global. Siguiendo una
-          metodología de búsqueda y análisis rigurosa, revisamos 97 artículos, mayormente estudios cualitativos
-          realizados con adultos en contextos del norte y sur global.
+        <p class="narracion" style="margin-bottom:25vh">
+          Todavía no comprendemos completamente cómo el estigma y esas normas sociales y de género afectan las
+          decisiones de las personas para denunciar y buscar ayuda después de enfrentar estos eventos. Por esta razón,
+          decidimos hacer una revisión de la literatura conocida como 'scoping review' en la que analizamos 97 artículos
+          científicos de todo el mundo. Estos articulos estudiaban el estigma y las normas sociales en relación con el
+          reporte y denuncia de experiencias de violencia sexual en adultos, niños, niñas y jovenes.
         </p>
       </div>
     </section>
 
     <section id="seccionResultados" class="columnas seccion">
       <div class="tituloSeccion">
-        <h3 class="subtitulo">Resultados</h3>
+        <h3 class="subtitulo">Lo que encontramos</h3>
       </div>
 
       <div class="columna">
         <p class="narracion">
-          Encontramos muy pocos artículos enfocados en violencia sexual infantil (VSI). Esto demuestra que las visiones
-          y las experiencias de los niños, niñas y jóvenes permanecen poco investigadas. Analizamos los hallazgos de
-          nuestra revisión utilizando el modelo socioecológico. Este modelo nos permite ver en dónde están localizados y
-          cómo interactúan múltiples factores y mecanismos que dan forma al estigma y por lo tanto al subreporte. Los
-          niveles que considera este modelo son: individual (ej. factores personales como la etnia), meso (ej.
-          relaciones, familia) y macro (ej. instituciones, políticas).
+          Encontramos muy pocos artículos enfocados particularmente en violencia sexual infantil. Tan solo el 11% de los
+          estudios involucraron personas menores de 18 años. Esto nos preocupa porque indica que las experiencias de los
+          niños, niñas y jóvenes permanecen poco investigadas.
+        </p>
+
+        <p class="narracion">
+          Analizamos los hallazgos de nuestra revisión utilizando el modelo socioecológico. Este modelo nos permite ver
+          en dónde están localizados y cómo interactúan múltiples factores y mecanismos que dan forma al estigma y por
+          lo tanto al subreporte. Los niveles que considera este modelo son: <b><i>individual</i></b> (ej. factores personales
+          como la etnia), <b><i>meso</i></b> (ej. relaciones, familia) y <b><i>macro</i></b> (ej. instituciones, políticas).
         </p>
         <div class="destacado">
           <p>
-            A nivel individual, dos factores principales parecen aumentar una forma de estigma conocido como autoestigma
-            y, por lo tanto, disminuir el reporte:
+            A nivel <b><i>individual</i></b>, dos factores principales parecen aumentar una forma de estigma conocido
+            como autoestigma y, por lo tanto, disminuir el reporte:
           </p>
           <ul>
             <li>Pertenecer a una identidad sexual y/o grupo étnico minoritario.</li>
-            <li>Ser trabajador sexual.</li>
+            <li>
+              Ser trabajador sexual (al parecer la violencia sexual es considerada normal y un riesgo esperado en el
+              contexto de sus trabajos).
+            </li>
           </ul>
         </div>
-        <p class="narracion">
-          En el nivel meso encontramos que existen complejas normas sociales y de género en torno al honor familiar, la
-          virginidad de las mujeres y las nociones de masculinidad. Estas ideas generan respuestas sociales
-          estigmatizantes hacia aquellos que han experimentado violencia sexual. Los sobrevivientes son conscientes de
-          estas respuestas, temen perder su estatus social y/o de género, el de sus familias y ser socialmente
-          discriminados. Por lo tanto, prefieren permanecer en silencio, no reportar ni buscar ayuda.
+        <div>
+          <p class="narracion">
+            Algunas mujeres afroamericanas perciben los servicios de salud o los sitios donde se reportan estos eventos
+            (e.j. policía), dominados por blancos y hombres y esto no las hace sentir cómodas para reportar un evento de
+            violencia sexual, así que prefieren no hacerlo.
+          </p>
+          <p class="narracion">
+            Entre algunas minorias étnicas, algunas normas sociales y de género nocivas son más frecuentes. Por ejemplo,
+            algunos sobrevivientes de violencia sexual de comunidades afroamericanas, latina y del sur de Asia (e.j.
+            Bangladesh, India) consideran que reportar un evento de violencia puede ser un signo de debilidad de
+            carácter, also así como mostrar su incapacidad para lidiar con la dificultad propia de la vida.
+          </p>
+        </div>
+        <p class="narracion">En la revisión de los estudios encontramos testimonios como este:</p>
+
+        <div class="relato">
+          <p>
+            <p class="narracion">
+              'bueno, nos enseñaron desde muy jóvenes que hay que ser fuerte, no puedes ser una carga para tu familia …
+              ellos tienen sus propios problemas entonces no es justo molestar a la gente con mis problemas. Además yo
+              guardo las cosas para mí, no le digo a nadie lo que me pasa, es mi asunto.'
+            </p>
+          </p>
+        </div>
+        <div></div>
+        <div>
+          <p class="narracion">
+            Sobre las prácticas de trabajo sexual, Mai, una participante de uno de los estudios analizados, dijo esto:
+          </p>
+          <div class="relato">
+            <p>
+              'Hay muchos riesgos esperados, por ejemplo hay clientes difíciles, pueden engañarme y no pagar después o
+              pueden pegarme o tratarme mal… no sé por qué esto pasa pero es tal vez porque no les gustó el servicio
+              entonces esto puede hacer que a uno no lo traten bien.'
+            </p>
+          </div>
+          <div></div>
+        </div>
+        <p class="destacado">
+          En el nivel <b><i>meso</i></b> encontramos que existen complejas normas sociales y de género en torno al honor
+          familiar, la virginidad de las mujeres y las nociones de masculinidad. Estas ideas generan respuestas sociales
+          estigmatizantes hacia aquellos que han experimentado violencia sexual. Los sobrevivientes son conscientes de estas
+          respuestas, temen perder su estatus social y/o de género, el de sus familias y ser socialmente discriminados. Por
+          lo tanto, prefieren permanecer en silencio, no reportar ni buscar ayuda.
         </p>
-        <p class="narracion">
-          A nivel macro, hay complejos y persistentes “mitos de la violación” en contextos del sur y norte global. Son
-          creencias falsas, perjudiciales y estereotipadas sobre los eventos de violencia sexual, agresores y
+        <div>
+          <p class="narracion">Christensen, participante de uno de los estudios analizados, dijo esto:</p>
+
+          <div class="relato">
+            <p>
+              'Admitir un evento de violencia, trae verguenza, no solo a ti, a tu familia y a toda la gente que hay a tu
+              alrededor.'
+            </p>
+          </div>
+        </div>
+        <p class="destacado">
+          A nivel <b><i>macro</i></b>, hay complejos y persistentes “mitos de la violación” en contextos del <span
+            class="abrirGlosario"
+            data-ancla="norteSur">sur y norte global</span
+          >. Son creencias falsas, perjudiciales y estereotipadas sobre los eventos de violencia sexual, agresores y
           sobrevivientes.
         </p>
         <p class="narracion">Algunos de estos mitos son:</p>
-
+        <div></div>
+        <div></div>
         <div class="relato">
           <p>'El abuso sexual solo sucede en la noche.'</p>
         </div>
         <div></div>
-        <div class="relato">
+        <div></div>
+        <div class="relato" style="margin-bottom:20vh">
           <p>'Algo habrá hecho para que la violaran. ¿Llevaba minifalda, caminaba sola en la noche...?'</p>
         </div>
-        <div></div>
-        <div class="relato">
+
+        <div class="relato" style="margin-bottom:10vh">
           <p>'Debe estar mintiendo para conseguir algo a cambio.'</p>
         </div>
+        <div></div>
+        <div></div>
 
-        <p class="narracion">
+        <p class="narracion" style="margin-bottom:30vh">
           Estos mitos son frecuentemente experimentados por los sobrevivientes al reportar y buscar ayuda en
           instituciones como la policía o servicios de salud. Aquí se revela cómo políticas y prácticas institucionales
           pueden ir en contra del acceso de los sobrevivientes a la sanación y la justicia adecuadas.
@@ -149,42 +193,43 @@ const elementosIndice = [
 
       <div class="columna">
         <p class="narracion">
-          Muy pocos estudios se centran específicamente en ASI y menos aún abordan las experiencias y opiniones de
-          niños, niñas y jóvenes sobrevivientes. Los sentimientos de miedo, vergüenza y culpa de los sobrevivientes
-          asociados a estos eventos sirven para erosionar su estatus social.
+          Muy pocos estudios se centran específicamente en <span class="abrirGlosario" data-ancla="asi">(ASI)</span> y menos
+          aún abordan las experiencias y opiniones de niños, niñas y jóvenes sobrevivientes. Los sentimientos de miedo, vergüenza
+          y culpa son centrales en las decisiones de los sobrevivientes de no reportar, esto porque temen ser socialmente
+          discriminados. Los mitos de la violación parecen ser frecuentes en las instituciones donde estos eventos son reportados
+          y por lo tanto una barrera para el reporte y la búsqueda de ayuda.
         </p>
         <p class="destacado">
           Las normas sociales y de género negativas refuerzan los sentimientos de culpa y vergüenza, de modo que las
           sobrevivientes prefieren internalizar sus experiencias en lugar de revelarlas y buscar ayuda.
         </p>
 
-        <p class="narracion">
+        <!-- <p class="narracion">
           Instituciones como la la policía y los servicios de salud y las estructuras (políticas) desempeñan un papel
           importante en la promoción de una cultura de culpa y de incredulidad hacia las sobrevivientes.
-        </p>
+        </p> -->
 
-        <ul class="narracion" style="margin-bottom:25vw">
+        <ul class="narracion" style="margin-bottom:35vh">
           <h4 class="subtituloInterno">Puntos claves</h4>
           <li>
             El estigma y las normas sociales y de género perjudiciales disuaden a los sobrevivientes de violencia sexual
-            de reportar y buscar ayuda; sin embargo, existe una falta significativa de investigación sobre el papel del
-            estigma entre los sobrevivientes de ASI y aún menos evidencia sobre las experiencias de los niños, niñas y
-            jóvenes.
+            de reportar y buscar ayuda; sin embargo, hay poca investigación sobre el papel del estigma entre los
+            sobrevivientes de <span class="abrirGlosario" data-ancla="asi">(ASI)</span> y aún menos estudios que directamente
+            exploran las experiencias de los niños, niñas y jóvenes.
           </li>
+
           <li>
-            Los niños, niñas y jóvenes sobrevivientes de ASI pueden enfrentar desafíos únicos relacionados con el
-            estigma que deben explorarse en futuras investigaciones y abordarse.
-          </li>
-          <li>
-            El estigma que impide la divulgación opera a nivel individual, meso y macro. Las intervenciones de
-            prevención y respuesta para abordar el estigma deben trabajar en estos múltiples niveles simultáneamente.
+            El estigma que impide la divulgación opera a nivel <b><i>individual</i></b>, <b><i>meso</i></b> y <b
+              ><i>macro</i></b
+            >. Las intervenciones de prevención y respuesta para abordar el estigma deben trabajar en estos múltiples
+            niveles simultáneamente.
           </li>
           <li>
             Los temores de los sobrevivientes a la pérdida de su estatus social, el de su familia, la exclusión social y
             la discriminación se ven acentuados por complejas y perjudiciales normas sociales/de género, particularmente
-            alrededor de la sexualidad, la virginidad, la masculinidad y el honor familiar. Estas normas y prácticas
-            deben ser exploradas e intervenidas si queremos garantizar políticas en prevención de la violencia más
-            coherentes y mejores desenlaces en salud entre los sobrevivientes.
+            alrededor de la sexualidad, la virginidad en las mujeres, la masculinidad y el honor familiar. Estas normas
+            y prácticas deben ser exploradas e intervenidas si queremos garantizar políticas de prevención de la
+            violencia más coherentes y mejores desenlaces en salud entre los sobrevivientes
           </li>
         </ul>
       </div>

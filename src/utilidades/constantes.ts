@@ -5,16 +5,16 @@ export const rutas = [
     ruta: `${rutaBase}proyecto1`,
   },
   {
-    nombre: 'Experiencias Adversas en la Infancia: Estudio Comparativo de Colombia, Honduras y El Salvador',
+    nombre: 'Experiencias adversas en la infancia: estudio comparativo de Colombia, Honduras y El Salvador',
     ruta: `${rutaBase}proyecto2`,
   },
   {
     nombre:
-      'Trayectorias de maltrato: El impacto de la violencia en la infancia y adolescencia como predictor de ser víctima y victimario en la adultez',
+      'Trayectorias de maltrato: el impacto de la violencia en la infancia y adolescencia como predictor de ser víctima y victimario en la adultez',
     ruta: `${rutaBase}proyecto3`,
   },
   {
-    nombre: 'El rol del estigma en los patrones de reporte y búsqueda de ayuda después de un evento de abuso sexual',
+    nombre: 'Subreporte de violencia sexual: estigma, normas sociales y de género',
     ruta: `${rutaBase}proyecto4`,
   },
 ];
