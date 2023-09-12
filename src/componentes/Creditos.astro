@@ -3,5 +3,45 @@ import Desplegable from './Desplegable.astro';
 ---
 
 <Desplegable id="creditos">
-  <h2 id="titulo">Créditos</h2>
+  <h2 class="titulo">Créditos</h2>
+  <p class="subtituloCreditos">
+    Aquí va un texto que describa en uno o dos párrafos la motivación y/o el alcance del proyecto.
+  </p>
+  <h3>La guerra no tiene rostro de infancia</h3>
+  <h5>¿Y dónde estaban los niños durante el conflicto armado en Colombia?</h5>
+
+  <ul>
+    <h4>
+      <a id="proyecto1Enlace" href=`${import.meta.env.BASE_URL}proyecto1`
+        >La huella del conflicto armado en la niñez y adolescencia colombianas</a
+      >
+    </h4>
+    <!-- <h6>Basada en la investigación:</h6>
+
+    <h6>La huella del conflicto armado en la niñez y adolescencia colombiana</h6> -->
+    <div>
+      <span id="investigacion1">
+        <p class="autoresCreditos">Autoras:</p>
+        <li>Karla Judith de la Hoz del Villar</li>
+        <p class="estudiosAutores">Magister en Estudios Culturales, Universidad de los Andes.</p>
+        <li>Diana Catalina Contreras</li>
+        <p class="estudiosAutores">Magister en Economía, Universidad de Los Andes.</p>
+      </span>
+    </div>
+  </ul>
+  <ul>
+    <h4>Nombre narrativa</h4>
+    <h6>Basada en la investigación: ____</h6>
+    <li id="investigacion2">
+      <p>Autores:</p>
+    </li>
+  </ul>
 </Desplegable>
+
+<style lang="scss">
+  .titulo {
+    position: sticky;
+    top: -1.6em;
+    background-color: var(--blancoNube);
+  }
+</style>
