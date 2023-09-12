@@ -81,15 +81,7 @@
 
 body {
   background: var(--blancoNube);
-  background: 
-  // linear-gradient(
-  //   180deg,
-  //   var(--fondo1) 0%,
-  //   var(--fondo2) 100vh,
-  //   var(--fondo2) calc(100% - 250vh),
-  //   var(--fondo1) 100%
-  // );
-    linear-gradient(
+  background: linear-gradient(
     180deg,
     var(--fondo1) 0%,
     var(--fondo2) 100vh,
@@ -137,7 +129,7 @@ main {
 .narracion {
   font-size: 1.1em;
   line-height: 1.5em;
-  //  margin-top: 6.5em;
+
   b {
     font-weight: 600;
   }
