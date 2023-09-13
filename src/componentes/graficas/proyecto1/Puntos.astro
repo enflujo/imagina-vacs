@@ -28,34 +28,22 @@ const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
       const { cantidad, texto, fechainicio, fechafin } = this.dataset;
       const textoFechas = `Desde ${fechainicio} a ${fechafin}`;
       let relojLienzo = 0;
-      let opacidad = 0;
       let conteo = 0;
       const formatoNumero = new Intl.NumberFormat('es-CO');
       const totalVictimas = +cantidad;
       const pasoConteo = (totalVictimas / 100) | 0;
-      // let reloj: NodeJS.Timer;
       escalar();
-      window.onresize = escalar;
+      window.addEventListener('resize', escalar);
 
       duranteInterseccion(contenedor, enVista, false, { threshold: 0 }, fueraDeVista);
 
       function enVista() {
-        ctx.fillStyle = '#531cb3';
         relojLienzo = requestAnimationFrame(pintar);
-        // const { y, height } = entrada.boundingClientRect;
-        // reloj = setInterval(() => {
-        //   console.log('activo', window.scrollY > y && window.scrollY + lienzo.height < y);
-        //   if (window.scrollY > y && window.scrollY + lienzo.height < height + y) {
-        //     lienzo.style.top = `${window.scrollY - y}px`;
-        //   }
-        // }, 10);
       }
 
       function fueraDeVista() {
         cancelAnimationFrame(relojLienzo);
-        ctx.fillStyle = 'black';
         ctx.fillRect(0, 0, lienzo.width, lienzo.height);
-        opacidad = 0;
         conteo = 0;
       }
 
@@ -69,14 +57,10 @@ const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
         dims.alto = window.innerHeight - altoMenu;
         lienzo.width = width; // Ancho pantalla sin contar barra "scroll"
         lienzo.height = dims.alto;
+        ctx.fillStyle = '#531cb3';
       }
 
       function pintar() {
-        // if (opacidad < 1) {
-        //   opacidad += 0.01;
-        //   ctx.globalAlpha = opacidad;
-        // }
-
         if (conteo < totalVictimas) {
           conteo += pasoConteo;
         } else {
