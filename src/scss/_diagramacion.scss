@@ -2,17 +2,6 @@
   min-height: 100vh;
 }
 
-.contenidoColumna {
-  max-width: 90vw;
-  margin: 0 auto;
-  font-size: 1.2em;
-}
-
-.tituloProyecto {
-  font-size: 2.3em;
-  margin-bottom: 0.3em;
-}
-
 .subtitulo {
   font-size: 2em;
   font-weight: 500;
@@ -24,36 +13,10 @@
   font-weight: 400;
 }
 
-.anchoTitulo {
-  max-width: 90vw;
-  margin: 0 auto;
-}
-
 .abrirGlosario {
   cursor: pointer;
   color: var(--moradoUva);
   &:hover {
     font-weight: 700;
-  }
-}
-
-@media screen and (min-width: $corte3) {
-  .contenidoColumna {
-    max-width: 60vw;
-  }
-}
-
-@media screen and (min-width: $corte4) {
-  .contenidoColumna {
-    max-width: 41vw;
-  }
-
-  .tituloProyecto {
-    font-size: 5em;
-    max-width: 80vw;
-  }
-  .anchoTitulo {
-    max-width: 70vw;
-    margin: 0 auto;
   }
 }

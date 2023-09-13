@@ -59,6 +59,8 @@ const elementosAbreviados = ['intro', 'I.', 'II.', 'III.', 'IV.', 'conclusion'];
 </script>
 
 <style lang="scss">
+  @import '../scss/_constantes.scss';
+
   #indice {
     position: fixed;
     margin-left: 2em;
@@ -71,6 +73,7 @@ const elementosAbreviados = ['intro', 'I.', 'II.', 'III.', 'IV.', 'conclusion'];
     }
     li {
       margin-bottom: 1.2em;
+      max-width: 145px;
     }
   }
 
@@ -98,5 +101,11 @@ const elementosAbreviados = ['intro', 'I.', 'II.', 'III.', 'IV.', 'conclusion'];
       opacity: 1;
       color: var(--amarilloSol);
     }
+  }
+
+  @media screen and (min-width: $corte3) {
+  }
+
+  @media screen and (min-width: $corte4) {
   }
 </style>
