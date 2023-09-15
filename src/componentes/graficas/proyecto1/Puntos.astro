@@ -32,8 +32,17 @@ const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
       const formatoNumero = new Intl.NumberFormat('es-CO');
       const totalVictimas = +cantidad;
       const pasoConteo = (totalVictimas / 100) | 0;
-      escalar();
-      window.addEventListener('resize', escalar);
+      const corte1 = window.matchMedia('(min-width: 760px)');
+      const corte2 = window.matchMedia('(min-width: 1200px)');
+      let corte = 2;
+      let tamañoFila1 = '2em';
+      let tamañoFila2 = '10em';
+      let tamañoFila3 = '1.6em';
+      let xFila2 = 100;
+      let xFila3 = 200;
+
+      escalarLienzo();
+      window.addEventListener('resize', escalarLienzo);
 
       duranteInterseccion(contenedor, enVista, false, { threshold: 0 }, fueraDeVista);
 
@@ -47,7 +56,26 @@ const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
         conteo = 0;
       }
 
-      function escalar() {
+      function escalarLienzo() {
+        if (corte2.matches) {
+          corte = 2;
+          tamañoFila1 = '2em';
+          tamañoFila2 = '10em';
+          tamañoFila3 = '1.6em';
+        } else if (corte1.matches) {
+          corte = 1;
+          tamañoFila1 = '1.5em';
+          tamañoFila2 = '7em';
+          tamañoFila3 = '1em';
+        } else {
+          corte = 0;
+          tamañoFila1 = '1em';
+          tamañoFila2 = '3.5em';
+          tamañoFila3 = '0.8em';
+          xFila2 = 30;
+          xFila3 = 15;
+        }
+
         const menu = document.getElementById('menu');
         const altoMenu = menu.clientHeight;
         const { top, width } = contenedor.getBoundingClientRect();
@@ -61,24 +89,37 @@ const { cantidad, fechaInicio, fechaFin, texto } = Astro.props;
       }
 
       function pintar() {
+        ctx.fillRect(0, 0, lienzo.width, lienzo.height);
+        ctx.save();
+        ctx.fontKerning = 'none';
+        ctx.font = `600 ${tamañoFila1} Nohemi`;
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillText(textoFechas, 90, 200);
+        ctx.font = `900 ${tamañoFila2} Nohemi`;
+        ctx.fillText(formatoNumero.format(conteo), xFila2, 400);
+
+        ctx.font = `500 ${tamañoFila3} Nohemi`;
+
+        if (corte === 0) {
+          const partes = texto.split(' ');
+          const mitad = Math.ceil(partes.length / 2);
+          const primera = partes.filter((_, i) => i <= mitad);
+          const segunda = partes.filter((_, i) => i > mitad);
+          ctx.fillText(primera.join(' '), xFila3, 450);
+          ctx.fillText(segunda.join(' '), xFila3, 450 + 30);
+        } else {
+          ctx.fillText(texto, xFila3, 450);
+        }
+
+        ctx.restore();
+        relojLienzo = requestAnimationFrame(pintar);
+
         if (conteo < totalVictimas) {
           conteo += pasoConteo;
         } else {
           conteo = totalVictimas;
+          // window.cancelAnimationFrame(relojLienzo);
         }
-
-        ctx.fillRect(0, 0, lienzo.width, lienzo.height);
-        ctx.save();
-        ctx.fontKerning = 'none';
-        ctx.font = '600 2em Nohemi';
-        ctx.fillStyle = '#FFFFFF';
-        ctx.fillText(textoFechas, 90, 200);
-        ctx.font = '900 10em Nohemi';
-        ctx.fillText(formatoNumero.format(conteo), 100, 400);
-        ctx.font = '500 1.6em Nohemi';
-        ctx.fillText(texto, 200, 450);
-        ctx.restore();
-        relojLienzo = requestAnimationFrame(pintar);
       }
     }
   }

@@ -74,6 +74,7 @@
 ::selection {
   background-color: var(--verdeBiche);
 }
+
 @mixin fuenteRelato {
   font-family: var(--fuenteTexto2);
   font-weight: 415;
@@ -115,17 +116,6 @@ main {
   margin-right: 2em;
 }
 
-.columnas {
-  display: flex;
-  justify-content: space-between;
-
-  .columna {
-    flex-basis: 50%;
-    margin-right: 20%;
-    max-width: 40vw;
-  }
-}
-
 .narracion {
   font-size: 1.1em;
   line-height: 1.5em;
@@ -135,10 +125,21 @@ main {
   }
 }
 
+.columnas {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  .columna {
+    margin-left: 15vw;
+    max-width: 75vw;
+  }
+}
+
 .relato {
   @include fuenteRelato();
   border-radius: 15px;
-  padding: 1em;
+  padding: 0em;
   font-size: 1.1em;
   min-height: 100vh;
   font-size: 2.2em;
@@ -152,6 +153,23 @@ main {
   font-weight: bold;
 }
 
+.destacado {
+  font-size: 1.2em;
+  font-family: var(--fuenteMono2);
+  color: var(--grisTexto);
+  background-color: var(--blancoNube);
+  border: 4px solid var(--moraAzul);
+  margin: 4em 0em 4em 0;
+  padding: 1em;
+  width: 100%;
+  line-height: 1.5em;
+  font-weight: 400;
+
+  b {
+    font-weight: 800;
+  }
+}
+
 .separador {
   height: 2px;
   width: 70vw;
@@ -162,49 +180,15 @@ main {
 .escribiendo {
   text-decoration: blink;
   color: var(--moraAzul);
-  margin: 10em 5em 10em 5em;
+  margin: 7em 1em;
   font-family: var(--fuenteMono);
   background-color: var(--moradoLavanda);
   padding: 0.4em;
   width: fit-content;
 }
-
-.destacado {
-  font-size: 1.2em;
-  font-family: var(--fuenteMono2);
-  color: var(--grisTexto);
-  background-color: var(--blancoNube);
-  //border-image: linear-gradient(90deg, var(--moraAzul), var(--azulVaALlover)) 1;
-  //border: 4px solid transparent;
-  border: 4px solid var(--moraAzul);
-  margin: 8em 5em 10em 5em;
-  padding: 3em;
-  line-height: 1.5em;
-  width: 85%;
-  font-weight: 400;
-
-  b {
-    font-weight: 800;
-  }
-}
-
 .navegacion {
   display: flex;
   justify-content: space-between;
-}
-
-// Borrar eventualmente esta clase
-.comentario {
-  font-size: 0.8em;
-  color: rgb(216, 213, 37);
-  font-weight: bold;
-
-  &::before {
-    content: '(';
-  }
-  &::after {
-    content: ')';
-  }
 }
 
 .anotacionGrafica {
@@ -213,9 +197,14 @@ main {
 }
 
 .contenidoColumna {
-  h2 {
-    padding-bottom: 0.75em;
-  }
+  max-width: 90vw;
+  margin: 0 auto;
+  font-size: 1.2em;
+}
+
+.tituloProyecto {
+  font-size: 2.3em;
+  margin-bottom: 0.3em;
 }
 
 .grafica {
@@ -246,6 +235,10 @@ main {
   top: var(--margenSuperior);
 }
 
+.anchoTitulo {
+  max-width: 80vw;
+  margin: 0 auto;
+}
 .seccion {
   margin-bottom: 4em;
 }
@@ -254,12 +247,123 @@ main {
   margin-top: 7em;
 }
 
+@media screen and (min-width: $corte3) {
+  .columnas {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    .columna {
+      flex-basis: 50%;
+      margin-right: 20%;
+      max-width: 40vw;
+    }
+  }
+  // .contenidoColumna {
+  //   max-width: 60vw;
+  // }
+
+  .contenidoColumna {
+    max-width: 60vw;
+    // margin: 0 auto;
+    // font-size: 1.2em;
+  }
+
+  .tituloProyecto {
+    font-size: 5em;
+    max-width: 80vw;
+    // font-size: 2.3em;
+    // margin-bottom: 0.3em;
+  }
+
+  .anchoTitulo {
+    max-width: 70vw;
+    margin: 0 auto;
+  }
+
+  .destacado {
+    margin: 8em 5em 10em 5em;
+    padding: 3em;
+    line-height: 1.5em;
+    width: 85%;
+  }
+
+  .escribiendo {
+    margin: 10em 5em;
+  }
+
+  .tituloSeccion {
+    margin: 1.5em 0 0 7em;
+    z-index: -1;
+    .subtitulo {
+      position: sticky;
+      top: 128px;
+      max-width: 14em;
+    }
+  }
+
+  .relato {
+    padding: 0em;
+  }
+}
+
 .tituloSeccion {
-  margin: 1.5em 0 0 7em;
+  margin: 1.5em 0 0 15vw;
   z-index: -1;
   .subtitulo {
     position: sticky;
     top: 128px;
     max-width: 14em;
+  }
+}
+
+@media screen and (min-width: $corte4) {
+  .columnas {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    .columna {
+      flex-basis: 50%;
+      margin-right: 20%;
+      max-width: 40vw;
+    }
+  }
+  .contenidoColumna {
+    max-width: 41vw;
+  }
+
+  .tituloProyecto {
+    font-size: 5em;
+    max-width: 80vw;
+  }
+
+  .anchoTitulo {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+  .destacado {
+    margin: 8em 5em 10em 5em;
+    padding: 3em;
+    line-height: 1.5em;
+    width: 85%;
+  }
+
+  .escribiendo {
+    margin: 10em 5em;
+  }
+
+  .tituloSeccion {
+    margin: 1.5em 0 0 7em;
+    z-index: -1;
+    .subtitulo {
+      position: sticky;
+      top: 128px;
+      max-width: 14em;
+    }
+  }
+
+  .relato {
+    padding: 0em;
   }
 }
