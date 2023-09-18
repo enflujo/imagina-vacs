@@ -12,45 +12,123 @@ const { id } = Astro.props;
 </div>
 
 <script define:vars={{ id }}>
-  const contenedorDesplegable = document.getElementById(id);
-  const cerrar = contenedorDesplegable.querySelector('.cerrar');
+const contenedorDesplegable = document.getElementById(id);
+const cerrar = contenedorDesplegable.querySelector('.cerrar');
 
-  // Cerrar el glosario con click afuera
-  function clicFuera(evento) {
-    const elemento = evento.target;
+// Cerrar el glosario con click afuera
+function clicFuera(evento) {
+  const elemento = evento.target;
 
-    if (id === 'glosario' && elemento.id === 'botonGlosario') {
-      return;
-    } else if (id === 'creditos' && elemento.id === 'botonCreditos') {
-      return;
-    }
-
-    if (
-      !(
-        contenedorDesplegable === elemento ||
-        contenedorDesplegable.contains(elemento) ||
-        elemento.classList.contains('abrirGlosario')
-      )
-    ) {
-      contenedorDesplegable.classList.remove('visible');
-    }
+  if (id === 'glosario' && elemento.id === 'botonGlosario') {
+    return;
+  } else if (id === 'creditos' && elemento.id === 'botonCreditos') {
+    return;
+  } else if (id === 'encuesta' && elemento.id === 'botonEncuesta') {
+    return;
   }
 
-  cerrar.addEventListener('click', () => {
+  if (
+    !(
+      contenedorDesplegable === elemento ||
+      contenedorDesplegable.contains(elemento) ||
+      elemento.classList.contains('abrirGlosario')
+    )
+  ) {
     contenedorDesplegable.classList.remove('visible');
-  });
+  }
+}
 
-  document.body.addEventListener('click', clicFuera);
+cerrar.addEventListener('click', () => {
+  contenedorDesplegable.classList.remove('visible');
+});
+
+document.body.addEventListener('click', clicFuera);
 </script>
 
 <style lang="scss" is:global>
   @import '@/scss/constantes';
+  .desplegable {
+    position: fixed;
+    overflow-y: auto;
+    top: 54px; // Buscar forma de calcular alto para convertir en: var(--altoMenu);
+    left: 0;
+    background-color: var(--blancoNube);
+    height: calc(100% - 54px);
+    width: 90vw;
+    padding: 2em 2em 3em 2.2em;
+    z-index: 8;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease-out;
+
+    h3,
+    h4 {
+      margin-top: 2em;
+      padding-bottom: 0.2em;
+    }
+
+    li {
+      padding-top: 0.2em;
+    }
+
+    ul {
+      border-bottom: 1px solid;
+      padding-bottom: 2em;
+    }
+
+    h3 {
+      border-bottom: 1px solid;
+      padding-bottom: 2em;
+      font-size: 1.4em;
+      line-height: 1.2;
+    }
+
+    h4 {
+      font-size: 1.2em;
+      line-height: 1.3em;
+      font-weight: 400;
+      padding-bottom: 0.1em;
+    }
+
+    p {
+      margin: 0.5em 0;
+      line-height: 1.3em;
+    }
+
+    &.visible {
+      transform: translateX(0);
+    }
+
+    .cerrar {
+      font-size: 1.6em;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      transition: opacity 0.15s ease-out;
+      text-align: right;
+      margin-right: -1em;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
 
   #glosario {
     .titulo {
       z-index: 5;
       font-size: 2.2em;
       color: var(--rosaChicle);
+      border-bottom: 1px solid var(--grisTexto);
+      padding: 0.8em 0 0.6em;
+    }
+  }
+
+  #encuesta {
+    .titulo {
+      z-index: 5;
+      font-size: 2.2em;
+      line-height: 1em;
+      color: var(--naranjaMandarina);
       border-bottom: 1px solid var(--grisTexto);
       padding: 0.8em 0 0.6em;
     }
@@ -127,71 +205,6 @@ const { id } = Astro.props;
       font-weight: 400;
       padding-top: 0.5em;
       line-height: 1em;
-    }
-  }
-  .desplegable {
-    position: fixed;
-    overflow-y: auto;
-    top: 54px; // Buscar forma de calcular alto para convertir en: var(--altoMenu);
-    left: 0;
-    background-color: var(--blancoNube);
-    height: calc(100% - 54px);
-    width: 90vw;
-    padding: 2em 2em 3em 2.2em;
-    z-index: 8;
-    transform: translateX(-100%);
-    transition: transform 0.25s ease-out;
-
-    h3,
-    h4 {
-      margin-top: 2em;
-      padding-bottom: 0.2em;
-    }
-
-    li {
-      padding-top: 0.2em;
-    }
-
-    ul {
-      border-bottom: 1px solid;
-      padding-bottom: 2em;
-    }
-
-    h3 {
-      border-bottom: 1px solid;
-      padding-bottom: 2em;
-      font-size: 1.4em;
-      line-height: 1.2;
-    }
-
-    h4 {
-      font-size: 1.2em;
-      line-height: 1.3em;
-      font-weight: 400;
-      padding-bottom: 0.1em;
-    }
-
-    p {
-      margin: 0.5em 0;
-      line-height: 1.3em;
-    }
-
-    &.visible {
-      transform: translateX(0);
-    }
-
-    .cerrar {
-      font-size: 1.6em;
-      margin: 0;
-      padding: 0;
-      cursor: pointer;
-      transition: opacity 0.15s ease-out;
-      text-align: right;
-      margin-right: -1em;
-
-      &:hover {
-        opacity: 0.7;
-      }
     }
   }
 

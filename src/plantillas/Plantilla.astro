@@ -1,6 +1,7 @@
 ---
 import Glosario from '@/componentes/Glosario.astro';
 import Creditos from '@/componentes/Creditos.astro';
+import Encuesta from '@/componentes/Encuesta.astro';
 import { rutaBase } from '@/utilidades/constantes';
 export interface Props {
   titulo: string;
@@ -61,6 +62,7 @@ const img = imagen || { url: `${rutaBase}og-EnFlujo-predeterminado.jpg`, titulo:
   </head>
   <body>
     <Glosario />
+    <Encuesta />
     <Creditos />
     <slot />
   </body>

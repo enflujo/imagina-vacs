@@ -15,6 +15,7 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
   <div id="encabezado">
     <a href={`${rutaBase}`}>Inicio</a>
     <p id="botonGlosario" class="enlaceMenu">Glosario</p>
+    <p id="botonEncuesta" class="enlaceMenu">Encuesta</p>
     <a href={`${rutaBase}recursos`}>Recursos</a>
     <p id="botonCreditos" class="enlaceMenu">Créditos</p>
     <div class="historias">
@@ -43,9 +44,11 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
   const contenedorMenu = document.getElementById('menu');
   const botonHistorias = document.getElementById('botonHistorias');
   const botonGlosario = document.getElementById('botonGlosario');
+  const botonEncuesta = document.getElementById('botonEncuesta');
   const botonCreditos = document.getElementById('botonCreditos');
   const lista = document.getElementById('lista');
   const glosario = document.getElementById('glosario');
+  const encuesta = document.getElementById('encuesta');
   const creditos = document.getElementById('creditos');
 
   botonHistorias.onclick = () => {
@@ -54,6 +57,10 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
 
   botonGlosario.onclick = () => {
     glosario.classList.toggle('visible');
+  };
+
+  botonEncuesta.onclick = () => {
+    encuesta.classList.toggle('visible');
   };
 
   botonCreditos.onclick = () => {
