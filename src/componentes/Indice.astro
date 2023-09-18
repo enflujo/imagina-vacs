@@ -14,21 +14,21 @@ const elementosAbreviados = ['intro', 'I.', 'II.', 'III.', 'IV.', 'conclusion'];
       elementos.map((elemento, i) => {
         if (i === 0) {
           return (
-            <li class="enlaceIndice">
-              <a href={`#${elemento.enlace}`}>
+            <a href={`#${elemento.enlace}`}>
+              <li class="enlaceIndice">
                 <img class="icono" src="/especiales/vacs/iconos/flor_1.svg" />{' '}
                 <span class="nombre">{elemento.nombre}</span>
-              </a>
-            </li>
+              </li>
+            </a>
           );
         } else if (i === elementos.length - 1) {
           return (
-            <li class="enlaceIndice">
-              <a href={`#${elemento.enlace}`}>
+            <a href={`#${elemento.enlace}`}>
+              <li class="enlaceIndice">
                 <img class="icono" src="/especiales/vacs/iconos/flor_2.svg" />{' '}
                 <span class="nombre">{elemento.nombre}</span>
-              </a>
-            </li>
+              </li>
+            </a>
           );
         } else {
           return (
@@ -73,7 +73,7 @@ const elementosAbreviados = ['intro', 'I.', 'II.', 'III.', 'IV.', 'conclusion'];
     }
     li {
       margin-bottom: 1.2em;
-      max-width: 145px;
+      max-width: 10vw;
     }
   }
 
