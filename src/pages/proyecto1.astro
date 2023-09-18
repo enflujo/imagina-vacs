@@ -129,16 +129,16 @@ const elementosIndice = [
       </div>
 
       <div class="columna">
-        <p class="narracion">
+        <!-- <p class="narracion">
           Las <span class="resaltado">personas desplazadas</span> son aquellas que por situaciones de violencia o catástrofes
           naturales, han sido obligadas a huir de su hogar hacia otro lugar del país.
-        </p>
+        </p> -->
         <p class="destacado">
           El desplazamiento forzado tiene fuertes consecuencias sociales, culturales y económicas. Rompe comunidades,
           separa familias, produce sensaciones de desarraigo y obliga a las personas a adaptarse a entornos extraños,
           muchas veces en situaciones precarias.
         </p>
-        <p class="narracion">
+        <!-- <p class="narracion">
           Aunque según la <span class="abrirGlosario" data-ancla="evcnna">EVCNNA</span> las razones más comunes por las que
           los y las menores de 18 años han migrado dentro y fuera de Colombia son la búsqueda de oportunidades económicas
           o laborales y la reunión con familiares migrantes, la violencia es también un factor importante: <span
@@ -147,7 +147,7 @@ const elementosIndice = [
             cuarta causa de migración</span
           >
           , tanto interna como externa.
-        </p>
+        </p> -->
 
         <Grafica1 />
 
@@ -156,12 +156,12 @@ const elementosIndice = [
           el Registro Único de Víctimas.
         </p>
 
-        <p class="narracion">
+        <!-- <p class="narracion">
           Los datos muestran que los municipios históricamente más afectados por la violencia (PDET) son los lugares
           donde los menores han sufrido más el desplazamiento a causa del conflicto.
-        </p>
+        </p> -->
 
-        <Grafica2 />
+        <!-- <Grafica2 /> -->
 
         <p class="destacado">
           Los municipios históricamente afectados por la violencia presentan 2.88% más probabilidad de migrar a otro
@@ -184,7 +184,7 @@ const elementosIndice = [
       </div>
 
       <div class="columna">
-        <p class="narracion">
+        <!-- <p class="narracion">
           Se consideran huérfanos los niños y niñas que han sufrido la pérdida de uno o ambos padres. Esa ausencia
           aumenta el riesgo de tener menor acceso a educación y a servicios médicos, y de sufrir de angustia
           psicosocial, abandono y abusos.
@@ -198,11 +198,8 @@ const elementosIndice = [
           portaron mal o porque dejaron de hacer algo. Sin embrago, que esos sentimientos permanezcan durante mucho
           tiempo muestra, ante todo, una falta de espacios sociales de reconocimiento y apoyo para poder asimilar y
           entender lo vivido.
-        </p>
-        <p class="destacado">
-          En Colombia la orfandad es un fenómeno frecuente pero poco estudiado y, también, una de las principales y más
-          invisibilizadas consecuencias de la guerra.
-        </p>
+        </p> -->
+        <p class="destacado">En Colombia la orfandad es de las consecuencias más invisibilizadas de la guerra.</p>
 
         <p class="escribiendo" data-velocidad="50">
           Según la Comisión, entre 1985 y 2018 más de 620.000 personas, en su mayoría adultas, fueron asesinadas,
@@ -243,10 +240,9 @@ const elementosIndice = [
 
       <div class="columna">
         <p class="narracion">
-          El conflicto armado causó en Colombia la desintegración de muchas familias. Niños y niñas quedaron al cuidado
-          de personas distintas a sus padres o nuevas personas llegaron a integrar sus núcleos familiares. En esos
-          contextos se hizo más probable la vulneración de los derechos y muchos sufrieron violencias físicas, sexuales
-          y psicológicas, maltratados por las nuevas personas que asumieron su cuidado.
+          El conflicto armado causó en Colombia la desintegración de muchas familias. La orfandad y llegada de personas
+          al hogar hizo más probable la vulneración de los derechos de los niños y muchos sufrieron violencias físicas,
+          sexuales y psicológicas, maltratados por las nuevas personas que asumieron su cuidado.
         </p>
 
         <p class="escribiendo" data-velocidad="50">En el informe de la Comisión hay relatos como este:</p>
@@ -259,16 +255,24 @@ const elementosIndice = [
           </p>
         </div>
 
-        <p class="destacado">
+        <!-- <p class="destacado">
           El maltrato intrafamiliar que sufrían los menores a manos de los cuidadores y la presencia de grupos armados
           en el territorio influyeron mucho en su reclutamiento para la guerra.
-        </p>
+        </p> -->
 
-        <h3>Violencia física y emocional</h3>
-        <p class="narracion">
+        <div class="columna">
+          <p class="narracion">
+            La <span class="abrirGlosario" data-ancla="evcnna">EVCNNA</span> permitió desagregar la violencia como una categoria
+            amplia para identificar diferentes tipos de violencia ejercidas en el marco del conflicto en niñas, niños y adolescentes
+            en Colombia:
+          </p>
+        </div>
+
+        <h3 style="margin-top:20vh">Violencia física</h3>
+        <!-- <p class="narracion">
           En el marco del conflicto, los niños reclutados por grupos al margen de la ley eran obligados a ejercer
           trabajos forzados y maltratados físicamente como forma de castigo.
-        </p>
+        </p> -->
 
         <p class="narracion">
           Carlos, que tenía 12 años cuando fue reclutado, recuerda qué sucedió después de intentar fugarse de un
@@ -287,39 +291,38 @@ const elementosIndice = [
           hogares y en la comunidad.
         </p>
 
-        <Grafica3ViolenciaFisica />
+        <!-- <Grafica3ViolenciaFisica /> -->
 
         <p class="destacado">
           Para 2018 7 de cada 20 jóvenes (35%) sufrieron alguna agresión física antes de los 18 años. Las primeras
           suceden, por lo general, entre los 9 y los 15 años.
         </p>
 
-        <p class="narracion">
+        <!-- <p class="narracion">
           En cuanto a diferencias de género, encontramos que los hombres en Colombia son 7.33% más propensos a ser
           abofeteados, 12.3% a ser golpeados y 5.76% a ser amenazados con cuchillo que las mujeres. También en los
-          munidicpios PDET los hombres también son más vulnerables a estas agresiones, en particular son 6.52% más
+          municipios PDET los hombres también son más vulnerables a estas agresiones, en particular son 6.52% más
           golpeados y 3.05% más amenazados con cuchillo que las mujeres.
-        </p>
+        </p> -->
+
+        <h3 style="margin-top:20vh">Violencia emocional</h3>
 
         <p class="narracion">
           Niños, niñas y jóvenes en Colombia también sufren violencia emocional. Cuando se les preguntó si sus padres o
           apoderados alguna vez habían dicho algo hiriente como que no merecían haber nacido o si los habían
-          ridiculizado o amenazado con deshacerse de ellos, respondieron:
+          ridiculizado, respondieron:
         </p>
 
         <Grafica4ViolenciaEmocional />
 
-        <p class="destacado">
-          En general, las mujeres en Colombia son agredidas emocionalmente más que los hombres. 1 de cada 10 mujeres es
-          ridiculizada o menospreciada antes de cumplir 18 años.
-        </p>
+        <p class="destacado">1 de cada 10 mujeres es ridiculizada o menospreciada antes de cumplir 18 años.</p>
 
-        <h3>Violencia sexual</h3>
-        <p class="narracion">
+        <h3 style="margin-top:20vh">Violencia sexual</h3>
+        <!-- <p class="narracion">
           Aunque tanto las niñas como los niños sufrieron las consecuencias de la guerra, la Comisión desveló que las
           violencias que sufrían unos y otros no eran las mismas. De las 1.172 entrevistas hechas a víctimas de
           violencia sexual, se encontró que el 37% eran niñas, niños y adolescentes.
-        </p>
+        </p> -->
 
         <p class="destacado">
           Las niñas reclutadas eran más propensas a ser víctimas de acoso y abuso sexual, obligadas a asumir funciones
@@ -355,26 +358,26 @@ const elementosIndice = [
           </p>
         </div>
 
-        <p class="escribiendo" data-velocidad="50">
+        <!-- <p class="escribiendo" data-velocidad="50">
           Camila, por su parte, reveló cómo las niñas y adolescentes eran tratadas como propiedad de integrantes del
           grupo armado:
-        </p>
+        </p> -->
 
-        <div class="relato">
+        <!-- <div class="relato">
           <p>
             Aunque no dejé entrar tanto la aguja, no me lo he podido quitar del todo, me tocó hacerme un tatuaje para
             tapar ese nombre porque todo el mundo me preguntaba.
           </p>
-        </div>
+        </div> -->
 
-        <p class="narracion">
+        <!-- <p class="narracion">
           La <span class="abrirGlosario" data-ancla="evcnna">EVCNNA</span>ha ayudado a entender mejor el panorama de
           violencia sexual a nivel nacional y en los municipios más afectados por el conflicto. Reveló que las mujeres
           son las grandes afectadas de este tipo de agresiones, y que quienes viven en municipios PDET tienden a tener
           el primer evento de sexo forzado físicamente antes que el promedio nacional. El aborto, en cambio, parece ser
           menos recurrente en estos municipios, quizás debido a la dificultad de realizar este procedimiento en regiones
           periféricas del país.
-        </p>
+        </p> -->
 
         <p class="destacado">
           A nivel nacional 11.7% de los entrevistados entre 14 y 24 años afirmaron haber sido tocados de manera
@@ -384,12 +387,12 @@ const elementosIndice = [
 
         <Grafica5ViolenciaSexual />
 
-        <p class="narracion">
+        <!-- <p class="narracion">
           Las mujeres a nivel nacional sufren 6.85% más de tocamientos indeseados que los hombres, para municipios PDET
           la diferencia es del 7.34%. También son alrededor de 4% más propensas a sufrir de un intento de sexo sin
           consentimiento, un 2.4% a ser forzadas físicamente a tener sexo y un 1% a ser forzadas a tener relaciones
           sexuales por presión.
-        </p>
+        </p> -->
       </div>
     </div>
 
@@ -399,11 +402,11 @@ const elementosIndice = [
       </div>
 
       <div class="columna">
-        <p class="narracion">
+        <!-- <p class="narracion">
           La forma como murieron los padres, los relatos de otras personas y la propia imaginación sobre los hechos
           violentos vividos producen frecuentemente malestar emocional, ideas obsesivas, pesadillas, culpa, y hasta
           pensamientos suicidas. Estas secuelas pueden verse inmediatamente o aparecer años después.
-        </p>
+        </p> -->
         <p class="destacado">
           Experiencias como el secuestro, el homicidio de un familiar o el desplazamiento forzado han dejado secuelas
           físicas, psicológicas y afectivas en la vida de niñas, niños y adolescentes colombianos.
@@ -432,26 +435,26 @@ const elementosIndice = [
         </p>
 
         <p class="escribiendo" data-velocidad="50">¿La afectación es diferente en los municipios PDET?</p>
-        <p class="narracion">
+        <!-- <p class="narracion">
           Para identificar problemas de salud mental en jóvenes entre 14 y 18 años, la <span
             class="abrirGlosario"
             data-ancla="evcnna">EVCNNA</span
           > hizo preguntas como si en los últimos 30 días la persona se había sentido nerviosa, desesperada, ansiosa, intranquila,
           inútil o tan triste que nada le pudo alegrar, y si alguna vez se había lastimado o había pensado en suicidarse
           y, de ser así, si había intentado hacerlo.
-        </p>
+        </p> -->
 
-        <p class="narracion">
+        <!-- <p class="narracion">
           Según los resultados, la presencia de problemas de salud mental moderada en los jóvenes de la muestra PDET fue
           4% menor que en la muestra nacional y pensaron en hacerse daño 3.84% menos que el promedio nacional.
-        </p>
+        </p> -->
 
         <Grafica6SaludMentalPdet />
 
-        <p class="destacado">
+        <!-- <p class="destacado">
           También se encontró que en todo el país las mujeres habían sufrido más afectaciones de salud mental que los
           hombres.
-        </p>
+        </p> -->
 
         <Grafica7SaludMentalGenero />
 
@@ -480,7 +483,7 @@ const elementosIndice = [
           sufrido múltiples formas de violencia y abuso que marcaron su experiencia de vida y alteraron su mundo
           infantil y adolescente.
         </p>
-        <p class="narracion" style="margin-bottom:25vw">
+        <p class="narracion" style="margin-bottom:50vh">
           Las personas entrevistadas por la CEV que sufrieron la desaparición u homicidio de un familiar durante las
           primeras décadas de su vida quedaron con severas afectaciones a su salud mental expresadas en malestar
           emocional, pesadillas, sentimientos de culpa, ideas obsesivas y pensamientos suicidas. De estas violencias
