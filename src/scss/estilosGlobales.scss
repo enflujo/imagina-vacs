@@ -236,7 +236,7 @@ main {
 }
 
 .anchoTitulo {
-  max-width: 80vw;
+  max-width: 90vw;
   margin: 0 auto;
 }
 .seccion {
@@ -286,7 +286,7 @@ main {
   }
 
   .tituloSeccion {
-    margin: 1.5em 0 0 7em;
+    margin: 1.5em 0 0 15vw;
     z-index: -1;
     .subtitulo {
       position: sticky;
@@ -307,7 +307,7 @@ main {
   .subtitulo {
     position: sticky;
     top: 128px;
-    max-width: 14em;
+    max-width: 4em;
   }
 }
 
@@ -333,7 +333,7 @@ main {
   }
 
   .anchoTitulo {
-    max-width: 90vw;
+    max-width: 70vw;
     margin: 0 auto;
   }
   .destacado {
@@ -348,7 +348,7 @@ main {
   }
 
   .tituloSeccion {
-    margin: 1.5em 0 0 7em;
+    margin: 1.5em 0 0 15vw;
     z-index: -1;
     .subtitulo {
       position: sticky;
