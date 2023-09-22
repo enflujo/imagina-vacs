@@ -1,0 +1,305 @@
+---
+import Desplegable from './Desplegable.astro';
+import Personitas from '@/componentes/Personitas.astro';
+---
+
+<Desplegable id="encuesta">
+  <h2 class="titulo">¿Cuánto sabe sobre datos de violencia en Colombia?</h2>
+
+  <div id="encuesta">
+    <h3>Violencia sexual</h3>
+    <section id="sexual">
+      <form>
+        <p class="narracion">
+          La violencia sexual es uno de los tipos de violencia de los que menos se conoce por su naturaleza
+          estigmatizante y tabú. Cualquier dato que usted haya visto seguramente es mucho menor al número real por el
+          miedo o presión que genera denunciar. Con eso en mente, ¿cuál cree que es el porcentaje de mujeres y de
+          hombres que han experimentado violencia antes de sus 18 años?
+        </p>
+        <p>
+          <input type="radio" id="mas50" name="porcentaje" />
+          <label for="mas50">Más del 50%</label>
+        </p>
+        <p>
+          <input type="radio" id="1020" name="porcentaje" />
+          <label for="1020">Entre el 10 y el 20 %</label>
+        </p>
+        <p>
+          <input type="radio" id="menos10" name="porcentaje" />
+          <label for="menos10">Menos del 10%</label>
+        </p>
+      </form>
+      <div><input class="botonEnviar" id="enviarSexual" type="submit" value="Saber más" /></div>
+
+      <div id="conclusionSexual" class="conclusion">
+        <p class="narracion">
+          Según la encuesta (EVCNNA) realizada a jóvenes entre 18 y 24 años, cerca de una de cada siete mujeres (15,3%)
+          y menos de uno de cada trece hombres (7,8%) fueron víctimas de violencia sexual antes de cumplir 18 años.
+          Entre quienes fueron víctimas de violencia sexual en la infancia, el 37.2% de las mujeres fueron víctimas del
+          primer evento a los 13 años o menos.
+        </p>
+        <p class="narracion">
+          A nivel nacional, entre los jóvenes que fueron víctimas de violencia sexual en la infancia, aproximadamente
+          tres de cada cinco mujeres (61.8%) y más de dos de cada tres hombres (67.4%) fueron víctimas de múltiples
+          eventos antes de cumplir 18 años.
+        </p>
+      </div>
+    </section>
+
+    <section id="perpetradores">
+      <h4>Perpetradores de violencia sexual</h4>
+      <form>
+        <p class="narracion">
+          Existe el mito de que los violadores o perpetradores de violencia sexual son personas que andan por las calles
+          acechando a sus víctimas. Sin embargo, con bastante frecuencia estas personas suelen ser cercanos a quienes
+          violentan. ¿Quiénes cree usted que son los agresores más frecuentes en Colombia?
+        </p>
+        <p>
+          <input type="radio" id="desconocidos" name="perpetuador" />
+          <label for="desconocidos">Desconocidos</label>
+        </p>
+        <p>
+          <input type="radio" id="familiares" name="perpetuador" />
+          <label for="familiares">Familiares</label>
+        </p>
+        <p>
+          <input type="radio" id="parejas" name="perpetuador" />
+          <label for="parejas">Parejas o exparejas</label>
+        </p>
+        <p>
+          <input type="radio" id="amigos" name="perpetuador" />
+          <label for="amigos">Amigos o vecinos</label>
+        </p>
+      </form>
+      <div><input class="botonEnviar" id="enviarPerpetradores" type="submit" value="Saber más" /></div>
+
+      <div id="conclusionPerpetradores" class="conclusion">
+        <p class="narracion">
+          Según la encuesta (EVCNNA) realizada a jóvenes entre 18 y 24 años, en las mujeres a nivel nacional el agresor
+          más común en los primeros eventos de violencia sexual fue un amigo, compañero de estudios o vecino (30.5%) o
+          una pareja romántica actual o anterior (18.9%).
+        </p>
+        <p class="narracion">
+          En los hombres, los agresores más comunes para el primer evento de violencia sexual fueron un amigo, un
+          compañero de estudios o un vecino (61.0%).
+        </p>
+      </div>
+    </section>
+
+    <section id="ayuda">
+      <h4>Servicios de ayuda para violencia sexual</h4>
+      <form>
+        <p class="narracion">
+          Muchas veces se recrimina a quienes experimentan algún tipo de violencia sexual no haber denunciado o buscado
+          ayuda, pero ¿sabe usted cuántas personas, de las que experimentan este tipo de violencia, conocen a dónde
+          acudir?
+        </p>
+        <p>
+          <input type="radio" id="mas80" name="porcentaje" />
+          <label for="mas80">Más del 80%</label>
+        </p>
+        <p>
+          <input type="radio" id="4050" name="porcentaje" />
+          <label for="4050">Entre el 40% y 50%</label>
+        </p>
+        <p>
+          <input type="radio" id="menos40" name="porcentaje" />
+          <label for="menos40">Menos del 40%</label>
+        </p>
+      </form>
+      <div><input class="botonEnviar" id="enviarAyuda" type="submit" value="Saber más" /></div>
+
+      <div id="conclusionAyuda" class="conclusion">
+        <p class="narracion">
+          El conocimiento de los servicios de atención es relativamente bajo; a nivel nacional, solo el 49.4% de las
+          mujeres y el 54.3% de los hombres que fueron víctimas de violencia sexual en la infancia, conocían un lugar al
+          que acudir en busca de ayuda. La búsqueda de ayuda es tan baja que no hay datos confiables para medirla.
+        </p>
+      </div>
+    </section>
+
+    <h3>Violencia física y psicológica</h3>
+    <section id="fisicaPsico">
+      <form>
+        <p class="narracion">
+          ¿Puedes imaginar cuantos niños y jovenes entre en Colombia han experiementa violencia psicológica al menos una
+          vez en sus vidas?
+        </p>
+        <p>
+          <input type="radio" id="1020" name="porcentaje" />
+          <label for="1020">Entre el 10 y 20%</label>
+        </p>
+        <p>
+          <input type="radio" id="mas20" name="porcentaje" />
+          <label for="mas20">Más del 20%</label>
+        </p>
+        <p>
+          <input type="radio" id="menos10" name="porcentaje" />
+          <label for="menos10">Menos del 10%</label>
+        </p>
+      </form>
+      <div><input class="botonEnviar" id="enviarFisicaPsico" type="submit" value="Saber más" /></div>
+
+      <div id="conclusionFisicaPsico" class="conclusion">
+        <Personitas
+          felices={3}
+          tristes={1}
+          rutaSvgFeliz="/especiales/vacs/iconos/casa_rellena_bien_2.svg"
+          rutaSvgTriste="/especiales/vacs/iconos/casa_rellena_rota.svg"
+          descripcion="Más de una de cada cuatro (26.5%) mujeres"
+        />
+        <Personitas
+          felices={2}
+          tristes={1}
+          rutaSvgFeliz="/especiales/vacs/iconos/casa_rellena_bien_2.svg"
+          rutaSvgTriste="/especiales/vacs/iconos/casa_rellena_rota.svg"
+          descripcion="y más de 1 de cada 3 hombres (37.5%) sufrió violencia física en su infancia o adolescencia."
+        />
+      </div>
+    </section>
+
+    <h3>Impactos en salud</h3>
+
+    <section id="impactoSaludMujeres">
+      <p class="narracion">
+        Es muy común escuchar que hay que disciplinar a los niños mediante la violencia para que no sean malcriados o
+        rebeldes de grandes. Sin embargo, la violencia en la infancia tiene graves consecuencias de salud que perduran
+        incluso en la adultez.
+      </p>
+
+      <p class="narracion">Haga clic aquí para conocer algunos de estos graves efectos.</p>
+
+      <div>
+        <input
+          class="botonEnviar carta"
+          id="enviarImpactoSaludMujeres"
+          type="submit"
+          value="Mujeres de 18 a 24 años "
+        />
+      </div>
+
+      <div id="conclusionImpactoSaludMujeres" class="conclusion">
+        <p class="narracion">
+          A nivel nacional, las mujeres de 18 a 24 años que fueron víctimas de <b>violencia sexual</b> en la infancia tienen
+          mayor probabilidad de haber pensado en suicidarse comparadas con aquellas que nunca fueron víctimas de violencia
+          sexual en la infancia (49.9% vs 14.0%).
+        </p>
+        <p class="narracion">
+          A nivel nacional, las mujeres que fueron víctimas de <b>violencia psicológica</b> en la infancia tuvieron significativamente
+          más probabilidad de haber pensado alguna vez en suicidarse, que las que no fueron víctimas de este tipo de violencia
+          (49.6% vs 11.4%).
+        </p>
+        <p class="narracion">
+          Las mujeres que fueron víctimas de violencia sexual en la infancia fueron más propensas a haber experimentado
+          malestar psicológico en los últimos 30 días, en comparación con aquellas que no fueron víctimas de violencia
+          psicológica en la infancia (78.5% vs 47.1%).
+        </p>
+      </div>
+    </section>
+
+    <section id="impactoSaludAdolescentes">
+      <div>
+        <input
+          class="botonEnviar carta"
+          id="enviarImpactoSaludAdolescentes"
+          type="submit"
+          value="Adolescentes de 13 a 17 años"
+        />
+      </div>
+
+      <div id="conclusionImpactoSaludAdolescentes" class="conclusion">
+        <p class="narracion">
+          Cuando se examina a hombres y mujeres simultáneamente, a nivel nacional los adolescentes de 13 a 17 años que
+          fueron víctimas de <b>violencia sexual</b> en el último año fueron significativamente más propensos a:
+          <ul class="consecuencias">
+            <li>
+              Experimentar malestar psicológico en los últimos 30 días, comparados con que aquellos que no fueron
+              víctimas de violencia sexual (78.1% versus 43.5%).
+            </li>
+            <li>Haber consumido alcohol en exceso en los últimos 30 días (49.9% versus 17.8%).</li>
+            <li>Haberse lastimando intencionalmente (70.4% versus 13.5%).</li>
+            <li>Haber pensado alguna vez en el suicidio (63.1% versus 9.4%).</li>
+          </ul>
+        </p>
+        <p class="narracion">
+          A nivel nacional, los adolescentes que fueron víctimas de <b>violencia física</b> en el último año fueron significativamente
+          más propensos que aquellos que no a:
+          <ul class="consecuencias">
+            <li>Experimentar malestar psicológico en los últimos 30 días (66.9% versus 40.3%).</li>
+            <li>Haberse lastimado intencionalmente (32.0% versus 13.2%).</li>
+            <li>Haber pensado alguna vez en el suicidio (24,9% versus 9,5%).</li>
+          </ul>
+        </p>
+        <p class="narracion">
+          Los adolescentes que fueron víctimas de <b>violencia psicológica</b> en el último año fueron significativamente
+          más propensos, comparados con aquellos que no lo fueron, a:
+          <ul class="consecuencias">
+            <li>Experimentar malestar psicológico en los últimos 30 días (77.8% versus 41.4%).</li>
+            <li>Haberse lastimado intencionalmente (52.7% versus 12.7%).</li>
+            <li>Haber pensado alguna vez en el suicidio (43.1% versus 8.8%).</li>
+          </ul>
+        </p>
+      </div>
+    </section>
+  </div>
+</Desplegable>
+
+<script>
+  const botonSexual = document.getElementById('enviarSexual');
+  const botonPerpetradores = document.getElementById('enviarPerpetradores');
+  const botonAyuda = document.getElementById('enviarAyuda');
+  const botonFisicaPsico = document.getElementById('enviarFisicaPsico');
+  const botonImpactoMujeres = document.getElementById('enviarImpactoSaludMujeres');
+  const botonImpactoAdolescentes = document.getElementById('enviarImpactoSaludAdolescentes');
+
+  botonSexual.addEventListener('click', () => enviar('sexual'));
+  botonPerpetradores.addEventListener('click', () => enviar('perpetradores'));
+  botonAyuda.addEventListener('click', () => enviar('ayuda'));
+  botonFisicaPsico.addEventListener('click', () => enviar('fisicaPsico'));
+  botonImpactoMujeres.addEventListener('click', () => enviar('impactoSaludMujeres'));
+  botonImpactoAdolescentes.addEventListener('click', () => enviar('impactoSaludAdolescentes'));
+
+  function enviar(seccion: string) {
+    const seccionElegida = document.getElementById(seccion);
+    const conclusion = seccionElegida.querySelector('.conclusion');
+    conclusion.classList.add('visible');
+  }
+</script>
+
+<style lang="scss">
+  .seccion {
+    margin-top: 2em;
+  }
+  .consecuencias {
+    padding-left: 1em;
+    list-style-image: url('/especiales/vacs/iconos/flor_2.svg');
+    li {
+      margin: 1em 0;
+    }
+  }
+  .botonEnviar {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    cursor: pointer;
+    font-family: var(--fuenteTexto);
+
+    &.carta {
+      padding: 1em;
+      font-size: 1em;
+    }
+
+    &:hover {
+      background-color: var(--rosaChicle);
+    }
+  }
+  .conclusion {
+    display: none;
+
+    &.visible {
+      display: block;
+    }
+  }
+  input[type='radio'] {
+    accent-color: var(--rosaChicle);
+  }
+</style>
