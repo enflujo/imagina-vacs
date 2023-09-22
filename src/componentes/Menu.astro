@@ -83,8 +83,8 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
   #menu {
     margin: 0;
     font-family: var(--fuenteTitulos);
-    font-size: 0.8em;
-    padding: 1em;
+    font-size: 0.6em;
+    padding: 2em 1em 1em 1em;
     border-bottom: 1px solid var(--azulVaALlover);
     position: fixed;
     top: 0;
@@ -122,7 +122,7 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
     flex-direction: row;
     font-weight: 650;
     font-size: 1.3em;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .historias {
@@ -194,12 +194,20 @@ const urlSiguiente = numeroProyecto < rutas.length ? `${rutas[numeroProyecto].ru
   @media screen and (min-width: $corte1) {
     #menu {
       font-size: 1em;
+      padding: 1em;
+    }
+    #encabezado {
+      justify-content: space-between;
     }
   }
 
   @media screen and (min-width: $corte4) {
     #menu {
       padding: 1em calc((100vw - $corte4) / 2);
+      font-size: 1em;
+    }
+    #encabezado {
+      justify-content: space-between;
     }
   }
 </style>
