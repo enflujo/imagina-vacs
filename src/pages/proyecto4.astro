@@ -181,6 +181,10 @@ const elementosIndice = [
         </p>
 
         <ul class="narracion" style="margin-bottom:35vh">
+          <p class="narracion">Así se ve el modelo socioecológico que encontramos:</p>
+
+          <img class="imagenEstigma" src="./estigma_socioeco.webp" />
+
           <h4 class="subtituloInterno">Puntos claves</h4>
           <li>
             El estigma y las normas sociales y de género perjudiciales disuaden a los sobrevivientes de violencia sexual
@@ -219,6 +223,7 @@ const elementosIndice = [
 </script>
 
 <style lang="scss">
+  @import '@/scss/constantes';
   li {
     list-style-image: url('/especiales/vacs/iconos/flor_2.svg');
     margin: 1em 0 0 1em;
@@ -228,5 +233,37 @@ const elementosIndice = [
     font-size: 1.8em;
     margin-top: 2.5em;
     margin-bottom: 1em;
+  }
+
+  .imagenEstigma {
+    width: 70vw;
+  }
+
+  @media screen and (min-width: $corte1) {
+    .imagenEstigma {
+      width: 90vw;
+      margin-left: -50px;
+    }
+  }
+
+  @media screen and (min-width: $corte1) {
+    .imagenEstigma {
+      width: 85vw;
+      margin-left: -3vw;
+    }
+  }
+
+  @media screen and (min-width: $corte3) {
+    .imagenEstigma {
+      width: 70vw;
+      margin-left: -25vw;
+    }
+  }
+
+  @media screen and (min-width: $corte4) {
+    .imagenEstigma {
+      width: 60vw;
+      margin-left: -15vw;
+    }
   }
 </style>
