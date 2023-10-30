@@ -12,37 +12,37 @@ const { id } = Astro.props;
 </div>
 
 <script define:vars={{ id }}>
-  const contenedorDesplegable = document.getElementById(id);
-  const cerrar = contenedorDesplegable.querySelector('.cerrar');
+const contenedorDesplegable = document.getElementById(id);
+const cerrar = contenedorDesplegable.querySelector('.cerrar');
 
-  // Cerrar el glosario con click afuera
-  function clicFuera(evento) {
-    const elemento = evento.target;
+// Cerrar el glosario con click afuera
+function clicFuera(evento) {
+  const elemento = evento.target;
 
-    if (id === 'glosario' && elemento.id === 'botonGlosario') {
-      return;
-    } else if (id === 'creditos' && elemento.id === 'botonCreditos') {
-      return;
-    } else if (id === 'encuesta' && elemento.id === 'botonEncuesta') {
-      return;
-    }
-
-    if (
-      !(
-        contenedorDesplegable === elemento ||
-        contenedorDesplegable.contains(elemento) ||
-        elemento.classList.contains('abrirGlosario')
-      )
-    ) {
-      contenedorDesplegable.classList.remove('visible');
-    }
+  if (id === 'glosario' && elemento.id === 'botonGlosario') {
+    return;
+  } else if (id === 'creditos' && elemento.id === 'botonCreditos') {
+    return;
+  } else if (id === 'encuesta' && elemento.id === 'botonEncuesta') {
+    return;
   }
 
-  cerrar.addEventListener('click', () => {
+  if (
+    !(
+      contenedorDesplegable === elemento ||
+      contenedorDesplegable.contains(elemento) ||
+      elemento.classList.contains('abrirGlosario')
+    )
+  ) {
     contenedorDesplegable.classList.remove('visible');
-  });
+  }
+}
 
-  document.body.addEventListener('click', clicFuera);
+cerrar.addEventListener('click', () => {
+  contenedorDesplegable.classList.remove('visible');
+});
+
+document.body.addEventListener('click', clicFuera);
 </script>
 
 <style lang="scss" is:global>
@@ -141,12 +141,20 @@ const { id } = Astro.props;
       color: var(--moraAzul);
       padding: 1em 0 0.8em;
     }
+
+    .subtituloCreditoUno {
+      font-family: var(--fuenteMono);
+      border-bottom: 0px solid var(--grisTexto);
+
+      color: var(--moraAzul);
+    }
     .subtituloCreditos {
       font-family: var(--fuenteMono);
       border-bottom: 1px solid var(--grisTexto);
       padding: 0em 0 2em;
       color: var(--moraAzul);
     }
+
     .autoresCreditos {
       font-weight: 650;
       padding: 2em 0 0.1em 0;
