@@ -131,7 +131,7 @@ main {
   flex-direction: column;
 
   .columna {
-    margin-left: 15vw;
+    margin-left: 10vw;
     max-width: 75vw;
   }
 }
@@ -302,12 +302,12 @@ main {
 }
 
 .tituloSeccion {
-  margin: 1.5em 0 0 15vw;
+  margin: 1.5em 0 5em 10vw;
   z-index: -1;
   .subtitulo {
     position: sticky;
     top: 128px;
-    max-width: 4em;
+    max-width: 14em;
   }
 }
 
