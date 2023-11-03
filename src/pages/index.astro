@@ -76,6 +76,9 @@ import Plantilla from '@/plantillas/Plantilla.astro';
           los padres como forma de educación hacia sus hijos. Muchos también consideran que la violencia que ocurre
           dentro del hogar es un asunto privado y se espera que los niños se sometan a la voluntad de sus padres.
         </p>
+
+        <img class="ilustracion" src="/especiales/vacs/imgs/img-3.webp" />
+
         <section class="seccion medio">
           <p>
             Un grupo de investigadores del
@@ -268,6 +271,40 @@ import Plantilla from '@/plantillas/Plantilla.astro';
         font-weight: 300;
         font-size: 2em;
         line-height: 1;
+      }
+    }
+
+    .ilustracion {
+      width: 70vw;
+      margin-top: 10vh;
+      margin-left: 20vw;
+    }
+
+    @media screen and (min-width: $corte1) {
+      .ilustracion {
+        width: 90vw;
+        margin-left: 0.1em;
+      }
+    }
+
+    @media screen and (min-width: $corte2) {
+      .ilustracion {
+        width: 85vw;
+        margin-left: 0;
+      }
+    }
+
+    @media screen and (min-width: $corte3) {
+      .ilustracion {
+        width: 70vw;
+        padding-right: 15vw;
+      }
+    }
+
+    @media screen and (min-width: $corte4) {
+      .ilustracion {
+        width: 70vw;
+        margin-left: -7vw;
       }
     }
 
